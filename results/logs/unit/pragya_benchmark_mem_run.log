@@ -1,0 +1,188 @@
+Reading pref.tcl
+
+# 2021.3
+
+# vsim -64 -c tb_pragya_benchmark_mem_opt -coverage -do "onfinish stop; run -all; coverage save pragya_benchmark_mem.ucdb; quit -f" 
+# Start time: 23:57:19 on Nov 05,2026
+# //  ModelSim SE-64 2021.3 Jul 13 2021 Linux 4.18.0-348.7.1.el8_5.x86_64
+# //
+# //  Copyright 1991-2021 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim SE-64 and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.tb_pragya_benchmark_mem(fast)
+# Loading work.pragya_top(fast)
+# Loading work.pragya_core(fast)
+# Loading work.pc_unit(fast)
+# Loading work.pragya_if_id_reg(fast)
+# Loading work.pragya_decoder(fast)
+# Loading work.pragya_regfile(fast)
+# Loading work.pragya_csr(fast)
+# Loading work.pragya_machine_control(fast)
+# Loading work.pragya_hazard_unit(fast)
+# Loading work.pragya_imm_generator(fast)
+# Loading work.pragya_imm_adder(fast)
+# Loading work.pragya_branch_unit(fast)
+# Loading work.pragya_alu_mux(fast)
+# Loading work.pragya_alu(fast)
+# Loading work.pragya_mdu(fast)
+# Loading work.pragya_de_mw_pipeline(fast)
+# Loading work.pragya_wb_mux(fast)
+# Loading work.pragya_lsu(fast)
+# Loading work.pragya_instr_mem_wrapper(fast)
+# Loading work.pragya_imem(fast)
+# Loading work.obi_ctrl(fast)
+# Loading work.pragya_data_mem_wrapper(fast)
+# Loading work.pragya_dmem(fast)
+# onfinish stop
+#  run -all
+# 
+# =========================================================================================================
+#   PRAGYA RV32I LSU LOAD & STORE COMPREHENSIVE BENCHMARK
+# =========================================================================================================
+# 
+# ---------------------------------------------------------------------------------------------------------
+#   [TEST  1] SW/LW: Word aligned store and load
+# ---------------------------------------------------------------------------------------------------------
+# IMM_ADDER: rs1=80008000 imm=0012a000 target=80132000
+# IMM_ADDER: rs1=80008000 imm=00000000 target=80008000
+# IMM_ADDER: rs1=80008000 imm=00000000 target=80008000
+#    [PASS] x2 = 0x92345004 (matches x1)
+# 
+# ---------------------------------------------------------------------------------------------------------
+#   [TEST  2] SW/LW: Word access with positive offset (+8)
+# ---------------------------------------------------------------------------------------------------------
+# IMM_ADDER: rs1=80008000 imm=0082a000 target=80832000
+# IMM_ADDER: rs1=80008000 imm=00000008 target=80008008
+# IMM_ADDER: rs1=00000000 imm=00000008 target=00000008
+#    [PASS] x1 = 0xdeadbeef (exp 0xDEADBEEF)
+# 
+# ---------------------------------------------------------------------------------------------------------
+#   [TEST  3] SW/LW: Word access with negative offset (-4)
+# ---------------------------------------------------------------------------------------------------------
+# IMM_ADDER: rs1=80008008 imm=fffffffc target=80008004
+# IMM_ADDER: rs1=80008000 imm=fffffffc target=80007ffc
+#    [PASS] x1 = 0xcafebabe (exp 0xCAFEBABE)
+# 
+# ---------------------------------------------------------------------------------------------------------
+#   [TEST  4] SB: Byte writes at offsets 0, 1, 2, 3 (strobe check)
+# ---------------------------------------------------------------------------------------------------------
+# IMM_ADDER: rs1=80008000 imm=00000001 target=80008001
+# IMM_ADDER: rs1=80008000 imm=00000000 target=80008000
+# IMM_ADDER: rs1=80008000 imm=00000002 target=80008002
+# IMM_ADDER: rs1=80008000 imm=00000001 target=80008001
+# IMM_ADDER: rs1=80008000 imm=00000003 target=80008003
+# IMM_ADDER: rs1=80008000 imm=00000002 target=80008002
+# IMM_ADDER: rs1=80008000 imm=00000004 target=80008004
+# IMM_ADDER: rs1=80008000 imm=00000003 target=80008003
+# IMM_ADDER: rs1=80008000 imm=00000000 target=80008000
+#    [PASS] dmem[0] = 0xddccbbaa (exp 0xDDCCBBAA)
+# 
+# ---------------------------------------------------------------------------------------------------------
+#   [TEST  5] LB: Signed byte load with MSB=1 (0x85 -> 0xFFFFFF85)
+# ---------------------------------------------------------------------------------------------------------
+# IMM_ADDER: rs1=80008000 imm=00028000 target=80030000
+# IMM_ADDER: rs1=80008000 imm=00000000 target=80008000
+# IMM_ADDER: rs1=00000000 imm=00000000 target=00000000
+#    [PASS] x1 = 0xffffff85 (exp 0xFFFFFF85)
+# 
+# ---------------------------------------------------------------------------------------------------------
+#   [TEST  6] LBU: Unsigned byte load with MSB=1 (0x85 -> 0x00000085)
+# ---------------------------------------------------------------------------------------------------------
+# IMM_ADDER: rs1=80008000 imm=0002c000 target=80034000
+# IMM_ADDER: rs1=80008000 imm=00000000 target=80008000
+# IMM_ADDER: rs1=00000000 imm=00000000 target=00000000
+#    [PASS] x1 = 0x00000085 (exp 0x00000085)
+# 
+# ---------------------------------------------------------------------------------------------------------
+#   [TEST  7] LB: Individual reads from byte offsets 0, 1, 2, 3
+# ---------------------------------------------------------------------------------------------------------
+# IMM_ADDER: rs1=80008000 imm=00028000 target=80030000
+# IMM_ADDER: rs1=80008000 imm=00000000 target=80008000
+# IMM_ADDER: rs1=00000000 imm=00000000 target=00000000
+# IMM_ADDER: rs1=80008000 imm=00000001 target=80008001
+# IMM_ADDER: rs1=80008000 imm=00000002 target=80008002
+# IMM_ADDER: rs1=80008000 imm=00000003 target=80008003
+#    [PASS] x1=1, x2=2, x3=3, x4=4
+# 
+# ---------------------------------------------------------------------------------------------------------
+#   [TEST  8] SH: Store half-words at offset 0 and 2
+# ---------------------------------------------------------------------------------------------------------
+# IMM_ADDER: rs1=80008000 imm=00000001 target=80008001
+# IMM_ADDER: rs1=80008000 imm=00000000 target=80008000
+# IMM_ADDER: rs1=80008000 imm=00000002 target=80008002
+# IMM_ADDER: rs1=80008000 imm=00000000 target=80008000
+#    [PASS] dmem[0] = 0xffff0123 (exp 0xFFFF0123)
+# 
+# ---------------------------------------------------------------------------------------------------------
+#   [TEST  9] LH: Signed half-word load (0x8000 sign-extended)
+# ---------------------------------------------------------------------------------------------------------
+# IMM_ADDER: rs1=80008000 imm=00029000 target=80031000
+# IMM_ADDER: rs1=80008000 imm=00000000 target=80008000
+# IMM_ADDER: rs1=00000000 imm=00000000 target=00000000
+#    [PASS] x1 = 0xffff8000 (exp 0xFFFF8000)
+# 
+# ---------------------------------------------------------------------------------------------------------
+#   [TEST 10] LHU: Unsigned half-word load (0x8000 zero-extended)
+# ---------------------------------------------------------------------------------------------------------
+# IMM_ADDER: rs1=80008000 imm=0002d000 target=80035000
+# IMM_ADDER: rs1=80008000 imm=00000000 target=80008000
+# IMM_ADDER: rs1=00000000 imm=00000000 target=00000000
+#    [PASS] x1 = 0x00008000 (exp 0x00008000)
+# 
+# ---------------------------------------------------------------------------------------------------------
+#   [TEST 11] RAW: SW immediately followed by LW from same address
+# ---------------------------------------------------------------------------------------------------------
+# IMM_ADDER: rs1=80008000 imm=00000001 target=80008001
+# IMM_ADDER: rs1=80008000 imm=00000000 target=80008000
+# IMM_ADDER: rs1=80008000 imm=00000000 target=80008000
+#    [PASS] x2 = 0x00000042 (exp 0x42)
+# 
+# ---------------------------------------------------------------------------------------------------------
+#   [TEST 12] Load-Use: LW immediately consumed by ADD
+# ---------------------------------------------------------------------------------------------------------
+# IMM_ADDER: rs1=80008000 imm=0002a000 target=80032000
+# IMM_ADDER: rs1=80008000 imm=00000000 target=80008000
+# IMM_ADDER: rs1=00000000 imm=00000000 target=00000000
+#    [PASS] x2 = 17 (exp 17)
+# 
+# ---------------------------------------------------------------------------------------------------------
+#   [TEST 13] WAW: Back-to-back stores to same address
+# ---------------------------------------------------------------------------------------------------------
+# IMM_ADDER: rs1=80008000 imm=00000001 target=80008001
+# IMM_ADDER: rs1=80008000 imm=00000000 target=80008000
+# IMM_ADDER: rs1=80008000 imm=00000002 target=80008002
+# IMM_ADDER: rs1=80008000 imm=00000000 target=80008000
+# IMM_ADDER: rs1=80008000 imm=00000000 target=80008000
+#    [PASS] x3 = 2 (exp 2)
+# 
+# 
+# =========================================================================================================
+#   LSU LOAD/STORE BENCHMARK SUMMARY
+# =========================================================================================================
+# 
+# Total Memory Tests:   13
+# Passed:               13
+# Failed:               0
+# Success Rate:         100%
+# 
+# =========================================================================================================
+#                ALL LOAD/STORE INSTRUCTION BENCHMARK TESTS PASSED CLEANLY!                                
+# =========================================================================================================
+# 
+# ** Note: $finish    : tb/unit/tb_pragya_benchmark_mem.sv(315)
+#    Time: 4415 ns  Iteration: 1  Instance: /tb_pragya_benchmark_mem
+# Break in Module tb_pragya_benchmark_mem at tb/unit/tb_pragya_benchmark_mem.sv line 315
+# Stopped at tb/unit/tb_pragya_benchmark_mem.sv line 315
+#  coverage save pragya_benchmark_mem.ucdb
+#  quit -f
+# End time: 23:57:20 on Nov 05,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0

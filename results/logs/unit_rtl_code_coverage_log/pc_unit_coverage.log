@@ -1,0 +1,22 @@
+Model Technology ModelSim SE-64 vcover 2021.3 Coverage Utility 2021.07 Jul 13 2021
+Start time: 10:19:36 on Nov 05,2026
+vcover report -codeAll -dumptables -instance=/tb_pc_unit/u_pc_unit pc_unit.ucdb 
+Coverage Report Summary Data by instance
+
+=================================================================================
+=== Instance: /tb_pc_unit/u_pc_unit
+=== Design Unit: work.pc_unit
+=================================================================================
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        20        19         1    95.00%
+    Conditions                      12         9         3    75.00%
+    Expressions                      4         4         0   100.00%
+    Statements                      23        22         1    95.65%
+    Toggles                        608       420       188    69.07%
+
+
+Total Coverage By Instance (filtered view): 86.94%
+
+End time: 10:19:36 on Nov 05,2026, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0

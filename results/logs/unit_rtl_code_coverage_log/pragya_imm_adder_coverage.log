@@ -1,0 +1,19 @@
+Model Technology ModelSim SE-64 vcover 2021.3 Coverage Utility 2021.07 Jul 13 2021
+Start time: 20:05:56 on Nov 05,2026
+vcover report -codeAll -du=work.pragya_imm_adder pragya_imm_adder.ucdb 
+Coverage Report Summary Data by DU
+
+=================================================================================
+=== Design Unit: work.pragya_imm_adder
+=================================================================================
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         6         6         0   100.00%
+    Statements                       5         5         0   100.00%
+    Toggles                        388       388         0   100.00%
+
+
+Total Coverage By Design Unit (filtered view): 100.00%
+
+End time: 20:05:56 on Nov 05,2026, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0

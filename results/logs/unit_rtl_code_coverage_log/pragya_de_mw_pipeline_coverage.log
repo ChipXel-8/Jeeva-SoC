@@ -1,0 +1,20 @@
+Model Technology ModelSim SE-64 vcover 2021.3 Coverage Utility 2021.07 Jul 13 2021
+Start time: 17:36:58 on Nov 05,2026
+vcover report -codeAll -du=work.pragya_de_mw_pipeline pragya_de_mw_pipeline.ucdb 
+Coverage Report Summary Data by DU
+
+=================================================================================
+=== Design Unit: work.pragya_de_mw_pipeline
+=================================================================================
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         5         5         0   100.00%
+    Conditions                       2         2         0   100.00%
+    Statements                      49        49         0   100.00%
+    Toggles                       1306      1057       249    80.93%
+
+
+Total Coverage By Design Unit (filtered view): 95.23%
+
+End time: 17:36:58 on Nov 05,2026, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0

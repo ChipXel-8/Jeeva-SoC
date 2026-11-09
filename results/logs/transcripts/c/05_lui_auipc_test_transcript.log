@@ -1,0 +1,1889 @@
+# vsim -64 -coverage -c work.tb_pragya_top -l logs/transcripts/c/05_lui_auipc_test_transcript.log -onfinish stop -do "do /home/tops1/pragya_core_waivers.do; run -all; coverage save coverage/05_lui_auipc_test.ucdb; quit -f" -gRISCV_DV_MODE=0 -gMAX_CYCLES=300000 
+# Start time: 18:52:58 on Nov 06,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: rtl/pragya_core.v(1892): (vopt-2685) [TFMPC] - Too few port connections for 'decoder_inst'.  Expected 27, found 25.
+# ** Warning: rtl/pragya_core.v(1892): (vopt-2718) [TFMPC] - Missing connection for port 'is_ecall_out'.
+# ** Warning: rtl/pragya_core.v(1892): (vopt-2718) [TFMPC] - Missing connection for port 'is_mret_out'.
+# ** Warning: rtl/pragya_top.v(44): (vopt-2685) [TFMPC] - Too few port connections for 'CORE'.  Expected 33, found 27.
+# ** Warning: rtl/pragya_top.v(44): (vopt-2718) [TFMPC] - Missing connection for port 'commit_store_be'.
+# ** Warning: rtl/pragya_top.v(44): (vopt-2718) [TFMPC] - Missing connection for port 'commit_store_instr'.
+# ** Warning: rtl/pragya_top.v(44): (vopt-2718) [TFMPC] - Missing connection for port 'commit_store_pc'.
+# ** Warning: rtl/pragya_top.v(44): (vopt-2718) [TFMPC] - Missing connection for port 'commit_store_data'.
+# ** Warning: rtl/pragya_top.v(44): (vopt-2718) [TFMPC] - Missing connection for port 'commit_store_addr'.
+# ** Warning: rtl/pragya_top.v(44): (vopt-2718) [TFMPC] - Missing connection for port 'commit_store'.
+# ** Note: (vopt-143) Recognized 1 FSM in module "pragya_mdu(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "pragya_machine_control(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=10.
+# //  ModelSim SE-64 2021.3 Jul 13 2021 Linux 4.18.0-348.7.1.el8_5.x86_64
+# //
+# //  Copyright 1991-2021 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim SE-64 and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.pragya_pkg(fast)
+# Loading work.pragya_pkg_sv_unit(fast)
+# Loading work.tb_pragya_top(fast)
+# Loading work.pragya_top(fast)
+# do /home/tops1/pragya_core_waivers.do
+# coverage exclude -src /home/tops1/pragya_verification/rtl/pragya_csr.v -code b -line 253
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -src /home/tops1/pragya_verification/rtl/pragya_decoder.v -code s -line 311 348
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -src /home/tops1/pragya_verification/rtl/pragya_decoder.v -code b -line 311 348
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -src /home/tops1/pragya_verification/rtl/pragya_machine_control.v -code s -line 186-192
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -src /home/tops1/pragya_verification/rtl/pragya_machine_control.v -code b -line 184
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -src /home/tops1/pragya_verification/rtl/pragya_machine_control.v -code e -line 104 106
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -src /home/tops1/pragya_verification/rtl/pragya_machine_control.v -code c -line 259-264
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut -togglenode {commit_pc[28]} {commit_pc[29]} {commit_pc[30]} {commit_pc[31]} {instr_rdata_o[0]} {instr_rdata_o[1]} {pg_riscv32_mp_dmaddr_out[0]} {pg_riscv32_mp_dmaddr_out[1]} {pg_riscv32_mp_imaddr_out[0]} pg_riscv32_mp_imreq_out
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/u_pc_unit -togglenode {normal_pc_next[0]} {pc[0]} {pc_next[0]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/csr_inst -togglenode {base_offset[0]} {base_offset[1]} {base_offset[4]} {base_offset[6]} {base_offset[7]} {base_offset[8]} {base_offset[9]} {base_offset[10]} {base_offset[11]} {base_offset[12]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/csr_inst -togglenode {base_offset[13]} {base_offset[14]} {base_offset[15]} {base_offset[16]} {base_offset[17]} {base_offset[18]} {base_offset[19]} {base_offset[20]} {base_offset[21]} {base_offset[22]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/csr_inst -togglenode {base_offset[23]} {base_offset[24]} {base_offset[25]} {base_offset[26]} {base_offset[27]} {base_offset[28]} {base_offset[29]} {base_offset[30]} {base_offset[31]} {mcause[4]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/csr_inst -togglenode {misa[24]} {misa[25]} {misa[26]} {misa[27]} {misa[28]} {misa[29]} {misa[30]} {misa[31]} {misa_out[0]} {misa_out[1]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/csr_inst -togglenode {misa_out[2]} {misa_out[3]} {misa_out[4]} {misa_out[5]} {misa_out[6]} {misa_out[7]} {misa_out[8]} {misa_out[9]} {misa_out[10]} {misa_out[11]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/csr_inst -togglenode {misa_out[13]} {misa_out[14]} {misa_out[15]} {misa_out[16]} {misa_out[17]} {misa_out[18]} {misa_out[19]} {misa_out[20]} {misa_out[21]} {misa_out[22]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/csr_inst -togglenode {misa_out[23]} {misa_out[24]} {misa_out[25]} {misa_out[26]} {misa_out[27]} {misa_out[28]} {misa_out[29]} {misa_out[30]} {misa_out[31]} {mstatus_out[0]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/csr_inst -togglenode {mstatus_out[1]} {mstatus_out[2]} {mstatus_out[4]} {mstatus_out[5]} {mstatus_out[6]} {mstatus_out[8]} {mstatus_out[9]} {mstatus_out[10]} {mstatus_out[11]} {mstatus_out[12]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/csr_inst -togglenode {mstatus_out[13]} {mstatus_out[14]} {mstatus_out[15]} {mstatus_out[16]} {mstatus_out[17]} {mstatus_out[18]} {mstatus_out[19]} {mstatus_out[20]} {mstatus_out[21]} {mstatus_out[22]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/csr_inst -togglenode {mstatus_out[23]} {mstatus_out[24]} {mstatus_out[25]} {mstatus_out[26]} {mstatus_out[27]} {mstatus_out[28]} {mstatus_out[29]} {mstatus_out[30]} {mstatus_out[31]} {trap_mux_out[0]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/csr_inst -togglenode {trap_mux_out[1]} {vec_mux_out[0]} {vec_mux_out[1]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/imm_gen_inst -togglenode {b_type[0]} {j_type[0]} {u_type[0]} {u_type[1]} {u_type[2]} {u_type[3]} {u_type[4]} {u_type[5]} {u_type[6]} {u_type[7]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/imm_gen_inst -togglenode {u_type[8]} {u_type[9]} {u_type[10]} {u_type[11]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/alu_inst -togglenode {slt_out[1]} {slt_out[2]} {slt_out[3]} {slt_out[4]} {slt_out[5]} {slt_out[6]} {slt_out[7]} {slt_out[8]} {slt_out[9]} {slt_out[10]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/alu_inst -togglenode {slt_out[11]} {slt_out[12]} {slt_out[13]} {slt_out[14]} {slt_out[15]} {slt_out[16]} {slt_out[17]} {slt_out[18]} {slt_out[19]} {slt_out[20]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/alu_inst -togglenode {slt_out[21]} {slt_out[22]} {slt_out[23]} {slt_out[24]} {slt_out[25]} {slt_out[26]} {slt_out[27]} {slt_out[28]} {slt_out[29]} {slt_out[30]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/alu_inst -togglenode {slt_out[31]} {sltu_out[1]} {sltu_out[2]} {sltu_out[3]} {sltu_out[4]} {sltu_out[5]} {sltu_out[6]} {sltu_out[7]} {sltu_out[8]} {sltu_out[9]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/alu_inst -togglenode {sltu_out[10]} {sltu_out[11]} {sltu_out[12]} {sltu_out[13]} {sltu_out[14]} {sltu_out[15]} {sltu_out[16]} {sltu_out[17]} {sltu_out[18]} {sltu_out[19]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/alu_inst -togglenode {sltu_out[20]} {sltu_out[21]} {sltu_out[22]} {sltu_out[23]} {sltu_out[24]} {sltu_out[25]} {sltu_out[26]} {sltu_out[27]} {sltu_out[28]} {sltu_out[29]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/alu_inst -togglenode {sltu_out[30]} {sltu_out[31]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -src rtl/pragya_core.v -code e -line 873
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -src rtl/pragya_csr.v -code b -line 253
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -src rtl/pragya_decoder.v -code s -line 311 348
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -src rtl/pragya_decoder.v -code b -line 311 348
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -src rtl/pragya_machine_control.v -code s -line 186-192
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -src rtl/pragya_machine_control.v -code b -line 184
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -src rtl/pragya_machine_control.v -code e -line 104 106
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -src rtl/pragya_machine_control.v -code c -line 259-264
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -src rtl/pragya_regfile.v -code c -line 37
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+# 
+# coverage exclude -du work.pragya_machine_control -ft curr_state {STATE_OPERATING -> STATE_RESET} {STATE_TRAP_RETURN -> STATE_RESET} {STATE_TRAP_TAKEN -> STATE_RESET}
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+# 
+# coverage exclude -scope /tb_pragya_top/dut -togglenode {commit_instr[0]} {commit_instr[1]} {commit_instr[2]} {commit_instr[3]} {commit_instr[4]} {commit_instr[5]} {commit_instr[6]} {commit_instr[7]} {commit_instr[8]} {commit_instr[9]}
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+#     * Unaffected toggles: /tb_pragya_top/dut/commit_instr[0] /tb_pragya_top/dut/commit_instr[1] /tb_pragya_top/dut/commit_instr[2] /tb_pragya_top/dut/commit_instr[3] /tb_pragya_top/dut/commit_instr[4] /tb_pragya_top/dut/commit_instr[5] /tb_pragya_top/dut/commit_instr[6] /tb_pragya_top/dut/commit_instr[7] /tb_pragya_top/dut/commit_instr[8] /tb_pragya_top/dut/commit_instr[9]
+# 
+# coverage exclude -scope /tb_pragya_top/dut -togglenode {commit_instr[10]} {commit_instr[11]} {commit_instr[12]} {commit_instr[13]} {commit_instr[14]} {commit_instr[15]} {commit_instr[16]} {commit_instr[17]} {commit_instr[18]} {commit_instr[19]}
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+#     * Unaffected toggles: /tb_pragya_top/dut/commit_instr[10] /tb_pragya_top/dut/commit_instr[11] /tb_pragya_top/dut/commit_instr[12] /tb_pragya_top/dut/commit_instr[13] /tb_pragya_top/dut/commit_instr[14] /tb_pragya_top/dut/commit_instr[15] /tb_pragya_top/dut/commit_instr[16] /tb_pragya_top/dut/commit_instr[17] /tb_pragya_top/dut/commit_instr[18] /tb_pragya_top/dut/commit_instr[19]
+# 
+# coverage exclude -scope /tb_pragya_top/dut -togglenode {commit_instr[20]} {commit_instr[21]} {commit_instr[22]} {commit_instr[23]} {commit_instr[24]} {commit_instr[25]} {commit_instr[26]} {commit_instr[27]} {commit_instr[28]} {commit_instr[29]}
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+#     * Unaffected toggles: /tb_pragya_top/dut/commit_instr[20] /tb_pragya_top/dut/commit_instr[21] /tb_pragya_top/dut/commit_instr[22] /tb_pragya_top/dut/commit_instr[23] /tb_pragya_top/dut/commit_instr[24] /tb_pragya_top/dut/commit_instr[25] /tb_pragya_top/dut/commit_instr[26] /tb_pragya_top/dut/commit_instr[27] /tb_pragya_top/dut/commit_instr[28] /tb_pragya_top/dut/commit_instr[29]
+# 
+# coverage exclude -scope /tb_pragya_top/dut -togglenode {commit_instr[30]} {commit_instr[31]} {commit_pc[0]} {commit_pc[1]} {commit_pc[2]} {commit_pc[3]} {commit_pc[4]} {commit_pc[5]} {commit_pc[6]} {commit_pc[7]}
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+#     * Unaffected toggles: /tb_pragya_top/dut/commit_instr[30] /tb_pragya_top/dut/commit_instr[31] /tb_pragya_top/dut/commit_pc[0] /tb_pragya_top/dut/commit_pc[1] /tb_pragya_top/dut/commit_pc[2] /tb_pragya_top/dut/commit_pc[3] /tb_pragya_top/dut/commit_pc[4] /tb_pragya_top/dut/commit_pc[5] /tb_pragya_top/dut/commit_pc[6] /tb_pragya_top/dut/commit_pc[7]
+# 
+# coverage exclude -scope /tb_pragya_top/dut -togglenode {commit_pc[8]} {commit_pc[9]} {commit_pc[10]} {commit_pc[11]} {commit_pc[12]} {commit_pc[13]} {commit_pc[14]} {commit_pc[15]} {commit_pc[16]} {commit_pc[17]}
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+#     * Unaffected toggles: /tb_pragya_top/dut/commit_pc[8] /tb_pragya_top/dut/commit_pc[9] /tb_pragya_top/dut/commit_pc[10] /tb_pragya_top/dut/commit_pc[11] /tb_pragya_top/dut/commit_pc[12] /tb_pragya_top/dut/commit_pc[13] /tb_pragya_top/dut/commit_pc[14] /tb_pragya_top/dut/commit_pc[15] /tb_pragya_top/dut/commit_pc[16] /tb_pragya_top/dut/commit_pc[17]
+# 
+# coverage exclude -scope /tb_pragya_top/dut -togglenode {commit_pc[18]} {commit_pc[19]} {commit_pc[20]} {commit_pc[21]} {commit_pc[22]} {commit_pc[23]} {commit_pc[24]} {commit_pc[25]} {commit_pc[26]} {commit_pc[27]}
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+#     * Unaffected toggles: /tb_pragya_top/dut/commit_pc[18] /tb_pragya_top/dut/commit_pc[19] /tb_pragya_top/dut/commit_pc[20] /tb_pragya_top/dut/commit_pc[21] /tb_pragya_top/dut/commit_pc[22] /tb_pragya_top/dut/commit_pc[23] /tb_pragya_top/dut/commit_pc[24] /tb_pragya_top/dut/commit_pc[25] /tb_pragya_top/dut/commit_pc[26] /tb_pragya_top/dut/commit_pc[27]
+# 
+# coverage exclude -scope /tb_pragya_top/dut -togglenode {commit_pc[28]} {commit_pc[29]} {commit_pc[30]} {commit_pc[31]} pg_riscv32_mp_imreq_out
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+#     * Unaffected toggles: /tb_pragya_top/dut/commit_pc[28] /tb_pragya_top/dut/commit_pc[29] /tb_pragya_top/dut/commit_pc[30] /tb_pragya_top/dut/commit_pc[31] /tb_pragya_top/dut/pg_riscv32_mp_imreq_out
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE -togglenode {cause_out[2]} {commit_instr_reg[0]} {commit_instr_reg[1]} {commit_pc_reg[0]} {commit_pc_reg[1]} {commit_pc_reg[15]} {commit_pc_reg[16]} {commit_pc_reg[17]} {commit_pc_reg[18]} {commit_pc_reg[19]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE -togglenode {commit_store_pc[29]} {commit_store_pc[30]} {commit_store_pc[31]} {epc_out[0]} {epc_out[1]} {id_instr[0]} {id_instr[1]} {instr_reg_out[0]} {instr_reg_out[1]} {mdu_instr[2]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE -togglenode {mdu_instr[3]} {mdu_instr[6]} {mdu_instr[26]} {mdu_instr[27]} {mdu_instr[28]} {mdu_instr[29]} {mdu_instr[30]} {mdu_instr[31]} {mdu_pc[0]} {mdu_pc[1]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE -togglenode {mdu_pc[15]} {mdu_pc[16]} {mdu_pc[17]} {mdu_pc[18]} {mdu_pc[19]} {mdu_pc[20]} {mdu_pc[21]} {mdu_pc[22]} {mdu_pc[23]} {mdu_pc[24]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE -togglenode {mdu_pc[25]} {mdu_pc[26]} {mdu_pc[27]} {mdu_pc[28]} {mdu_pc[29]} {mdu_pc[30]} {opcode_out[0]} {opcode_out[1]} {pc[0]} {pc_out[0]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE -togglenode {pc_out[1]} {pc_out[15]} {pc_out[16]} {pc_out[17]} {pc_out[18]} {pc_out[19]} {pc_out[20]} {pc_out[21]} {pc_out[22]} {pc_out[23]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE -togglenode {pc_out[24]} {pc_out[25]} {pc_out[26]} {pc_out[27]} {pc_out[28]} {pc_out[29]} {pc_out[30]} {pc_plus_4_out[0]} {pc_plus_4_pipline1_out[0]} {pc_plus_4_pipline1_out[1]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE -togglenode {pc_plus_4_pipline1_out[15]} {pc_plus_4_pipline1_out[16]} {pc_plus_4_pipline1_out[17]} {pc_plus_4_pipline1_out[18]} {pc_plus_4_pipline1_out[19]} {pc_plus_4_pipline1_out[20]} {pc_plus_4_pipline1_out[21]} {pc_plus_4_pipline1_out[22]} {pc_plus_4_pipline1_out[23]} {pc_plus_4_pipline1_out[24]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE -togglenode {pc_plus_4_pipline1_out[25]} {pc_plus_4_pipline1_out[26]} {pc_plus_4_pipline1_out[27]} {pc_plus_4_pipline1_out[28]} {pc_plus_4_pipline1_out[29]} {pc_plus_4_pipline1_out[30]} {pc_plus_4_reg_out[0]} {pc_plus_4_reg_out[1]} {pc_plus_4_reg_out[15]} {pc_plus_4_reg_out[16]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE -togglenode {pc_plus_4_reg_out[17]} {pc_plus_4_reg_out[18]} {pc_plus_4_reg_out[19]} {pc_plus_4_reg_out[20]} {pc_plus_4_reg_out[21]} {pc_plus_4_reg_out[22]} {pc_plus_4_reg_out[23]} {pc_plus_4_reg_out[24]} {pc_plus_4_reg_out[25]} {pc_plus_4_reg_out[26]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE -togglenode {pc_plus_4_reg_out[27]} {pc_plus_4_reg_out[28]} {pc_plus_4_reg_out[29]} {pc_plus_4_reg_out[30]} {pc_plus_4_reg_out[31]} {pc_reg_out[0]} {pc_reg_out[1]} {pc_reg_out[15]} {pc_reg_out[16]} {pc_reg_out[17]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE -togglenode {pc_reg_out[18]} {pc_reg_out[19]} {pc_reg_out[20]} {pc_reg_out[21]} {pc_reg_out[22]} {pc_reg_out[23]} {pc_reg_out[24]} {pc_reg_out[25]} {pc_reg_out[26]} {pc_reg_out[27]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE -togglenode {pc_reg_out[28]} {pc_reg_out[29]} {pc_reg_out[30]} {pc_reg_out[31]} {pipe2_instr[0]} {pipe2_instr[1]} {pipe2_pc[0]} {pipe2_pc[1]} {pipe2_pc[15]} {pipe2_pc[16]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE -togglenode {pipe2_pc[17]} {pipe2_pc[18]} {pipe2_pc[19]} {pipe2_pc[20]} {pipe2_pc[21]} {pipe2_pc[22]} {pipe2_pc[23]} {pipe2_pc[24]} {pipe2_pc[25]} {pipe2_pc[26]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE -togglenode {pipe2_pc[27]} {pipe2_pc[28]} {pipe2_pc[29]} {pipe2_pc[30]} {trap_address_out[0]} {trap_address_out[1]} {trap_pc_out[0]} {trap_pc_out[1]} {trap_pc_out[15]} {trap_pc_out[16]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE -togglenode {trap_pc_out[17]} {trap_pc_out[18]} {trap_pc_out[19]} {trap_pc_out[20]} {trap_pc_out[21]} {trap_pc_out[22]} {trap_pc_out[23]} {trap_pc_out[24]} {trap_pc_out[25]} {trap_pc_out[26]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE -togglenode {trap_pc_out[27]} {trap_pc_out[28]} {trap_pc_out[29]} {trap_pc_out[30]} {trap_pc_out[31]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/u_pc_unit -togglenode {pc[0]} {pc_next[0]}
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+#     * Unaffected toggles: /tb_pragya_top/dut/CORE/u_pc_unit/pc[0] /tb_pragya_top/dut/CORE/u_pc_unit/pc_next[0]
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/if_id_reg_inst -togglenode {pc_out[0]} {pc_out[1]} {pc_out[15]} {pc_out[16]} {pc_out[17]} {pc_out[18]} {pc_out[19]} {pc_out[20]} {pc_out[21]} {pc_out[22]}
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+#     * Unaffected toggles: /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_out[0] /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_out[1] /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_out[15] /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_out[16] /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_out[17] /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_out[18] /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_out[19] /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_out[20] /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_out[21] /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_out[22]
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/if_id_reg_inst -togglenode {pc_out[23]} {pc_out[24]} {pc_out[25]} {pc_out[26]} {pc_out[27]} {pc_out[28]} {pc_out[29]} {pc_out[30]} {pc_plus_4_pipline1_out[0]} {pc_plus_4_pipline1_out[1]}
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+#     * Unaffected toggles: /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_out[23] /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_out[24] /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_out[25] /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_out[26] /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_out[27] /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_out[28] /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_out[29] /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_out[30] /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_plus_4_pipline1_out[0] /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_plus_4_pipline1_out[1]
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/if_id_reg_inst -togglenode {pc_plus_4_pipline1_out[15]} {pc_plus_4_pipline1_out[16]} {pc_plus_4_pipline1_out[17]} {pc_plus_4_pipline1_out[18]} {pc_plus_4_pipline1_out[19]} {pc_plus_4_pipline1_out[20]} {pc_plus_4_pipline1_out[21]} {pc_plus_4_pipline1_out[22]} {pc_plus_4_pipline1_out[23]} {pc_plus_4_pipline1_out[24]}
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+#     * Unaffected toggles: /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_plus_4_pipline1_out[15] /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_plus_4_pipline1_out[16] /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_plus_4_pipline1_out[17] /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_plus_4_pipline1_out[18] /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_plus_4_pipline1_out[19] /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_plus_4_pipline1_out[20] /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_plus_4_pipline1_out[21] /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_plus_4_pipline1_out[22] /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_plus_4_pipline1_out[23] /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_plus_4_pipline1_out[24]
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/if_id_reg_inst -togglenode {pc_plus_4_pipline1_out[25]} {pc_plus_4_pipline1_out[26]} {pc_plus_4_pipline1_out[27]} {pc_plus_4_pipline1_out[28]} {pc_plus_4_pipline1_out[29]} {pc_plus_4_pipline1_out[30]}
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+#     * Unaffected toggles: /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_plus_4_pipline1_out[25] /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_plus_4_pipline1_out[26] /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_plus_4_pipline1_out[27] /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_plus_4_pipline1_out[28] /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_plus_4_pipline1_out[29] /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_plus_4_pipline1_out[30]
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/regfile_inst -togglenode {i[0]} {i[1]} {i[2]} {i[3]} {i[4]} {i[5]} {i[6]} {i[7]} {i[8]} {i[9]}
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+#     * Unaffected toggles: /tb_pragya_top/dut/CORE/regfile_inst/i[0] /tb_pragya_top/dut/CORE/regfile_inst/i[1] /tb_pragya_top/dut/CORE/regfile_inst/i[2] /tb_pragya_top/dut/CORE/regfile_inst/i[3] /tb_pragya_top/dut/CORE/regfile_inst/i[4] /tb_pragya_top/dut/CORE/regfile_inst/i[5] /tb_pragya_top/dut/CORE/regfile_inst/i[6] /tb_pragya_top/dut/CORE/regfile_inst/i[7] /tb_pragya_top/dut/CORE/regfile_inst/i[8] /tb_pragya_top/dut/CORE/regfile_inst/i[9]
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/regfile_inst -togglenode {i[10]} {i[11]} {i[12]} {i[13]} {i[14]} {i[15]} {i[16]} {i[17]} {i[18]} {i[19]}
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+#     * Unaffected toggles: /tb_pragya_top/dut/CORE/regfile_inst/i[10] /tb_pragya_top/dut/CORE/regfile_inst/i[11] /tb_pragya_top/dut/CORE/regfile_inst/i[12] /tb_pragya_top/dut/CORE/regfile_inst/i[13] /tb_pragya_top/dut/CORE/regfile_inst/i[14] /tb_pragya_top/dut/CORE/regfile_inst/i[15] /tb_pragya_top/dut/CORE/regfile_inst/i[16] /tb_pragya_top/dut/CORE/regfile_inst/i[17] /tb_pragya_top/dut/CORE/regfile_inst/i[18] /tb_pragya_top/dut/CORE/regfile_inst/i[19]
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/regfile_inst -togglenode {i[20]} {i[21]} {i[22]} {i[23]} {i[24]} {i[25]} {i[26]} {i[27]} {i[28]} {i[29]}
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+#     * Unaffected toggles: /tb_pragya_top/dut/CORE/regfile_inst/i[20] /tb_pragya_top/dut/CORE/regfile_inst/i[21] /tb_pragya_top/dut/CORE/regfile_inst/i[22] /tb_pragya_top/dut/CORE/regfile_inst/i[23] /tb_pragya_top/dut/CORE/regfile_inst/i[24] /tb_pragya_top/dut/CORE/regfile_inst/i[25] /tb_pragya_top/dut/CORE/regfile_inst/i[26] /tb_pragya_top/dut/CORE/regfile_inst/i[27] /tb_pragya_top/dut/CORE/regfile_inst/i[28] /tb_pragya_top/dut/CORE/regfile_inst/i[29]
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/regfile_inst -togglenode {i[30]} {i[31]}
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+#     * Unaffected toggles: /tb_pragya_top/dut/CORE/regfile_inst/i[30] /tb_pragya_top/dut/CORE/regfile_inst/i[31]
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/csr_inst -togglenode {mcause[4]} {mcause[5]} {mcause[6]} {mcause[7]} {mcause[8]} {mcause[9]} {mcause[10]} {mcause[11]} {mcause[12]} {mcause[13]}
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+#     * Unaffected toggles: /tb_pragya_top/dut/CORE/csr_inst/mcause[4] /tb_pragya_top/dut/CORE/csr_inst/mcause[5] /tb_pragya_top/dut/CORE/csr_inst/mcause[6] /tb_pragya_top/dut/CORE/csr_inst/mcause[7] /tb_pragya_top/dut/CORE/csr_inst/mcause[8] /tb_pragya_top/dut/CORE/csr_inst/mcause[9] /tb_pragya_top/dut/CORE/csr_inst/mcause[10] /tb_pragya_top/dut/CORE/csr_inst/mcause[11] /tb_pragya_top/dut/CORE/csr_inst/mcause[12] /tb_pragya_top/dut/CORE/csr_inst/mcause[13]
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/csr_inst -togglenode {mcause[14]} {mcause[15]} {mcause[16]} {mcause[17]} {mcause[18]} {mcause[19]} {mcause[20]} {mcause[21]} {mcause[22]} {mcause[23]}
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+#     * Unaffected toggles: /tb_pragya_top/dut/CORE/csr_inst/mcause[14] /tb_pragya_top/dut/CORE/csr_inst/mcause[15] /tb_pragya_top/dut/CORE/csr_inst/mcause[16] /tb_pragya_top/dut/CORE/csr_inst/mcause[17] /tb_pragya_top/dut/CORE/csr_inst/mcause[18] /tb_pragya_top/dut/CORE/csr_inst/mcause[19] /tb_pragya_top/dut/CORE/csr_inst/mcause[20] /tb_pragya_top/dut/CORE/csr_inst/mcause[21] /tb_pragya_top/dut/CORE/csr_inst/mcause[22] /tb_pragya_top/dut/CORE/csr_inst/mcause[23]
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/csr_inst -togglenode {mcause[24]} {mcause[25]} {mcause[26]} {mcause[27]} {mcause[28]} {mcause[29]} {mcause[30]} {mepc[0]} {mepc[1]} {mie[0]}
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+#     * Unaffected toggles: /tb_pragya_top/dut/CORE/csr_inst/mcause[24] /tb_pragya_top/dut/CORE/csr_inst/mcause[25] /tb_pragya_top/dut/CORE/csr_inst/mcause[26] /tb_pragya_top/dut/CORE/csr_inst/mcause[27] /tb_pragya_top/dut/CORE/csr_inst/mcause[28] /tb_pragya_top/dut/CORE/csr_inst/mcause[29] /tb_pragya_top/dut/CORE/csr_inst/mcause[30] /tb_pragya_top/dut/CORE/csr_inst/mepc[0] /tb_pragya_top/dut/CORE/csr_inst/mepc[1] /tb_pragya_top/dut/CORE/csr_inst/mie[0]
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/csr_inst -togglenode {mie[1]} {mie[2]} {mie[4]} {mie[5]} {mie[6]} {mie[8]} {mie[9]} {mie[10]} {mie[12]} {mie[13]}
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+#     * Unaffected toggles: /tb_pragya_top/dut/CORE/csr_inst/mie[1] /tb_pragya_top/dut/CORE/csr_inst/mie[2] /tb_pragya_top/dut/CORE/csr_inst/mie[4] /tb_pragya_top/dut/CORE/csr_inst/mie[5] /tb_pragya_top/dut/CORE/csr_inst/mie[6] /tb_pragya_top/dut/CORE/csr_inst/mie[8] /tb_pragya_top/dut/CORE/csr_inst/mie[9] /tb_pragya_top/dut/CORE/csr_inst/mie[10] /tb_pragya_top/dut/CORE/csr_inst/mie[12] /tb_pragya_top/dut/CORE/csr_inst/mie[13]
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/csr_inst -togglenode {mie[14]} {mie[15]} {mie[16]} {mie[17]} {mie[18]} {mie[19]} {mie[20]} {mie[21]} {mie[22]} {mie[23]}
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+#     * Unaffected toggles: /tb_pragya_top/dut/CORE/csr_inst/mie[14] /tb_pragya_top/dut/CORE/csr_inst/mie[15] /tb_pragya_top/dut/CORE/csr_inst/mie[16] /tb_pragya_top/dut/CORE/csr_inst/mie[17] /tb_pragya_top/dut/CORE/csr_inst/mie[18] /tb_pragya_top/dut/CORE/csr_inst/mie[19] /tb_pragya_top/dut/CORE/csr_inst/mie[20] /tb_pragya_top/dut/CORE/csr_inst/mie[21] /tb_pragya_top/dut/CORE/csr_inst/mie[22] /tb_pragya_top/dut/CORE/csr_inst/mie[23]
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/csr_inst -togglenode {mie[24]} {mie[25]} {mie[26]} {mie[27]} {mie[28]} {mie[29]} {mie[30]} {mie[31]} {misa[0]} {misa[1]}
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+#     * Unaffected toggles: /tb_pragya_top/dut/CORE/csr_inst/mie[24] /tb_pragya_top/dut/CORE/csr_inst/mie[25] /tb_pragya_top/dut/CORE/csr_inst/mie[26] /tb_pragya_top/dut/CORE/csr_inst/mie[27] /tb_pragya_top/dut/CORE/csr_inst/mie[28] /tb_pragya_top/dut/CORE/csr_inst/mie[29] /tb_pragya_top/dut/CORE/csr_inst/mie[30] /tb_pragya_top/dut/CORE/csr_inst/mie[31] /tb_pragya_top/dut/CORE/csr_inst/misa[0] /tb_pragya_top/dut/CORE/csr_inst/misa[1]
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/csr_inst -togglenode {misa[2]} {misa[3]} {misa[4]} {misa[5]} {misa[6]} {misa[7]} {misa[8]} {misa[9]} {misa[10]} {misa[11]}
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+#     * Unaffected toggles: /tb_pragya_top/dut/CORE/csr_inst/misa[2] /tb_pragya_top/dut/CORE/csr_inst/misa[3] /tb_pragya_top/dut/CORE/csr_inst/misa[4] /tb_pragya_top/dut/CORE/csr_inst/misa[5] /tb_pragya_top/dut/CORE/csr_inst/misa[6] /tb_pragya_top/dut/CORE/csr_inst/misa[7] /tb_pragya_top/dut/CORE/csr_inst/misa[8] /tb_pragya_top/dut/CORE/csr_inst/misa[9] /tb_pragya_top/dut/CORE/csr_inst/misa[10] /tb_pragya_top/dut/CORE/csr_inst/misa[11]
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/csr_inst -togglenode {misa[13]} {misa[14]} {misa[15]} {misa[16]} {misa[17]} {misa[18]} {misa[19]} {misa[20]} {misa[21]} {misa[22]}
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+#     * Unaffected toggles: /tb_pragya_top/dut/CORE/csr_inst/misa[13] /tb_pragya_top/dut/CORE/csr_inst/misa[14] /tb_pragya_top/dut/CORE/csr_inst/misa[15] /tb_pragya_top/dut/CORE/csr_inst/misa[16] /tb_pragya_top/dut/CORE/csr_inst/misa[17] /tb_pragya_top/dut/CORE/csr_inst/misa[18] /tb_pragya_top/dut/CORE/csr_inst/misa[19] /tb_pragya_top/dut/CORE/csr_inst/misa[20] /tb_pragya_top/dut/CORE/csr_inst/misa[21] /tb_pragya_top/dut/CORE/csr_inst/misa[22]
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/csr_inst -togglenode {misa[23]} {misa[24]} {misa[25]} {misa[26]} {misa[27]} {misa[28]} {misa[29]} {misa[30]} {misa[31]}
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+#     * Unaffected toggles: /tb_pragya_top/dut/CORE/csr_inst/misa[23] /tb_pragya_top/dut/CORE/csr_inst/misa[24] /tb_pragya_top/dut/CORE/csr_inst/misa[25] /tb_pragya_top/dut/CORE/csr_inst/misa[26] /tb_pragya_top/dut/CORE/csr_inst/misa[27] /tb_pragya_top/dut/CORE/csr_inst/misa[28] /tb_pragya_top/dut/CORE/csr_inst/misa[29] /tb_pragya_top/dut/CORE/csr_inst/misa[30] /tb_pragya_top/dut/CORE/csr_inst/misa[31]
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/machine_control_inst -togglenode {cause_out[2]} {curr_state[0]} {next_state[0]} {trap_pc_out[0]} {trap_pc_out[1]} {trap_pc_out[15]} {trap_pc_out[16]} {trap_pc_out[17]} {trap_pc_out[18]} {trap_pc_out[19]}
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+#     * Unaffected toggles: /tb_pragya_top/dut/CORE/machine_control_inst/cause_out[2] /tb_pragya_top/dut/CORE/machine_control_inst/curr_state[0] /tb_pragya_top/dut/CORE/machine_control_inst/next_state[0] /tb_pragya_top/dut/CORE/machine_control_inst/trap_pc_out[0] /tb_pragya_top/dut/CORE/machine_control_inst/trap_pc_out[1] /tb_pragya_top/dut/CORE/machine_control_inst/trap_pc_out[15] /tb_pragya_top/dut/CORE/machine_control_inst/trap_pc_out[16] /tb_pragya_top/dut/CORE/machine_control_inst/trap_pc_out[17] /tb_pragya_top/dut/CORE/machine_control_inst/trap_pc_out[18] /tb_pragya_top/dut/CORE/machine_control_inst/trap_pc_out[19]
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/machine_control_inst -togglenode {trap_pc_out[20]} {trap_pc_out[21]} {trap_pc_out[22]} {trap_pc_out[23]} {trap_pc_out[24]} {trap_pc_out[25]} {trap_pc_out[26]} {trap_pc_out[27]} {trap_pc_out[28]} {trap_pc_out[29]}
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+#     * Unaffected toggles: /tb_pragya_top/dut/CORE/machine_control_inst/trap_pc_out[20] /tb_pragya_top/dut/CORE/machine_control_inst/trap_pc_out[21] /tb_pragya_top/dut/CORE/machine_control_inst/trap_pc_out[22] /tb_pragya_top/dut/CORE/machine_control_inst/trap_pc_out[23] /tb_pragya_top/dut/CORE/machine_control_inst/trap_pc_out[24] /tb_pragya_top/dut/CORE/machine_control_inst/trap_pc_out[25] /tb_pragya_top/dut/CORE/machine_control_inst/trap_pc_out[26] /tb_pragya_top/dut/CORE/machine_control_inst/trap_pc_out[27] /tb_pragya_top/dut/CORE/machine_control_inst/trap_pc_out[28] /tb_pragya_top/dut/CORE/machine_control_inst/trap_pc_out[29]
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/machine_control_inst -togglenode {trap_pc_out[30]} {trap_pc_out[31]}
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+#     * Unaffected toggles: /tb_pragya_top/dut/CORE/machine_control_inst/trap_pc_out[30] /tb_pragya_top/dut/CORE/machine_control_inst/trap_pc_out[31]
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/pipeline2_inst -togglenode {instr_reg_out[0]} {instr_reg_out[1]} {pc_plus_4_reg_out[0]} {pc_plus_4_reg_out[1]} {pc_plus_4_reg_out[15]} {pc_plus_4_reg_out[16]} {pc_plus_4_reg_out[17]} {pc_plus_4_reg_out[18]} {pc_plus_4_reg_out[19]} {pc_plus_4_reg_out[20]}
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+#     * Unaffected toggles: /tb_pragya_top/dut/CORE/pipeline2_inst/instr_reg_out[0] /tb_pragya_top/dut/CORE/pipeline2_inst/instr_reg_out[1] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_plus_4_reg_out[0] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_plus_4_reg_out[1] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_plus_4_reg_out[15] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_plus_4_reg_out[16] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_plus_4_reg_out[17] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_plus_4_reg_out[18] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_plus_4_reg_out[19] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_plus_4_reg_out[20]
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/pipeline2_inst -togglenode {pc_plus_4_reg_out[21]} {pc_plus_4_reg_out[22]} {pc_plus_4_reg_out[23]} {pc_plus_4_reg_out[24]} {pc_plus_4_reg_out[25]} {pc_plus_4_reg_out[26]} {pc_plus_4_reg_out[27]} {pc_plus_4_reg_out[28]} {pc_plus_4_reg_out[29]} {pc_plus_4_reg_out[30]}
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+#     * Unaffected toggles: /tb_pragya_top/dut/CORE/pipeline2_inst/pc_plus_4_reg_out[21] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_plus_4_reg_out[22] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_plus_4_reg_out[23] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_plus_4_reg_out[24] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_plus_4_reg_out[25] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_plus_4_reg_out[26] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_plus_4_reg_out[27] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_plus_4_reg_out[28] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_plus_4_reg_out[29] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_plus_4_reg_out[30]
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/pipeline2_inst -togglenode {pc_plus_4_reg_out[31]} {pc_reg_out[0]} {pc_reg_out[1]} {pc_reg_out[15]} {pc_reg_out[16]} {pc_reg_out[17]} {pc_reg_out[18]} {pc_reg_out[19]} {pc_reg_out[20]} {pc_reg_out[21]}
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+#     * Unaffected toggles: /tb_pragya_top/dut/CORE/pipeline2_inst/pc_plus_4_reg_out[31] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_reg_out[0] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_reg_out[1] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_reg_out[15] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_reg_out[16] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_reg_out[17] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_reg_out[18] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_reg_out[19] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_reg_out[20] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_reg_out[21]
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/pipeline2_inst -togglenode {pc_reg_out[22]} {pc_reg_out[23]} {pc_reg_out[24]} {pc_reg_out[25]} {pc_reg_out[26]} {pc_reg_out[27]} {pc_reg_out[28]} {pc_reg_out[29]} {pc_reg_out[30]} {pc_reg_out[31]}
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+#     * Unaffected toggles: /tb_pragya_top/dut/CORE/pipeline2_inst/pc_reg_out[22] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_reg_out[23] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_reg_out[24] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_reg_out[25] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_reg_out[26] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_reg_out[27] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_reg_out[28] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_reg_out[29] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_reg_out[30] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_reg_out[31]
+# 
+# coverage exclude -scope /tb_pragya_top/dut/I_wrapper/imem -togglenode {instruction_out[0]} {instruction_out[1]}
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+#     * Unaffected toggles: /tb_pragya_top/dut/I_wrapper/imem/instruction_out[0] /tb_pragya_top/dut/I_wrapper/imem/instruction_out[1]
+# 
+#  run -all
+# ** Warning: (vsim-7) Failed to open readmem file "data.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : rtl/pragya_dmem.v(20)
+#    Time: 0 ps  Iteration: 0  Instance: /tb_pragya_top/dut/D_wrapper/dmem
+# c_wfi_timer_test    = 0
+# 
+# ==============================================
+# TB TEST MODE
+# ==============================================
+# RISCV_DV_MODE       = 0
+# c_irq_test          = 0
+# c_timer_irq_test    = 0
+# c_timer_pending_test    = 0
+# c_timer_mtie_disabled_test = 0
+# c_external_pending_test    = 0
+# c_software_pending_test    = 0
+# c_software_irq_test = 0
+# dv_irq_test         = 0
+# ==============================================
+# 
+# RTL log opened successfully.
+# [40000] Reset Released
+# 
+# ======================================
+# Starting C Program
+# ======================================
+# 
+# PC=80000000 INSTR=00010117 x2=80010000
+# PC=80000004 INSTR=00010113 x2=80010000
+# PC=80000008 INSTR=00008197 x3=80008008
+# PC=8000000c INSTR=7f818193 x3=80008800
+# PC=80000010 INSTR=00008297 x5=80008010
+# PC=80000014 INSTR=ff028293 x5=80008000
+# PC=80000018 INSTR=00008317 x6=80008018
+# PC=8000001c INSTR=3fc30313 x6=80008414
+# IMM_ADDER: rs1=80008000 imm=00000000 target=80008000
+# PC=80000024 INSTR=0002a023 MEM[80008000]=00000000
+# PC=80000028 INSTR=00428293 x5=80008004
+# IMM_ADDER: rs1=80008004 imm=00000000 target=80008004
+# PC=80000024 INSTR=0002a023 MEM[80008004]=00000000
+# PC=80000028 INSTR=00428293 x5=80008008
+# IMM_ADDER: rs1=80008008 imm=00000000 target=80008008
+# PC=80000024 INSTR=0002a023 MEM[80008008]=00000000
+# PC=80000028 INSTR=00428293 x5=8000800c
+# IMM_ADDER: rs1=8000800c imm=00000000 target=8000800c
+# PC=80000024 INSTR=0002a023 MEM[8000800c]=00000000
+# PC=80000028 INSTR=00428293 x5=80008010
+# IMM_ADDER: rs1=80008010 imm=00000000 target=80008010
+# PC=80000024 INSTR=0002a023 MEM[80008010]=00000000
+# PC=80000028 INSTR=00428293 x5=80008014
+# IMM_ADDER: rs1=80008014 imm=00000000 target=80008014
+# PC=80000024 INSTR=0002a023 MEM[80008014]=00000000
+# PC=80000028 INSTR=00428293 x5=80008018
+# IMM_ADDER: rs1=80008018 imm=00000000 target=80008018
+# PC=80000024 INSTR=0002a023 MEM[80008018]=00000000
+# PC=80000028 INSTR=00428293 x5=8000801c
+# IMM_ADDER: rs1=8000801c imm=00000000 target=8000801c
+# PC=80000024 INSTR=0002a023 MEM[8000801c]=00000000
+# PC=80000028 INSTR=00428293 x5=80008020
+# IMM_ADDER: rs1=80008020 imm=00000000 target=80008020
+# PC=80000024 INSTR=0002a023 MEM[80008020]=00000000
+# PC=80000028 INSTR=00428293 x5=80008024
+# IMM_ADDER: rs1=80008024 imm=00000000 target=80008024
+# PC=80000024 INSTR=0002a023 MEM[80008024]=00000000
+# PC=80000028 INSTR=00428293 x5=80008028
+# IMM_ADDER: rs1=80008028 imm=00000000 target=80008028
+# PC=80000024 INSTR=0002a023 MEM[80008028]=00000000
+# PC=80000028 INSTR=00428293 x5=8000802c
+# IMM_ADDER: rs1=8000802c imm=00000000 target=8000802c
+# PC=80000024 INSTR=0002a023 MEM[8000802c]=00000000
+# PC=80000028 INSTR=00428293 x5=80008030
+# IMM_ADDER: rs1=80008030 imm=00000000 target=80008030
+# PC=80000024 INSTR=0002a023 MEM[80008030]=00000000
+# PC=80000028 INSTR=00428293 x5=80008034
+# IMM_ADDER: rs1=80008034 imm=00000000 target=80008034
+# PC=80000024 INSTR=0002a023 MEM[80008034]=00000000
+# PC=80000028 INSTR=00428293 x5=80008038
+# IMM_ADDER: rs1=80008038 imm=00000000 target=80008038
+# PC=80000024 INSTR=0002a023 MEM[80008038]=00000000
+# PC=80000028 INSTR=00428293 x5=8000803c
+# IMM_ADDER: rs1=8000803c imm=00000000 target=8000803c
+# PC=80000024 INSTR=0002a023 MEM[8000803c]=00000000
+# PC=80000028 INSTR=00428293 x5=80008040
+# IMM_ADDER: rs1=80008040 imm=00000000 target=80008040
+# PC=80000024 INSTR=0002a023 MEM[80008040]=00000000
+# PC=80000028 INSTR=00428293 x5=80008044
+# IMM_ADDER: rs1=80008044 imm=00000000 target=80008044
+# PC=80000024 INSTR=0002a023 MEM[80008044]=00000000
+# PC=80000028 INSTR=00428293 x5=80008048
+# IMM_ADDER: rs1=80008048 imm=00000000 target=80008048
+# PC=80000024 INSTR=0002a023 MEM[80008048]=00000000
+# PC=80000028 INSTR=00428293 x5=8000804c
+# IMM_ADDER: rs1=8000804c imm=00000000 target=8000804c
+# PC=80000024 INSTR=0002a023 MEM[8000804c]=00000000
+# PC=80000028 INSTR=00428293 x5=80008050
+# IMM_ADDER: rs1=80008050 imm=00000000 target=80008050
+# PC=80000024 INSTR=0002a023 MEM[80008050]=00000000
+# PC=80000028 INSTR=00428293 x5=80008054
+# IMM_ADDER: rs1=80008054 imm=00000000 target=80008054
+# PC=80000024 INSTR=0002a023 MEM[80008054]=00000000
+# PC=80000028 INSTR=00428293 x5=80008058
+# IMM_ADDER: rs1=80008058 imm=00000000 target=80008058
+# PC=80000024 INSTR=0002a023 MEM[80008058]=00000000
+# PC=80000028 INSTR=00428293 x5=8000805c
+# IMM_ADDER: rs1=8000805c imm=00000000 target=8000805c
+# PC=80000024 INSTR=0002a023 MEM[8000805c]=00000000
+# PC=80000028 INSTR=00428293 x5=80008060
+# IMM_ADDER: rs1=80008060 imm=00000000 target=80008060
+# PC=80000024 INSTR=0002a023 MEM[80008060]=00000000
+# PC=80000028 INSTR=00428293 x5=80008064
+# IMM_ADDER: rs1=80008064 imm=00000000 target=80008064
+# PC=80000024 INSTR=0002a023 MEM[80008064]=00000000
+# PC=80000028 INSTR=00428293 x5=80008068
+# IMM_ADDER: rs1=80008068 imm=00000000 target=80008068
+# PC=80000024 INSTR=0002a023 MEM[80008068]=00000000
+# PC=80000028 INSTR=00428293 x5=8000806c
+# IMM_ADDER: rs1=8000806c imm=00000000 target=8000806c
+# PC=80000024 INSTR=0002a023 MEM[8000806c]=00000000
+# PC=80000028 INSTR=00428293 x5=80008070
+# IMM_ADDER: rs1=80008070 imm=00000000 target=80008070
+# PC=80000024 INSTR=0002a023 MEM[80008070]=00000000
+# PC=80000028 INSTR=00428293 x5=80008074
+# IMM_ADDER: rs1=80008074 imm=00000000 target=80008074
+# PC=80000024 INSTR=0002a023 MEM[80008074]=00000000
+# PC=80000028 INSTR=00428293 x5=80008078
+# IMM_ADDER: rs1=80008078 imm=00000000 target=80008078
+# PC=80000024 INSTR=0002a023 MEM[80008078]=00000000
+# PC=80000028 INSTR=00428293 x5=8000807c
+# IMM_ADDER: rs1=8000807c imm=00000000 target=8000807c
+# PC=80000024 INSTR=0002a023 MEM[8000807c]=00000000
+# PC=80000028 INSTR=00428293 x5=80008080
+# IMM_ADDER: rs1=80008080 imm=00000000 target=80008080
+# PC=80000024 INSTR=0002a023 MEM[80008080]=00000000
+# PC=80000028 INSTR=00428293 x5=80008084
+# IMM_ADDER: rs1=80008084 imm=00000000 target=80008084
+# PC=80000024 INSTR=0002a023 MEM[80008084]=00000000
+# PC=80000028 INSTR=00428293 x5=80008088
+# IMM_ADDER: rs1=80008088 imm=00000000 target=80008088
+# PC=80000024 INSTR=0002a023 MEM[80008088]=00000000
+# PC=80000028 INSTR=00428293 x5=8000808c
+# IMM_ADDER: rs1=8000808c imm=00000000 target=8000808c
+# PC=80000024 INSTR=0002a023 MEM[8000808c]=00000000
+# PC=80000028 INSTR=00428293 x5=80008090
+# IMM_ADDER: rs1=80008090 imm=00000000 target=80008090
+# PC=80000024 INSTR=0002a023 MEM[80008090]=00000000
+# PC=80000028 INSTR=00428293 x5=80008094
+# IMM_ADDER: rs1=80008094 imm=00000000 target=80008094
+# PC=80000024 INSTR=0002a023 MEM[80008094]=00000000
+# PC=80000028 INSTR=00428293 x5=80008098
+# IMM_ADDER: rs1=80008098 imm=00000000 target=80008098
+# PC=80000024 INSTR=0002a023 MEM[80008098]=00000000
+# PC=80000028 INSTR=00428293 x5=8000809c
+# IMM_ADDER: rs1=8000809c imm=00000000 target=8000809c
+# PC=80000024 INSTR=0002a023 MEM[8000809c]=00000000
+# PC=80000028 INSTR=00428293 x5=800080a0
+# IMM_ADDER: rs1=800080a0 imm=00000000 target=800080a0
+# PC=80000024 INSTR=0002a023 MEM[800080a0]=00000000
+# PC=80000028 INSTR=00428293 x5=800080a4
+# IMM_ADDER: rs1=800080a4 imm=00000000 target=800080a4
+# PC=80000024 INSTR=0002a023 MEM[800080a4]=00000000
+# PC=80000028 INSTR=00428293 x5=800080a8
+# IMM_ADDER: rs1=800080a8 imm=00000000 target=800080a8
+# PC=80000024 INSTR=0002a023 MEM[800080a8]=00000000
+# PC=80000028 INSTR=00428293 x5=800080ac
+# IMM_ADDER: rs1=800080ac imm=00000000 target=800080ac
+# PC=80000024 INSTR=0002a023 MEM[800080ac]=00000000
+# PC=80000028 INSTR=00428293 x5=800080b0
+# IMM_ADDER: rs1=800080b0 imm=00000000 target=800080b0
+# PC=80000024 INSTR=0002a023 MEM[800080b0]=00000000
+# PC=80000028 INSTR=00428293 x5=800080b4
+# IMM_ADDER: rs1=800080b4 imm=00000000 target=800080b4
+# PC=80000024 INSTR=0002a023 MEM[800080b4]=00000000
+# PC=80000028 INSTR=00428293 x5=800080b8
+# IMM_ADDER: rs1=800080b8 imm=00000000 target=800080b8
+# PC=80000024 INSTR=0002a023 MEM[800080b8]=00000000
+# PC=80000028 INSTR=00428293 x5=800080bc
+# IMM_ADDER: rs1=800080bc imm=00000000 target=800080bc
+# PC=80000024 INSTR=0002a023 MEM[800080bc]=00000000
+# PC=80000028 INSTR=00428293 x5=800080c0
+# IMM_ADDER: rs1=800080c0 imm=00000000 target=800080c0
+# PC=80000024 INSTR=0002a023 MEM[800080c0]=00000000
+# PC=80000028 INSTR=00428293 x5=800080c4
+# IMM_ADDER: rs1=800080c4 imm=00000000 target=800080c4
+# PC=80000024 INSTR=0002a023 MEM[800080c4]=00000000
+# PC=80000028 INSTR=00428293 x5=800080c8
+# IMM_ADDER: rs1=800080c8 imm=00000000 target=800080c8
+# PC=80000024 INSTR=0002a023 MEM[800080c8]=00000000
+# PC=80000028 INSTR=00428293 x5=800080cc
+# IMM_ADDER: rs1=800080cc imm=00000000 target=800080cc
+# PC=80000024 INSTR=0002a023 MEM[800080cc]=00000000
+# PC=80000028 INSTR=00428293 x5=800080d0
+# IMM_ADDER: rs1=800080d0 imm=00000000 target=800080d0
+# PC=80000024 INSTR=0002a023 MEM[800080d0]=00000000
+# PC=80000028 INSTR=00428293 x5=800080d4
+# IMM_ADDER: rs1=800080d4 imm=00000000 target=800080d4
+# PC=80000024 INSTR=0002a023 MEM[800080d4]=00000000
+# PC=80000028 INSTR=00428293 x5=800080d8
+# IMM_ADDER: rs1=800080d8 imm=00000000 target=800080d8
+# PC=80000024 INSTR=0002a023 MEM[800080d8]=00000000
+# PC=80000028 INSTR=00428293 x5=800080dc
+# IMM_ADDER: rs1=800080dc imm=00000000 target=800080dc
+# PC=80000024 INSTR=0002a023 MEM[800080dc]=00000000
+# PC=80000028 INSTR=00428293 x5=800080e0
+# IMM_ADDER: rs1=800080e0 imm=00000000 target=800080e0
+# PC=80000024 INSTR=0002a023 MEM[800080e0]=00000000
+# PC=80000028 INSTR=00428293 x5=800080e4
+# IMM_ADDER: rs1=800080e4 imm=00000000 target=800080e4
+# PC=80000024 INSTR=0002a023 MEM[800080e4]=00000000
+# PC=80000028 INSTR=00428293 x5=800080e8
+# IMM_ADDER: rs1=800080e8 imm=00000000 target=800080e8
+# PC=80000024 INSTR=0002a023 MEM[800080e8]=00000000
+# PC=80000028 INSTR=00428293 x5=800080ec
+# IMM_ADDER: rs1=800080ec imm=00000000 target=800080ec
+# PC=80000024 INSTR=0002a023 MEM[800080ec]=00000000
+# PC=80000028 INSTR=00428293 x5=800080f0
+# IMM_ADDER: rs1=800080f0 imm=00000000 target=800080f0
+# PC=80000024 INSTR=0002a023 MEM[800080f0]=00000000
+# PC=80000028 INSTR=00428293 x5=800080f4
+# IMM_ADDER: rs1=800080f4 imm=00000000 target=800080f4
+# PC=80000024 INSTR=0002a023 MEM[800080f4]=00000000
+# PC=80000028 INSTR=00428293 x5=800080f8
+# IMM_ADDER: rs1=800080f8 imm=00000000 target=800080f8
+# PC=80000024 INSTR=0002a023 MEM[800080f8]=00000000
+# PC=80000028 INSTR=00428293 x5=800080fc
+# IMM_ADDER: rs1=800080fc imm=00000000 target=800080fc
+# PC=80000024 INSTR=0002a023 MEM[800080fc]=00000000
+# PC=80000028 INSTR=00428293 x5=80008100
+# IMM_ADDER: rs1=80008100 imm=00000000 target=80008100
+# PC=80000024 INSTR=0002a023 MEM[80008100]=00000000
+# PC=80000028 INSTR=00428293 x5=80008104
+# IMM_ADDER: rs1=80008104 imm=00000000 target=80008104
+# PC=80000024 INSTR=0002a023 MEM[80008104]=00000000
+# PC=80000028 INSTR=00428293 x5=80008108
+# IMM_ADDER: rs1=80008108 imm=00000000 target=80008108
+# PC=80000024 INSTR=0002a023 MEM[80008108]=00000000
+# PC=80000028 INSTR=00428293 x5=8000810c
+# IMM_ADDER: rs1=8000810c imm=00000000 target=8000810c
+# PC=80000024 INSTR=0002a023 MEM[8000810c]=00000000
+# PC=80000028 INSTR=00428293 x5=80008110
+# IMM_ADDER: rs1=80008110 imm=00000000 target=80008110
+# PC=80000024 INSTR=0002a023 MEM[80008110]=00000000
+# PC=80000028 INSTR=00428293 x5=80008114
+# IMM_ADDER: rs1=80008114 imm=00000000 target=80008114
+# PC=80000024 INSTR=0002a023 MEM[80008114]=00000000
+# PC=80000028 INSTR=00428293 x5=80008118
+# IMM_ADDER: rs1=80008118 imm=00000000 target=80008118
+# PC=80000024 INSTR=0002a023 MEM[80008118]=00000000
+# PC=80000028 INSTR=00428293 x5=8000811c
+# IMM_ADDER: rs1=8000811c imm=00000000 target=8000811c
+# PC=80000024 INSTR=0002a023 MEM[8000811c]=00000000
+# PC=80000028 INSTR=00428293 x5=80008120
+# IMM_ADDER: rs1=80008120 imm=00000000 target=80008120
+# PC=80000024 INSTR=0002a023 MEM[80008120]=00000000
+# PC=80000028 INSTR=00428293 x5=80008124
+# IMM_ADDER: rs1=80008124 imm=00000000 target=80008124
+# PC=80000024 INSTR=0002a023 MEM[80008124]=00000000
+# PC=80000028 INSTR=00428293 x5=80008128
+# IMM_ADDER: rs1=80008128 imm=00000000 target=80008128
+# PC=80000024 INSTR=0002a023 MEM[80008128]=00000000
+# PC=80000028 INSTR=00428293 x5=8000812c
+# IMM_ADDER: rs1=8000812c imm=00000000 target=8000812c
+# PC=80000024 INSTR=0002a023 MEM[8000812c]=00000000
+# PC=80000028 INSTR=00428293 x5=80008130
+# IMM_ADDER: rs1=80008130 imm=00000000 target=80008130
+# PC=80000024 INSTR=0002a023 MEM[80008130]=00000000
+# PC=80000028 INSTR=00428293 x5=80008134
+# IMM_ADDER: rs1=80008134 imm=00000000 target=80008134
+# PC=80000024 INSTR=0002a023 MEM[80008134]=00000000
+# PC=80000028 INSTR=00428293 x5=80008138
+# IMM_ADDER: rs1=80008138 imm=00000000 target=80008138
+# PC=80000024 INSTR=0002a023 MEM[80008138]=00000000
+# PC=80000028 INSTR=00428293 x5=8000813c
+# IMM_ADDER: rs1=8000813c imm=00000000 target=8000813c
+# PC=80000024 INSTR=0002a023 MEM[8000813c]=00000000
+# PC=80000028 INSTR=00428293 x5=80008140
+# IMM_ADDER: rs1=80008140 imm=00000000 target=80008140
+# PC=80000024 INSTR=0002a023 MEM[80008140]=00000000
+# PC=80000028 INSTR=00428293 x5=80008144
+# IMM_ADDER: rs1=80008144 imm=00000000 target=80008144
+# PC=80000024 INSTR=0002a023 MEM[80008144]=00000000
+# PC=80000028 INSTR=00428293 x5=80008148
+# IMM_ADDER: rs1=80008148 imm=00000000 target=80008148
+# PC=80000024 INSTR=0002a023 MEM[80008148]=00000000
+# PC=80000028 INSTR=00428293 x5=8000814c
+# IMM_ADDER: rs1=8000814c imm=00000000 target=8000814c
+# PC=80000024 INSTR=0002a023 MEM[8000814c]=00000000
+# PC=80000028 INSTR=00428293 x5=80008150
+# IMM_ADDER: rs1=80008150 imm=00000000 target=80008150
+# PC=80000024 INSTR=0002a023 MEM[80008150]=00000000
+# PC=80000028 INSTR=00428293 x5=80008154
+# IMM_ADDER: rs1=80008154 imm=00000000 target=80008154
+# PC=80000024 INSTR=0002a023 MEM[80008154]=00000000
+# PC=80000028 INSTR=00428293 x5=80008158
+# IMM_ADDER: rs1=80008158 imm=00000000 target=80008158
+# PC=80000024 INSTR=0002a023 MEM[80008158]=00000000
+# PC=80000028 INSTR=00428293 x5=8000815c
+# IMM_ADDER: rs1=8000815c imm=00000000 target=8000815c
+# PC=80000024 INSTR=0002a023 MEM[8000815c]=00000000
+# PC=80000028 INSTR=00428293 x5=80008160
+# IMM_ADDER: rs1=80008160 imm=00000000 target=80008160
+# PC=80000024 INSTR=0002a023 MEM[80008160]=00000000
+# PC=80000028 INSTR=00428293 x5=80008164
+# IMM_ADDER: rs1=80008164 imm=00000000 target=80008164
+# PC=80000024 INSTR=0002a023 MEM[80008164]=00000000
+# PC=80000028 INSTR=00428293 x5=80008168
+# IMM_ADDER: rs1=80008168 imm=00000000 target=80008168
+# PC=80000024 INSTR=0002a023 MEM[80008168]=00000000
+# PC=80000028 INSTR=00428293 x5=8000816c
+# IMM_ADDER: rs1=8000816c imm=00000000 target=8000816c
+# PC=80000024 INSTR=0002a023 MEM[8000816c]=00000000
+# PC=80000028 INSTR=00428293 x5=80008170
+# IMM_ADDER: rs1=80008170 imm=00000000 target=80008170
+# PC=80000024 INSTR=0002a023 MEM[80008170]=00000000
+# PC=80000028 INSTR=00428293 x5=80008174
+# IMM_ADDER: rs1=80008174 imm=00000000 target=80008174
+# PC=80000024 INSTR=0002a023 MEM[80008174]=00000000
+# PC=80000028 INSTR=00428293 x5=80008178
+# IMM_ADDER: rs1=80008178 imm=00000000 target=80008178
+# PC=80000024 INSTR=0002a023 MEM[80008178]=00000000
+# PC=80000028 INSTR=00428293 x5=8000817c
+# IMM_ADDER: rs1=8000817c imm=00000000 target=8000817c
+# PC=80000024 INSTR=0002a023 MEM[8000817c]=00000000
+# PC=80000028 INSTR=00428293 x5=80008180
+# IMM_ADDER: rs1=80008180 imm=00000000 target=80008180
+# PC=80000024 INSTR=0002a023 MEM[80008180]=00000000
+# PC=80000028 INSTR=00428293 x5=80008184
+# IMM_ADDER: rs1=80008184 imm=00000000 target=80008184
+# PC=80000024 INSTR=0002a023 MEM[80008184]=00000000
+# PC=80000028 INSTR=00428293 x5=80008188
+# IMM_ADDER: rs1=80008188 imm=00000000 target=80008188
+# PC=80000024 INSTR=0002a023 MEM[80008188]=00000000
+# PC=80000028 INSTR=00428293 x5=8000818c
+# IMM_ADDER: rs1=8000818c imm=00000000 target=8000818c
+# PC=80000024 INSTR=0002a023 MEM[8000818c]=00000000
+# PC=80000028 INSTR=00428293 x5=80008190
+# IMM_ADDER: rs1=80008190 imm=00000000 target=80008190
+# PC=80000024 INSTR=0002a023 MEM[80008190]=00000000
+# PC=80000028 INSTR=00428293 x5=80008194
+# IMM_ADDER: rs1=80008194 imm=00000000 target=80008194
+# PC=80000024 INSTR=0002a023 MEM[80008194]=00000000
+# PC=80000028 INSTR=00428293 x5=80008198
+# IMM_ADDER: rs1=80008198 imm=00000000 target=80008198
+# PC=80000024 INSTR=0002a023 MEM[80008198]=00000000
+# PC=80000028 INSTR=00428293 x5=8000819c
+# IMM_ADDER: rs1=8000819c imm=00000000 target=8000819c
+# PC=80000024 INSTR=0002a023 MEM[8000819c]=00000000
+# PC=80000028 INSTR=00428293 x5=800081a0
+# IMM_ADDER: rs1=800081a0 imm=00000000 target=800081a0
+# PC=80000024 INSTR=0002a023 MEM[800081a0]=00000000
+# PC=80000028 INSTR=00428293 x5=800081a4
+# IMM_ADDER: rs1=800081a4 imm=00000000 target=800081a4
+# PC=80000024 INSTR=0002a023 MEM[800081a4]=00000000
+# PC=80000028 INSTR=00428293 x5=800081a8
+# IMM_ADDER: rs1=800081a8 imm=00000000 target=800081a8
+# PC=80000024 INSTR=0002a023 MEM[800081a8]=00000000
+# PC=80000028 INSTR=00428293 x5=800081ac
+# IMM_ADDER: rs1=800081ac imm=00000000 target=800081ac
+# PC=80000024 INSTR=0002a023 MEM[800081ac]=00000000
+# PC=80000028 INSTR=00428293 x5=800081b0
+# IMM_ADDER: rs1=800081b0 imm=00000000 target=800081b0
+# PC=80000024 INSTR=0002a023 MEM[800081b0]=00000000
+# PC=80000028 INSTR=00428293 x5=800081b4
+# IMM_ADDER: rs1=800081b4 imm=00000000 target=800081b4
+# PC=80000024 INSTR=0002a023 MEM[800081b4]=00000000
+# PC=80000028 INSTR=00428293 x5=800081b8
+# IMM_ADDER: rs1=800081b8 imm=00000000 target=800081b8
+# PC=80000024 INSTR=0002a023 MEM[800081b8]=00000000
+# PC=80000028 INSTR=00428293 x5=800081bc
+# IMM_ADDER: rs1=800081bc imm=00000000 target=800081bc
+# PC=80000024 INSTR=0002a023 MEM[800081bc]=00000000
+# PC=80000028 INSTR=00428293 x5=800081c0
+# IMM_ADDER: rs1=800081c0 imm=00000000 target=800081c0
+# PC=80000024 INSTR=0002a023 MEM[800081c0]=00000000
+# PC=80000028 INSTR=00428293 x5=800081c4
+# IMM_ADDER: rs1=800081c4 imm=00000000 target=800081c4
+# PC=80000024 INSTR=0002a023 MEM[800081c4]=00000000
+# PC=80000028 INSTR=00428293 x5=800081c8
+# IMM_ADDER: rs1=800081c8 imm=00000000 target=800081c8
+# PC=80000024 INSTR=0002a023 MEM[800081c8]=00000000
+# PC=80000028 INSTR=00428293 x5=800081cc
+# IMM_ADDER: rs1=800081cc imm=00000000 target=800081cc
+# PC=80000024 INSTR=0002a023 MEM[800081cc]=00000000
+# PC=80000028 INSTR=00428293 x5=800081d0
+# IMM_ADDER: rs1=800081d0 imm=00000000 target=800081d0
+# PC=80000024 INSTR=0002a023 MEM[800081d0]=00000000
+# PC=80000028 INSTR=00428293 x5=800081d4
+# IMM_ADDER: rs1=800081d4 imm=00000000 target=800081d4
+# PC=80000024 INSTR=0002a023 MEM[800081d4]=00000000
+# PC=80000028 INSTR=00428293 x5=800081d8
+# IMM_ADDER: rs1=800081d8 imm=00000000 target=800081d8
+# PC=80000024 INSTR=0002a023 MEM[800081d8]=00000000
+# PC=80000028 INSTR=00428293 x5=800081dc
+# IMM_ADDER: rs1=800081dc imm=00000000 target=800081dc
+# PC=80000024 INSTR=0002a023 MEM[800081dc]=00000000
+# PC=80000028 INSTR=00428293 x5=800081e0
+# IMM_ADDER: rs1=800081e0 imm=00000000 target=800081e0
+# PC=80000024 INSTR=0002a023 MEM[800081e0]=00000000
+# PC=80000028 INSTR=00428293 x5=800081e4
+# IMM_ADDER: rs1=800081e4 imm=00000000 target=800081e4
+# PC=80000024 INSTR=0002a023 MEM[800081e4]=00000000
+# PC=80000028 INSTR=00428293 x5=800081e8
+# IMM_ADDER: rs1=800081e8 imm=00000000 target=800081e8
+# PC=80000024 INSTR=0002a023 MEM[800081e8]=00000000
+# PC=80000028 INSTR=00428293 x5=800081ec
+# IMM_ADDER: rs1=800081ec imm=00000000 target=800081ec
+# PC=80000024 INSTR=0002a023 MEM[800081ec]=00000000
+# PC=80000028 INSTR=00428293 x5=800081f0
+# IMM_ADDER: rs1=800081f0 imm=00000000 target=800081f0
+# PC=80000024 INSTR=0002a023 MEM[800081f0]=00000000
+# PC=80000028 INSTR=00428293 x5=800081f4
+# IMM_ADDER: rs1=800081f4 imm=00000000 target=800081f4
+# PC=80000024 INSTR=0002a023 MEM[800081f4]=00000000
+# PC=80000028 INSTR=00428293 x5=800081f8
+# IMM_ADDER: rs1=800081f8 imm=00000000 target=800081f8
+# PC=80000024 INSTR=0002a023 MEM[800081f8]=00000000
+# PC=80000028 INSTR=00428293 x5=800081fc
+# IMM_ADDER: rs1=800081fc imm=00000000 target=800081fc
+# PC=80000024 INSTR=0002a023 MEM[800081fc]=00000000
+# PC=80000028 INSTR=00428293 x5=80008200
+# IMM_ADDER: rs1=80008200 imm=00000000 target=80008200
+# PC=80000024 INSTR=0002a023 MEM[80008200]=00000000
+# PC=80000028 INSTR=00428293 x5=80008204
+# IMM_ADDER: rs1=80008204 imm=00000000 target=80008204
+# PC=80000024 INSTR=0002a023 MEM[80008204]=00000000
+# PC=80000028 INSTR=00428293 x5=80008208
+# IMM_ADDER: rs1=80008208 imm=00000000 target=80008208
+# PC=80000024 INSTR=0002a023 MEM[80008208]=00000000
+# PC=80000028 INSTR=00428293 x5=8000820c
+# IMM_ADDER: rs1=8000820c imm=00000000 target=8000820c
+# PC=80000024 INSTR=0002a023 MEM[8000820c]=00000000
+# PC=80000028 INSTR=00428293 x5=80008210
+# IMM_ADDER: rs1=80008210 imm=00000000 target=80008210
+# PC=80000024 INSTR=0002a023 MEM[80008210]=00000000
+# PC=80000028 INSTR=00428293 x5=80008214
+# IMM_ADDER: rs1=80008214 imm=00000000 target=80008214
+# PC=80000024 INSTR=0002a023 MEM[80008214]=00000000
+# PC=80000028 INSTR=00428293 x5=80008218
+# IMM_ADDER: rs1=80008218 imm=00000000 target=80008218
+# PC=80000024 INSTR=0002a023 MEM[80008218]=00000000
+# PC=80000028 INSTR=00428293 x5=8000821c
+# IMM_ADDER: rs1=8000821c imm=00000000 target=8000821c
+# PC=80000024 INSTR=0002a023 MEM[8000821c]=00000000
+# PC=80000028 INSTR=00428293 x5=80008220
+# IMM_ADDER: rs1=80008220 imm=00000000 target=80008220
+# PC=80000024 INSTR=0002a023 MEM[80008220]=00000000
+# PC=80000028 INSTR=00428293 x5=80008224
+# IMM_ADDER: rs1=80008224 imm=00000000 target=80008224
+# PC=80000024 INSTR=0002a023 MEM[80008224]=00000000
+# PC=80000028 INSTR=00428293 x5=80008228
+# IMM_ADDER: rs1=80008228 imm=00000000 target=80008228
+# PC=80000024 INSTR=0002a023 MEM[80008228]=00000000
+# PC=80000028 INSTR=00428293 x5=8000822c
+# IMM_ADDER: rs1=8000822c imm=00000000 target=8000822c
+# PC=80000024 INSTR=0002a023 MEM[8000822c]=00000000
+# PC=80000028 INSTR=00428293 x5=80008230
+# IMM_ADDER: rs1=80008230 imm=00000000 target=80008230
+# PC=80000024 INSTR=0002a023 MEM[80008230]=00000000
+# PC=80000028 INSTR=00428293 x5=80008234
+# IMM_ADDER: rs1=80008234 imm=00000000 target=80008234
+# PC=80000024 INSTR=0002a023 MEM[80008234]=00000000
+# PC=80000028 INSTR=00428293 x5=80008238
+# IMM_ADDER: rs1=80008238 imm=00000000 target=80008238
+# PC=80000024 INSTR=0002a023 MEM[80008238]=00000000
+# PC=80000028 INSTR=00428293 x5=8000823c
+# IMM_ADDER: rs1=8000823c imm=00000000 target=8000823c
+# PC=80000024 INSTR=0002a023 MEM[8000823c]=00000000
+# PC=80000028 INSTR=00428293 x5=80008240
+# IMM_ADDER: rs1=80008240 imm=00000000 target=80008240
+# PC=80000024 INSTR=0002a023 MEM[80008240]=00000000
+# PC=80000028 INSTR=00428293 x5=80008244
+# IMM_ADDER: rs1=80008244 imm=00000000 target=80008244
+# PC=80000024 INSTR=0002a023 MEM[80008244]=00000000
+# PC=80000028 INSTR=00428293 x5=80008248
+# IMM_ADDER: rs1=80008248 imm=00000000 target=80008248
+# PC=80000024 INSTR=0002a023 MEM[80008248]=00000000
+# PC=80000028 INSTR=00428293 x5=8000824c
+# IMM_ADDER: rs1=8000824c imm=00000000 target=8000824c
+# PC=80000024 INSTR=0002a023 MEM[8000824c]=00000000
+# PC=80000028 INSTR=00428293 x5=80008250
+# IMM_ADDER: rs1=80008250 imm=00000000 target=80008250
+# PC=80000024 INSTR=0002a023 MEM[80008250]=00000000
+# PC=80000028 INSTR=00428293 x5=80008254
+# IMM_ADDER: rs1=80008254 imm=00000000 target=80008254
+# PC=80000024 INSTR=0002a023 MEM[80008254]=00000000
+# PC=80000028 INSTR=00428293 x5=80008258
+# IMM_ADDER: rs1=80008258 imm=00000000 target=80008258
+# PC=80000024 INSTR=0002a023 MEM[80008258]=00000000
+# PC=80000028 INSTR=00428293 x5=8000825c
+# IMM_ADDER: rs1=8000825c imm=00000000 target=8000825c
+# PC=80000024 INSTR=0002a023 MEM[8000825c]=00000000
+# PC=80000028 INSTR=00428293 x5=80008260
+# IMM_ADDER: rs1=80008260 imm=00000000 target=80008260
+# PC=80000024 INSTR=0002a023 MEM[80008260]=00000000
+# PC=80000028 INSTR=00428293 x5=80008264
+# IMM_ADDER: rs1=80008264 imm=00000000 target=80008264
+# PC=80000024 INSTR=0002a023 MEM[80008264]=00000000
+# PC=80000028 INSTR=00428293 x5=80008268
+# IMM_ADDER: rs1=80008268 imm=00000000 target=80008268
+# PC=80000024 INSTR=0002a023 MEM[80008268]=00000000
+# PC=80000028 INSTR=00428293 x5=8000826c
+# IMM_ADDER: rs1=8000826c imm=00000000 target=8000826c
+# PC=80000024 INSTR=0002a023 MEM[8000826c]=00000000
+# PC=80000028 INSTR=00428293 x5=80008270
+# IMM_ADDER: rs1=80008270 imm=00000000 target=80008270
+# PC=80000024 INSTR=0002a023 MEM[80008270]=00000000
+# PC=80000028 INSTR=00428293 x5=80008274
+# IMM_ADDER: rs1=80008274 imm=00000000 target=80008274
+# PC=80000024 INSTR=0002a023 MEM[80008274]=00000000
+# PC=80000028 INSTR=00428293 x5=80008278
+# IMM_ADDER: rs1=80008278 imm=00000000 target=80008278
+# PC=80000024 INSTR=0002a023 MEM[80008278]=00000000
+# PC=80000028 INSTR=00428293 x5=8000827c
+# IMM_ADDER: rs1=8000827c imm=00000000 target=8000827c
+# PC=80000024 INSTR=0002a023 MEM[8000827c]=00000000
+# PC=80000028 INSTR=00428293 x5=80008280
+# IMM_ADDER: rs1=80008280 imm=00000000 target=80008280
+# PC=80000024 INSTR=0002a023 MEM[80008280]=00000000
+# PC=80000028 INSTR=00428293 x5=80008284
+# IMM_ADDER: rs1=80008284 imm=00000000 target=80008284
+# PC=80000024 INSTR=0002a023 MEM[80008284]=00000000
+# PC=80000028 INSTR=00428293 x5=80008288
+# IMM_ADDER: rs1=80008288 imm=00000000 target=80008288
+# PC=80000024 INSTR=0002a023 MEM[80008288]=00000000
+# PC=80000028 INSTR=00428293 x5=8000828c
+# IMM_ADDER: rs1=8000828c imm=00000000 target=8000828c
+# PC=80000024 INSTR=0002a023 MEM[8000828c]=00000000
+# PC=80000028 INSTR=00428293 x5=80008290
+# IMM_ADDER: rs1=80008290 imm=00000000 target=80008290
+# PC=80000024 INSTR=0002a023 MEM[80008290]=00000000
+# PC=80000028 INSTR=00428293 x5=80008294
+# IMM_ADDER: rs1=80008294 imm=00000000 target=80008294
+# PC=80000024 INSTR=0002a023 MEM[80008294]=00000000
+# PC=80000028 INSTR=00428293 x5=80008298
+# IMM_ADDER: rs1=80008298 imm=00000000 target=80008298
+# PC=80000024 INSTR=0002a023 MEM[80008298]=00000000
+# PC=80000028 INSTR=00428293 x5=8000829c
+# IMM_ADDER: rs1=8000829c imm=00000000 target=8000829c
+# PC=80000024 INSTR=0002a023 MEM[8000829c]=00000000
+# PC=80000028 INSTR=00428293 x5=800082a0
+# IMM_ADDER: rs1=800082a0 imm=00000000 target=800082a0
+# PC=80000024 INSTR=0002a023 MEM[800082a0]=00000000
+# PC=80000028 INSTR=00428293 x5=800082a4
+# IMM_ADDER: rs1=800082a4 imm=00000000 target=800082a4
+# PC=80000024 INSTR=0002a023 MEM[800082a4]=00000000
+# PC=80000028 INSTR=00428293 x5=800082a8
+# IMM_ADDER: rs1=800082a8 imm=00000000 target=800082a8
+# PC=80000024 INSTR=0002a023 MEM[800082a8]=00000000
+# PC=80000028 INSTR=00428293 x5=800082ac
+# IMM_ADDER: rs1=800082ac imm=00000000 target=800082ac
+# PC=80000024 INSTR=0002a023 MEM[800082ac]=00000000
+# PC=80000028 INSTR=00428293 x5=800082b0
+# IMM_ADDER: rs1=800082b0 imm=00000000 target=800082b0
+# PC=80000024 INSTR=0002a023 MEM[800082b0]=00000000
+# PC=80000028 INSTR=00428293 x5=800082b4
+# IMM_ADDER: rs1=800082b4 imm=00000000 target=800082b4
+# PC=80000024 INSTR=0002a023 MEM[800082b4]=00000000
+# PC=80000028 INSTR=00428293 x5=800082b8
+# IMM_ADDER: rs1=800082b8 imm=00000000 target=800082b8
+# PC=80000024 INSTR=0002a023 MEM[800082b8]=00000000
+# PC=80000028 INSTR=00428293 x5=800082bc
+# IMM_ADDER: rs1=800082bc imm=00000000 target=800082bc
+# PC=80000024 INSTR=0002a023 MEM[800082bc]=00000000
+# PC=80000028 INSTR=00428293 x5=800082c0
+# IMM_ADDER: rs1=800082c0 imm=00000000 target=800082c0
+# PC=80000024 INSTR=0002a023 MEM[800082c0]=00000000
+# PC=80000028 INSTR=00428293 x5=800082c4
+# IMM_ADDER: rs1=800082c4 imm=00000000 target=800082c4
+# PC=80000024 INSTR=0002a023 MEM[800082c4]=00000000
+# PC=80000028 INSTR=00428293 x5=800082c8
+# IMM_ADDER: rs1=800082c8 imm=00000000 target=800082c8
+# PC=80000024 INSTR=0002a023 MEM[800082c8]=00000000
+# PC=80000028 INSTR=00428293 x5=800082cc
+# IMM_ADDER: rs1=800082cc imm=00000000 target=800082cc
+# PC=80000024 INSTR=0002a023 MEM[800082cc]=00000000
+# PC=80000028 INSTR=00428293 x5=800082d0
+# IMM_ADDER: rs1=800082d0 imm=00000000 target=800082d0
+# PC=80000024 INSTR=0002a023 MEM[800082d0]=00000000
+# PC=80000028 INSTR=00428293 x5=800082d4
+# IMM_ADDER: rs1=800082d4 imm=00000000 target=800082d4
+# PC=80000024 INSTR=0002a023 MEM[800082d4]=00000000
+# PC=80000028 INSTR=00428293 x5=800082d8
+# IMM_ADDER: rs1=800082d8 imm=00000000 target=800082d8
+# PC=80000024 INSTR=0002a023 MEM[800082d8]=00000000
+# PC=80000028 INSTR=00428293 x5=800082dc
+# IMM_ADDER: rs1=800082dc imm=00000000 target=800082dc
+# PC=80000024 INSTR=0002a023 MEM[800082dc]=00000000
+# PC=80000028 INSTR=00428293 x5=800082e0
+# IMM_ADDER: rs1=800082e0 imm=00000000 target=800082e0
+# PC=80000024 INSTR=0002a023 MEM[800082e0]=00000000
+# PC=80000028 INSTR=00428293 x5=800082e4
+# IMM_ADDER: rs1=800082e4 imm=00000000 target=800082e4
+# PC=80000024 INSTR=0002a023 MEM[800082e4]=00000000
+# PC=80000028 INSTR=00428293 x5=800082e8
+# IMM_ADDER: rs1=800082e8 imm=00000000 target=800082e8
+# PC=80000024 INSTR=0002a023 MEM[800082e8]=00000000
+# PC=80000028 INSTR=00428293 x5=800082ec
+# IMM_ADDER: rs1=800082ec imm=00000000 target=800082ec
+# PC=80000024 INSTR=0002a023 MEM[800082ec]=00000000
+# PC=80000028 INSTR=00428293 x5=800082f0
+# IMM_ADDER: rs1=800082f0 imm=00000000 target=800082f0
+# PC=80000024 INSTR=0002a023 MEM[800082f0]=00000000
+# PC=80000028 INSTR=00428293 x5=800082f4
+# IMM_ADDER: rs1=800082f4 imm=00000000 target=800082f4
+# PC=80000024 INSTR=0002a023 MEM[800082f4]=00000000
+# PC=80000028 INSTR=00428293 x5=800082f8
+# IMM_ADDER: rs1=800082f8 imm=00000000 target=800082f8
+# PC=80000024 INSTR=0002a023 MEM[800082f8]=00000000
+# PC=80000028 INSTR=00428293 x5=800082fc
+# IMM_ADDER: rs1=800082fc imm=00000000 target=800082fc
+# PC=80000024 INSTR=0002a023 MEM[800082fc]=00000000
+# PC=80000028 INSTR=00428293 x5=80008300
+# IMM_ADDER: rs1=80008300 imm=00000000 target=80008300
+# PC=80000024 INSTR=0002a023 MEM[80008300]=00000000
+# PC=80000028 INSTR=00428293 x5=80008304
+# IMM_ADDER: rs1=80008304 imm=00000000 target=80008304
+# PC=80000024 INSTR=0002a023 MEM[80008304]=00000000
+# PC=80000028 INSTR=00428293 x5=80008308
+# IMM_ADDER: rs1=80008308 imm=00000000 target=80008308
+# PC=80000024 INSTR=0002a023 MEM[80008308]=00000000
+# PC=80000028 INSTR=00428293 x5=8000830c
+# IMM_ADDER: rs1=8000830c imm=00000000 target=8000830c
+# PC=80000024 INSTR=0002a023 MEM[8000830c]=00000000
+# PC=80000028 INSTR=00428293 x5=80008310
+# IMM_ADDER: rs1=80008310 imm=00000000 target=80008310
+# PC=80000024 INSTR=0002a023 MEM[80008310]=00000000
+# PC=80000028 INSTR=00428293 x5=80008314
+# IMM_ADDER: rs1=80008314 imm=00000000 target=80008314
+# PC=80000024 INSTR=0002a023 MEM[80008314]=00000000
+# PC=80000028 INSTR=00428293 x5=80008318
+# IMM_ADDER: rs1=80008318 imm=00000000 target=80008318
+# PC=80000024 INSTR=0002a023 MEM[80008318]=00000000
+# PC=80000028 INSTR=00428293 x5=8000831c
+# IMM_ADDER: rs1=8000831c imm=00000000 target=8000831c
+# PC=80000024 INSTR=0002a023 MEM[8000831c]=00000000
+# PC=80000028 INSTR=00428293 x5=80008320
+# IMM_ADDER: rs1=80008320 imm=00000000 target=80008320
+# PC=80000024 INSTR=0002a023 MEM[80008320]=00000000
+# PC=80000028 INSTR=00428293 x5=80008324
+# IMM_ADDER: rs1=80008324 imm=00000000 target=80008324
+# PC=80000024 INSTR=0002a023 MEM[80008324]=00000000
+# PC=80000028 INSTR=00428293 x5=80008328
+# IMM_ADDER: rs1=80008328 imm=00000000 target=80008328
+# PC=80000024 INSTR=0002a023 MEM[80008328]=00000000
+# PC=80000028 INSTR=00428293 x5=8000832c
+# IMM_ADDER: rs1=8000832c imm=00000000 target=8000832c
+# PC=80000024 INSTR=0002a023 MEM[8000832c]=00000000
+# PC=80000028 INSTR=00428293 x5=80008330
+# IMM_ADDER: rs1=80008330 imm=00000000 target=80008330
+# PC=80000024 INSTR=0002a023 MEM[80008330]=00000000
+# PC=80000028 INSTR=00428293 x5=80008334
+# IMM_ADDER: rs1=80008334 imm=00000000 target=80008334
+# PC=80000024 INSTR=0002a023 MEM[80008334]=00000000
+# PC=80000028 INSTR=00428293 x5=80008338
+# IMM_ADDER: rs1=80008338 imm=00000000 target=80008338
+# PC=80000024 INSTR=0002a023 MEM[80008338]=00000000
+# PC=80000028 INSTR=00428293 x5=8000833c
+# IMM_ADDER: rs1=8000833c imm=00000000 target=8000833c
+# PC=80000024 INSTR=0002a023 MEM[8000833c]=00000000
+# PC=80000028 INSTR=00428293 x5=80008340
+# IMM_ADDER: rs1=80008340 imm=00000000 target=80008340
+# PC=80000024 INSTR=0002a023 MEM[80008340]=00000000
+# PC=80000028 INSTR=00428293 x5=80008344
+# IMM_ADDER: rs1=80008344 imm=00000000 target=80008344
+# PC=80000024 INSTR=0002a023 MEM[80008344]=00000000
+# PC=80000028 INSTR=00428293 x5=80008348
+# IMM_ADDER: rs1=80008348 imm=00000000 target=80008348
+# PC=80000024 INSTR=0002a023 MEM[80008348]=00000000
+# PC=80000028 INSTR=00428293 x5=8000834c
+# IMM_ADDER: rs1=8000834c imm=00000000 target=8000834c
+# PC=80000024 INSTR=0002a023 MEM[8000834c]=00000000
+# PC=80000028 INSTR=00428293 x5=80008350
+# IMM_ADDER: rs1=80008350 imm=00000000 target=80008350
+# PC=80000024 INSTR=0002a023 MEM[80008350]=00000000
+# PC=80000028 INSTR=00428293 x5=80008354
+# IMM_ADDER: rs1=80008354 imm=00000000 target=80008354
+# PC=80000024 INSTR=0002a023 MEM[80008354]=00000000
+# PC=80000028 INSTR=00428293 x5=80008358
+# IMM_ADDER: rs1=80008358 imm=00000000 target=80008358
+# PC=80000024 INSTR=0002a023 MEM[80008358]=00000000
+# PC=80000028 INSTR=00428293 x5=8000835c
+# IMM_ADDER: rs1=8000835c imm=00000000 target=8000835c
+# PC=80000024 INSTR=0002a023 MEM[8000835c]=00000000
+# PC=80000028 INSTR=00428293 x5=80008360
+# IMM_ADDER: rs1=80008360 imm=00000000 target=80008360
+# PC=80000024 INSTR=0002a023 MEM[80008360]=00000000
+# PC=80000028 INSTR=00428293 x5=80008364
+# IMM_ADDER: rs1=80008364 imm=00000000 target=80008364
+# PC=80000024 INSTR=0002a023 MEM[80008364]=00000000
+# PC=80000028 INSTR=00428293 x5=80008368
+# IMM_ADDER: rs1=80008368 imm=00000000 target=80008368
+# PC=80000024 INSTR=0002a023 MEM[80008368]=00000000
+# PC=80000028 INSTR=00428293 x5=8000836c
+# IMM_ADDER: rs1=8000836c imm=00000000 target=8000836c
+# PC=80000024 INSTR=0002a023 MEM[8000836c]=00000000
+# PC=80000028 INSTR=00428293 x5=80008370
+# IMM_ADDER: rs1=80008370 imm=00000000 target=80008370
+# PC=80000024 INSTR=0002a023 MEM[80008370]=00000000
+# PC=80000028 INSTR=00428293 x5=80008374
+# IMM_ADDER: rs1=80008374 imm=00000000 target=80008374
+# PC=80000024 INSTR=0002a023 MEM[80008374]=00000000
+# PC=80000028 INSTR=00428293 x5=80008378
+# IMM_ADDER: rs1=80008378 imm=00000000 target=80008378
+# PC=80000024 INSTR=0002a023 MEM[80008378]=00000000
+# PC=80000028 INSTR=00428293 x5=8000837c
+# IMM_ADDER: rs1=8000837c imm=00000000 target=8000837c
+# PC=80000024 INSTR=0002a023 MEM[8000837c]=00000000
+# PC=80000028 INSTR=00428293 x5=80008380
+# IMM_ADDER: rs1=80008380 imm=00000000 target=80008380
+# PC=80000024 INSTR=0002a023 MEM[80008380]=00000000
+# PC=80000028 INSTR=00428293 x5=80008384
+# IMM_ADDER: rs1=80008384 imm=00000000 target=80008384
+# PC=80000024 INSTR=0002a023 MEM[80008384]=00000000
+# PC=80000028 INSTR=00428293 x5=80008388
+# IMM_ADDER: rs1=80008388 imm=00000000 target=80008388
+# PC=80000024 INSTR=0002a023 MEM[80008388]=00000000
+# PC=80000028 INSTR=00428293 x5=8000838c
+# IMM_ADDER: rs1=8000838c imm=00000000 target=8000838c
+# PC=80000024 INSTR=0002a023 MEM[8000838c]=00000000
+# PC=80000028 INSTR=00428293 x5=80008390
+# IMM_ADDER: rs1=80008390 imm=00000000 target=80008390
+# PC=80000024 INSTR=0002a023 MEM[80008390]=00000000
+# PC=80000028 INSTR=00428293 x5=80008394
+# IMM_ADDER: rs1=80008394 imm=00000000 target=80008394
+# PC=80000024 INSTR=0002a023 MEM[80008394]=00000000
+# PC=80000028 INSTR=00428293 x5=80008398
+# IMM_ADDER: rs1=80008398 imm=00000000 target=80008398
+# PC=80000024 INSTR=0002a023 MEM[80008398]=00000000
+# PC=80000028 INSTR=00428293 x5=8000839c
+# IMM_ADDER: rs1=8000839c imm=00000000 target=8000839c
+# PC=80000024 INSTR=0002a023 MEM[8000839c]=00000000
+# PC=80000028 INSTR=00428293 x5=800083a0
+# IMM_ADDER: rs1=800083a0 imm=00000000 target=800083a0
+# PC=80000024 INSTR=0002a023 MEM[800083a0]=00000000
+# PC=80000028 INSTR=00428293 x5=800083a4
+# IMM_ADDER: rs1=800083a4 imm=00000000 target=800083a4
+# PC=80000024 INSTR=0002a023 MEM[800083a4]=00000000
+# PC=80000028 INSTR=00428293 x5=800083a8
+# IMM_ADDER: rs1=800083a8 imm=00000000 target=800083a8
+# PC=80000024 INSTR=0002a023 MEM[800083a8]=00000000
+# PC=80000028 INSTR=00428293 x5=800083ac
+# IMM_ADDER: rs1=800083ac imm=00000000 target=800083ac
+# PC=80000024 INSTR=0002a023 MEM[800083ac]=00000000
+# PC=80000028 INSTR=00428293 x5=800083b0
+# IMM_ADDER: rs1=800083b0 imm=00000000 target=800083b0
+# PC=80000024 INSTR=0002a023 MEM[800083b0]=00000000
+# PC=80000028 INSTR=00428293 x5=800083b4
+# IMM_ADDER: rs1=800083b4 imm=00000000 target=800083b4
+# PC=80000024 INSTR=0002a023 MEM[800083b4]=00000000
+# PC=80000028 INSTR=00428293 x5=800083b8
+# IMM_ADDER: rs1=800083b8 imm=00000000 target=800083b8
+# PC=80000024 INSTR=0002a023 MEM[800083b8]=00000000
+# PC=80000028 INSTR=00428293 x5=800083bc
+# IMM_ADDER: rs1=800083bc imm=00000000 target=800083bc
+# PC=80000024 INSTR=0002a023 MEM[800083bc]=00000000
+# PC=80000028 INSTR=00428293 x5=800083c0
+# IMM_ADDER: rs1=800083c0 imm=00000000 target=800083c0
+# PC=80000024 INSTR=0002a023 MEM[800083c0]=00000000
+# PC=80000028 INSTR=00428293 x5=800083c4
+# IMM_ADDER: rs1=800083c4 imm=00000000 target=800083c4
+# PC=80000024 INSTR=0002a023 MEM[800083c4]=00000000
+# PC=80000028 INSTR=00428293 x5=800083c8
+# IMM_ADDER: rs1=800083c8 imm=00000000 target=800083c8
+# PC=80000024 INSTR=0002a023 MEM[800083c8]=00000000
+# PC=80000028 INSTR=00428293 x5=800083cc
+# IMM_ADDER: rs1=800083cc imm=00000000 target=800083cc
+# PC=80000024 INSTR=0002a023 MEM[800083cc]=00000000
+# PC=80000028 INSTR=00428293 x5=800083d0
+# IMM_ADDER: rs1=800083d0 imm=00000000 target=800083d0
+# PC=80000024 INSTR=0002a023 MEM[800083d0]=00000000
+# PC=80000028 INSTR=00428293 x5=800083d4
+# IMM_ADDER: rs1=800083d4 imm=00000000 target=800083d4
+# PC=80000024 INSTR=0002a023 MEM[800083d4]=00000000
+# PC=80000028 INSTR=00428293 x5=800083d8
+# IMM_ADDER: rs1=800083d8 imm=00000000 target=800083d8
+# PC=80000024 INSTR=0002a023 MEM[800083d8]=00000000
+# PC=80000028 INSTR=00428293 x5=800083dc
+# IMM_ADDER: rs1=800083dc imm=00000000 target=800083dc
+# PC=80000024 INSTR=0002a023 MEM[800083dc]=00000000
+# PC=80000028 INSTR=00428293 x5=800083e0
+# IMM_ADDER: rs1=800083e0 imm=00000000 target=800083e0
+# PC=80000024 INSTR=0002a023 MEM[800083e0]=00000000
+# PC=80000028 INSTR=00428293 x5=800083e4
+# IMM_ADDER: rs1=800083e4 imm=00000000 target=800083e4
+# PC=80000024 INSTR=0002a023 MEM[800083e4]=00000000
+# PC=80000028 INSTR=00428293 x5=800083e8
+# IMM_ADDER: rs1=800083e8 imm=00000000 target=800083e8
+# PC=80000024 INSTR=0002a023 MEM[800083e8]=00000000
+# PC=80000028 INSTR=00428293 x5=800083ec
+# IMM_ADDER: rs1=800083ec imm=00000000 target=800083ec
+# PC=80000024 INSTR=0002a023 MEM[800083ec]=00000000
+# PC=80000028 INSTR=00428293 x5=800083f0
+# IMM_ADDER: rs1=800083f0 imm=00000000 target=800083f0
+# PC=80000024 INSTR=0002a023 MEM[800083f0]=00000000
+# PC=80000028 INSTR=00428293 x5=800083f4
+# IMM_ADDER: rs1=800083f4 imm=00000000 target=800083f4
+# PC=80000024 INSTR=0002a023 MEM[800083f4]=00000000
+# PC=80000028 INSTR=00428293 x5=800083f8
+# IMM_ADDER: rs1=800083f8 imm=00000000 target=800083f8
+# PC=80000024 INSTR=0002a023 MEM[800083f8]=00000000
+# PC=80000028 INSTR=00428293 x5=800083fc
+# IMM_ADDER: rs1=800083fc imm=00000000 target=800083fc
+# PC=80000024 INSTR=0002a023 MEM[800083fc]=00000000
+# PC=80000028 INSTR=00428293 x5=80008400
+# IMM_ADDER: rs1=80008400 imm=00000000 target=80008400
+# PC=80000024 INSTR=0002a023 MEM[80008400]=00000000
+# PC=80000028 INSTR=00428293 x5=80008404
+# IMM_ADDER: rs1=80008404 imm=00000000 target=80008404
+# PC=80000024 INSTR=0002a023 MEM[80008404]=00000000
+# PC=80000028 INSTR=00428293 x5=80008408
+# IMM_ADDER: rs1=80008408 imm=00000000 target=80008408
+# PC=80000024 INSTR=0002a023 MEM[80008408]=00000000
+# PC=80000028 INSTR=00428293 x5=8000840c
+# IMM_ADDER: rs1=8000840c imm=00000000 target=8000840c
+# PC=80000024 INSTR=0002a023 MEM[8000840c]=00000000
+# PC=80000028 INSTR=00428293 x5=80008410
+# IMM_ADDER: rs1=80008410 imm=00000000 target=80008410
+# PC=80000024 INSTR=0002a023 MEM[80008410]=00000000
+# PC=80000028 INSTR=00428293 x5=80008414
+# PC=80000030 INSTR=00000297 x5=80000030
+# PC=80000034 INSTR=02428293 x5=80000054
+# IMM_ADDER: rs1=8000003c imm=0b008000 target=8b00803c
+# IMM_ADDER: rs1=8000003c imm=000000b0 target=800000ec
+# PC=8000003c INSTR=00000097 x1=8000003c
+# IMM_ADDER: rs1=00000000 imm=000000b0 target=000000b0
+# PC=80000040 INSTR=0b0080e7 x1=80000044
+# IMM_ADDER: rs1=8000ffe0 imm=00000001 target=8000ffe1
+# IMM_ADDER: rs1=8000ffe0 imm=0000001c target=8000fffc
+# PC=800000ec INSTR=fe010113 x2=8000ffe0
+# IMM_ADDER: rs1=80010000 imm=0000001c target=8001001c
+# PC=800000f0 INSTR=00112e23 MEM[8000fffc]=80000044
+# IMM_ADDER: rs1=8000ffe0 imm=00000008 target=8000ffe8
+# IMM_ADDER: rs1=8000ffe0 imm=00000018 target=8000fff8
+# PC=800000f4 INSTR=00812c23 MEM[8000fff8]=00000000
+# PC=800000f8 INSTR=02010413 x8=80010000
+# PC=800000fc INSTR=00008797 x15=800080fc
+# PC=80000100 INSTR=f0478793 x15=80008000
+# PC=80000104 INSTR=12345737 x14=12345000
+# IMM_ADDER: rs1=80008000 imm=0000000e target=8000800e
+# IMM_ADDER: rs1=80008000 imm=00000000 target=80008000
+# PC=80000108 INSTR=67870713 x14=12345678
+# PC=8000010c INSTR=00e7a023 MEM[80008000]=12345678
+# PC=80000110 INSTR=00008797 x15=80008110
+# PC=80000114 INSTR=ef478793 x15=80008004
+# PC=80000118 INSTR=87654737 x14=87654000
+# IMM_ADDER: rs1=80008004 imm=0000000e target=80008012
+# IMM_ADDER: rs1=80008004 imm=00000000 target=80008004
+# PC=8000011c INSTR=32170713 x14=87654321
+# PC=80000120 INSTR=00e7a023 MEM[80008004]=87654321
+# PC=80000124 INSTR=00008797 x15=80008124
+# PC=80000128 INSTR=ee478793 x15=80008008
+# PC=8000012c INSTR=abcdf737 x14=abcdf000
+# IMM_ADDER: rs1=80008008 imm=0000000e target=80008016
+# IMM_ADDER: rs1=80008008 imm=00000000 target=80008008
+# PC=80000130 INSTR=f0170713 x14=abcdef01
+# PC=80000134 INSTR=00e7a023 MEM[80008008]=abcdef01
+# PC=80000138 INSTR=00008797 x15=80008138
+# PC=8000013c INSTR=ed478793 x15=8000800c
+# IMM_ADDER: rs1=8000800c imm=00e7a000 target=80e8200c
+# IMM_ADDER: rs1=8000800c imm=00000000 target=8000800c
+# PC=80000140 INSTR=80000737 x14=80000000
+# PC=80000144 INSTR=00e7a023 MEM[8000800c]=80000000
+# PC=80000148 INSTR=00008797 x15=80008148
+# PC=8000014c INSTR=ec878793 x15=80008010
+# PC=80000150 INSTR=80000737 x14=80000000
+# IMM_ADDER: rs1=80008010 imm=0000000e target=8000801e
+# IMM_ADDER: rs1=80008010 imm=00000000 target=80008010
+# PC=80000154 INSTR=fff70713 x14=7fffffff
+# PC=80000158 INSTR=00e7a023 MEM[80008010]=7fffffff
+# PC=8000015c INSTR=00008797 x15=8000815c
+# IMM_ADDER: rs1=80008000 imm=00000000 target=80008000
+# PC=80000160 INSTR=ea478793 x15=80008000
+# IMM_ADDER: rs1=8000815c imm=00000000 target=8000815c
+# PC=80000164 INSTR=0007a703 x14=12345678
+# PC=80000168 INSTR=123457b7 x15=12345000
+# PC=8000016c INSTR=67878793 x15=12345678
+# PC=8000017c INSTR=00008797 x15=8000817c
+# IMM_ADDER: rs1=80008004 imm=00000000 target=80008004
+# PC=80000180 INSTR=e8878793 x15=80008004
+# IMM_ADDER: rs1=8000817c imm=00000000 target=8000817c
+# PC=80000184 INSTR=0007a703 x14=87654321
+# PC=80000188 INSTR=876547b7 x15=87654000
+# PC=8000018c INSTR=32178793 x15=87654321
+# PC=8000019c INSTR=00008797 x15=8000819c
+# IMM_ADDER: rs1=80008008 imm=00000000 target=80008008
+# PC=800001a0 INSTR=e6c78793 x15=80008008
+# IMM_ADDER: rs1=8000819c imm=00000000 target=8000819c
+# PC=800001a4 INSTR=0007a703 x14=abcdef01
+# PC=800001a8 INSTR=abcdf7b7 x15=abcdf000
+# PC=800001ac INSTR=f0178793 x15=abcdef01
+# PC=800001bc INSTR=00008797 x15=800081bc
+# IMM_ADDER: rs1=8000800c imm=00000000 target=8000800c
+# PC=800001c0 INSTR=e5078793 x15=8000800c
+# IMM_ADDER: rs1=800081bc imm=00000000 target=800081bc
+# PC=800001c4 INSTR=0007a703 x14=80000000
+# PC=800001c8 INSTR=800007b7 x15=80000000
+# PC=800001d8 INSTR=00008797 x15=800081d8
+# IMM_ADDER: rs1=80008010 imm=00000000 target=80008010
+# PC=800001dc INSTR=e3878793 x15=80008010
+# IMM_ADDER: rs1=800081d8 imm=00000000 target=800081d8
+# PC=800001e0 INSTR=0007a703 x14=7fffffff
+# PC=800001e4 INSTR=800007b7 x15=80000000
+# PC=800001e8 INSTR=fff78793 x15=7fffffff
+# PC=800001f8 INSTR=00008797 x15=800081f8
+# IMM_ADDER: rs1=80008000 imm=00000000 target=80008000
+# PC=800001fc INSTR=e0878793 x15=80008000
+# IMM_ADDER: rs1=800081f8 imm=00000000 target=800081f8
+# PC=80000200 INSTR=0007a703 x14=12345678
+# PC=80000204 INSTR=00008797 x15=80008204
+# IMM_ADDER: rs1=80008014 imm=0000000e target=80008022
+# IMM_ADDER: rs1=80008014 imm=00000000 target=80008014
+# PC=80000208 INSTR=e1078793 x15=80008014
+# IMM_ADDER: rs1=80008204 imm=00000000 target=80008204
+# PC=8000020c INSTR=00e7a023 MEM[80008014]=12345678
+# PC=80000210 INSTR=00008797 x15=80008210
+# IMM_ADDER: rs1=80008004 imm=00000000 target=80008004
+# PC=80000214 INSTR=df478793 x15=80008004
+# IMM_ADDER: rs1=80008210 imm=00000000 target=80008210
+# PC=80000218 INSTR=0007a703 x14=87654321
+# PC=8000021c INSTR=00008797 x15=8000821c
+# IMM_ADDER: rs1=80008014 imm=000000ce target=800080e2
+# IMM_ADDER: rs1=80008014 imm=000000c8 target=800080dc
+# PC=80000220 INSTR=df878793 x15=80008014
+# IMM_ADDER: rs1=8000821c imm=000000c8 target=800082e4
+# PC=80000224 INSTR=0ce7a423 MEM[800080dc]=87654321
+# PC=80000228 INSTR=00008797 x15=80008228
+# IMM_ADDER: rs1=80008008 imm=00000000 target=80008008
+# PC=8000022c INSTR=de078793 x15=80008008
+# IMM_ADDER: rs1=80008228 imm=00000000 target=80008228
+# PC=80000230 INSTR=0007a703 x14=abcdef01
+# PC=80000234 INSTR=00008797 x15=80008234
+# IMM_ADDER: rs1=80008014 imm=0000018e target=800081a2
+# IMM_ADDER: rs1=80008014 imm=00000190 target=800081a4
+# PC=80000238 INSTR=de078793 x15=80008014
+# IMM_ADDER: rs1=80008234 imm=00000190 target=800083c4
+# PC=8000023c INSTR=18e7a823 MEM[800081a4]=abcdef01
+# PC=80000240 INSTR=00008797 x15=80008240
+# IMM_ADDER: rs1=8000800c imm=00000000 target=8000800c
+# PC=80000244 INSTR=dcc78793 x15=8000800c
+# IMM_ADDER: rs1=80008240 imm=00000000 target=80008240
+# PC=80000248 INSTR=0007a703 x14=80000000
+# PC=8000024c INSTR=00008797 x15=8000824c
+# IMM_ADDER: rs1=80008014 imm=0000024e target=80008262
+# IMM_ADDER: rs1=80008014 imm=00000258 target=8000826c
+# PC=80000250 INSTR=dc878793 x15=80008014
+# IMM_ADDER: rs1=8000824c imm=00000258 target=800084a4
+# PC=80000254 INSTR=24e7ac23 MEM[8000826c]=80000000
+# PC=80000258 INSTR=00008797 x15=80008258
+# IMM_ADDER: rs1=80008010 imm=00000000 target=80008010
+# PC=8000025c INSTR=db878793 x15=80008010
+# IMM_ADDER: rs1=80008258 imm=00000000 target=80008258
+# PC=80000260 INSTR=0007a703 x14=7fffffff
+# PC=80000264 INSTR=00008797 x15=80008264
+# IMM_ADDER: rs1=80008014 imm=0000032e target=80008342
+# IMM_ADDER: rs1=80008014 imm=00000320 target=80008334
+# PC=80000268 INSTR=db078793 x15=80008014
+# IMM_ADDER: rs1=80008264 imm=00000320 target=80008584
+# PC=8000026c INSTR=32e7a023 MEM[80008334]=7fffffff
+# PC=80000270 INSTR=00008797 x15=80008270
+# IMM_ADDER: rs1=80008014 imm=00000000 target=80008014
+# PC=80000274 INSTR=da478793 x15=80008014
+# IMM_ADDER: rs1=80008270 imm=00000000 target=80008270
+# PC=80000278 INSTR=0007a703 x14=12345678
+# PC=8000027c INSTR=00008797 x15=8000827c
+# IMM_ADDER: rs1=80008000 imm=00000000 target=80008000
+# PC=80000280 INSTR=d8478793 x15=80008000
+# IMM_ADDER: rs1=8000827c imm=00000000 target=8000827c
+# PC=80000284 INSTR=0007a783 x15=12345678
+# PC=80000294 INSTR=00008797 x15=80008294
+# IMM_ADDER: rs1=80008014 imm=000000c8 target=800080dc
+# PC=80000298 INSTR=d8078793 x15=80008014
+# IMM_ADDER: rs1=80008294 imm=000000c8 target=8000835c
+# PC=8000029c INSTR=0c87a703 x14=87654321
+# PC=800002a0 INSTR=00008797 x15=800082a0
+# IMM_ADDER: rs1=80008004 imm=00000000 target=80008004
+# PC=800002a4 INSTR=d6478793 x15=80008004
+# IMM_ADDER: rs1=800082a0 imm=00000000 target=800082a0
+# PC=800002a8 INSTR=0007a783 x15=87654321
+# PC=800002b8 INSTR=00008797 x15=800082b8
+# IMM_ADDER: rs1=80008014 imm=00000190 target=800081a4
+# PC=800002bc INSTR=d5c78793 x15=80008014
+# IMM_ADDER: rs1=800082b8 imm=00000190 target=80008448
+# PC=800002c0 INSTR=1907a703 x14=abcdef01
+# PC=800002c4 INSTR=00008797 x15=800082c4
+# IMM_ADDER: rs1=80008008 imm=00000000 target=80008008
+# PC=800002c8 INSTR=d4478793 x15=80008008
+# IMM_ADDER: rs1=800082c4 imm=00000000 target=800082c4
+# PC=800002cc INSTR=0007a783 x15=abcdef01
+# PC=800002dc INSTR=00008797 x15=800082dc
+# IMM_ADDER: rs1=80008014 imm=00000258 target=8000826c
+# PC=800002e0 INSTR=d3878793 x15=80008014
+# IMM_ADDER: rs1=800082dc imm=00000258 target=80008534
+# PC=800002e4 INSTR=2587a703 x14=80000000
+# PC=800002e8 INSTR=00008797 x15=800082e8
+# IMM_ADDER: rs1=8000800c imm=00000000 target=8000800c
+# PC=800002ec INSTR=d2478793 x15=8000800c
+# IMM_ADDER: rs1=800082e8 imm=00000000 target=800082e8
+# PC=800002f0 INSTR=0007a783 x15=80000000
+# PC=80000300 INSTR=00008797 x15=80008300
+# IMM_ADDER: rs1=80008014 imm=00000320 target=80008334
+# PC=80000304 INSTR=d1478793 x15=80008014
+# IMM_ADDER: rs1=80008300 imm=00000320 target=80008620
+# PC=80000308 INSTR=3207a703 x14=7fffffff
+# PC=8000030c INSTR=00008797 x15=8000830c
+# IMM_ADDER: rs1=80008010 imm=00000000 target=80008010
+# PC=80000310 INSTR=d0478793 x15=80008010
+# IMM_ADDER: rs1=8000830c imm=00000000 target=8000830c
+# PC=80000314 INSTR=0007a783 x15=7fffffff
+# PC=80000324 INSTR=00008797 x15=80008324
+# IMM_ADDER: rs1=80010000 imm=ffffffef target=8000ffef
+# IMM_ADDER: rs1=80010000 imm=ffffffec target=8000ffec
+# PC=80000328 INSTR=ed078793 x15=800081f4
+# PC=8000032c INSTR=fef42623 MEM[8000ffec]=800081f4
+# IMM_ADDER: rs1=80010000 imm=ffffffec target=8000ffec
+# PC=80000330 INSTR=fec42783 x15=800081f4
+# PC=80000334 INSTR=deadc737 x14=deadc000
+# IMM_ADDER: rs1=800081f4 imm=0000000e target=80008202
+# IMM_ADDER: rs1=800081f4 imm=00000000 target=800081f4
+# PC=80000338 INSTR=eef70713 x14=deadbeef
+# PC=8000033c INSTR=00e7a023 MEM[800081f4]=deadbeef
+# IMM_ADDER: rs1=80010000 imm=ffffffec target=8000ffec
+# IMM_ADDER: rs1=800081f4 imm=00000000 target=800081f4
+# PC=80000340 INSTR=fec42783 x15=800081f4
+# PC=80000344 INSTR=0007a703 x14=deadbeef
+# PC=80000348 INSTR=deadc7b7 x15=deadc000
+# PC=8000034c INSTR=eef78793 x15=deadbeef
+# IMM_ADDER: rs1=80010000 imm=ffffffec target=8000ffec
+# PC=8000035c INSTR=fec42783 x15=800081f4
+# IMM_ADDER: rs1=80010000 imm=ffffffef target=8000ffef
+# IMM_ADDER: rs1=80010000 imm=ffffffec target=8000ffec
+# PC=80000360 INSTR=02878793 x15=8000821c
+# PC=80000364 INSTR=fef42623 MEM[8000ffec]=8000821c
+# IMM_ADDER: rs1=80010000 imm=ffffffec target=8000ffec
+# PC=80000368 INSTR=fec42783 x15=8000821c
+# PC=8000036c INSTR=cafec737 x14=cafec000
+# IMM_ADDER: rs1=8000821c imm=0000000e target=8000822a
+# IMM_ADDER: rs1=8000821c imm=00000000 target=8000821c
+# PC=80000370 INSTR=abe70713 x14=cafebabe
+# PC=80000374 INSTR=00e7a023 MEM[8000821c]=cafebabe
+# IMM_ADDER: rs1=80010000 imm=ffffffec target=8000ffec
+# IMM_ADDER: rs1=8000821c imm=00000000 target=8000821c
+# PC=80000378 INSTR=fec42783 x15=8000821c
+# PC=8000037c INSTR=0007a703 x14=cafebabe
+# PC=80000380 INSTR=cafec7b7 x15=cafec000
+# PC=80000384 INSTR=abe78793 x15=cafebabe
+# IMM_ADDER: rs1=80000394 imm=d1808000 target=51808394
+# IMM_ADDER: rs1=80000394 imm=fffffd18 target=800000ac
+# PC=80000394 INSTR=00000097 x1=80000394
+# IMM_ADDER: rs1=80000044 imm=fffffd18 target=7ffffd5c
+# PC=80000398 INSTR=d18080e7 x1=8000039c
+# IMM_ADDER: rs1=8000ffd0 imm=00000001 target=8000ffd1
+# IMM_ADDER: rs1=8000ffd0 imm=0000000c target=8000ffdc
+# PC=800000ac INSTR=ff010113 x2=8000ffd0
+# IMM_ADDER: rs1=8000ffe0 imm=0000000c target=8000ffec
+# PC=800000b0 INSTR=00112623 MEM[8000ffdc]=8000039c
+# IMM_ADDER: rs1=8000ffd0 imm=00000008 target=8000ffd8
+# PC=800000b4 INSTR=00812423 MEM[8000ffd8]=80010000
+# PC=800000b8 INSTR=01010413 x8=8000ffe0
+# PC=800000bc INSTR=800087b7 x15=80008000
+# IMM_ADDER: rs1=80008000 imm=0000000e target=8000800e
+# IMM_ADDER: rs1=80008000 imm=00000000 target=80008000
+# PC=800000c0 INSTR=00100713 x14=00000001
+# PC=800000c4 INSTR=00e7a023 MEM[80008000]=00000001
+# PROGRAM PASSED
+# 
+# ======================================
+#       FUNCTIONAL COVERAGE
+# ======================================
+# 
+# ==========================================================
+#                  PRAGYA RV32I COVERAGE
+# ==========================================================
+# RV32I Instruction Coverage : 24.32 %
+# RV32I Overall Coverage     : 37.50 %
+# Register Hazard Coverage    : 92.50 %
+# Edge Case Coverage          : 80.00 %
+# ==========================================================
+# 
+# 
+# ===========================================
+#          RV32M COVERAGE REPORT
+# ===========================================
+# Coverage = 0.00 %
+# ===========================================
+# 
+# 
+# ========================================
+#       LOAD / STORE COVERAGE
+# ========================================
+# Coverage = 39.00 %
+# ========================================
+# 
+# --------------------------------
+# Branch/Jump Coverage = 68.30%
+# --------------------------------
+# 
+# ===================================
+#  PIPELINE COVERAGE REPORT
+# ===================================
+# Coverage = 94.10 %
+# ===================================
+# 
+# 
+# ==================================================
+#           PRAGYA SYSTEM COVERAGE
+# ==================================================
+# CSR Coverage        = 32.37 % 
+# Exception Coverage  = 0.00 % 
+# Interrupt Coverage  = 32.57 % 
+# --------------------------------------------------
+# TOTAL SYSTEM COVERAGE = 21.65 %
+# ==================================================
+# 
+# ======================================
+# 
+# ** Note: $finish    : tb/tb_pragya_top.sv(4432)
+#    Time: 18285 ns  Iteration: 1  Instance: /tb_pragya_top
+# Break at tb/tb_pragya_top.sv line 4432
+# Stopped at tb/tb_pragya_top.sv line 4432
+#  coverage save coverage/05_lui_auipc_test.ucdb
+#  quit -f
+# End time: 18:53:00 on Nov 06,2026, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 11
+
+========================================================
+          PRAGYA RTL vs SPIKE COMPARISON
+========================================================
+
+RTL commits   : 677
+Spike commits : 677
+
+
+========================================================
+                    TEST PASSED
+========================================================
+
+All 677 architectural commits match.

@@ -1,0 +1,59 @@
+Reading pref.tcl
+
+# 2021.3
+
+# vsim -64 -c tb_pragya_imm_generator_opt -coverage -do "onfinish stop; run -all; coverage save pragya_imm_generator.ucdb; quit -f" 
+# Start time: 20:59:40 on Nov 05,2026
+# //  ModelSim SE-64 2021.3 Jul 13 2021 Linux 4.18.0-348.7.1.el8_5.x86_64
+# //
+# //  Copyright 1991-2021 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim SE-64 and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.tb_pragya_imm_generator(fast)
+# Loading work.pragya_imm_generator(fast)
+# onfinish stop
+#  run -all
+# Starting Pragya Immediate Generator Verification...
+# [PASS] I-type: addi +10 | Extracted: 10 (0x0000000a)
+# [PASS] I-type: addi -5 | Extracted: -5 (0xfffffffb)
+# [PASS] I-type: Max positive (+2047) | Extracted: 2047 (0x000007ff)
+# [PASS] I-type: Min negative (-2048) | Extracted: -2048 (0xfffff800)
+# [PASS] S-type: sw +16 | Extracted: 16 (0x00000010)
+# [PASS] S-type: sw -12 | Extracted: -12 (0xfffffff4)
+# [PASS] S-type: Max positive (+2047) | Extracted: 2047 (0x000007ff)
+# [PASS] S-type: Min negative (-2048) | Extracted: -2048 (0xfffff800)
+# [PASS] B-type: beq +8 | Extracted: 8 (0x00000008)
+# [PASS] B-type: beq -8 | Extracted: -8 (0xfffffff8)
+# [PASS] B-type: Max positive (+4094) | Extracted: 4094 (0x00000ffe)
+# [PASS] B-type: Min negative (-4096) | Extracted: -4096 (0xfffff000)
+# [PASS] U-type: lui 0x12345 | Extracted: 305418240 (0x12345000)
+# [PASS] U-type: Max lui (0xFFFFF000) | Extracted: -4096 (0xfffff000)
+# [PASS] U-type: Min lui (0x00001000) | Extracted: 4096 (0x00001000)
+# [PASS] J-type: jal +100 | Extracted: 100 (0x00000064)
+# [PASS] J-type: jal -100 | Extracted: -100 (0xffffff9c)
+# [PASS] J-type: Max positive jump | Extracted: 1048574 (0x000ffffe)
+# [PASS] J-type: Min negative jump | Extracted: -1048576 (0xfff00000)
+# [PASS] Default case (3'b110): fallback to I-type | Extracted: 10 (0x0000000a)
+# [PASS] Default case (3'b111): fallback to I-type | Extracted: 10 (0x0000000a)
+# 
+# =======================================================
+#    TEST SUMMARY: ALL 21 CHECKS PASSED PERFECTLY!       
+# =======================================================
+# 
+# ** Note: $finish    : tb/unit/tb_pragya_imm_generator.sv(112)
+#    Time: 21 ns  Iteration: 0  Instance: /tb_pragya_imm_generator
+# Break in Module tb_pragya_imm_generator at tb/unit/tb_pragya_imm_generator.sv line 112
+# Stopped at tb/unit/tb_pragya_imm_generator.sv line 112
+#  coverage save pragya_imm_generator.ucdb
+#  quit -f
+# End time: 20:59:40 on Nov 05,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0

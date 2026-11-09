@@ -1,0 +1,21 @@
+Model Technology ModelSim SE-64 vcover 2021.3 Coverage Utility 2021.07 Jul 13 2021
+Start time: 14:39:37 on Nov 05,2026
+vcover report -codeAll -du=work.pragya_decoder pragya_decoder.ucdb 
+Coverage Report Summary Data by DU
+
+=================================================================================
+=== Design Unit: work.pragya_decoder
+=================================================================================
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        50        48         2    96.00%
+    Conditions                      12        12         0   100.00%
+    Expressions                    138       116        22    84.05%
+    Statements                      81        79         2    97.53%
+    Toggles                        332       332         0   100.00%
+
+
+Total Coverage By Design Unit (filtered view): 95.51%
+
+End time: 14:39:37 on Nov 05,2026, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0

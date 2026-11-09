@@ -1,0 +1,119 @@
+Reading pref.tcl
+
+# 2021.3
+
+# vsim -64 -c tb_pragya_decoder_opt -coverage -do "onfinish stop; run -all; coverage save pragya_decoder.ucdb; quit -f" 
+# Start time: 14:39:36 on Nov 05,2026
+# //  ModelSim SE-64 2021.3 Jul 13 2021 Linux 4.18.0-348.7.1.el8_5.x86_64
+# //
+# //  Copyright 1991-2021 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim SE-64 and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.tb_pragya_decoder(fast)
+# Loading work.pragya_decoder(fast)
+# onfinish stop
+#  run -all
+# 
+# =======================================================
+#      STARTING PRAGYA DECODER VERIFICATION SUITE       
+# =======================================================
+# 
+# --- [Group 1] RV32I OP-IMM Instructions ---
+# [PASS] ADDI (0x00a08113)
+# [PASS] SLTI (0x00512193)
+# [PASS] SLTIU (0x0081b213)
+# [PASS] XORI (0x00f24293)
+# [PASS] ORI (0x0072e313)
+# [PASS] ANDI (0x00337393)
+# [PASS] SLLI (0x00409113)
+# [PASS] SRLI (0x0040d113)
+# [PASS] SRAI (0x4040d113)
+# 
+# --- [Group 2] RV32I OP Register-Register Instructions ---
+# [PASS] ADD (0x002081b3)
+# [PASS] SUB (0x402081b3)
+# [PASS] SLL (0x002091b3)
+# [PASS] SLT (0x0020a1b3)
+# [PASS] SLTU (0x0020b1b3)
+# [PASS] XOR (0x0020c1b3)
+# [PASS] SRL (0x0020d1b3)
+# [PASS] SRA (0x4020d1b3)
+# [PASS] OR (0x0020e1b3)
+# [PASS] AND (0x0020f1b3)
+# 
+# --- [Group 3] RV32M Extension Instructions ---
+# [PASS] MUL (0x022081b3)
+# [PASS] MULH (0x022091b3)
+# [PASS] MULHSU (0x0220a1b3)
+# [PASS] MULHU (0x0220b1b3)
+# [PASS] DIV (0x0220c1b3)
+# [PASS] DIVU (0x0220d1b3)
+# [PASS] REM (0x0220e1b3)
+# [PASS] REMU (0x0220f1b3)
+# 
+# --- [Group 4] Memory Instructions ---
+# [PASS] LB (0x00408103)
+# [PASS] LH (0x00409103)
+# [PASS] LW (0x0040a103)
+# [PASS] LBU (0x0040c103)
+# [PASS] LHU (0x0040d103)
+# [PASS] SB (0x00208423)
+# [PASS] SH (0x00209423)
+# [PASS] SW (0x0020a423)
+# 
+# --- [Group 5] Control Flow Instructions ---
+# [PASS] BEQ (0x00208863)
+# [PASS] BNE (0x00209863)
+# [PASS] BLT (0x0020c863)
+# [PASS] BGE (0x0020d863)
+# [PASS] BLTU (0x0020e863)
+# [PASS] BGEU (0x0020f863)
+# [PASS] JAL (0x000640ef)
+# [PASS] JALR (0x010100e7)
+# 
+# --- [Group 6] Upper Immediate Instructions ---
+# [PASS] LUI (0x123450b7)
+# [PASS] AUIPC (0x12345097)
+# 
+# --- [Group 7] SYSTEM Instructions ---
+# [PASS] ECALL Verified
+# [PASS] EBREAK Verified
+# [PASS] MRET Verified
+# [PASS] DRET Verified
+# 
+# --- [Group 8] CSR Read/Write Instructions ---
+# [PASS] CSRRW (mstatus) (0x30009173)
+# [PASS] CSRRS (rs1=0 read-only) (0x30002173)
+# 
+# --- [Group 9] Illegal Instruction Corner Cases ---
+# [PASS] Illegal Opcode (All 0s) (0x00000000)
+# [PASS] Illegal Opcode (All 1s) (0xffffffff)
+# [PASS] Illegal Load funct3 (3'b011) (0x0040b103)
+# [PASS] Illegal Store funct3 (3'b011) (0x00113223)
+# [PASS] Illegal Branch funct3 (3'b010) (0x00112463)
+# [PASS] Illegal CSR Address (0x999) (0x99909173)
+# [PASS] Illegal SLLI funct7 (0x40409113)
+# 
+# --- [Group 10] Cross-Coverage & Toggle Sweep (2000 Cycles) ---
+# 
+# =======================================================
+#    TEST SUMMARY: ALL 60 CHECKS PASSED PERFECTLY!         
+# =======================================================
+# 
+# ** Note: $finish    : tb/unit/tb_pragya_decoder.sv(351)
+#    Time: 2063 ns  Iteration: 0  Instance: /tb_pragya_decoder
+# Break in Module tb_pragya_decoder at tb/unit/tb_pragya_decoder.sv line 351
+# Stopped at tb/unit/tb_pragya_decoder.sv line 351
+#  coverage save pragya_decoder.ucdb
+#  quit -f
+# End time: 14:39:36 on Nov 05,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0

@@ -1,0 +1,102 @@
+Reading pref.tcl
+
+# 2021.3
+
+# vsim -64 -c tb_pragya_csr_opt -coverage -do "onfinish stop; run -all; coverage save pragya_csr.ucdb; quit -f" 
+# Start time: 17:19:33 on Nov 05,2026
+# //  ModelSim SE-64 2021.3 Jul 13 2021 Linux 4.18.0-348.7.1.el8_5.x86_64
+# //
+# //  Copyright 1991-2021 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim SE-64 and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.tb_pragya_csr(fast)
+# Loading work.pragya_csr(fast)
+# onfinish stop
+#  run -all
+# Starting Exhaustive Pragya CSR Verification...
+# [PASS] Reset MISA (RV32IM Base) | Addr 0x301 == 0x40001100
+# [PASS] Reset MARCHID | Addr 0xf12 == 0x00000005
+# [PASS] Reset MVENDORID | Addr 0xf11 == 0x00000000
+# [PASS] Reset MIMPID | Addr 0xf13 == 0x00000000
+# [PASS] Reset MHARTID | Addr 0xf14 == 0x00000000
+# [PASS] Reset DCSR | Addr 0x7b0 == 0x4a030003
+# [PASS] Reset MIE | Addr 0x304 == 0x00000000
+# [PASS] Reset MEPC | Addr 0x341 == 0x00000000
+# [PASS] Reset MCAUSE | Addr 0x342 == 0x00000000
+# [PASS] Reset MTVEC | Addr 0x305 == 0x00000000
+# [PASS] Reset MSCRATCH | Addr 0x340 == 0x00000000
+# [PASS] Reset MTVAL | Addr 0x343 == 0x00000000
+# [PASS] Reset MIP | Addr 0x344 == 0x00000000
+# [PASS] Reset PMPADDR16 | Addr 0x3c0 == 0x00000000
+# [PASS] Reset DPC | Addr 0x7b1 == 0x00000000
+# [PASS] Reset DSCRATCH0 | Addr 0x7b2 == 0x00000000
+# [PASS] Reset DSCRATCH1 | Addr 0x7b3 == 0x00000000
+# [PASS] CSRRW Write Baseline | Addr 0x340 == 0x12345670
+# [PASS] CSRRS Set Low Bits | Addr 0x340 == 0x1234567f
+# [PASS] CSRRC Clear Bits | Addr 0x340 == 0x12345679
+# [PASS] CSRRWI Direct Immediate | Addr 0x340 == 0x00000015
+# [PASS] CSRRSI Immediate Bit Set | Addr 0x340 == 0x0000001f
+# [PASS] CSRRCI Immediate Bit Clear | Addr 0x340 == 0x0000001c
+# [PASS] Write Suppress: CSRRS with data=0 | Addr 0x340 == 0x0000001c
+# [PASS] Write Suppress: CSRRC with data=0 | Addr 0x340 == 0x0000001c
+# [PASS] Write Suppress: CSRRSI with imm=0 | Addr 0x340 == 0x0000001c
+# [PASS] Write Suppress: CSRRCI with imm=0 | Addr 0x340 == 0x0000001c
+# [PASS] Write Suppress: csr_wr_en_in = 0 | Addr 0x340 == 0x0000001c
+# [PASS] Unmapped Address 0xFFF Defaults to Zero | Addr 0xfff == 0x00000000
+# [PASS] Unmapped Address 0x000 Defaults to Zero | Addr 0x000 == 0x00000000
+# [PASS] MCAUSE R/W | Addr 0x342 == 0x80000007
+# [PASS] MTVAL R/W | Addr 0x343 == 0xbad00004
+# [PASS] MIP R/W | Addr 0x344 == 0x00000888
+# [PASS] PMPADDR16 R/W | Addr 0x3c0 == 0xffff0000
+# [PASS] DSCRATCH1 R/W | Addr 0x7b3 == 0xfeedcafe
+# [PASS] MEPC Truncates Bit 0 | Addr 0x341 == 0x80000000
+# [PASS] MEPC Truncates Bits [1:0] | Addr 0x341 == 0x80000000
+# [PASS] MISA Preserves Base RV32I Architecture | Addr 0x301 == 0x40000100
+# [PASS] MISA Sets M Extension Bit | Addr 0x301 == 0x40001100
+# [PASS] MIE Valid Mask Applied (Bits 11, 7, 3) | Addr 0x304 == 0x00000888
+# [PASS] meie_out, mtie_out, msie_out active
+# [PASS] meie_out, mtie_out, msie_out cleared
+# [PASS] Trap Latch: MEPC Aligned to 4 Bytes | Addr 0x341 == 0x10000004
+# [PASS] Trap Latch: MCAUSE Interrupt Bit and Code | Addr 0x342 == 0x8000000b
+# [PASS] Trap Latch: MTVAL Latch | Addr 0x343 == 0xcafebabe
+# [PASS] Trap Latch: Exception MCAUSE (MSB=0) | Addr 0x342 == 0x00000002
+# [PASS] mie_out active from MSTATUS write
+# [PASS] mie_clear: mie_out cleared to 0, old state saved to mpie
+# [PASS] mie_set: mie_out restored to 1 from mpie
+# [PASS] MTVEC Direct Mode Trap Address: 0x80000000
+# [PASS] MTVEC Vectored Mode Trap Address: 0x8000001c
+# [PASS] MTVEC Exception in Vectored Mode strictly uses Base Address
+# [PASS] MCYCLE Increments With Clock | Addr 0xb00 == 0x11223345
+# [PASS] MCYCLEH Preserved High Word | Addr 0xb80 == 0x55667788
+# [PASS] CYCLE Shadow Matches MCYCLE | Addr 0xc00 == 0x11223345
+# [PASS] CYCLEH Shadow Matches MCYCLEH | Addr 0xc80 == 0x55667788
+# [PASS] MINSTRET Initial Value | Addr 0xb02 == 0x000001f4
+# [PASS] MINSTRETH Initial Value | Addr 0xb82 == 0x00000002
+# [PASS] INSTRET Shadow Read | Addr 0xc02 == 0x000001f4
+# [PASS] INSTRETH Shadow Read | Addr 0xc82 == 0x00000002
+# [PASS] MINSTRET Increments on instret_inc | Addr 0xb02 == 0x000001f5
+# [PASS] Hardware Debug DPC Latch: 0x30000004
+# [PASS] DPC Register Matches dpc_out | Addr 0x7b1 == 0x30000004
+# [PASS] DCSR debug cause bits [8:6] == 3'b001
+# 
+# =======================================================
+#    TEST SUMMARY: ALL 70 CHECKS PASSED PERFECTLY!       
+# =======================================================
+# 
+# ** Note: $finish    : tb/unit/tb_pragya_csr.sv(577)
+#    Time: 458 ns  Iteration: 0  Instance: /tb_pragya_csr
+# Break in Module tb_pragya_csr at tb/unit/tb_pragya_csr.sv line 577
+# Stopped at tb/unit/tb_pragya_csr.sv line 577
+#  coverage save pragya_csr.ucdb
+#  quit -f
+# End time: 17:19:34 on Nov 05,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0

@@ -1,0 +1,39 @@
+# Generated build outputs
+/build/
+/work/
+
+# Simulation logs and generated results
+/results/logs/
+
+# Coverage databases and generated HTML reports
+/coverage/databases/
+/coverage/reports/
+
+# Simulator generated files
+*.wlf
+*.vcd
+*.vpd
+*.fst
+*.vstf
+transcript
+vsim.wlf
+
+# Generated binaries and executable files
+*.bin
+*.elf
+*.o
+*.a
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Editor temporary files
+*.swp
+*.swo
+*~
+
+# Operating system files
+.DS_Store
+Thumbs.db

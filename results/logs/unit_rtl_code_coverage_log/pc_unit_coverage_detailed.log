@@ -1,0 +1,244 @@
+Model Technology ModelSim SE-64 vcover 2021.3 Coverage Utility 2021.07 Jul 13 2021
+Start time: 10:13:12 on Nov 05,2026
+vcover report -details -codeAll -instance=/tb_pc_unit/u_pc_unit pc_unit.ucdb 
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /tb_pc_unit/u_pc_unit
+=== Design Unit: work.pc_unit
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        20        19         1    95.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /tb_pc_unit/u_pc_unit
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File rtl/pc_unit.v
+------------------------------------IF Branch------------------------------------
+    305                                       39     Count coming in to IF
+    305             1                         13     
+    305             2                         26     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    311                                       42     Count coming in to IF
+    311             1                         12     
+    314             1                         30     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------CASE Branch------------------------------------
+    315                                       30     Count coming in to CASE
+    318             1                          2     
+    322             1                          2     
+    326             1                          5     
+    330             1                         21     
+    333             1                    ***0***     
+Branch totals: 4 hits of 5 branches = 80.00%
+
+------------------------------------IF Branch------------------------------------
+    356                                       16     Count coming in to IF
+    356             1                          3     
+    356             2                         13     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    364                                       28     Count coming in to IF
+    364             1                          2     
+    368             1                         26     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    370                                       26     Count coming in to IF
+    370             1                          3     
+    376             1                          3     
+    381             1                          1     
+    387             1                          2     
+    392             1                          1     
+    397             1                         14     
+                                               2     All False Count
+Branch totals: 7 hits of 7 branches = 100.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                      12         9         3    75.00%
+
+================================Condition Details================================
+
+Condition Coverage for instance /tb_pc_unit/u_pc_unit --
+
+  File rtl/pc_unit.v
+----------------Focused Condition View-------------------
+Line       356 Item    1  (debug_req_i && ~debug_mode_q)
+Condition totals: 2 of 2 input terms covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       370 Item    1  (debug_req_i && ~debug_mode_q)
+Condition totals: 2 of 2 input terms covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       376 Item    1  (is_dret_inst && debug_mode_q)
+Condition totals: 1 of 2 input terms covered = 50.00%
+
+    Input Term   Covered  Reason for no coverage   Hint
+   -----------  --------  -----------------------  --------------
+  is_dret_inst         Y
+  debug_mode_q         N  '_0' not hit             Hit '_0'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          1  is_dret_inst_0        -                             
+  Row   2:          1  is_dret_inst_1        debug_mode_q                  
+  Row   3:    ***0***  debug_mode_q_0        is_dret_inst                  
+  Row   4:          1  debug_mode_q_1        is_dret_inst                  
+
+----------------Focused Condition View-------------------
+Line       381 Item    1  (is_ebreak_inst && debug_mode_q)
+Condition totals: 1 of 2 input terms covered = 50.00%
+
+      Input Term   Covered  Reason for no coverage   Hint
+     -----------  --------  -----------------------  --------------
+  is_ebreak_inst         Y
+    debug_mode_q         N  '_0' not hit             Hit '_0'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          1  is_ebreak_inst_0      -                             
+  Row   2:          1  is_ebreak_inst_1      debug_mode_q                  
+  Row   3:    ***0***  debug_mode_q_0        is_ebreak_inst                
+  Row   4:          1  debug_mode_q_1        is_ebreak_inst                
+
+----------------Focused Condition View-------------------
+Line       387 Item    1  ((pc_src_in == 2) && ~debug_mode_q)
+Condition totals: 2 of 2 input terms covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       392 Item    1  ((pc_src_in == 1) && ~debug_mode_q)
+Condition totals: 1 of 2 input terms covered = 50.00%
+
+        Input Term   Covered  Reason for no coverage   Hint
+       -----------  --------  -----------------------  --------------
+  (pc_src_in == 1)         Y
+      debug_mode_q         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          1  (pc_src_in == 1)_0    -                             
+  Row   2:          1  (pc_src_in == 1)_1    ~debug_mode_q                 
+  Row   3:          1  debug_mode_q_0        (pc_src_in == 1)              
+  Row   4:    ***0***  debug_mode_q_1        (pc_src_in == 1)              
+
+
+Expression Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Expressions                      4         4         0   100.00%
+
+================================Expression Details================================
+
+Expression Coverage for instance /tb_pc_unit/u_pc_unit --
+
+  File rtl/pc_unit.v
+----------------Focused Expression View-----------------
+Line       340 Item    1  (branch_taken_in && (pc_target[1:0] != 0))
+Expression totals: 2 of 2 input terms covered = 100.00%
+
+----------------Focused Expression View-----------------
+Line       352 Item    1  (debug_req_i && ~debug_mode_q)
+Expression totals: 2 of 2 input terms covered = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      23        22         1    95.65%
+
+================================Statement Details================================
+
+Statement Coverage for instance /tb_pc_unit/u_pc_unit --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File rtl/pc_unit.v
+    301             1                         26     
+    305             1                         40     
+    310             1                         42     
+    312             1                         12     
+    319             1                          2     
+    323             1                          2     
+    327             1                          5     
+    331             1                         21     
+    334             1                    ***0***     
+    340             1                         14     
+    351             1                         17     
+    355             1                         17     
+    363             1                         28     
+    365             1                          2     
+    366             1                          2     
+    371             1                          3     
+    372             1                          3     
+    377             1                          3     
+    378             1                          3     
+    382             1                          1     
+    388             1                          2     
+    393             1                          1     
+    398             1                         14     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                        608       420       188    69.07%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /tb_pc_unit/u_pc_unit --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+                                  debug_cause_o[2]           0           0        0.00 
+                              debug_pc_save_o[0-1]           0           1       50.00 
+                                       dpc_in[0-3]           0           0        0.00 
+                                         dpc_in[6]           0           1       50.00 
+                                         dpc_in[7]           0           0        0.00 
+                                        dpc_in[10]           0           1       50.00 
+                                        dpc_in[11]           0           0        0.00 
+                                        dpc_in[14]           0           1       50.00 
+                                     dpc_in[15-30]           0           0        0.00 
+                                        dpc_in[31]           0           1       50.00 
+                                      epc_in[0-12]           0           0        0.00 
+                                        epc_in[13]           0           1       50.00 
+                                     epc_in[14-30]           0           0        0.00 
+                                        epc_in[31]           0           1       50.00 
+                                           pc[1-0]           0           1       50.00 
+                                     pc_plus4[0-1]           0           1       50.00 
+                                       pc_plus4[7]           0           1       50.00 
+                                      pc_plus4[11]           0           1       50.00 
+                                      pc_plus4[15]           0           1       50.00 
+                                   pc_plus4[16-23]           0           0        0.00 
+                                   pc_plus4[25-30]           0           0        0.00 
+                                     pc_target[31]           0           1       50.00 
+                                               rst           1           0       50.00 
+                                trap_address_in[1]           0           1       50.00 
+                                trap_address_in[2]           0           0        0.00 
+                                trap_address_in[5]           0           1       50.00 
+                                trap_address_in[9]           0           1       50.00 
+                               trap_address_in[13]           0           1       50.00 
+                            trap_address_in[16-30]           0           0        0.00 
+                               trap_address_in[31]           0           1       50.00 
+
+Total Node Count     =        304 
+Toggled Node Count   =        199 
+Untoggled Node Count =        105 
+
+Toggle Coverage      =      69.07% (420 of 608 bins)
+
+
+Total Coverage By Instance (filtered view): 86.94%
+
+End time: 10:13:12 on Nov 05,2026, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0

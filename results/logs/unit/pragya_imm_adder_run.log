@@ -1,0 +1,194 @@
+Reading pref.tcl
+
+# 2021.3
+
+# vsim -64 -c tb_pragya_imm_adder_opt -coverage -do "onfinish stop; run -all; coverage save pragya_imm_adder.ucdb; quit -f" 
+# Start time: 20:05:55 on Nov 05,2026
+# //  ModelSim SE-64 2021.3 Jul 13 2021 Linux 4.18.0-348.7.1.el8_5.x86_64
+# //
+# //  Copyright 1991-2021 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim SE-64 and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.tb_pragya_imm_adder(fast)
+# Loading work.pragya_imm_adder(fast)
+# onfinish stop
+#  run -all
+# Starting Pragya Immediate Adder Verification...
+# [PASS] Select PC (pc + imm) | Out: 0x00010020
+# IMM_ADDER: rs1=20000000 imm=00000040 target=20000040
+# [PASS] Select RS1 (rs1 + imm) | Out: 0x20000040
+# [PASS] Isolation: rs1=0 when src=0 | Out: 0x00001004
+# [PASS] Isolation: rs1=FFFFFFFF when src=0 | Out: 0x00001004
+# IMM_ADDER: rs1=00002000 imm=00000008 target=00002008
+# [PASS] Isolation: pc=0 when src=1 | Out: 0x00002008
+# [PASS] Isolation: pc=FFFFFFFF when src=1 | Out: 0x00002008
+# IMM_ADDER: rs1=10000001 imm=00000002 target=10000002
+# [PASS] JALR: (0x10000001 + 2) & ~1 -> 0x10000002 | Out: 0x10000002
+# IMM_ADDER: rs1=10000000 imm=00000003 target=10000002
+# [PASS] JALR: (0x10000000 + 3) & ~1 -> 0x10000002 | Out: 0x10000002
+# IMM_ADDER: rs1=10000001 imm=00000002 target=10000003
+# [PASS] No JALR: Odd sum passes unchanged (0x10000003) | Out: 0x10000003
+# IMM_ADDER: rs1=10000000 imm=00000004 target=10000004
+# [PASS] JALR: Even sum remains even (0x10000004) | Out: 0x10000004
+# IMM_ADDER: rs1=ffffffff imm=00000000 target=fffffffe
+# [PASS] JALR: 0xFFFFFFFF & ~1 -> 0xFFFFFFFE | Out: 0xfffffffe
+# [PASS] Arithmetic: Max Pos + 1 = Min Neg | Out: 0x80000000
+# [PASS] Arithmetic: 32-bit Address Wrap-Around | Out: 0x00000004
+# [PASS] Arithmetic: Backward Jump (pc - 32) | Out: 0x00010000
+# [PASS] Arithmetic: Underflow wrap below zero | Out: 0xfffffffc
+# [PASS] Arithmetic: Self-cancellation to zero | Out: 0x00000000
+# [PASS] Pattern: 0x55555555 on PC | Out: 0x55555555
+# IMM_ADDER: rs1=aaaaaaaa imm=00000000 target=aaaaaaaa
+# [PASS] Pattern: 0xAAAAAAAA on RS1 | Out: 0xaaaaaaaa
+# [PASS] Pattern: 0x55555555 on IMM | Out: 0x55555555
+# [PASS] Pattern: 0x55555555 + 0xAAAAAAAA = 0xFFFFFFFF | Out: 0xffffffff
+# [PASS] Walking 1 on PC | Out: 0x00000001
+# IMM_ADDER: rs1=00000001 imm=00000000 target=00000001
+# [PASS] Walking 1 on RS1 | Out: 0x00000001
+# [PASS] Walking 1 on IMM | Out: 0x00000001
+# [PASS] Walking 1 on PC | Out: 0x00000002
+# IMM_ADDER: rs1=00000002 imm=00000000 target=00000002
+# [PASS] Walking 1 on RS1 | Out: 0x00000002
+# [PASS] Walking 1 on IMM | Out: 0x00000002
+# [PASS] Walking 1 on PC | Out: 0x00000004
+# IMM_ADDER: rs1=00000004 imm=00000000 target=00000004
+# [PASS] Walking 1 on RS1 | Out: 0x00000004
+# [PASS] Walking 1 on IMM | Out: 0x00000004
+# [PASS] Walking 1 on PC | Out: 0x00000008
+# IMM_ADDER: rs1=00000008 imm=00000000 target=00000008
+# [PASS] Walking 1 on RS1 | Out: 0x00000008
+# [PASS] Walking 1 on IMM | Out: 0x00000008
+# [PASS] Walking 1 on PC | Out: 0x00000010
+# IMM_ADDER: rs1=00000010 imm=00000000 target=00000010
+# [PASS] Walking 1 on RS1 | Out: 0x00000010
+# [PASS] Walking 1 on IMM | Out: 0x00000010
+# [PASS] Walking 1 on PC | Out: 0x00000020
+# IMM_ADDER: rs1=00000020 imm=00000000 target=00000020
+# [PASS] Walking 1 on RS1 | Out: 0x00000020
+# [PASS] Walking 1 on IMM | Out: 0x00000020
+# [PASS] Walking 1 on PC | Out: 0x00000040
+# IMM_ADDER: rs1=00000040 imm=00000000 target=00000040
+# [PASS] Walking 1 on RS1 | Out: 0x00000040
+# [PASS] Walking 1 on IMM | Out: 0x00000040
+# [PASS] Walking 1 on PC | Out: 0x00000080
+# IMM_ADDER: rs1=00000080 imm=00000000 target=00000080
+# [PASS] Walking 1 on RS1 | Out: 0x00000080
+# [PASS] Walking 1 on IMM | Out: 0x00000080
+# [PASS] Walking 1 on PC | Out: 0x00000100
+# IMM_ADDER: rs1=00000100 imm=00000000 target=00000100
+# [PASS] Walking 1 on RS1 | Out: 0x00000100
+# [PASS] Walking 1 on IMM | Out: 0x00000100
+# [PASS] Walking 1 on PC | Out: 0x00000200
+# IMM_ADDER: rs1=00000200 imm=00000000 target=00000200
+# [PASS] Walking 1 on RS1 | Out: 0x00000200
+# [PASS] Walking 1 on IMM | Out: 0x00000200
+# [PASS] Walking 1 on PC | Out: 0x00000400
+# IMM_ADDER: rs1=00000400 imm=00000000 target=00000400
+# [PASS] Walking 1 on RS1 | Out: 0x00000400
+# [PASS] Walking 1 on IMM | Out: 0x00000400
+# [PASS] Walking 1 on PC | Out: 0x00000800
+# IMM_ADDER: rs1=00000800 imm=00000000 target=00000800
+# [PASS] Walking 1 on RS1 | Out: 0x00000800
+# [PASS] Walking 1 on IMM | Out: 0x00000800
+# [PASS] Walking 1 on PC | Out: 0x00001000
+# IMM_ADDER: rs1=00001000 imm=00000000 target=00001000
+# [PASS] Walking 1 on RS1 | Out: 0x00001000
+# [PASS] Walking 1 on IMM | Out: 0x00001000
+# [PASS] Walking 1 on PC | Out: 0x00002000
+# IMM_ADDER: rs1=00002000 imm=00000000 target=00002000
+# [PASS] Walking 1 on RS1 | Out: 0x00002000
+# [PASS] Walking 1 on IMM | Out: 0x00002000
+# [PASS] Walking 1 on PC | Out: 0x00004000
+# IMM_ADDER: rs1=00004000 imm=00000000 target=00004000
+# [PASS] Walking 1 on RS1 | Out: 0x00004000
+# [PASS] Walking 1 on IMM | Out: 0x00004000
+# [PASS] Walking 1 on PC | Out: 0x00008000
+# IMM_ADDER: rs1=00008000 imm=00000000 target=00008000
+# [PASS] Walking 1 on RS1 | Out: 0x00008000
+# [PASS] Walking 1 on IMM | Out: 0x00008000
+# [PASS] Walking 1 on PC | Out: 0x00010000
+# IMM_ADDER: rs1=00010000 imm=00000000 target=00010000
+# [PASS] Walking 1 on RS1 | Out: 0x00010000
+# [PASS] Walking 1 on IMM | Out: 0x00010000
+# [PASS] Walking 1 on PC | Out: 0x00020000
+# IMM_ADDER: rs1=00020000 imm=00000000 target=00020000
+# [PASS] Walking 1 on RS1 | Out: 0x00020000
+# [PASS] Walking 1 on IMM | Out: 0x00020000
+# [PASS] Walking 1 on PC | Out: 0x00040000
+# IMM_ADDER: rs1=00040000 imm=00000000 target=00040000
+# [PASS] Walking 1 on RS1 | Out: 0x00040000
+# [PASS] Walking 1 on IMM | Out: 0x00040000
+# [PASS] Walking 1 on PC | Out: 0x00080000
+# IMM_ADDER: rs1=00080000 imm=00000000 target=00080000
+# [PASS] Walking 1 on RS1 | Out: 0x00080000
+# [PASS] Walking 1 on IMM | Out: 0x00080000
+# [PASS] Walking 1 on PC | Out: 0x00100000
+# IMM_ADDER: rs1=00100000 imm=00000000 target=00100000
+# [PASS] Walking 1 on RS1 | Out: 0x00100000
+# [PASS] Walking 1 on IMM | Out: 0x00100000
+# [PASS] Walking 1 on PC | Out: 0x00200000
+# IMM_ADDER: rs1=00200000 imm=00000000 target=00200000
+# [PASS] Walking 1 on RS1 | Out: 0x00200000
+# [PASS] Walking 1 on IMM | Out: 0x00200000
+# [PASS] Walking 1 on PC | Out: 0x00400000
+# IMM_ADDER: rs1=00400000 imm=00000000 target=00400000
+# [PASS] Walking 1 on RS1 | Out: 0x00400000
+# [PASS] Walking 1 on IMM | Out: 0x00400000
+# [PASS] Walking 1 on PC | Out: 0x00800000
+# IMM_ADDER: rs1=00800000 imm=00000000 target=00800000
+# [PASS] Walking 1 on RS1 | Out: 0x00800000
+# [PASS] Walking 1 on IMM | Out: 0x00800000
+# [PASS] Walking 1 on PC | Out: 0x01000000
+# IMM_ADDER: rs1=01000000 imm=00000000 target=01000000
+# [PASS] Walking 1 on RS1 | Out: 0x01000000
+# [PASS] Walking 1 on IMM | Out: 0x01000000
+# [PASS] Walking 1 on PC | Out: 0x02000000
+# IMM_ADDER: rs1=02000000 imm=00000000 target=02000000
+# [PASS] Walking 1 on RS1 | Out: 0x02000000
+# [PASS] Walking 1 on IMM | Out: 0x02000000
+# [PASS] Walking 1 on PC | Out: 0x04000000
+# IMM_ADDER: rs1=04000000 imm=00000000 target=04000000
+# [PASS] Walking 1 on RS1 | Out: 0x04000000
+# [PASS] Walking 1 on IMM | Out: 0x04000000
+# [PASS] Walking 1 on PC | Out: 0x08000000
+# IMM_ADDER: rs1=08000000 imm=00000000 target=08000000
+# [PASS] Walking 1 on RS1 | Out: 0x08000000
+# [PASS] Walking 1 on IMM | Out: 0x08000000
+# [PASS] Walking 1 on PC | Out: 0x10000000
+# IMM_ADDER: rs1=10000000 imm=00000000 target=10000000
+# [PASS] Walking 1 on RS1 | Out: 0x10000000
+# [PASS] Walking 1 on IMM | Out: 0x10000000
+# [PASS] Walking 1 on PC | Out: 0x20000000
+# IMM_ADDER: rs1=20000000 imm=00000000 target=20000000
+# [PASS] Walking 1 on RS1 | Out: 0x20000000
+# [PASS] Walking 1 on IMM | Out: 0x20000000
+# [PASS] Walking 1 on PC | Out: 0x40000000
+# IMM_ADDER: rs1=40000000 imm=00000000 target=40000000
+# [PASS] Walking 1 on RS1 | Out: 0x40000000
+# [PASS] Walking 1 on IMM | Out: 0x40000000
+# [PASS] Walking 1 on PC | Out: 0x80000000
+# IMM_ADDER: rs1=80000000 imm=00000000 target=80000000
+# [PASS] Walking 1 on RS1 | Out: 0x80000000
+# [PASS] Walking 1 on IMM | Out: 0x80000000
+# 
+# =======================================================
+#    TEST SUMMARY: ALL 116 CHECKS PASSED PERFECTLY!       
+# =======================================================
+# 
+# ** Note: $finish    : tb/unit/tb_pragya_imm_adder.sv(156)
+#    Time: 116 ns  Iteration: 0  Instance: /tb_pragya_imm_adder
+# Break in Module tb_pragya_imm_adder at tb/unit/tb_pragya_imm_adder.sv line 156
+# Stopped at tb/unit/tb_pragya_imm_adder.sv line 156
+#  coverage save pragya_imm_adder.ucdb
+#  quit -f
+# End time: 20:05:56 on Nov 05,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0

@@ -1,0 +1,72 @@
+Reading pref.tcl
+
+# 2021.3
+
+# vsim -64 -c tb_pragya_hazard_unit_opt -coverage -do "onfinish stop; run -all; coverage save pragya_hazard_unit.ucdb; quit -f" 
+# Start time: 17:05:31 on Nov 05,2026
+# //  ModelSim SE-64 2021.3 Jul 13 2021 Linux 4.18.0-348.7.1.el8_5.x86_64
+# //
+# //  Copyright 1991-2021 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim SE-64 and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.tb_pragya_hazard_unit(fast)
+# Loading work.pragya_hazard_unit(fast)
+# onfinish stop
+#  run -all
+# 
+# =======================================================
+#      STARTING PRAGYA HAZARD UNIT VERIFICATION SUITE   
+# =======================================================
+# 
+# --- [Group 1] Quiescent / No-Hazard Default State ---
+# [PASS] All inputs idle / no hazards | FwdA=0 FwdB=0 Stall=0 Flush=0
+# 
+# --- [Group 2] Data Forwarding Paths (ALU/MW to DE) ---
+# [PASS] Forward A only (rd_MW == rs1_DE == x5) | FwdA=1 FwdB=0 Stall=0 Flush=0
+# [PASS] Forward B only (rd_MW == rs2_DE == x6) | FwdA=0 FwdB=1 Stall=0 Flush=0
+# [PASS] Forward A & B simultaneously (rd_MW == rs1 == rs2 == x10) | FwdA=1 FwdB=1 Stall=0 Flush=0
+# [PASS] Forwarding suppressed when reg_write_MW is 0 | FwdA=0 FwdB=0 Stall=0 Flush=0
+# 
+# --- [Group 3] x0 Hazard Suppression Invariance ---
+# [PASS] x0 write must NEVER forward to rs1=0 or rs2=0 | FwdA=0 FwdB=0 Stall=0 Flush=0
+# [PASS] rd_MW=x0 with rs1=x0, rs2=x3: No forwarding on either port | FwdA=0 FwdB=0 Stall=0 Flush=0
+# 
+# --- [Group 4] Boundary Register Address Checks ---
+# [PASS] Boundary register x1 forward A | FwdA=1 FwdB=0 Stall=0 Flush=0
+# [PASS] Boundary register x31 forward B | FwdA=0 FwdB=1 Stall=0 Flush=0
+# 
+# --- [Group 5] Pipeline Stall Multi-Source Matrix ---
+# [PASS] Stall source: mem_req_DE | FwdA=0 FwdB=0 Stall=1 Flush=0
+# [PASS] Stall source: wait_for_mem | FwdA=0 FwdB=0 Stall=1 Flush=0
+# [PASS] Stall source: mdu_stall | FwdA=0 FwdB=0 Stall=1 Flush=0
+# [PASS] Stall source: wfi_stall | FwdA=0 FwdB=0 Stall=1 Flush=0
+# [PASS] Multiple simultaneous stalls asserted | FwdA=0 FwdB=0 Stall=1 Flush=0
+# 
+# --- [Group 6] Branch Flush and Stall/Flush Interaction ---
+# [PASS] Branch taken asserts flush_DE | FwdA=0 FwdB=0 Stall=0 Flush=1
+# [PASS] Concurrent stall and branch flush | FwdA=0 FwdB=0 Stall=1 Flush=1
+# [PASS] Forwarding, stall, and flush active simultaneously | FwdA=1 FwdB=0 Stall=1 Flush=1
+# 
+# --- [Group 7] Randomized Stimulus Sweep (1000 Cycles) ---
+# 
+# =======================================================
+#    TEST SUMMARY: ALL 1017 CHECKS PASSED PERFECTLY!             
+# =======================================================
+# 
+# ** Note: $finish    : tb/unit/tb_pragya_hazard_unit.sv(292)
+#    Time: 1017 ns  Iteration: 0  Instance: /tb_pragya_hazard_unit
+# Break in Module tb_pragya_hazard_unit at tb/unit/tb_pragya_hazard_unit.sv line 292
+# Stopped at tb/unit/tb_pragya_hazard_unit.sv line 292
+#  coverage save pragya_hazard_unit.ucdb
+#  quit -f
+# End time: 17:05:32 on Nov 05,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0

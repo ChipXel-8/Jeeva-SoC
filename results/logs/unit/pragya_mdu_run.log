@@ -1,0 +1,81 @@
+Reading pref.tcl
+
+# 2021.3
+
+# vsim -64 -c tb_pragya_mdu_opt -coverage -do "onfinish stop; run -all; coverage save pragya_mdu.ucdb; quit -f" 
+# Start time: 16:54:03 on Nov 05,2026
+# //  ModelSim SE-64 2021.3 Jul 13 2021 Linux 4.18.0-348.7.1.el8_5.x86_64
+# //
+# //  Copyright 1991-2021 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim SE-64 and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.tb_pragya_mdu(fast)
+# Loading work.pragya_mdu(fast)
+# onfinish stop
+#  run -all
+# 
+# =======================================================
+#           STARTING PRAGYA MDU VERIFICATION             
+# =======================================================
+# 
+# --- [Group 1] Division by Zero Corner Cases ---
+# [PASS] DIV by 0 (Pos/0) | Result: 0xffffffff (Cycles: 32)
+# [PASS] DIV by 0 (Neg/0) | Result: 0xffffffff (Cycles: 32)
+# [PASS] DIVU by 0 | Result: 0xffffffff (Cycles: 32)
+# [PASS] REM by 0 (7 % 0 = 7) | Result: 0x00000007 (Cycles: 32)
+# [PASS] REM by 0 (-7 % 0 = -7) | Result: 0xfffffff9 (Cycles: 32)
+# [PASS] REMU by 0 (DEADBEEF % 0) | Result: 0xdeadbeef (Cycles: 32)
+# 
+# --- [Group 2] Signed Overflow Corner Cases (-2^31 / -1) ---
+# [PASS] DIV Overflow (0x80000000 / -1) | Result: 0x80000000 (Cycles: 32)
+# [PASS] REM Overflow (0x80000000 % -1) | Result: 0x00000000 (Cycles: 32)
+# 
+# --- [Group 3] Standard Division & Remainder Paths ---
+# [PASS] DIV (20 / 3) | Result: 0x00000006 (Cycles: 32)
+# [PASS] REM (20 % 3) | Result: 0x00000002 (Cycles: 32)
+# [PASS] DIV (-20 / 3 = -6) | Result: 0xfffffffa (Cycles: 32)
+# [PASS] REM (-20 % 3 = -2) | Result: 0xfffffffe (Cycles: 32)
+# [PASS] DIV (20 / -3 = -6) | Result: 0xfffffffa (Cycles: 32)
+# [PASS] REM (20 % -3 = 2) | Result: 0x00000002 (Cycles: 32)
+# [PASS] DIV (-20 / -3 = 6) | Result: 0x00000006 (Cycles: 32)
+# [PASS] REM (-20 % -3 = -2) | Result: 0xfffffffe (Cycles: 32)
+# [PASS] DIVU Unsigned High | Result: 0x7ffffffb (Cycles: 32)
+# [PASS] REMU Unsigned Remainder | Result: 0x00000001 (Cycles: 32)
+# 
+# --- [Group 4] Multiplier Sign & Cross Boundary Checks ---
+# [PASS] MUL Basic | Result: 0x001e8480 (Cycles: 4)
+# [PASS] MUL (-1 * 5) | Result: 0xfffffffb (Cycles: 4)
+# [PASS] MULH (-1 * -1) | Result: 0x00000000 (Cycles: 4)
+# [PASS] MULH (-1 * 1) | Result: 0xffffffff (Cycles: 4)
+# [PASS] MULH (MAX_POS * MAX_POS) | Result: 0x3fffffff (Cycles: 4)
+# [PASS] MULH (MIN_NEG * MIN_NEG) | Result: 0x40000000 (Cycles: 4)
+# [PASS] MULHSU (-1 * 2u) | Result: 0xffffffff (Cycles: 4)
+# [PASS] MULHSU (1 * 0xFFFFFFFFu) | Result: 0x00000000 (Cycles: 4)
+# [PASS] MULHU (All 1s * All 1s) | Result: 0xfffffffe (Cycles: 4)
+# [PASS] MULHU (0x80000000 * 2) | Result: 0x00000001 (Cycles: 4)
+# 
+# --- [Group 5] Backpressure & Back-to-Back Sequencing ---
+# [PASS] Back-to-Back Phase 1 (MUL) | Result: 0x0000002a (Cycles: 4)
+# [PASS] Back-to-Back Phase 2 (DIV) | Result: 0x00000006 (Cycles: 32)
+# 
+# =======================================================
+#    TEST SUMMARY: ALL 30 CHECKS PASSED PERFECTLY!       
+# =======================================================
+# 
+# ** Note: $finish    : tb/unit/tb_pragya_mdu.sv(261)
+#    Time: 7156 ns  Iteration: 0  Instance: /tb_pragya_mdu
+# Break in Module tb_pragya_mdu at tb/unit/tb_pragya_mdu.sv line 261
+# Stopped at tb/unit/tb_pragya_mdu.sv line 261
+#  coverage save pragya_mdu.ucdb
+#  quit -f
+# End time: 16:54:03 on Nov 05,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0

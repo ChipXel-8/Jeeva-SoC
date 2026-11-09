@@ -1,0 +1,77 @@
+Reading pref.tcl
+
+# 2021.3
+
+# vsim -64 -c tb_pc_unit_opt -coverage -do "run -all; coverage save coverage_reports/unit/pc_unit.ucdb; quit -f" 
+# Start time: 23:36:42 on Nov 04,2026
+# //  ModelSim SE-64 2021.3 Jul 13 2021 Linux 4.18.0-348.7.1.el8_5.x86_64
+# //
+# //  Copyright 1991-2021 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim SE-64 and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.tb_pc_unit(fast)
+# run -all
+# 
+# =======================================================
+#           STARTING PC UNIT VERIFICATION SUITE          
+# =======================================================
+# 
+# --- [Test Group 1] Reset & Initialization ---
+# [PASS] Hardware reset properly drives PC to boot address (0x80000000)
+# 
+# --- [Test Group 2] Sequential Execution & Rollover ---
+# [PASS] Step forward 1 instruction -> PC = 0x80000004 (PC+4 = 0x80000008)
+# [PASS] Step forward 2 instructions -> PC = 0x80000008 (PC+4 = 0x8000000c)
+# [PASS] Jump to highest 32-bit boundary -> PC = 0xfffffffc (PC+4 = 0x00000000)
+# [PASS] Address space roll-over from 0xFFFFFFFC to 0x00000000 -> PC = 0x00000000 (PC+4 = 0x00000004)
+# [PASS] Continue stepping smoothly after roll-over -> PC = 0x00000004 (PC+4 = 0x00000008)
+# 
+# --- [Test Group 3] Pipeline Stall & Freeze Tests ---
+# [PASS] Stall cycle 1: PC must freeze -> PC = 0x00000004 (PC+4 = 0x00000008)
+# [PASS] Stall cycle 2: PC must stay frozen -> PC = 0x00000004 (PC+4 = 0x00000008)
+# [PASS] Deassert stall: PC advances to next instruction -> PC = 0x00000008 (PC+4 = 0x0000000c)
+# 
+# --- [Test Group 4] Branching & Alignment Detection ---
+# [PASS] Take forward branch to 0x80001000 -> PC = 0x80001000 (PC+4 = 0x80001004)
+# [PASS] Take backward branch to 0x80000500 -> PC = 0x80000500 (PC+4 = 0x80000504)
+# [PASS] Word-aligned branch target correctly flagged as valid (misalign=0)
+# [PASS] Misaligned target detected on byte offset +1
+# [PASS] Misaligned target detected on byte offset +2
+# [PASS] Misalignment flag suppressed when branch_taken_in is inactive
+# 
+# --- [Test Group 5] Machine Mode Traps & Returns ---
+# [PASS] Vector directly into trap handler (mtvec) -> PC = 0x80000040 (PC+4 = 0x80000044)
+# [PASS] MRET returns to interrupted instruction (mepc) -> PC = 0x80002000 (PC+4 = 0x80002004)
+# [PASS] Warm boot forces PC back to RESET_PC -> PC = 0x80000000 (PC+4 = 0x80000004)
+# 
+# --- [Test Group 6] Hardware Debug Mode Protocol ---
+# [PASS] Debug entry generates DPC save pulse with halt cause = 3
+# [PASS] Core enters debug park loop at DEBUG_BASE_ADDR -> PC = 0x01000000 (PC+4 = 0x01000004)
+# [PASS] Redundant debug request suppressed while already in debug mode
+# [PASS] EBREAK inside debug mode loops back to DEBUG_BASE_ADDR -> PC = 0x01000000 (PC+4 = 0x01000004)
+# [PASS] External traps safely ignored while running in debug mode -> PC = 0x01000004 (PC+4 = 0x01000008)
+# [PASS] DRET successfully exits debug mode back to saved DPC -> PC = 0x80003330 (PC+4 = 0x80003334)
+# 
+# --- [Test Group 7] Priority Resolution & Anti-Deadlock ---
+# [PASS] Priority 1: Debug request breaks active pipeline stall -> PC = 0x01000000 (PC+4 = 0x01000004)
+# [PASS] Priority 1: Debug request overrides concurrent branch and trap -> PC = 0x01000000 (PC+4 = 0x01000004)
+# [PASS] Priority 2: Trap address overrides concurrent branch -> PC = 0x8000bbbb (PC+4 = 0x8000bbbf)
+# [PASS] Priority 3: Pipeline stall holds PC, ignoring branch -> PC = 0x8000bbbb (PC+4 = 0x8000bbbf)
+# 
+# =======================================================
+#    TEST SUMMARY: ALL 28 CHECKS PASSED PERFECTLY!            
+# =======================================================
+# 
+# ** Note: $finish    : tb/unit/tb_pc_unit.sv(361)
+#    Time: 296 ns  Iteration: 0  Instance: /tb_pc_unit
+# End time: 23:36:42 on Nov 04,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0

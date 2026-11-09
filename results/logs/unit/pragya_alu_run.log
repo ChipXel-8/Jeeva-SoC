@@ -1,0 +1,175 @@
+Reading pref.tcl
+
+# 2021.3
+
+# vsim -64 -c tb_pragya_alu_opt -coverage -do "onfinish stop; run -all; coverage save pragya_alu.ucdb; quit -f" 
+# Start time: 16:12:41 on Nov 05,2026
+# //  ModelSim SE-64 2021.3 Jul 13 2021 Linux 4.18.0-348.7.1.el8_5.x86_64
+# //
+# //  Copyright 1991-2021 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim SE-64 and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.tb_pragya_alu(fast)
+# Loading work.pragya_alu(fast)
+# onfinish stop
+#  run -all
+# 
+# =======================================================
+#           STARTING PRAGYA ALU UNIT VERIFICATION        
+# =======================================================
+# 
+# --- [Group 1] ADD/SUB Boundary, Overflow & Underflow ---
+# [PASS] ADD Pos Overflow (MAX_POS + 1) | op=0 A=0x7fffffff B=0x00000001 == 0x80000000
+# [PASS] ADD Neg Overflow (MIN_NEG + -1) | op=0 A=0x80000000 B=0xffffffff == 0x7fffffff
+# [PASS] SUB Underflow (MIN_NEG - 1) | op=1 A=0x80000000 B=0x00000001 == 0x7fffffff
+# [PASS] SUB Cancellation to Zero | op=1 A=0x7fffffff B=0x7fffffff == 0x00000000
+# [PASS] SUB Underflow from Zero (0 - 1) | op=1 A=0x00000000 B=0x00000001 == 0xffffffff
+# 
+# --- [Group 2] 4x4 Corner Matrix on Arithmetic & Logic ---
+# [PASS] Corner-to-Corner Test | op=0 A=0x00000000 B=0x00000000 == 0x00000000
+# [PASS] Corner-to-Corner Test | op=0 A=0x00000000 B=0xffffffff == 0xffffffff
+# [PASS] Corner-to-Corner Test | op=0 A=0x00000000 B=0x7fffffff == 0x7fffffff
+# [PASS] Corner-to-Corner Test | op=0 A=0x00000000 B=0x80000000 == 0x80000000
+# [PASS] Corner-to-Corner Test | op=0 A=0xffffffff B=0x00000000 == 0xffffffff
+# [PASS] Corner-to-Corner Test | op=0 A=0xffffffff B=0xffffffff == 0xfffffffe
+# [PASS] Corner-to-Corner Test | op=0 A=0xffffffff B=0x7fffffff == 0x7ffffffe
+# [PASS] Corner-to-Corner Test | op=0 A=0xffffffff B=0x80000000 == 0x7fffffff
+# [PASS] Corner-to-Corner Test | op=0 A=0x7fffffff B=0x00000000 == 0x7fffffff
+# [PASS] Corner-to-Corner Test | op=0 A=0x7fffffff B=0xffffffff == 0x7ffffffe
+# [PASS] Corner-to-Corner Test | op=0 A=0x7fffffff B=0x7fffffff == 0xfffffffe
+# [PASS] Corner-to-Corner Test | op=0 A=0x7fffffff B=0x80000000 == 0xffffffff
+# [PASS] Corner-to-Corner Test | op=0 A=0x80000000 B=0x00000000 == 0x80000000
+# [PASS] Corner-to-Corner Test | op=0 A=0x80000000 B=0xffffffff == 0x7fffffff
+# [PASS] Corner-to-Corner Test | op=0 A=0x80000000 B=0x7fffffff == 0xffffffff
+# [PASS] Corner-to-Corner Test | op=0 A=0x80000000 B=0x80000000 == 0x00000000
+# [PASS] Corner-to-Corner Test | op=1 A=0x00000000 B=0x00000000 == 0x00000000
+# [PASS] Corner-to-Corner Test | op=1 A=0x00000000 B=0xffffffff == 0x00000001
+# [PASS] Corner-to-Corner Test | op=1 A=0x00000000 B=0x7fffffff == 0x80000001
+# [PASS] Corner-to-Corner Test | op=1 A=0x00000000 B=0x80000000 == 0x80000000
+# [PASS] Corner-to-Corner Test | op=1 A=0xffffffff B=0x00000000 == 0xffffffff
+# [PASS] Corner-to-Corner Test | op=1 A=0xffffffff B=0xffffffff == 0x00000000
+# [PASS] Corner-to-Corner Test | op=1 A=0xffffffff B=0x7fffffff == 0x80000000
+# [PASS] Corner-to-Corner Test | op=1 A=0xffffffff B=0x80000000 == 0x7fffffff
+# [PASS] Corner-to-Corner Test | op=1 A=0x7fffffff B=0x00000000 == 0x7fffffff
+# [PASS] Corner-to-Corner Test | op=1 A=0x7fffffff B=0xffffffff == 0x80000000
+# [PASS] Corner-to-Corner Test | op=1 A=0x7fffffff B=0x7fffffff == 0x00000000
+# [PASS] Corner-to-Corner Test | op=1 A=0x7fffffff B=0x80000000 == 0xffffffff
+# [PASS] Corner-to-Corner Test | op=1 A=0x80000000 B=0x00000000 == 0x80000000
+# [PASS] Corner-to-Corner Test | op=1 A=0x80000000 B=0xffffffff == 0x80000001
+# [PASS] Corner-to-Corner Test | op=1 A=0x80000000 B=0x7fffffff == 0x00000001
+# [PASS] Corner-to-Corner Test | op=1 A=0x80000000 B=0x80000000 == 0x00000000
+# [PASS] Corner-to-Corner Test | op=2 A=0x00000000 B=0x00000000 == 0x00000000
+# [PASS] Corner-to-Corner Test | op=2 A=0x00000000 B=0xffffffff == 0x00000000
+# [PASS] Corner-to-Corner Test | op=2 A=0x00000000 B=0x7fffffff == 0x00000000
+# [PASS] Corner-to-Corner Test | op=2 A=0x00000000 B=0x80000000 == 0x00000000
+# [PASS] Corner-to-Corner Test | op=2 A=0xffffffff B=0x00000000 == 0x00000000
+# [PASS] Corner-to-Corner Test | op=2 A=0xffffffff B=0xffffffff == 0xffffffff
+# [PASS] Corner-to-Corner Test | op=2 A=0xffffffff B=0x7fffffff == 0x7fffffff
+# [PASS] Corner-to-Corner Test | op=2 A=0xffffffff B=0x80000000 == 0x80000000
+# [PASS] Corner-to-Corner Test | op=2 A=0x7fffffff B=0x00000000 == 0x00000000
+# [PASS] Corner-to-Corner Test | op=2 A=0x7fffffff B=0xffffffff == 0x7fffffff
+# [PASS] Corner-to-Corner Test | op=2 A=0x7fffffff B=0x7fffffff == 0x7fffffff
+# [PASS] Corner-to-Corner Test | op=2 A=0x7fffffff B=0x80000000 == 0x00000000
+# [PASS] Corner-to-Corner Test | op=2 A=0x80000000 B=0x00000000 == 0x00000000
+# [PASS] Corner-to-Corner Test | op=2 A=0x80000000 B=0xffffffff == 0x80000000
+# [PASS] Corner-to-Corner Test | op=2 A=0x80000000 B=0x7fffffff == 0x00000000
+# [PASS] Corner-to-Corner Test | op=2 A=0x80000000 B=0x80000000 == 0x80000000
+# [PASS] Corner-to-Corner Test | op=3 A=0x00000000 B=0x00000000 == 0x00000000
+# [PASS] Corner-to-Corner Test | op=3 A=0x00000000 B=0xffffffff == 0xffffffff
+# [PASS] Corner-to-Corner Test | op=3 A=0x00000000 B=0x7fffffff == 0x7fffffff
+# [PASS] Corner-to-Corner Test | op=3 A=0x00000000 B=0x80000000 == 0x80000000
+# [PASS] Corner-to-Corner Test | op=3 A=0xffffffff B=0x00000000 == 0xffffffff
+# [PASS] Corner-to-Corner Test | op=3 A=0xffffffff B=0xffffffff == 0xffffffff
+# [PASS] Corner-to-Corner Test | op=3 A=0xffffffff B=0x7fffffff == 0xffffffff
+# [PASS] Corner-to-Corner Test | op=3 A=0xffffffff B=0x80000000 == 0xffffffff
+# [PASS] Corner-to-Corner Test | op=3 A=0x7fffffff B=0x00000000 == 0x7fffffff
+# [PASS] Corner-to-Corner Test | op=3 A=0x7fffffff B=0xffffffff == 0xffffffff
+# [PASS] Corner-to-Corner Test | op=3 A=0x7fffffff B=0x7fffffff == 0x7fffffff
+# [PASS] Corner-to-Corner Test | op=3 A=0x7fffffff B=0x80000000 == 0xffffffff
+# [PASS] Corner-to-Corner Test | op=3 A=0x80000000 B=0x00000000 == 0x80000000
+# [PASS] Corner-to-Corner Test | op=3 A=0x80000000 B=0xffffffff == 0xffffffff
+# [PASS] Corner-to-Corner Test | op=3 A=0x80000000 B=0x7fffffff == 0xffffffff
+# [PASS] Corner-to-Corner Test | op=3 A=0x80000000 B=0x80000000 == 0x80000000
+# [PASS] Corner-to-Corner Test | op=4 A=0x00000000 B=0x00000000 == 0x00000000
+# [PASS] Corner-to-Corner Test | op=4 A=0x00000000 B=0xffffffff == 0xffffffff
+# [PASS] Corner-to-Corner Test | op=4 A=0x00000000 B=0x7fffffff == 0x7fffffff
+# [PASS] Corner-to-Corner Test | op=4 A=0x00000000 B=0x80000000 == 0x80000000
+# [PASS] Corner-to-Corner Test | op=4 A=0xffffffff B=0x00000000 == 0xffffffff
+# [PASS] Corner-to-Corner Test | op=4 A=0xffffffff B=0xffffffff == 0x00000000
+# [PASS] Corner-to-Corner Test | op=4 A=0xffffffff B=0x7fffffff == 0x80000000
+# [PASS] Corner-to-Corner Test | op=4 A=0xffffffff B=0x80000000 == 0x7fffffff
+# [PASS] Corner-to-Corner Test | op=4 A=0x7fffffff B=0x00000000 == 0x7fffffff
+# [PASS] Corner-to-Corner Test | op=4 A=0x7fffffff B=0xffffffff == 0x80000000
+# [PASS] Corner-to-Corner Test | op=4 A=0x7fffffff B=0x7fffffff == 0x00000000
+# [PASS] Corner-to-Corner Test | op=4 A=0x7fffffff B=0x80000000 == 0xffffffff
+# [PASS] Corner-to-Corner Test | op=4 A=0x80000000 B=0x00000000 == 0x80000000
+# [PASS] Corner-to-Corner Test | op=4 A=0x80000000 B=0xffffffff == 0x7fffffff
+# [PASS] Corner-to-Corner Test | op=4 A=0x80000000 B=0x7fffffff == 0xffffffff
+# [PASS] Corner-to-Corner Test | op=4 A=0x80000000 B=0x80000000 == 0x00000000
+# 
+# --- [Group 3] Shifter Shifts (0, 1, 31, and >31) ---
+# [PASS] SLL Boundary | op=5 A=0x00000001 B=0x00000000 == 0x00000001
+# [PASS] SRL Boundary | op=6 A=0x80000000 B=0x00000000 == 0x80000000
+# [PASS] SRA Negative Sign-Extension | op=7 A=0x80000000 B=0x00000000 == 0x80000000
+# [PASS] SRA Positive Zero-Fill | op=7 A=0x7fffffff B=0x00000000 == 0x7fffffff
+# [PASS] SLL Boundary | op=5 A=0x00000001 B=0x00000001 == 0x00000002
+# [PASS] SRL Boundary | op=6 A=0x80000000 B=0x00000001 == 0x40000000
+# [PASS] SRA Negative Sign-Extension | op=7 A=0x80000000 B=0x00000001 == 0xc0000000
+# [PASS] SRA Positive Zero-Fill | op=7 A=0x7fffffff B=0x00000001 == 0x3fffffff
+# [PASS] SLL Boundary | op=5 A=0x00000001 B=0x0000001f == 0x80000000
+# [PASS] SRL Boundary | op=6 A=0x80000000 B=0x0000001f == 0x00000001
+# [PASS] SRA Negative Sign-Extension | op=7 A=0x80000000 B=0x0000001f == 0xffffffff
+# [PASS] SRA Positive Zero-Fill | op=7 A=0x7fffffff B=0x0000001f == 0x00000000
+# [PASS] SLL Boundary | op=5 A=0x00000001 B=0x00000020 == 0x00000001
+# [PASS] SRL Boundary | op=6 A=0x80000000 B=0x00000020 == 0x80000000
+# [PASS] SRA Negative Sign-Extension | op=7 A=0x80000000 B=0x00000020 == 0x80000000
+# [PASS] SRA Positive Zero-Fill | op=7 A=0x7fffffff B=0x00000020 == 0x7fffffff
+# [PASS] SLL Boundary | op=5 A=0x00000001 B=0x00000021 == 0x00000002
+# [PASS] SRL Boundary | op=6 A=0x80000000 B=0x00000021 == 0x40000000
+# [PASS] SRA Negative Sign-Extension | op=7 A=0x80000000 B=0x00000021 == 0xc0000000
+# [PASS] SRA Positive Zero-Fill | op=7 A=0x7fffffff B=0x00000021 == 0x3fffffff
+# [PASS] SLL Boundary | op=5 A=0x00000001 B=0x0000003f == 0x80000000
+# [PASS] SRL Boundary | op=6 A=0x80000000 B=0x0000003f == 0x00000001
+# [PASS] SRA Negative Sign-Extension | op=7 A=0x80000000 B=0x0000003f == 0xffffffff
+# [PASS] SRA Positive Zero-Fill | op=7 A=0x7fffffff B=0x0000003f == 0x00000000
+# 
+# --- [Group 4] SLT / SLTU Corner Comparisons ---
+# [PASS] SLT (-1 < 1) -> True | op=8 A=0xffffffff B=0x00000001 == 0x00000001
+# [PASS] SLTU (0xFFFFFFFF < 1) -> False | op=9 A=0xffffffff B=0x00000001 == 0x00000000
+# [PASS] SLT (MIN_NEG < MAX_POS) -> True | op=8 A=0x80000000 B=0x7fffffff == 0x00000001
+# [PASS] SLTU (MIN_NEG < MAX_POS) -> False | op=9 A=0x80000000 B=0x7fffffff == 0x00000000
+# [PASS] SLT Equal Operands -> False | op=8 A=0x7fffffff B=0x7fffffff == 0x00000000
+# [PASS] SLTU Equal Operands -> False | op=9 A=0x7fffffff B=0x7fffffff == 0x00000000
+# [PASS] SLT (0 < -1) -> False | op=8 A=0x00000000 B=0xffffffff == 0x00000000
+# [PASS] SLTU (0 < 0xFFFFFFFF) -> True | op=9 A=0x00000000 B=0xffffffff == 0x00000001
+# 
+# --- [Group 5] Unmapped ALU Control Opcodes (Default Branch Closure) ---
+# [PASS] Unmapped Opcode Fallback | op=10 A=0x12345678 B=0x9abcdef0 == 0x00000000
+# [PASS] Unmapped Opcode Fallback | op=11 A=0x12345678 B=0x9abcdef0 == 0x00000000
+# [PASS] Unmapped Opcode Fallback | op=12 A=0x12345678 B=0x9abcdef0 == 0x00000000
+# [PASS] Unmapped Opcode Fallback | op=13 A=0x12345678 B=0x9abcdef0 == 0x00000000
+# [PASS] Unmapped Opcode Fallback | op=14 A=0x12345678 B=0x9abcdef0 == 0x00000000
+# [PASS] Unmapped Opcode Fallback | op=15 A=0x12345678 B=0x9abcdef0 == 0x00000000
+# 
+# =======================================================
+#    TEST SUMMARY: ALL 123 CHECKS PASSED PERFECTLY!       
+#    STATUS: READY FOR SIGN-OFF (CHECKLIST ITEM 4.4)      
+# =======================================================
+# 
+# ** Note: $finish    : tb/unit/tb_pragya_alu.sv(187)
+#    Time: 123 ns  Iteration: 0  Instance: /tb_pragya_alu
+# Break in Module tb_pragya_alu at tb/unit/tb_pragya_alu.sv line 187
+# Stopped at tb/unit/tb_pragya_alu.sv line 187
+#  coverage save pragya_alu.ucdb
+#  quit -f
+# End time: 16:12:42 on Nov 05,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0

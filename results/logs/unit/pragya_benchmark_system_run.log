@@ -1,0 +1,153 @@
+Reading pref.tcl
+
+# 2021.3
+
+# vsim -64 -c tb_pragya_benchmark_system_opt -coverage -do "onfinish stop; run -all; coverage save pragya_benchmark_system.ucdb; quit -f" 
+# Start time: 00:10:42 on Nov 06,2026
+# //  ModelSim SE-64 2021.3 Jul 13 2021 Linux 4.18.0-348.7.1.el8_5.x86_64
+# //
+# //  Copyright 1991-2021 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim SE-64 and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.tb_pragya_benchmark_system(fast)
+# Loading work.pragya_top(fast)
+# Loading work.pragya_core(fast)
+# Loading work.pc_unit(fast)
+# Loading work.pragya_if_id_reg(fast)
+# Loading work.pragya_decoder(fast)
+# Loading work.pragya_regfile(fast)
+# Loading work.pragya_csr(fast)
+# Loading work.pragya_machine_control(fast)
+# Loading work.pragya_hazard_unit(fast)
+# Loading work.pragya_imm_generator(fast)
+# Loading work.pragya_imm_adder(fast)
+# Loading work.pragya_branch_unit(fast)
+# Loading work.pragya_alu_mux(fast)
+# Loading work.pragya_alu(fast)
+# Loading work.pragya_mdu(fast)
+# Loading work.pragya_de_mw_pipeline(fast)
+# Loading work.pragya_wb_mux(fast)
+# Loading work.pragya_lsu(fast)
+# Loading work.pragya_instr_mem_wrapper(fast)
+# Loading work.pragya_imem(fast)
+# Loading work.obi_ctrl(fast)
+# Loading work.pragya_data_mem_wrapper(fast)
+# Loading work.pragya_dmem(fast)
+# onfinish stop
+#  run -all
+# 
+# =========================================================================================================
+#   PRAGYA RV32IM SYSTEM & CSR COMPREHENSIVE ARCHITECTURE BENCHMARK
+# =========================================================================================================
+# 
+# ---------------------------------------------------------------------------------------------------------
+#   [TEST  1] Read-Only CSR IDs: marchid=5, mvendorid=0, mimpid=0, mhartid=0
+# ---------------------------------------------------------------------------------------------------------
+#    [PASS] marchid=0x00000005, mvendorid=0x00000000
+# 
+# ---------------------------------------------------------------------------------------------------------
+#   [TEST  2] MISA: Verification of RV32I base architecture lock
+# ---------------------------------------------------------------------------------------------------------
+#    [PASS] misa reset = 0x40001100, post-clear = 0x40000100
+# 
+# ---------------------------------------------------------------------------------------------------------
+#   [TEST  3] Unmapped CSR: Read from invalid address returns 0x00000000
+# ---------------------------------------------------------------------------------------------------------
+#    [PASS] x1 = 0x00000000 (exp 0x00000000)
+# 
+# ---------------------------------------------------------------------------------------------------------
+#   [TEST  4] Counters: mcycle (0xB00) and cycle (0xC00) increment monotonically
+# ---------------------------------------------------------------------------------------------------------
+#    [PASS] mcycle = 3, cycle = 5 (increasing)
+# 
+# ---------------------------------------------------------------------------------------------------------
+#   [TEST  5] MINSTRET: Write to minstret (0xB02) and instret (0xC02)
+# ---------------------------------------------------------------------------------------------------------
+#    [PASS] instret readback = 100 (>= 100)
+# 
+# ---------------------------------------------------------------------------------------------------------
+#   [TEST  6] Counters High: Write and Readback on mcycleh and minstreth
+# ---------------------------------------------------------------------------------------------------------
+#    [PASS] cycleh = 0x00000012, instreth = 0x00000012
+# 
+# ---------------------------------------------------------------------------------------------------------
+#   [TEST  7] MSTATUS: Privilege mode hardwired to 2'b11 (Machine Mode)
+# ---------------------------------------------------------------------------------------------------------
+#    [PASS] mstatus = 0x00001800, MPP[12:11] = 11
+# 
+# ---------------------------------------------------------------------------------------------------------
+#   [TEST  8] MIE: Unimplemented bits remain zero (mask 0x00000888)
+# ---------------------------------------------------------------------------------------------------------
+#    [PASS] mie = 0x00000888 (exp 0x00000888)
+# 
+# ---------------------------------------------------------------------------------------------------------
+#   [TEST  9] MSTATUS: MIE clears on trap, restored from MPIE on MRET
+# ---------------------------------------------------------------------------------------------------------
+#    [PASS] Trap mstatus=0x00001880 (MPIE=1), Return mstatus=0x00001888 (MIE=1)
+# 
+# ---------------------------------------------------------------------------------------------------------
+#   [TEST 10] MTVEC: Base address [31:2] and Mode [1:0] extraction
+# ---------------------------------------------------------------------------------------------------------
+#    [PASS] mtvec = 0x80000041 (Base=0x80000040, Mode=01)
+# 
+# ---------------------------------------------------------------------------------------------------------
+#   [TEST 11] Vectored Mode: Trap jumps to Base + (cause << 2)
+# ---------------------------------------------------------------------------------------------------------
+#    [PASS] Vectored interrupt taken to 0x8000006C (x6 = 0xee)
+# 
+# ---------------------------------------------------------------------------------------------------------
+#   [TEST 12] MEPC: Lower 2 bits are locked to zero (word-aligned)
+# ---------------------------------------------------------------------------------------------------------
+#    [PASS] mepc = 0x8000002c (exp 0x8000002C)
+# 
+# ---------------------------------------------------------------------------------------------------------
+#   [TEST 13] MTVAL: Exception address captured on EBREAK (mtval = fault PC)
+# ---------------------------------------------------------------------------------------------------------
+#    [PASS] mtval = 0x8000000c (exp PC 0x8000000C)
+# 
+# ---------------------------------------------------------------------------------------------------------
+#   [TEST 14] DCSR: Reset value 0x4a030003 & preserved read-only bits [8:6]
+# ---------------------------------------------------------------------------------------------------------
+#    [PASS] dcsr reset = 0x4a030003
+# 
+# ---------------------------------------------------------------------------------------------------------
+#   [TEST 15] Debug Registers: DPC, DSCRATCH0 and DSCRATCH1 full R/W
+# ---------------------------------------------------------------------------------------------------------
+#    [PASS] dpc=0x80000014, dscratch0=0xaa, dscratch1=0xbb
+# 
+# ---------------------------------------------------------------------------------------------------------
+#   [TEST 16] WFI: Freeze in STATE_WFI and wakeup via Software Interrupt
+# ---------------------------------------------------------------------------------------------------------
+#    [PASS] WFI woke up: ISR x6=0x77 (exp 0x77), Resumed x7=1 (exp 1)
+# 
+# 
+# =========================================================================================================
+#   SYSTEM & CSR BENCHMARK SUMMARY
+# =========================================================================================================
+# 
+# Total System Tests:   16
+# Passed:               16
+# Failed:               0
+# Success Rate:         100%
+# 
+# =========================================================================================================
+#                  ALL SYSTEM & CSR BENCHMARK TESTS PASSED CLEANLY!                                        
+# =========================================================================================================
+# 
+# ** Note: $finish    : tb/unit/tb_pragya_benchmark_system.sv(417)
+#    Time: 6395 ns  Iteration: 1  Instance: /tb_pragya_benchmark_system
+# Break in Module tb_pragya_benchmark_system at tb/unit/tb_pragya_benchmark_system.sv line 417
+# Stopped at tb/unit/tb_pragya_benchmark_system.sv line 417
+#  coverage save pragya_benchmark_system.ucdb
+#  quit -f
+# End time: 00:10:42 on Nov 06,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0

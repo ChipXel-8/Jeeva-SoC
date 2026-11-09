@@ -1,0 +1,166 @@
+Reading pref.tcl
+
+# 2021.3
+
+# vsim -64 -c tb_pragya_regfile_opt -coverage -do "onfinish stop; run -all; coverage save pragya_regfile.ucdb; quit -f" 
+# Start time: 15:17:55 on Nov 05,2026
+# //  ModelSim SE-64 2021.3 Jul 13 2021 Linux 4.18.0-348.7.1.el8_5.x86_64
+# //
+# //  Copyright 1991-2021 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim SE-64 and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.tb_pragya_regfile(fast)
+# Loading work.pragya_regfile(fast)
+# onfinish stop
+#  run -all
+# 
+# =======================================================
+#      STARTING PRAGYA REGFILE VERIFICATION SUITE       
+# =======================================================
+# 
+# --- [Group 1] Reset & Initial State ---
+# [PASS] RS1 Reset verification (x0) -> 0x00000000
+# [PASS] RS1 Reset verification (x1) -> 0x00000000
+# [PASS] RS2 Reset verification (x15) -> 0x00000000
+# [PASS] RS2 Reset verification (x31) -> 0x00000000
+# 
+# --- [Group 2] x0 Constant Zero & Write-Suppression ---
+# [PASS] RS1 x0 must stay 0 after write 0xDEADBEEF (x0) -> 0x00000000
+# [PASS] RS2 x0 read via RS2 port must also be 0 (x0) -> 0x00000000
+# [PASS] RS1 x0 must stay 0 after write 0xFFFFFFFF (x0) -> 0x00000000
+# 
+# --- [Group 3] Write & Independent Dual-Port Read ---
+# [PASS] RS1 Dual port RS1 (x1) -> 0xa0000101
+# [PASS] RS2 Dual port RS2 (x1) -> 0xa0000101
+# [PASS] RS1 Dual port RS1 (x2) -> 0xa0000202
+# [PASS] RS2 Dual port RS2 (x2) -> 0xa0000202
+# [PASS] RS1 Dual port RS1 (x3) -> 0xa0000303
+# [PASS] RS2 Dual port RS2 (x3) -> 0xa0000303
+# [PASS] RS1 Dual port RS1 (x4) -> 0xa0000404
+# [PASS] RS2 Dual port RS2 (x4) -> 0xa0000404
+# [PASS] RS1 Dual port RS1 (x5) -> 0xa0000505
+# [PASS] RS2 Dual port RS2 (x5) -> 0xa0000505
+# [PASS] RS1 Dual port RS1 (x6) -> 0xa0000606
+# [PASS] RS2 Dual port RS2 (x6) -> 0xa0000606
+# [PASS] RS1 Dual port RS1 (x7) -> 0xa0000707
+# [PASS] RS2 Dual port RS2 (x7) -> 0xa0000707
+# [PASS] RS1 Dual port RS1 (x8) -> 0xa0000808
+# [PASS] RS2 Dual port RS2 (x8) -> 0xa0000808
+# [PASS] RS1 Dual port RS1 (x9) -> 0xa0000909
+# [PASS] RS2 Dual port RS2 (x9) -> 0xa0000909
+# [PASS] RS1 Dual port RS1 (x10) -> 0xa0000a0a
+# [PASS] RS2 Dual port RS2 (x10) -> 0xa0000a0a
+# [PASS] RS1 Dual port RS1 (x11) -> 0xa0000b0b
+# [PASS] RS2 Dual port RS2 (x11) -> 0xa0000b0b
+# [PASS] RS1 Dual port RS1 (x12) -> 0xa0000c0c
+# [PASS] RS2 Dual port RS2 (x12) -> 0xa0000c0c
+# [PASS] RS1 Dual port RS1 (x13) -> 0xa0000d0d
+# [PASS] RS2 Dual port RS2 (x13) -> 0xa0000d0d
+# [PASS] RS1 Dual port RS1 (x14) -> 0xa0000e0e
+# [PASS] RS2 Dual port RS2 (x14) -> 0xa0000e0e
+# [PASS] RS1 Dual port RS1 (x15) -> 0xa0000f0f
+# [PASS] RS2 Dual port RS2 (x15) -> 0xa0000f0f
+# [PASS] RS1 Dual port RS1 (x16) -> 0xa0001010
+# [PASS] RS2 Dual port RS2 (x16) -> 0xa0001010
+# [PASS] RS1 Dual port RS1 (x17) -> 0xa0001111
+# [PASS] RS2 Dual port RS2 (x17) -> 0xa0001111
+# [PASS] RS1 Dual port RS1 (x18) -> 0xa0001212
+# [PASS] RS2 Dual port RS2 (x18) -> 0xa0001212
+# [PASS] RS1 Dual port RS1 (x19) -> 0xa0001313
+# [PASS] RS2 Dual port RS2 (x19) -> 0xa0001313
+# [PASS] RS1 Dual port RS1 (x20) -> 0xa0001414
+# [PASS] RS2 Dual port RS2 (x20) -> 0xa0001414
+# [PASS] RS1 Dual port RS1 (x21) -> 0xa0001515
+# [PASS] RS2 Dual port RS2 (x21) -> 0xa0001515
+# [PASS] RS1 Dual port RS1 (x22) -> 0xa0001616
+# [PASS] RS2 Dual port RS2 (x22) -> 0xa0001616
+# [PASS] RS1 Dual port RS1 (x23) -> 0xa0001717
+# [PASS] RS2 Dual port RS2 (x23) -> 0xa0001717
+# [PASS] RS1 Dual port RS1 (x24) -> 0xa0001818
+# [PASS] RS2 Dual port RS2 (x24) -> 0xa0001818
+# [PASS] RS1 Dual port RS1 (x25) -> 0xa0001919
+# [PASS] RS2 Dual port RS2 (x25) -> 0xa0001919
+# [PASS] RS1 Dual port RS1 (x26) -> 0xa0001a1a
+# [PASS] RS2 Dual port RS2 (x26) -> 0xa0001a1a
+# [PASS] RS1 Dual port RS1 (x27) -> 0xa0001b1b
+# [PASS] RS2 Dual port RS2 (x27) -> 0xa0001b1b
+# [PASS] RS1 Dual port RS1 (x28) -> 0xa0001c1c
+# [PASS] RS2 Dual port RS2 (x28) -> 0xa0001c1c
+# [PASS] RS1 Dual port RS1 (x29) -> 0xa0001d1d
+# [PASS] RS2 Dual port RS2 (x29) -> 0xa0001d1d
+# [PASS] RS1 Dual port RS1 (x30) -> 0xa0001e1e
+# [PASS] RS2 Dual port RS2 (x30) -> 0xa0001e1e
+# [PASS] RS1 Dual port RS1 (x31) -> 0xa0001f1f
+# [PASS] RS2 Dual port RS2 (x31) -> 0xa0001f1f
+# 
+# --- [Group 4] Same-Cycle Read/Write Hazard Tests ---
+# [PASS] RS1 Same-cycle RS1 before posedge clk (old value) (x5) -> 0x11111111
+# [PASS] RS2 Same-cycle RS2 before posedge clk (old value) (x5) -> 0x11111111
+# [PASS] RS1 Same-cycle RS1 after posedge clk (new value) (x5) -> 0x22222222
+# [PASS] RS2 Same-cycle RS2 after posedge clk (new value) (x5) -> 0x22222222
+# 
+# --- [Group 5] Write-Enable Deassertion Gating ---
+# [PASS] RS1 Value unchanged when reg_write_in=0 (x5) -> 0x22222222
+# 
+# --- [Group 6] Boundary Registers & Data Patterns ---
+# [PASS] RS1 Boundary x1 with alternating 0x55555555 (x1) -> 0x55555555
+# [PASS] RS2 Boundary x31 with alternating 0xAAAAAAAA (x31) -> 0xaaaaaaaa
+# [PASS] RS2 Boundary x31 with all 1s (0xFFFFFFFF) (x31) -> 0xffffffff
+# [PASS] RS1 Walking 1s data check (x10) -> 0x00000001
+# [PASS] RS1 Walking 1s data check (x10) -> 0x00000002
+# [PASS] RS1 Walking 1s data check (x10) -> 0x00000004
+# [PASS] RS1 Walking 1s data check (x10) -> 0x00000008
+# [PASS] RS1 Walking 1s data check (x10) -> 0x00000010
+# [PASS] RS1 Walking 1s data check (x10) -> 0x00000020
+# [PASS] RS1 Walking 1s data check (x10) -> 0x00000040
+# [PASS] RS1 Walking 1s data check (x10) -> 0x00000080
+# [PASS] RS1 Walking 1s data check (x10) -> 0x00000100
+# [PASS] RS1 Walking 1s data check (x10) -> 0x00000200
+# [PASS] RS1 Walking 1s data check (x10) -> 0x00000400
+# [PASS] RS1 Walking 1s data check (x10) -> 0x00000800
+# [PASS] RS1 Walking 1s data check (x10) -> 0x00001000
+# [PASS] RS1 Walking 1s data check (x10) -> 0x00002000
+# [PASS] RS1 Walking 1s data check (x10) -> 0x00004000
+# [PASS] RS1 Walking 1s data check (x10) -> 0x00008000
+# [PASS] RS1 Walking 1s data check (x10) -> 0x00010000
+# [PASS] RS1 Walking 1s data check (x10) -> 0x00020000
+# [PASS] RS1 Walking 1s data check (x10) -> 0x00040000
+# [PASS] RS1 Walking 1s data check (x10) -> 0x00080000
+# [PASS] RS1 Walking 1s data check (x10) -> 0x00100000
+# [PASS] RS1 Walking 1s data check (x10) -> 0x00200000
+# [PASS] RS1 Walking 1s data check (x10) -> 0x00400000
+# [PASS] RS1 Walking 1s data check (x10) -> 0x00800000
+# [PASS] RS1 Walking 1s data check (x10) -> 0x01000000
+# [PASS] RS1 Walking 1s data check (x10) -> 0x02000000
+# [PASS] RS1 Walking 1s data check (x10) -> 0x04000000
+# [PASS] RS1 Walking 1s data check (x10) -> 0x08000000
+# [PASS] RS1 Walking 1s data check (x10) -> 0x10000000
+# [PASS] RS1 Walking 1s data check (x10) -> 0x20000000
+# [PASS] RS1 Walking 1s data check (x10) -> 0x40000000
+# [PASS] RS1 Walking 1s data check (x10) -> 0x80000000
+# 
+# --- [Group 7] Mid-Operation Reset Clearing ---
+# [PASS] RS1 Async reset immediately clears x1 (x1) -> 0x00000000
+# [PASS] RS2 Async reset immediately clears x31 (x31) -> 0x00000000
+# 
+# =======================================================
+#    TEST SUMMARY: ALL 111 CHECKS PASSED PERFECTLY!       
+# =======================================================
+# 
+# ** Note: $finish    : tb/unit/tb_pragya_regfile.sv(223)
+#    Time: 815 ns  Iteration: 1  Instance: /tb_pragya_regfile
+# Break in Module tb_pragya_regfile at tb/unit/tb_pragya_regfile.sv line 223
+# Stopped at tb/unit/tb_pragya_regfile.sv line 223
+#  coverage save pragya_regfile.ucdb
+#  quit -f
+# End time: 15:17:55 on Nov 05,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0

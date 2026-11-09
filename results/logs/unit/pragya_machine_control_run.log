@@ -1,0 +1,57 @@
+Reading pref.tcl
+
+# 2021.3
+
+# vsim -64 -c tb_pragya_machine_control_opt -coverage -do "onfinish stop; run -all; coverage save pragya_machine_control.ucdb; quit -f" 
+# Start time: 21:31:51 on Nov 05,2026
+# //  ModelSim SE-64 2021.3 Jul 13 2021 Linux 4.18.0-348.7.1.el8_5.x86_64
+# //
+# //  Copyright 1991-2021 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim SE-64 and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.tb_pragya_machine_control(fast)
+# Loading work.pragya_machine_control(fast)
+# onfinish stop
+#  run -all
+# Starting Pragya Machine Control Unit Verification...
+# [PASS] Reset State: pc_src_out = 2'b00 (PC_BOOT)
+# [PASS] Operating State Entered: pc_src_out = 2'b11 (PC_NEXT)
+# [PASS] instret_inc_out tracks retire_valid
+# [PASS] Timer Interrupt Trap: Cause=7 (0111), i_or_e=1, pc_src=PC_TRAP
+# [PASS] Software Interrupt Trap: Cause=3 (0011), i_or_e=1
+# [PASS] External Interrupt Trap: Cause=11 (1011), i_or_e=1
+# [PASS] Priority Resolution: External Interrupt correctly took precedence
+# [PASS] Global MIE=0 correctly masked external interrupt
+# [PASS] Illegal Instruction: Cause=2, i_or_e=0, mtval=0xDEADBEEF
+# [PASS] Misaligned Instruction: Cause=0, i_or_e=0, mtval=0x10000003
+# [PASS] ECALL: Cause=11, i_or_e=0 (Environment Call from M-mode), mtval=0
+# [PASS] EBREAK: Cause=3, i_or_e=0, mtval=pc (0x00020008)
+# [PASS] mret_detected_out asserted
+# [PASS] MRET Trap Return: pc_src_out = 2'b01 (PC_EPC), mie_set_out = 1
+# [PASS] WFI State Entered: wfi_stall_out asserted
+# [PASS] Core remains in WFI sleep without interrupts
+# [PASS] Core woke from WFI successfully upon interrupt (wfi_stall_out cleared)
+# [PASS] Debug Mode: Traps successfully suppressed (trap_detected_out = 0)
+# [PASS] Resumed from Debug Mode to normal execution
+# 
+# =======================================================
+#    TEST SUMMARY: ALL 33 CHECKS PASSED PERFECTLY!       
+# =======================================================
+# 
+# ** Note: $finish    : tb/unit/tb_pragya_machine_control.sv(495)
+#    Time: 286 ns  Iteration: 0  Instance: /tb_pragya_machine_control
+# Break in Module tb_pragya_machine_control at tb/unit/tb_pragya_machine_control.sv line 495
+# Stopped at tb/unit/tb_pragya_machine_control.sv line 495
+#  coverage save pragya_machine_control.ucdb
+#  quit -f
+# End time: 21:31:52 on Nov 05,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0

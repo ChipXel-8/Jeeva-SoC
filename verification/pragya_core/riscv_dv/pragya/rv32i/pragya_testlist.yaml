@@ -1,0 +1,454 @@
+#===========================================================
+# PRAGYA RISC-V-DV TESTLIST
+# RV32IM + Zicsr Machine Mode
+#===========================================================
+
+#-----------------------------------------------------------
+# ALU
+#-----------------------------------------------------------
+
+- test: pragya_arithmetic_basic_test
+  description: >
+    RV32I arithmetic and logical instructions
+
+  iterations: 20
+
+  gen_test: riscv_instr_base_test
+
+  gen_opts: >
+    +instr_cnt=2500
+    +num_of_sub_program=0
+    +boot_mode=m
+    +no_branch_jump=1
+    +no_load_store=1
+    +no_csr_instr=1
+    +no_fence=1
+    +no_data_page=1
+    +illegal_instr_ratio=0
+    +hint_instr_ratio=0
+    +disable_compressed_instr=1
+
+  rtl_test: core_base_test
+
+#-----------------------------------------------------------
+# LOAD STORE
+#-----------------------------------------------------------
+
+- test: pragya_mem_access_test
+  description: >
+    Aligned load/store verification
+
+  iterations: 20
+
+  gen_test: riscv_instr_base_test
+
+  gen_opts: >
+    +instr_cnt=5000
+    +num_of_sub_program=3
+    +boot_mode=m
+    +no_fence=1
+    +illegal_instr_ratio=0
+    +hint_instr_ratio=0
+    +disable_compressed_instr=1
+
+  rtl_test: core_base_test
+
+#-----------------------------------------------------------
+# MISALIGNED LOAD / STORE
+#-----------------------------------------------------------
+
+- test: pragya_misaligned_mem_test
+  description: >
+    Misaligned load and store exception verification
+
+  iterations: 20
+
+  gen_test: riscv_instr_base_test
+
+  gen_opts: >
+    +instr_cnt=3000
+    +num_of_sub_program=2
+    +boot_mode=m
+    +enable_unaligned_load_store=1
+    +no_fence=1
+    +illegal_instr_ratio=0
+    +hint_instr_ratio=0
+    +disable_compressed_instr=1
+
+  rtl_test: core_base_test
+
+#-----------------------------------------------------------
+# BRANCH / JUMP
+#-----------------------------------------------------------
+
+- test: pragya_branch_jump_test
+  description: >
+    Branch and jump verification
+
+  iterations: 20
+
+  gen_test: riscv_instr_base_test
+
+  gen_opts: >
+    +instr_cnt=5000
+    +num_of_sub_program=3
+    +boot_mode=m
+    +no_fence=1
+    +illegal_instr_ratio=0
+    +hint_instr_ratio=0
+    +disable_compressed_instr=1
+
+  rtl_test: core_base_test
+
+#-----------------------------------------------------------
+# CSR
+#-----------------------------------------------------------
+
+- test: pragya_csr_test
+  description: >
+    CSR instruction verification
+
+  iterations: 50
+
+  gen_test: riscv_instr_base_test
+
+  gen_opts: >
+    +instr_cnt=3000
+    +num_of_sub_program=4
+    +boot_mode=m
+    +no_load_store=1
+    +no_branch_jump=1
+    +no_fence=1
+    +illegal_instr_ratio=0
+    +hint_instr_ratio=0
+    +disable_compressed_instr=1
+
+  rtl_test: core_base_test
+
+#-----------------------------------------------------------
+# CSR STRESS
+#-----------------------------------------------------------
+
+- test: pragya_csr_stress_test
+  description: >
+    CSR stress verification including CSR read, write,
+    set, clear and immediate CSR operations
+
+  iterations: 50
+
+  gen_test: riscv_instr_base_test
+
+  gen_opts: >
+    +instr_cnt=6000
+    +num_of_sub_program=6
+    +boot_mode=m
+    +no_load_store=1
+    +no_branch_jump=1
+    +no_fence=1
+    +illegal_instr_ratio=0
+    +hint_instr_ratio=0
+    +disable_compressed_instr=1
+
+  rtl_test: core_base_test
+
+
+#-----------------------------------------------------------
+# EXCEPTIONS
+#-----------------------------------------------------------
+
+- test: pragya_exception_test
+  description: >
+    Machine-mode exception verification including
+    illegal instruction and instruction address misaligned
+
+  iterations: 20
+
+  gen_test: riscv_instr_base_test
+
+  gen_opts: >
+    +instr_cnt=3000
+    +num_of_sub_program=2
+    +boot_mode=m
+    +no_load_store=1
+    +no_branch_jump=1
+    +no_fence=1
+    +illegal_instr_ratio=10
+    +hint_instr_ratio=0
+    +disable_compressed_instr=1
+
+  rtl_test: core_base_test
+
+
+#-----------------------------------------------------------
+# EXCEPTION STRESS
+#-----------------------------------------------------------
+
+- test: pragya_exception_stress_test
+  description: >
+    Stress verification of machine-mode exceptions,
+    trap entry, MEPC, MCAUSE, MTVEC and MSTATUS
+
+  iterations: 20
+
+  gen_test: riscv_instr_base_test
+
+  gen_opts: >
+    +instr_cnt=6000
+    +num_of_sub_program=4
+    +boot_mode=m
+    +no_load_store=1
+    +no_branch_jump=1
+    +no_fence=1
+    +illegal_instr_ratio=20
+    +hint_instr_ratio=0
+    +disable_compressed_instr=1
+
+  rtl_test: core_base_test
+
+
+#-----------------------------------------------------------
+# ECALL / EBREAK / MRET
+#-----------------------------------------------------------
+
+- test: pragya_ecall_ebreak_test
+  description: >
+    ECALL, EBREAK and MRET machine-mode trap handling
+
+  iterations: 20
+
+  gen_test: riscv_instr_base_test
+
+  gen_opts: >
+    +instr_cnt=3000
+    +num_of_sub_program=2
+    +boot_mode=m
+    +no_load_store=1
+    +no_branch_jump=1
+    +no_fence=1
+    +illegal_instr_ratio=0
+    +hint_instr_ratio=0
+    +disable_compressed_instr=1
+
+  rtl_test: core_base_test
+
+
+#-----------------------------------------------------------
+# INTERRUPTS
+#-----------------------------------------------------------
+
+- test: pragya_interrupt_test
+  description: >
+    Machine-mode external, timer and software interrupt
+    verification
+
+  iterations: 20
+
+  gen_test: riscv_instr_base_test
+
+  gen_opts: >
+    +instr_cnt=3000
+    +num_of_sub_program=2
+    +boot_mode=m
+    +enable_interrupt=1
+    +enable_timer_irq=1
+    +no_load_store=1
+    +no_branch_jump=1
+    +no_fence=1
+    +illegal_instr_ratio=0
+    +hint_instr_ratio=0
+    +disable_compressed_instr=1
+
+  rtl_test: core_base_test
+
+
+#-----------------------------------------------------------
+# INTERRUPT STRESS
+#-----------------------------------------------------------
+
+- test: pragya_interrupt_stress_test
+  description: >
+    Stress verification of machine-mode interrupts,
+    MIE, MIP, MSTATUS, trap entry and MRET
+
+  iterations: 20
+
+  gen_test: riscv_instr_base_test
+
+  gen_opts: >
+    +instr_cnt=6000
+    +num_of_sub_program=4
+    +boot_mode=m
+    +enable_interrupt=1
+    +enable_timer_irq=1
+    +no_load_store=1
+    +no_branch_jump=1
+    +no_fence=1
+    +illegal_instr_ratio=0
+    +hint_instr_ratio=0
+    +disable_compressed_instr=1
+
+  rtl_test: core_base_test
+
+  sim_opts: >
+    +enable_irq_seq=1
+
+
+#-----------------------------------------------------------
+# COMPLETE SYSTEM
+#-----------------------------------------------------------
+
+- test: pragya_system_test
+  description: >
+    Complete RV32IM Zicsr machine-mode system verification
+    including CSR, exceptions, interrupts and trap handling
+
+  iterations: 30
+
+  gen_test: riscv_instr_base_test
+
+  gen_opts: >
+    +instr_cnt=7000
+    +num_of_sub_program=5
+    +boot_mode=m
+    +no_fence=1
+    +illegal_instr_ratio=5
+    +hint_instr_ratio=0
+    +disable_compressed_instr=1
+
+  rtl_test: core_base_test
+#-----------------------------------------------------------
+# RV32M
+#-----------------------------------------------------------
+
+- test: pragya_rv32m_test
+  description: >
+    Multiply and Divide verification
+
+  iterations: 20
+
+  gen_test: riscv_instr_base_test
+
+  gen_opts: >
+    +instr_cnt=5000
+    +num_of_sub_program=3
+    +boot_mode=m
+    +no_fence=1
+    +illegal_instr_ratio=0
+    +hint_instr_ratio=0
+    +disable_compressed_instr=1
+
+  rtl_test: core_base_test
+
+#-----------------------------------------------------------
+# PIPELINE STRESS
+#-----------------------------------------------------------
+
+- test: pragya_pipeline_stress
+  description: >
+    Pipeline forwarding and RAW hazard stress
+
+  iterations: 20
+
+  gen_test: riscv_instr_base_test
+
+  gen_opts: >
+    +instr_cnt=6000
+    +num_of_sub_program=4
+    +boot_mode=m
+    +no_fence=1
+    +illegal_instr_ratio=0
+    +hint_instr_ratio=0
+    +disable_compressed_instr=1
+
+  rtl_test: core_base_test
+
+#-----------------------------------------------------------
+# MEMORY STRESS
+#-----------------------------------------------------------
+
+- test: pragya_memory_stress
+  description: >
+    Heavy aligned memory traffic
+
+  iterations: 20
+
+  gen_test: riscv_instr_base_test
+
+  gen_opts: >
+    +instr_cnt=6000
+    +num_of_sub_program=4
+    +boot_mode=m
+    +no_fence=1
+    +illegal_instr_ratio=0
+    +hint_instr_ratio=0
+    +disable_compressed_instr=1
+
+  rtl_test: core_base_test
+
+#-----------------------------------------------------------
+# BRANCH STRESS
+#-----------------------------------------------------------
+
+- test: pragya_branch_stress
+  description: >
+    Heavy branch verification
+
+  iterations: 20
+
+  gen_test: riscv_instr_base_test
+
+  gen_opts: >
+    +instr_cnt=6000
+    +num_of_sub_program=4
+    +boot_mode=m
+    +no_fence=1
+    +illegal_instr_ratio=0
+    +hint_instr_ratio=0
+    +disable_compressed_instr=1
+
+  rtl_test: core_base_test
+
+#-----------------------------------------------------------
+# GENERAL RANDOM
+#-----------------------------------------------------------
+
+- test: pragya_random_test
+  description: >
+    Full RV32IM random verification
+
+  iterations: 30
+
+  gen_test: riscv_instr_base_test
+
+  gen_opts: >
+    +instr_cnt=6500
+    +num_of_sub_program=5
+    +boot_mode=m
+    +no_fence=1
+    +illegal_instr_ratio=0
+    +hint_instr_ratio=0
+    +disable_compressed_instr=1
+
+  rtl_test: core_base_test
+
+#-----------------------------------------------------------
+# LONG RANDOM
+#-----------------------------------------------------------
+- test: pragya_long_random
+
+  iterations: 10
+
+  gen_test: riscv_instr_base_test
+
+  gen_opts: >
+    +instr_cnt=7000
+    +num_of_sub_program=5
+    +boot_mode=m
+    +no_fence=1
+    +illegal_instr_ratio=0
+    +hint_instr_ratio=0
+    +disable_compressed_instr=1
+  rtl_test: core_base_test
+
+  rtl_test: core_base_test
+

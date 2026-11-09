@@ -1,0 +1,114 @@
+Reading pref.tcl
+
+# 2021.3
+
+# vsim -64 -c tb_pragya_alu_mux_opt -coverage -do "onfinish stop; run -all; coverage save pragya_alu_mux.ucdb; quit -f" 
+# Start time: 17:24:59 on Nov 05,2026
+# //  ModelSim SE-64 2021.3 Jul 13 2021 Linux 4.18.0-348.7.1.el8_5.x86_64
+# //
+# //  Copyright 1991-2021 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim SE-64 and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.tb_pragya_alu_mux(fast)
+# Loading work.pragya_alu_mux(fast)
+# onfinish stop
+#  run -all
+# Starting Pragya ALU Mux Verification...
+# [PASS] Select rs_2_in (sel=0) | sel=0 -> Out: 0xdeadbeef
+# [PASS] Select imm_in (sel=1) | sel=1 -> Out: 0x12345678
+# [PASS] Isolation: imm=0 when sel=0 | sel=0 -> Out: 0xcafebabe
+# [PASS] Isolation: imm=FFFFFFFF when sel=0 | sel=0 -> Out: 0xcafebabe
+# [PASS] Isolation: rs2=0 when sel=1 | sel=1 -> Out: 0xbaadf00d
+# [PASS] Isolation: rs2=FFFFFFFF when sel=1 | sel=1 -> Out: 0xbaadf00d
+# [PASS] Boundary: All 0s on rs2 | sel=0 -> Out: 0x00000000
+# [PASS] Boundary: All 0s on imm | sel=1 -> Out: 0x00000000
+# [PASS] Boundary: All 1s on rs2 | sel=0 -> Out: 0xffffffff
+# [PASS] Boundary: All 1s on imm | sel=1 -> Out: 0xffffffff
+# [PASS] Alternating: 0x55555555 on rs2 | sel=0 -> Out: 0x55555555
+# [PASS] Alternating: 0xAAAAAAAA on imm | sel=1 -> Out: 0xaaaaaaaa
+# [PASS] Walking 1 on rs2 | sel=0 -> Out: 0x00000001
+# [PASS] Walking 1 on imm | sel=1 -> Out: 0x00000001
+# [PASS] Walking 1 on rs2 | sel=0 -> Out: 0x00000002
+# [PASS] Walking 1 on imm | sel=1 -> Out: 0x00000002
+# [PASS] Walking 1 on rs2 | sel=0 -> Out: 0x00000004
+# [PASS] Walking 1 on imm | sel=1 -> Out: 0x00000004
+# [PASS] Walking 1 on rs2 | sel=0 -> Out: 0x00000008
+# [PASS] Walking 1 on imm | sel=1 -> Out: 0x00000008
+# [PASS] Walking 1 on rs2 | sel=0 -> Out: 0x00000010
+# [PASS] Walking 1 on imm | sel=1 -> Out: 0x00000010
+# [PASS] Walking 1 on rs2 | sel=0 -> Out: 0x00000020
+# [PASS] Walking 1 on imm | sel=1 -> Out: 0x00000020
+# [PASS] Walking 1 on rs2 | sel=0 -> Out: 0x00000040
+# [PASS] Walking 1 on imm | sel=1 -> Out: 0x00000040
+# [PASS] Walking 1 on rs2 | sel=0 -> Out: 0x00000080
+# [PASS] Walking 1 on imm | sel=1 -> Out: 0x00000080
+# [PASS] Walking 1 on rs2 | sel=0 -> Out: 0x00000100
+# [PASS] Walking 1 on imm | sel=1 -> Out: 0x00000100
+# [PASS] Walking 1 on rs2 | sel=0 -> Out: 0x00000200
+# [PASS] Walking 1 on imm | sel=1 -> Out: 0x00000200
+# [PASS] Walking 1 on rs2 | sel=0 -> Out: 0x00000400
+# [PASS] Walking 1 on imm | sel=1 -> Out: 0x00000400
+# [PASS] Walking 1 on rs2 | sel=0 -> Out: 0x00000800
+# [PASS] Walking 1 on imm | sel=1 -> Out: 0x00000800
+# [PASS] Walking 1 on rs2 | sel=0 -> Out: 0x00001000
+# [PASS] Walking 1 on imm | sel=1 -> Out: 0x00001000
+# [PASS] Walking 1 on rs2 | sel=0 -> Out: 0x00002000
+# [PASS] Walking 1 on imm | sel=1 -> Out: 0x00002000
+# [PASS] Walking 1 on rs2 | sel=0 -> Out: 0x00004000
+# [PASS] Walking 1 on imm | sel=1 -> Out: 0x00004000
+# [PASS] Walking 1 on rs2 | sel=0 -> Out: 0x00008000
+# [PASS] Walking 1 on imm | sel=1 -> Out: 0x00008000
+# [PASS] Walking 1 on rs2 | sel=0 -> Out: 0x00010000
+# [PASS] Walking 1 on imm | sel=1 -> Out: 0x00010000
+# [PASS] Walking 1 on rs2 | sel=0 -> Out: 0x00020000
+# [PASS] Walking 1 on imm | sel=1 -> Out: 0x00020000
+# [PASS] Walking 1 on rs2 | sel=0 -> Out: 0x00040000
+# [PASS] Walking 1 on imm | sel=1 -> Out: 0x00040000
+# [PASS] Walking 1 on rs2 | sel=0 -> Out: 0x00080000
+# [PASS] Walking 1 on imm | sel=1 -> Out: 0x00080000
+# [PASS] Walking 1 on rs2 | sel=0 -> Out: 0x00100000
+# [PASS] Walking 1 on imm | sel=1 -> Out: 0x00100000
+# [PASS] Walking 1 on rs2 | sel=0 -> Out: 0x00200000
+# [PASS] Walking 1 on imm | sel=1 -> Out: 0x00200000
+# [PASS] Walking 1 on rs2 | sel=0 -> Out: 0x00400000
+# [PASS] Walking 1 on imm | sel=1 -> Out: 0x00400000
+# [PASS] Walking 1 on rs2 | sel=0 -> Out: 0x00800000
+# [PASS] Walking 1 on imm | sel=1 -> Out: 0x00800000
+# [PASS] Walking 1 on rs2 | sel=0 -> Out: 0x01000000
+# [PASS] Walking 1 on imm | sel=1 -> Out: 0x01000000
+# [PASS] Walking 1 on rs2 | sel=0 -> Out: 0x02000000
+# [PASS] Walking 1 on imm | sel=1 -> Out: 0x02000000
+# [PASS] Walking 1 on rs2 | sel=0 -> Out: 0x04000000
+# [PASS] Walking 1 on imm | sel=1 -> Out: 0x04000000
+# [PASS] Walking 1 on rs2 | sel=0 -> Out: 0x08000000
+# [PASS] Walking 1 on imm | sel=1 -> Out: 0x08000000
+# [PASS] Walking 1 on rs2 | sel=0 -> Out: 0x10000000
+# [PASS] Walking 1 on imm | sel=1 -> Out: 0x10000000
+# [PASS] Walking 1 on rs2 | sel=0 -> Out: 0x20000000
+# [PASS] Walking 1 on imm | sel=1 -> Out: 0x20000000
+# [PASS] Walking 1 on rs2 | sel=0 -> Out: 0x40000000
+# [PASS] Walking 1 on imm | sel=1 -> Out: 0x40000000
+# [PASS] Walking 1 on rs2 | sel=0 -> Out: 0x80000000
+# [PASS] Walking 1 on imm | sel=1 -> Out: 0x80000000
+# 
+# =======================================================
+#    TEST SUMMARY: ALL 76 CHECKS PASSED PERFECTLY!       
+# =======================================================
+# 
+# ** Note: $finish    : tb/unit/tb_pragya_alu_mux.sv(110)
+#    Time: 76 ns  Iteration: 0  Instance: /tb_pragya_alu_mux
+# Break in Module tb_pragya_alu_mux at tb/unit/tb_pragya_alu_mux.sv line 110
+# Stopped at tb/unit/tb_pragya_alu_mux.sv line 110
+#  coverage save pragya_alu_mux.ucdb
+#  quit -f
+# End time: 17:25:00 on Nov 05,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
