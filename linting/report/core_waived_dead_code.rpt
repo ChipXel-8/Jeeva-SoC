@@ -1,0 +1,111 @@
+================================================
+  Jasper - Superlint Violation/Property Report  
+================================================
+
+---[ <Report Information> ]--------------------
+-----------------------------------------------
+ Num  | module      | created date             
+-----------------------------------------------
+[1]     pragya_core   Nov 15 14:55:43 IST 2026 
+
+
+********************************************************************************************
+
+
+********************************************************************************************
+
+PROPERTIES SUMMARY
+---[ <Domain: AUTO_FORMAL> ]---------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------
+ Num  | Category              | CEX | Unreachable | Unprocessed | Undetermined | Proven | Covered | Waived | Total 
+-------------------------------------------------------------------------------------------------------------------
+[1]     AUTO_FORMAL_DEAD_CODE   0     0             0             0              0        0         19       19    
+
+---[ <AUTO_FORMAL_DEAD_CODE> ]-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Num  | Status                                                                                                                                                                                          | Tag         | Property Name      | Engine | Time | Bound | Source Location                                                         | Instance-Module                             | Grouping status 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[1]     Waived (Reviewed by RTL designer.
+Intentional default assignments in PRAGYA CORE  RISC-V RTL.
+These statements are reported as unreachable by
+automatically generated formal dead-code checks.)   BLK_NO_RCHB   dead_code_prop_20    ?        0      1 -     /home/tops3/Downloads/jeeva_soc/core_rtl/pc_unit.v :179                   u_pc_unit-pc_unit                             -               
+[2]     Waived (Reviewed by RTL designer.
+Intentional default assignments in PRAGYA CORE  RISC-V RTL.
+These statements are reported as unreachable by
+automatically generated formal dead-code checks.)   BLK_NO_RCHB   dead_code_prop_40    ?        0      1 -     /home/tops3/Downloads/jeeva_soc/core_rtl/pragya_alu.v :43                 alu_inst-pragya_alu                           -               
+[3]     Waived (Reviewed by RTL designer.
+Intentional default assignments in PRAGYA CORE  RISC-V RTL.
+These statements are reported as unreachable by
+automatically generated formal dead-code checks.)   BLK_NO_RCHB   dead_code_prop_124   ?        0      1 -     /home/tops3/Downloads/jeeva_soc/core_rtl/pragya_csr.v :522                csr_inst-pragya_csr                           -               
+[4]     Waived (Reviewed by RTL designer.
+Intentional default assignments in PRAGYA CORE  RISC-V RTL.
+These statements are reported as unreachable by
+automatically generated formal dead-code checks.)   BLK_NO_RCHB   dead_code_prop_125   ?        0      1 -     /home/tops3/Downloads/jeeva_soc/core_rtl/pragya_csr.v :523                csr_inst-pragya_csr                           -               
+[5]     Waived (Reviewed by RTL designer.
+Intentional default assignments in PRAGYA CORE  RISC-V RTL.
+These statements are reported as unreachable by
+automatically generated formal dead-code checks.)   BLK_NO_RCHB   dead_code_prop_126   ?        0      1 -     /home/tops3/Downloads/jeeva_soc/core_rtl/pragya_csr.v :524                csr_inst-pragya_csr                           -               
+[6]     Waived (Reviewed by RTL designer.
+Intentional default assignments in PRAGYA CORE  RISC-V RTL.
+These statements are reported as unreachable by
+automatically generated formal dead-code checks.)   BLK_NO_RCHB   dead_code_prop_127   ?        0      1 -     /home/tops3/Downloads/jeeva_soc/core_rtl/pragya_csr.v :525                csr_inst-pragya_csr                           -               
+[7]     Waived (Reviewed by RTL designer.
+Intentional default assignments in PRAGYA CORE  RISC-V RTL.
+These statements are reported as unreachable by
+automatically generated formal dead-code checks.)   BLK_NO_RCHB   dead_code_prop_128   ?        0      1 -     /home/tops3/Downloads/jeeva_soc/core_rtl/pragya_de_mw_pipeline.v :85      pipeline2_inst-pragya_de_mw_pipeline          -               
+[8]     Waived (Reviewed by RTL designer.
+Intentional default assignments in PRAGYA CORE  RISC-V RTL.
+These statements are reported as unreachable by
+automatically generated formal dead-code checks.)   BLK_NO_RCHB   dead_code_prop_161   ?        0      1 -     /home/tops3/Downloads/jeeva_soc/core_rtl/pragya_decoder.v :682            decoder_inst-pragya_decoder                   -               
+[9]     Waived (Reviewed by RTL designer.
+Intentional default assignments in PRAGYA CORE  RISC-V RTL.
+These statements are reported as unreachable by
+automatically generated formal dead-code checks.)   BLK_NO_RCHB   dead_code_prop_175   ?        0      1 -     /home/tops3/Downloads/jeeva_soc/core_rtl/pragya_decoder.v :719            decoder_inst-pragya_decoder                   -               
+[10]    Waived (Reviewed by RTL designer.
+Intentional default assignments in PRAGYA CORE  RISC-V RTL.
+These statements are reported as unreachable by
+automatically generated formal dead-code checks.)   BLK_NO_RCHB   dead_code_prop_194   ?        0      1 -     /home/tops3/Downloads/jeeva_soc/core_rtl/pragya_imm_generator.v :33       imm_gen_inst-pragya_imm_generator             -               
+[11]    Waived (Reviewed by RTL designer.
+Intentional default assignments in PRAGYA CORE  RISC-V RTL.
+These statements are reported as unreachable by
+automatically generated formal dead-code checks.)   BLK_NO_RCHB   dead_code_prop_211   ?        0      1 -     /home/tops3/Downloads/jeeva_soc/core_rtl/pragya_machine_control.v :430    machine_control_inst-pragya_machine_control   -               
+[12]    Waived (Reviewed by RTL designer.
+Intentional default assignments in PRAGYA CORE  RISC-V RTL.
+These statements are reported as unreachable by
+automatically generated formal dead-code checks.)   BLK_NO_RCHB   dead_code_prop_213   ?        0      1 -     /home/tops3/Downloads/jeeva_soc/core_rtl/pragya_machine_control.v :437    machine_control_inst-pragya_machine_control   -               
+[13]    Waived (Reviewed by RTL designer.
+Intentional default assignments in PRAGYA CORE  RISC-V RTL.
+These statements are reported as unreachable by
+automatically generated formal dead-code checks.)   BLK_NO_RCHB   dead_code_prop_214   ?        0      1 -     /home/tops3/Downloads/jeeva_soc/core_rtl/pragya_machine_control.v :439    machine_control_inst-pragya_machine_control   -               
+[14]    Waived (Reviewed by RTL designer.
+Intentional default assignments in PRAGYA CORE  RISC-V RTL.
+These statements are reported as unreachable by
+automatically generated formal dead-code checks.)   BLK_NO_RCHB   dead_code_prop_217   ?        0      1 -     /home/tops3/Downloads/jeeva_soc/core_rtl/pragya_machine_control.v :449    machine_control_inst-pragya_machine_control   -               
+[15]    Waived (Reviewed by RTL designer.
+Intentional default assignments in PRAGYA CORE  RISC-V RTL.
+These statements are reported as unreachable by
+automatically generated formal dead-code checks.)   BLK_NO_RCHB   dead_code_prop_219   ?        0      1 -     /home/tops3/Downloads/jeeva_soc/core_rtl/pragya_machine_control.v :475    machine_control_inst-pragya_machine_control   -               
+[16]    Waived (Reviewed by RTL designer.
+Intentional default assignments in PRAGYA CORE  RISC-V RTL.
+These statements are reported as unreachable by
+automatically generated formal dead-code checks.)   BLK_NO_RCHB   dead_code_prop_222   ?        0      1 -     /home/tops3/Downloads/jeeva_soc/core_rtl/pragya_machine_control.v :502    machine_control_inst-pragya_machine_control   -               
+[17]    Waived (Reviewed by RTL designer.
+Intentional default assignments in PRAGYA CORE  RISC-V RTL.
+These statements are reported as unreachable by
+automatically generated formal dead-code checks.)   BLK_NO_RCHB   dead_code_prop_250   ?        0      1 -     /home/tops3/Downloads/jeeva_soc/core_rtl/pragya_mdu.v :532                mdu_inst-pragya_mdu                           -               
+[18]    Waived (Reviewed by RTL designer.
+Intentional default assignments in PRAGYA CORE  RISC-V RTL.
+These statements are reported as unreachable by
+automatically generated formal dead-code checks.)   BLK_NO_RCHB   dead_code_prop_254   ?        0      1 -     /home/tops3/Downloads/jeeva_soc/core_rtl/pragya_mdu.v :546                mdu_inst-pragya_mdu                           -               
+[19]    Waived (Reviewed by RTL designer.
+Intentional default assignments in PRAGYA CORE  RISC-V RTL.
+These statements are reported as unreachable by
+automatically generated formal dead-code checks.)   BLK_NO_RCHB   dead_code_prop_287   ?        0      1 -     /home/tops3/Downloads/jeeva_soc/core_rtl/pragya_wb_mux.v :32              wb_mux_inst-pragya_wb_mux                     -               
+
+
+
+********************************************************************************************
+
+
+
+[Jasper 2022.09] [Platform Linux] [Version 2022.09p002 64 bits] [Build date 2022.11.24 12:29:17 UTC]

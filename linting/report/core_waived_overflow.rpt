@@ -1,0 +1,101 @@
+================================================
+  Jasper - Superlint Violation/Property Report  
+================================================
+
+---[ <Report Information> ]--------------------
+-----------------------------------------------
+ Num  | module      | created date             
+-----------------------------------------------
+[1]     pragya_core   Nov 15 14:55:43 IST 2026 
+
+
+********************************************************************************************
+
+
+********************************************************************************************
+
+PROPERTIES SUMMARY
+---[ <Domain: AUTO_FORMAL> ]--------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------
+ Num  | Category             | CEX | Unreachable | Unprocessed | Undetermined | Proven | Covered | Waived | Total 
+------------------------------------------------------------------------------------------------------------------
+[1]     AUTO_FORMAL_OVERFLOW   0     0             0             0              0        0         11       11    
+
+---[ <AUTO_FORMAL_OVERFLOW> ]----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Num  | Status                                                                                                                                                                                                                                      | Tag         | Property Name                               | Engine | Time | Bound | Source Location                                                  | Instance-Module                 | Grouping status 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[1]     Waived (Reviewed by RTL designer.
+Overflow is intentional due to fixed-width arithmetic
+in the PRAGYA RISC-V core.
+Result truncation follows the defined 32-bit
+RISC-V arithmetic behavior.
+No unintended functional overflow is expected.)   ASG_AR_OVFL   arithmetic_overflow_assignment_prop_9         ?        0      1 -     /home/tops3/Downloads/jeeva_soc/core_rtl/pragya_csr.v :467         csr_inst-pragya_csr               -               
+[2]     Waived (Reviewed by RTL designer.
+Overflow is intentional due to fixed-width arithmetic
+in the PRAGYA RISC-V core.
+Result truncation follows the defined 32-bit
+RISC-V arithmetic behavior.
+No unintended functional overflow is expected.)   ASG_AR_OVFL   arithmetic_overflow_assignment_prop_10        ?        0      1 -     /home/tops3/Downloads/jeeva_soc/core_rtl/pragya_csr.v :469         csr_inst-pragya_csr               -               
+[3]     Waived (Reviewed by RTL designer.
+Overflow is intentional due to fixed-width arithmetic
+in the PRAGYA RISC-V core.
+Result truncation follows the defined 32-bit
+RISC-V arithmetic behavior.
+No unintended functional overflow is expected.)   ASG_AR_OVFL   arithmetic_overflow_assignment_prop_11        ?        0      1 -     /home/tops3/Downloads/jeeva_soc/core_rtl/pragya_imm_adder.v :19    imm_adder_inst-pragya_imm_adder   -               
+[4]     Waived (Reviewed by RTL designer.
+Overflow is intentional due to fixed-width arithmetic
+in the PRAGYA RISC-V core.
+Result truncation follows the defined 32-bit
+RISC-V arithmetic behavior.
+No unintended functional overflow is expected.)   ASG_AR_OVFL   arithmetic_overflow_assignment_prop_12        ?        0      1 -     /home/tops3/Downloads/jeeva_soc/core_rtl/pragya_mdu.v :452         mdu_inst-pragya_mdu               -               
+[5]     Waived (Reviewed by RTL designer.
+Overflow is intentional due to fixed-width arithmetic
+in the PRAGYA RISC-V core.
+Result truncation follows the defined 32-bit
+RISC-V arithmetic behavior.
+No unintended functional overflow is expected.)   ASG_IS_OVFL   non_arithmetic_overflow_assignment_prop_289   ?        0      1 -     /home/tops3/Downloads/jeeva_soc/core_rtl/pragya_alu.v :16          alu_inst-pragya_alu               -               
+[6]     Waived (Reviewed by RTL designer.
+Overflow is intentional due to fixed-width arithmetic
+in the PRAGYA RISC-V core.
+Result truncation follows the defined 32-bit
+RISC-V arithmetic behavior.
+No unintended functional overflow is expected.)   ASG_IS_OVFL   non_arithmetic_overflow_assignment_prop_290   ?        0      1 -     /home/tops3/Downloads/jeeva_soc/core_rtl/pragya_alu.v :33          alu_inst-pragya_alu               -               
+[7]     Waived (Reviewed by RTL designer.
+Overflow is intentional due to fixed-width arithmetic
+in the PRAGYA RISC-V core.
+Result truncation follows the defined 32-bit
+RISC-V arithmetic behavior.
+No unintended functional overflow is expected.)   ASG_IS_OVFL   non_arithmetic_overflow_assignment_prop_291   ?        0      1 -     /home/tops3/Downloads/jeeva_soc/core_rtl/pragya_alu.v :34          alu_inst-pragya_alu               -               
+[8]     Waived (Reviewed by RTL designer.
+Overflow is intentional due to fixed-width arithmetic
+in the PRAGYA RISC-V core.
+Result truncation follows the defined 32-bit
+RISC-V arithmetic behavior.
+No unintended functional overflow is expected.)   ASG_IS_OVFL   non_arithmetic_overflow_assignment_prop_292   ?        0      1 -     /home/tops3/Downloads/jeeva_soc/core_rtl/pragya_mdu.v :455         mdu_inst-pragya_mdu               -               
+[9]     Waived (Reviewed by RTL designer.
+Overflow is intentional due to fixed-width arithmetic
+in the PRAGYA RISC-V core.
+Result truncation follows the defined 32-bit
+RISC-V arithmetic behavior.
+No unintended functional overflow is expected.)   ASG_IS_OVFL   non_arithmetic_overflow_assignment_prop_293   ?        0      1 -     /home/tops3/Downloads/jeeva_soc/core_rtl/pragya_mdu.v :456         mdu_inst-pragya_mdu               -               
+[10]    Waived (Reviewed by RTL designer.
+Overflow is intentional due to fixed-width arithmetic
+in the PRAGYA RISC-V core.
+Result truncation follows the defined 32-bit
+RISC-V arithmetic behavior.
+No unintended functional overflow is expected.)   EXP_AR_OVFL   expression_overflow_prop_288                  ?        0      1 -     /home/tops3/Downloads/jeeva_soc/core_rtl/pragya_csr.v :391         csr_inst-pragya_csr               -               
+[11]    Waived (Reviewed by RTL designer.
+Overflow is intentional due to fixed-width arithmetic
+in the PRAGYA RISC-V core.
+Result truncation follows the defined 32-bit
+RISC-V arithmetic behavior.
+No unintended functional overflow is expected.)   SHF_IS_OVFL   shift_is_overflow_prop_294                    ?        0      1 -     /home/tops3/Downloads/jeeva_soc/core_rtl/pragya_alu.v :14          alu_inst-pragya_alu               -               
+
+
+
+********************************************************************************************
+
+
+
+[Jasper 2022.09] [Platform Linux] [Version 2022.09p002 64 bits] [Build date 2022.11.24 12:29:17 UTC]
