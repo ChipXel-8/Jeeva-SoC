@@ -13,31 +13,31 @@ DMEM             0x80008000         0x00008000         xrw
 
 Linker script and memory map
 
-LOAD /tmp/cc39pTJH.o
-LOAD /tmp/ccqONexI.o
-LOAD /tmp/cclNcVqI.o
+LOAD /tmp/cczumrv0.o
+LOAD /tmp/ccRhfCsY.o
+LOAD /tmp/ccf2aDB2.o
 
 .text           0x80000000      0x3b4
                 0x80000000                        . = ALIGN (0x4)
  *(.text.start)
- .text.start    0x80000000       0x54 /tmp/cc39pTJH.o
+ .text.start    0x80000000       0x54 /tmp/cczumrv0.o
                 0x80000000                _start
  *(.text.trap)
- .text.trap     0x80000054       0x58 /tmp/ccqONexI.o
+ .text.trap     0x80000054       0x58 /tmp/ccRhfCsY.o
                 0x80000054                trap_entry
  *(.text)
- .text          0x800000ac        0x0 /tmp/cc39pTJH.o
- .text          0x800000ac        0x0 /tmp/ccqONexI.o
- .text          0x800000ac      0x308 /tmp/cclNcVqI.o
+ .text          0x800000ac        0x0 /tmp/cczumrv0.o
+ .text          0x800000ac        0x0 /tmp/ccRhfCsY.o
+ .text          0x800000ac      0x308 /tmp/ccf2aDB2.o
                 0x800000ec                main
  *(.text.*)
                 0x800003b4                        . = ALIGN (0x4)
 
 .rela.dyn       0x800003b4        0x0
  .rela.text.start
-                0x800003b4        0x0 /tmp/cc39pTJH.o
+                0x800003b4        0x0 /tmp/cczumrv0.o
  .rela.text.trap
-                0x800003b4        0x0 /tmp/cc39pTJH.o
+                0x800003b4        0x0 /tmp/cczumrv0.o
 
 .rodata         0x800003b4        0x0
                 0x800003b4                        . = ALIGN (0x4)
@@ -52,9 +52,9 @@ LOAD /tmp/cclNcVqI.o
                 0x80008000                        _sdata = .
                 0x80008000                        __data_start = .
  *(.data)
- .data          0x80008000        0x0 /tmp/cc39pTJH.o
- .data          0x80008000        0x0 /tmp/ccqONexI.o
- .data          0x80008000        0x0 /tmp/cclNcVqI.o
+ .data          0x80008000        0x0 /tmp/cczumrv0.o
+ .data          0x80008000        0x0 /tmp/ccRhfCsY.o
+ .data          0x80008000        0x0 /tmp/ccf2aDB2.o
  *(.data.*)
                 0x80008000                        . = ALIGN (0x4)
                 0x80008800                        __global_pointer$ = (. + 0x800)
@@ -71,9 +71,9 @@ LOAD /tmp/cclNcVqI.o
  *(.sbss)
  *(.sbss.*)
  *(.bss)
- .bss           0x80008000        0x0 /tmp/cc39pTJH.o
- .bss           0x80008000        0x0 /tmp/ccqONexI.o
- .bss           0x80008000        0x0 /tmp/cclNcVqI.o
+ .bss           0x80008000        0x0 /tmp/cczumrv0.o
+ .bss           0x80008000        0x0 /tmp/ccRhfCsY.o
+ .bss           0x80008000        0x0 /tmp/ccf2aDB2.o
  *(.bss.*)
  *(COMMON)
                 0x80008000                        . = ALIGN (0x4)
@@ -100,17 +100,17 @@ OUTPUT(build/elf/01_alu_test_spike.elf elf32-littleriscv)
 .riscv.attributes
                 0x00000000       0x41
  .riscv.attributes
-                0x00000000       0x3f /tmp/cc39pTJH.o
+                0x00000000       0x3f /tmp/cczumrv0.o
  .riscv.attributes
-                0x0000003f       0x3f /tmp/ccqONexI.o
+                0x0000003f       0x3f /tmp/ccRhfCsY.o
  .riscv.attributes
-                0x0000007e       0x3d /tmp/cclNcVqI.o
+                0x0000007e       0x3d /tmp/ccf2aDB2.o
 
 .comment        0x00000000       0x19
- .comment       0x00000000       0x19 /tmp/cclNcVqI.o
+ .comment       0x00000000       0x19 /tmp/ccf2aDB2.o
                                  0x1a (size before relaxing)
 
 .note.GNU-stack
                 0x00000000        0x0
  .note.GNU-stack
-                0x00000000        0x0 /tmp/cclNcVqI.o
+                0x00000000        0x0 /tmp/ccf2aDB2.o

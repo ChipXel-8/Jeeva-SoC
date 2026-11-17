@@ -1,16 +1,16 @@
-# vsim -64 -coverage -c work.tb_pragya_top -l results/logs/transcripts/c/01_alu_test_transcript.log -onfinish stop -do "do /home/tops2/your_custom_directory_name/config/pragya_core_waivers.do; run -all; coverage save coverage/databases/regression/01_alu_test.ucdb; quit -f" -gRISCV_DV_MODE=0 -gMAX_CYCLES=300000 
-# Start time: 00:08:19 on Nov 17,2026
+# vsim -64 -coverage -c work.tb_pragya_top -l results/logs/transcripts/c/01_alu_test_transcript.log -onfinish stop -do "do /home/tops1/Jeeva-SoC/config/pragya_core_waivers.do; run -all; coverage save coverage/databases/regression/01_alu_test.ucdb; quit -f" -gRISCV_DV_MODE=0 -gMAX_CYCLES=300000 
+# Start time: 15:41:23 on Nov 17,2026
 # ** Note: (vsim-3812) Design is being optimized...
-# ** Warning: rtl/pragya_core/pragya_core.v(1892): (vopt-2685) [TFMPC] - Too few port connections for 'decoder_inst'.  Expected 27, found 25.
-# ** Warning: rtl/pragya_core/pragya_core.v(1892): (vopt-2718) [TFMPC] - Missing connection for port 'is_ecall_out'.
-# ** Warning: rtl/pragya_core/pragya_core.v(1892): (vopt-2718) [TFMPC] - Missing connection for port 'is_mret_out'.
-# ** Warning: rtl/top/pragya_top.v(44): (vopt-2685) [TFMPC] - Too few port connections for 'CORE'.  Expected 33, found 27.
-# ** Warning: rtl/top/pragya_top.v(44): (vopt-2718) [TFMPC] - Missing connection for port 'commit_store_be'.
-# ** Warning: rtl/top/pragya_top.v(44): (vopt-2718) [TFMPC] - Missing connection for port 'commit_store_instr'.
-# ** Warning: rtl/top/pragya_top.v(44): (vopt-2718) [TFMPC] - Missing connection for port 'commit_store_pc'.
-# ** Warning: rtl/top/pragya_top.v(44): (vopt-2718) [TFMPC] - Missing connection for port 'commit_store_data'.
-# ** Warning: rtl/top/pragya_top.v(44): (vopt-2718) [TFMPC] - Missing connection for port 'commit_store_addr'.
-# ** Warning: rtl/top/pragya_top.v(44): (vopt-2718) [TFMPC] - Missing connection for port 'commit_store'.
+# ** Warning: rtl/pragya_core/pragya_core.v(251): (vopt-2685) [TFMPC] - Too few port connections for 'decoder_inst'.  Expected 27, found 25.
+# ** Warning: rtl/pragya_core/pragya_core.v(251): (vopt-2718) [TFMPC] - Missing connection for port 'is_ecall_out'.
+# ** Warning: rtl/pragya_core/pragya_core.v(251): (vopt-2718) [TFMPC] - Missing connection for port 'is_mret_out'.
+# ** Warning: rtl/top/pragya_top.v(69): (vopt-2685) [TFMPC] - Too few port connections for 'CORE'.  Expected 33, found 27.
+# ** Warning: rtl/top/pragya_top.v(69): (vopt-2718) [TFMPC] - Missing connection for port 'commit_store_be'.
+# ** Warning: rtl/top/pragya_top.v(69): (vopt-2718) [TFMPC] - Missing connection for port 'commit_store_instr'.
+# ** Warning: rtl/top/pragya_top.v(69): (vopt-2718) [TFMPC] - Missing connection for port 'commit_store_pc'.
+# ** Warning: rtl/top/pragya_top.v(69): (vopt-2718) [TFMPC] - Missing connection for port 'commit_store_data'.
+# ** Warning: rtl/top/pragya_top.v(69): (vopt-2718) [TFMPC] - Missing connection for port 'commit_store_addr'.
+# ** Warning: rtl/top/pragya_top.v(69): (vopt-2718) [TFMPC] - Missing connection for port 'commit_store'.
 # ** Note: (vopt-143) Recognized 1 FSM in module "pragya_mdu(fast)".
 # ** Note: (vopt-143) Recognized 1 FSM in module "pragya_machine_control(fast)".
 # ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=10.
@@ -32,7 +32,7 @@
 # Loading work.pragya_pkg_sv_unit(fast)
 # Loading work.tb_pragya_top(fast)
 # Loading work.pragya_top(fast)
-# do /home/tops2/your_custom_directory_name/config/pragya_core_waivers.do
+# do /home/tops1/Jeeva-SoC/config/pragya_core_waivers.do
 # coverage exclude -src /home/tops1/pragya_verification/rtl/pragya_csr.v -code b -line 253
 # ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
 # no matching coverage data was found.
@@ -45,10 +45,6 @@
 # ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
 # no matching coverage data was found.
 # 
-# coverage exclude -src /home/tops1/pragya_verification/rtl/pragya_machine_control.v -code s -line 186-192
-# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
-# no matching coverage data was found.
-# 
 # coverage exclude -src /home/tops1/pragya_verification/rtl/pragya_machine_control.v -code b -line 184
 # ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
 # no matching coverage data was found.
@@ -58,6 +54,10 @@
 # no matching coverage data was found.
 # 
 # coverage exclude -src /home/tops1/pragya_verification/rtl/pragya_machine_control.v -code c -line 259-264
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -src /home/tops1/pragya_verification/rtl/pragya_regfile.v -code c -line 37
 # ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
 # no matching coverage data was found.
 # 
@@ -343,7 +343,7 @@
 # 
 # coverage exclude -src rtl/pragya_machine_control.v -code s -line 186-192
 # ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
-# no matching coverage data was found.
+#     * matching coverage data is already excluded.
 # 
 # coverage exclude -src rtl/pragya_machine_control.v -code b -line 184
 # ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
@@ -357,9 +357,13 @@
 # ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
 # no matching coverage data was found.
 # 
+# coverage exclude -src rtl/pragya_mdu.v -code b -line 532 546
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
 # coverage exclude -src rtl/pragya_regfile.v -code c -line 37
 # ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
-#     * matching coverage data is already excluded.
+# no matching coverage data was found.
 # 
 # coverage exclude -du work.pragya_machine_control -ft curr_state {STATE_OPERATING -> STATE_RESET} {STATE_TRAP_RETURN -> STATE_RESET} {STATE_TRAP_TAKEN -> STATE_RESET}
 # ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
@@ -785,228 +789,125 @@
 # PC=8000001c INSTR=fe830313 x6=80008000
 # PC=80000030 INSTR=00000297 x5=80000030
 # PC=80000034 INSTR=02428293 x5=80000054
-# IMM_ADDER: rs1=8000003c imm=0b008000 target=8b00803c
-# IMM_ADDER: rs1=8000003c imm=000000b0 target=800000ec
 # PC=8000003c INSTR=00000097 x1=8000003c
-# IMM_ADDER: rs1=00000000 imm=000000b0 target=000000b0
 # PC=80000040 INSTR=0b0080e7 x1=80000044
-# IMM_ADDER: rs1=8000ffd0 imm=00000021 target=8000fff1
-# IMM_ADDER: rs1=8000ffd0 imm=0000002c target=8000fffc
 # PC=800000ec INSTR=fd010113 x2=8000ffd0
-# IMM_ADDER: rs1=80010000 imm=0000002c target=8001002c
 # PC=800000f0 INSTR=02112623 MEM[8000fffc]=80000044
-# IMM_ADDER: rs1=8000ffd0 imm=00000028 target=8000fff8
 # PC=800000f4 INSTR=02812423 MEM[8000fff8]=00000000
 # PC=800000f8 INSTR=03010413 x8=80010000
-# IMM_ADDER: rs1=80010000 imm=ffffffef target=8000ffef
-# IMM_ADDER: rs1=80010000 imm=ffffffec target=8000ffec
 # PC=800000fc INSTR=00a00793 x15=0000000a
 # PC=80000100 INSTR=fef42623 MEM[8000ffec]=0000000a
-# IMM_ADDER: rs1=80010000 imm=ffffffef target=8000ffef
-# IMM_ADDER: rs1=80010000 imm=ffffffe8 target=8000ffe8
 # PC=80000104 INSTR=01400793 x15=00000014
 # PC=80000108 INSTR=fef42423 MEM[8000ffe8]=00000014
-# IMM_ADDER: rs1=80010000 imm=ffffffec target=8000ffec
-# IMM_ADDER: rs1=80010000 imm=ffffffe8 target=8000ffe8
 # PC=8000010c INSTR=fec42703 x14=0000000a
 # PC=80000110 INSTR=fe842783 x15=00000014
-# IMM_ADDER: rs1=80010000 imm=ffffffef target=8000ffef
-# IMM_ADDER: rs1=80010000 imm=ffffffe4 target=8000ffe4
 # PC=80000114 INSTR=00f707b3 x15=0000001e
 # PC=80000118 INSTR=fef42223 MEM[8000ffe4]=0000001e
-# IMM_ADDER: rs1=80010000 imm=ffffffe4 target=8000ffe4
 # PC=8000011c INSTR=fe442703 x14=0000001e
 # PC=80000120 INSTR=01e00793 x15=0000001e
-# IMM_ADDER: rs1=80010000 imm=ffffffe8 target=8000ffe8
-# IMM_ADDER: rs1=80010000 imm=ffffffec target=8000ffec
 # PC=80000130 INSTR=fe842703 x14=00000014
 # PC=80000134 INSTR=fec42783 x15=0000000a
-# IMM_ADDER: rs1=80010000 imm=ffffffef target=8000ffef
-# IMM_ADDER: rs1=80010000 imm=ffffffe4 target=8000ffe4
 # PC=80000138 INSTR=40f707b3 x15=0000000a
 # PC=8000013c INSTR=fef42223 MEM[8000ffe4]=0000000a
-# IMM_ADDER: rs1=80010000 imm=ffffffe4 target=8000ffe4
 # PC=80000140 INSTR=fe442703 x14=0000000a
 # PC=80000144 INSTR=00a00793 x15=0000000a
-# IMM_ADDER: rs1=80010000 imm=ffffffec target=8000ffec
-# IMM_ADDER: rs1=80010000 imm=ffffffe8 target=8000ffe8
 # PC=80000154 INSTR=fec42703 x14=0000000a
 # PC=80000158 INSTR=fe842783 x15=00000014
-# IMM_ADDER: rs1=80010000 imm=ffffffef target=8000ffef
-# IMM_ADDER: rs1=80010000 imm=ffffffe4 target=8000ffe4
 # PC=8000015c INSTR=00f777b3 x15=00000000
 # PC=80000160 INSTR=fef42223 MEM[8000ffe4]=00000000
-# IMM_ADDER: rs1=80010000 imm=ffffffe4 target=8000ffe4
 # PC=80000164 INSTR=fe442783 x15=00000000
-# IMM_ADDER: rs1=80010000 imm=ffffffec target=8000ffec
-# IMM_ADDER: rs1=80010000 imm=ffffffe8 target=8000ffe8
 # PC=80000174 INSTR=fec42703 x14=0000000a
 # PC=80000178 INSTR=fe842783 x15=00000014
-# IMM_ADDER: rs1=80010000 imm=ffffffef target=8000ffef
-# IMM_ADDER: rs1=80010000 imm=ffffffe4 target=8000ffe4
 # PC=8000017c INSTR=00f767b3 x15=0000001e
 # PC=80000180 INSTR=fef42223 MEM[8000ffe4]=0000001e
-# IMM_ADDER: rs1=80010000 imm=ffffffe4 target=8000ffe4
 # PC=80000184 INSTR=fe442703 x14=0000001e
 # PC=80000188 INSTR=01e00793 x15=0000001e
-# IMM_ADDER: rs1=80010000 imm=ffffffec target=8000ffec
-# IMM_ADDER: rs1=80010000 imm=ffffffe8 target=8000ffe8
 # PC=80000198 INSTR=fec42703 x14=0000000a
 # PC=8000019c INSTR=fe842783 x15=00000014
-# IMM_ADDER: rs1=80010000 imm=ffffffef target=8000ffef
-# IMM_ADDER: rs1=80010000 imm=ffffffe4 target=8000ffe4
 # PC=800001a0 INSTR=00f747b3 x15=0000001e
 # PC=800001a4 INSTR=fef42223 MEM[8000ffe4]=0000001e
-# IMM_ADDER: rs1=80010000 imm=ffffffe4 target=8000ffe4
 # PC=800001a8 INSTR=fe442703 x14=0000001e
 # PC=800001ac INSTR=01e00793 x15=0000001e
-# IMM_ADDER: rs1=80010000 imm=ffffffef target=8000ffef
-# IMM_ADDER: rs1=80010000 imm=ffffffe4 target=8000ffe4
 # PC=800001bc INSTR=02000793 x15=00000020
 # PC=800001c0 INSTR=fef42223 MEM[8000ffe4]=00000020
-# IMM_ADDER: rs1=80010000 imm=ffffffe4 target=8000ffe4
 # PC=800001c4 INSTR=fe442703 x14=00000020
 # PC=800001c8 INSTR=02000793 x15=00000020
-# IMM_ADDER: rs1=80010000 imm=ffffffef target=8000ffef
-# IMM_ADDER: rs1=80010000 imm=ffffffe4 target=8000ffe4
 # PC=800001d8 INSTR=00800793 x15=00000008
 # PC=800001dc INSTR=fef42223 MEM[8000ffe4]=00000008
-# IMM_ADDER: rs1=80010000 imm=ffffffe4 target=8000ffe4
 # PC=800001e0 INSTR=fe442703 x14=00000008
 # PC=800001e4 INSTR=00800793 x15=00000008
-# IMM_ADDER: rs1=80010000 imm=ffffffef target=8000ffef
-# IMM_ADDER: rs1=80010000 imm=ffffffe4 target=8000ffe4
 # PC=800001f4 INSTR=ffc00793 x15=fffffffc
 # PC=800001f8 INSTR=fef42223 MEM[8000ffe4]=fffffffc
-# IMM_ADDER: rs1=80010000 imm=ffffffe4 target=8000ffe4
 # PC=800001fc INSTR=fe442703 x14=fffffffc
 # PC=80000200 INSTR=ffc00793 x15=fffffffc
-# IMM_ADDER: rs1=80010000 imm=ffffffef target=8000ffef
-# IMM_ADDER: rs1=80010000 imm=ffffffe4 target=8000ffe4
 # PC=80000210 INSTR=00100793 x15=00000001
 # PC=80000214 INSTR=fef42223 MEM[8000ffe4]=00000001
-# IMM_ADDER: rs1=80010000 imm=ffffffe4 target=8000ffe4
 # PC=80000218 INSTR=fe442703 x14=00000001
 # PC=8000021c INSTR=00100793 x15=00000001
-# IMM_ADDER: rs1=80010000 imm=ffffffe0 target=8000ffe0
-# IMM_ADDER: rs1=80010000 imm=ffffffe4 target=8000ffe4
 # PC=8000022c INSTR=fe042223 MEM[8000ffe4]=00000000
-# IMM_ADDER: rs1=80010000 imm=ffffffe4 target=8000ffe4
 # PC=80000230 INSTR=fe442783 x15=00000000
-# IMM_ADDER: rs1=80010000 imm=ffffffef target=8000ffef
-# IMM_ADDER: rs1=80010000 imm=ffffffe0 target=8000ffe0
 # PC=80000240 INSTR=00100793 x15=00000001
 # PC=80000244 INSTR=fef42023 MEM[8000ffe0]=00000001
-# IMM_ADDER: rs1=80010000 imm=ffffffcf target=8000ffcf
-# IMM_ADDER: rs1=80010000 imm=ffffffdc target=8000ffdc
 # PC=80000248 INSTR=00200793 x15=00000002
 # PC=8000024c INSTR=fcf42e23 MEM[8000ffdc]=00000002
-# IMM_ADDER: rs1=80010000 imm=ffffffe0 target=8000ffe0
-# IMM_ADDER: rs1=80010000 imm=ffffffdc target=8000ffdc
 # PC=80000250 INSTR=fe042703 x14=00000001
 # PC=80000254 INSTR=fdc42783 x15=00000002
 # PC=80000258 INSTR=00f737b3 x15=00000001
-# IMM_ADDER: rs1=80010000 imm=ffffffef target=8000ffef
-# IMM_ADDER: rs1=80010000 imm=ffffffe4 target=8000ffe4
 # PC=8000025c INSTR=0ff7f793 x15=00000001
 # PC=80000260 INSTR=fef42223 MEM[8000ffe4]=00000001
-# IMM_ADDER: rs1=80010000 imm=ffffffe4 target=8000ffe4
 # PC=80000264 INSTR=fe442703 x14=00000001
 # PC=80000268 INSTR=00100793 x15=00000001
-# IMM_ADDER: rs1=80010000 imm=ffffffec target=8000ffec
 # PC=80000278 INSTR=fec42783 x15=0000000a
-# IMM_ADDER: rs1=80010000 imm=ffffffef target=8000ffef
-# IMM_ADDER: rs1=80010000 imm=ffffffe4 target=8000ffe4
 # PC=8000027c INSTR=00f78793 x15=00000019
 # PC=80000280 INSTR=fef42223 MEM[8000ffe4]=00000019
-# IMM_ADDER: rs1=80010000 imm=ffffffe4 target=8000ffe4
 # PC=80000284 INSTR=fe442703 x14=00000019
 # PC=80000288 INSTR=01900793 x15=00000019
-# IMM_ADDER: rs1=80010000 imm=ffffffec target=8000ffec
 # PC=80000298 INSTR=fec42783 x15=0000000a
-# IMM_ADDER: rs1=80010000 imm=ffffffef target=8000ffef
-# IMM_ADDER: rs1=80010000 imm=ffffffe4 target=8000ffe4
 # PC=8000029c INSTR=0077f793 x15=00000002
 # PC=800002a0 INSTR=fef42223 MEM[8000ffe4]=00000002
-# IMM_ADDER: rs1=80010000 imm=ffffffe4 target=8000ffe4
 # PC=800002a4 INSTR=fe442703 x14=00000002
 # PC=800002a8 INSTR=00200793 x15=00000002
-# IMM_ADDER: rs1=80010000 imm=ffffffec target=8000ffec
 # PC=800002b8 INSTR=fec42783 x15=0000000a
-# IMM_ADDER: rs1=80010000 imm=ffffffef target=8000ffef
-# IMM_ADDER: rs1=80010000 imm=ffffffe4 target=8000ffe4
 # PC=800002bc INSTR=0037e793 x15=0000000b
 # PC=800002c0 INSTR=fef42223 MEM[8000ffe4]=0000000b
-# IMM_ADDER: rs1=80010000 imm=ffffffe4 target=8000ffe4
 # PC=800002c4 INSTR=fe442703 x14=0000000b
 # PC=800002c8 INSTR=00b00793 x15=0000000b
-# IMM_ADDER: rs1=80010000 imm=ffffffec target=8000ffec
 # PC=800002d8 INSTR=fec42783 x15=0000000a
-# IMM_ADDER: rs1=80010000 imm=ffffffef target=8000ffef
-# IMM_ADDER: rs1=80010000 imm=ffffffe4 target=8000ffe4
 # PC=800002dc INSTR=00f7c793 x15=00000005
 # PC=800002e0 INSTR=fef42223 MEM[8000ffe4]=00000005
-# IMM_ADDER: rs1=80010000 imm=ffffffe4 target=8000ffe4
 # PC=800002e4 INSTR=fe442703 x14=00000005
 # PC=800002e8 INSTR=00500793 x15=00000005
-# IMM_ADDER: rs1=80010000 imm=ffffffef target=8000ffef
-# IMM_ADDER: rs1=80010000 imm=ffffffe4 target=8000ffe4
 # PC=800002f8 INSTR=03000793 x15=00000030
 # PC=800002fc INSTR=fef42223 MEM[8000ffe4]=00000030
-# IMM_ADDER: rs1=80010000 imm=ffffffe4 target=8000ffe4
 # PC=80000300 INSTR=fe442703 x14=00000030
 # PC=80000304 INSTR=03000793 x15=00000030
-# IMM_ADDER: rs1=80010000 imm=ffffffef target=8000ffef
-# IMM_ADDER: rs1=80010000 imm=ffffffe4 target=8000ffe4
 # PC=80000314 INSTR=00800793 x15=00000008
 # PC=80000318 INSTR=fef42223 MEM[8000ffe4]=00000008
-# IMM_ADDER: rs1=80010000 imm=ffffffe4 target=8000ffe4
 # PC=8000031c INSTR=fe442703 x14=00000008
 # PC=80000320 INSTR=00800793 x15=00000008
-# IMM_ADDER: rs1=80010000 imm=ffffffef target=8000ffef
-# IMM_ADDER: rs1=80010000 imm=ffffffe4 target=8000ffe4
 # PC=80000330 INSTR=ffc00793 x15=fffffffc
 # PC=80000334 INSTR=fef42223 MEM[8000ffe4]=fffffffc
-# IMM_ADDER: rs1=80010000 imm=ffffffe4 target=8000ffe4
 # PC=80000338 INSTR=fe442703 x14=fffffffc
 # PC=8000033c INSTR=ffc00793 x15=fffffffc
-# IMM_ADDER: rs1=80010000 imm=ffffffef target=8000ffef
-# IMM_ADDER: rs1=80010000 imm=ffffffe4 target=8000ffe4
 # PC=8000034c INSTR=00100793 x15=00000001
 # PC=80000350 INSTR=fef42223 MEM[8000ffe4]=00000001
-# IMM_ADDER: rs1=80010000 imm=ffffffe4 target=8000ffe4
 # PC=80000354 INSTR=fe442703 x14=00000001
 # PC=80000358 INSTR=00100793 x15=00000001
-# IMM_ADDER: rs1=80010000 imm=ffffffcf target=8000ffcf
-# IMM_ADDER: rs1=80010000 imm=ffffffd8 target=8000ffd8
 # PC=80000368 INSTR=00800793 x15=00000008
 # PC=8000036c INSTR=fcf42c23 MEM[8000ffd8]=00000008
-# IMM_ADDER: rs1=80010000 imm=ffffffd8 target=8000ffd8
 # PC=80000370 INSTR=fd842783 x15=00000008
 # PC=80000374 INSTR=0147b793 x15=00000001
-# IMM_ADDER: rs1=80010000 imm=ffffffef target=8000ffef
-# IMM_ADDER: rs1=80010000 imm=ffffffe4 target=8000ffe4
 # PC=80000378 INSTR=0ff7f793 x15=00000001
 # PC=8000037c INSTR=fef42223 MEM[8000ffe4]=00000001
-# IMM_ADDER: rs1=80010000 imm=ffffffe4 target=8000ffe4
 # PC=80000380 INSTR=fe442703 x14=00000001
 # PC=80000384 INSTR=00100793 x15=00000001
-# IMM_ADDER: rs1=80000394 imm=d1808000 target=51808394
-# IMM_ADDER: rs1=80000394 imm=fffffd18 target=800000ac
 # PC=80000394 INSTR=00000097 x1=80000394
-# IMM_ADDER: rs1=80000044 imm=fffffd18 target=7ffffd5c
 # PC=80000398 INSTR=d18080e7 x1=8000039c
-# IMM_ADDER: rs1=8000ffc0 imm=00000001 target=8000ffc1
-# IMM_ADDER: rs1=8000ffc0 imm=0000000c target=8000ffcc
 # PC=800000ac INSTR=ff010113 x2=8000ffc0
-# IMM_ADDER: rs1=8000ffd0 imm=0000000c target=8000ffdc
 # PC=800000b0 INSTR=00112623 MEM[8000ffcc]=8000039c
-# IMM_ADDER: rs1=8000ffc0 imm=00000008 target=8000ffc8
 # PC=800000b4 INSTR=00812423 MEM[8000ffc8]=80010000
 # PC=800000b8 INSTR=01010413 x8=8000ffd0
 # PC=800000bc INSTR=800087b7 x15=80008000
-# IMM_ADDER: rs1=80008000 imm=0000000e target=8000800e
-# IMM_ADDER: rs1=80008000 imm=00000000 target=80008000
 # PC=800000c0 INSTR=00100713 x14=00000001
 # PC=800000c4 INSTR=00e7a023 MEM[80008000]=00000001
 # PROGRAM PASSED
@@ -1067,7 +968,7 @@
 # Stopped at verification/pragya_core/top/tb_pragya_top.sv line 4432
 #  coverage save coverage/databases/regression/01_alu_test.ucdb
 #  quit -f
-# End time: 00:08:20 on Nov 17,2026, Elapsed time: 0:00:01
+# End time: 15:41:24 on Nov 17,2026, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 10
 
 ========================================================
