@@ -1,0 +1,3451 @@
+# vsim -64 -coverage -c work.tb_pragya_top -l results/logs/transcripts/dv/pragya_arithmetic_basic_test_seed1_transcript.log -onfinish stop -do "do /home/tops2/your_custom_directory_name/config/pragya_core_waivers.do; run -all; coverage save coverage/databases/regression/pragya_arithmetic_basic_test_seed1.ucdb; quit -f" -gRISCV_DV_MODE=1 -gMAX_CYCLES=300000 
+# Start time: 23:40:56 on Nov 16,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: rtl/pragya_core/pragya_core.v(1892): (vopt-2685) [TFMPC] - Too few port connections for 'decoder_inst'.  Expected 27, found 25.
+# ** Warning: rtl/pragya_core/pragya_core.v(1892): (vopt-2718) [TFMPC] - Missing connection for port 'is_ecall_out'.
+# ** Warning: rtl/pragya_core/pragya_core.v(1892): (vopt-2718) [TFMPC] - Missing connection for port 'is_mret_out'.
+# ** Warning: rtl/top/pragya_top.v(44): (vopt-2685) [TFMPC] - Too few port connections for 'CORE'.  Expected 33, found 27.
+# ** Warning: rtl/top/pragya_top.v(44): (vopt-2718) [TFMPC] - Missing connection for port 'commit_store_be'.
+# ** Warning: rtl/top/pragya_top.v(44): (vopt-2718) [TFMPC] - Missing connection for port 'commit_store_instr'.
+# ** Warning: rtl/top/pragya_top.v(44): (vopt-2718) [TFMPC] - Missing connection for port 'commit_store_pc'.
+# ** Warning: rtl/top/pragya_top.v(44): (vopt-2718) [TFMPC] - Missing connection for port 'commit_store_data'.
+# ** Warning: rtl/top/pragya_top.v(44): (vopt-2718) [TFMPC] - Missing connection for port 'commit_store_addr'.
+# ** Warning: rtl/top/pragya_top.v(44): (vopt-2718) [TFMPC] - Missing connection for port 'commit_store'.
+# ** Note: (vopt-143) Recognized 1 FSM in module "pragya_mdu(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "pragya_machine_control(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=10.
+# //  ModelSim SE-64 2021.3 Jul 13 2021 Linux 4.18.0-348.7.1.el8_5.x86_64
+# //
+# //  Copyright 1991-2021 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim SE-64 and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.pragya_pkg(fast)
+# Loading work.pragya_pkg_sv_unit(fast)
+# Loading work.tb_pragya_top(fast)
+# Loading work.pragya_top(fast)
+# do /home/tops2/your_custom_directory_name/config/pragya_core_waivers.do
+# coverage exclude -src /home/tops1/pragya_verification/rtl/pragya_csr.v -code b -line 253
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -src /home/tops1/pragya_verification/rtl/pragya_decoder.v -code s -line 311 348
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -src /home/tops1/pragya_verification/rtl/pragya_decoder.v -code b -line 311 348
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -src /home/tops1/pragya_verification/rtl/pragya_machine_control.v -code s -line 186-192
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -src /home/tops1/pragya_verification/rtl/pragya_machine_control.v -code b -line 184
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -src /home/tops1/pragya_verification/rtl/pragya_machine_control.v -code e -line 104 106
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -src /home/tops1/pragya_verification/rtl/pragya_machine_control.v -code c -line 259-264
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut -togglenode {commit_pc[28]} {commit_pc[29]} {commit_pc[30]} {commit_pc[31]} {instr_rdata_o[0]} {instr_rdata_o[1]} {pg_riscv32_mp_dmaddr_out[0]} {pg_riscv32_mp_dmaddr_out[1]} {pg_riscv32_mp_imaddr_out[0]} pg_riscv32_mp_imreq_out
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/u_pc_unit -togglenode {normal_pc_next[0]} {pc[0]} {pc_next[0]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/csr_inst -togglenode {base_offset[0]} {base_offset[1]} {base_offset[4]} {base_offset[6]} {base_offset[7]} {base_offset[8]} {base_offset[9]} {base_offset[10]} {base_offset[11]} {base_offset[12]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/csr_inst -togglenode {base_offset[13]} {base_offset[14]} {base_offset[15]} {base_offset[16]} {base_offset[17]} {base_offset[18]} {base_offset[19]} {base_offset[20]} {base_offset[21]} {base_offset[22]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/csr_inst -togglenode {base_offset[23]} {base_offset[24]} {base_offset[25]} {base_offset[26]} {base_offset[27]} {base_offset[28]} {base_offset[29]} {base_offset[30]} {base_offset[31]} {mcause[4]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/csr_inst -togglenode {misa[24]} {misa[25]} {misa[26]} {misa[27]} {misa[28]} {misa[29]} {misa[30]} {misa[31]} {misa_out[0]} {misa_out[1]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/csr_inst -togglenode {misa_out[2]} {misa_out[3]} {misa_out[4]} {misa_out[5]} {misa_out[6]} {misa_out[7]} {misa_out[8]} {misa_out[9]} {misa_out[10]} {misa_out[11]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/csr_inst -togglenode {misa_out[13]} {misa_out[14]} {misa_out[15]} {misa_out[16]} {misa_out[17]} {misa_out[18]} {misa_out[19]} {misa_out[20]} {misa_out[21]} {misa_out[22]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/csr_inst -togglenode {misa_out[23]} {misa_out[24]} {misa_out[25]} {misa_out[26]} {misa_out[27]} {misa_out[28]} {misa_out[29]} {misa_out[30]} {misa_out[31]} {mstatus_out[0]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/csr_inst -togglenode {mstatus_out[1]} {mstatus_out[2]} {mstatus_out[4]} {mstatus_out[5]} {mstatus_out[6]} {mstatus_out[8]} {mstatus_out[9]} {mstatus_out[10]} {mstatus_out[11]} {mstatus_out[12]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/csr_inst -togglenode {mstatus_out[13]} {mstatus_out[14]} {mstatus_out[15]} {mstatus_out[16]} {mstatus_out[17]} {mstatus_out[18]} {mstatus_out[19]} {mstatus_out[20]} {mstatus_out[21]} {mstatus_out[22]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/csr_inst -togglenode {mstatus_out[23]} {mstatus_out[24]} {mstatus_out[25]} {mstatus_out[26]} {mstatus_out[27]} {mstatus_out[28]} {mstatus_out[29]} {mstatus_out[30]} {mstatus_out[31]} {trap_mux_out[0]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/csr_inst -togglenode {trap_mux_out[1]} {vec_mux_out[0]} {vec_mux_out[1]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/imm_gen_inst -togglenode {b_type[0]} {j_type[0]} {u_type[0]} {u_type[1]} {u_type[2]} {u_type[3]} {u_type[4]} {u_type[5]} {u_type[6]} {u_type[7]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/imm_gen_inst -togglenode {u_type[8]} {u_type[9]} {u_type[10]} {u_type[11]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/alu_inst -togglenode {slt_out[1]} {slt_out[2]} {slt_out[3]} {slt_out[4]} {slt_out[5]} {slt_out[6]} {slt_out[7]} {slt_out[8]} {slt_out[9]} {slt_out[10]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/alu_inst -togglenode {slt_out[11]} {slt_out[12]} {slt_out[13]} {slt_out[14]} {slt_out[15]} {slt_out[16]} {slt_out[17]} {slt_out[18]} {slt_out[19]} {slt_out[20]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/alu_inst -togglenode {slt_out[21]} {slt_out[22]} {slt_out[23]} {slt_out[24]} {slt_out[25]} {slt_out[26]} {slt_out[27]} {slt_out[28]} {slt_out[29]} {slt_out[30]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/alu_inst -togglenode {slt_out[31]} {sltu_out[1]} {sltu_out[2]} {sltu_out[3]} {sltu_out[4]} {sltu_out[5]} {sltu_out[6]} {sltu_out[7]} {sltu_out[8]} {sltu_out[9]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/alu_inst -togglenode {sltu_out[10]} {sltu_out[11]} {sltu_out[12]} {sltu_out[13]} {sltu_out[14]} {sltu_out[15]} {sltu_out[16]} {sltu_out[17]} {sltu_out[18]} {sltu_out[19]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/alu_inst -togglenode {sltu_out[20]} {sltu_out[21]} {sltu_out[22]} {sltu_out[23]} {sltu_out[24]} {sltu_out[25]} {sltu_out[26]} {sltu_out[27]} {sltu_out[28]} {sltu_out[29]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/alu_inst -togglenode {sltu_out[30]} {sltu_out[31]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -src rtl/pragya_core.v -code e -line 873
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -src rtl/pragya_csr.v -code b -line 253
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -src rtl/pragya_decoder.v -code s -line 311 348
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -src rtl/pragya_decoder.v -code b -line 311 348
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -src rtl/pragya_machine_control.v -code s -line 186-192
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -src rtl/pragya_machine_control.v -code b -line 184
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -src rtl/pragya_machine_control.v -code e -line 104 106
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -src rtl/pragya_machine_control.v -code c -line 259-264
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -src rtl/pragya_regfile.v -code c -line 37
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+# 
+# coverage exclude -du work.pragya_machine_control -ft curr_state {STATE_OPERATING -> STATE_RESET} {STATE_TRAP_RETURN -> STATE_RESET} {STATE_TRAP_TAKEN -> STATE_RESET}
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+# 
+# coverage exclude -scope /tb_pragya_top/dut -togglenode {commit_instr[0]} {commit_instr[1]} {commit_instr[2]} {commit_instr[3]} {commit_instr[4]} {commit_instr[5]} {commit_instr[6]} {commit_instr[7]} {commit_instr[8]} {commit_instr[9]}
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+#     * Unaffected toggles: /tb_pragya_top/dut/commit_instr[0] /tb_pragya_top/dut/commit_instr[1] /tb_pragya_top/dut/commit_instr[2] /tb_pragya_top/dut/commit_instr[3] /tb_pragya_top/dut/commit_instr[4] /tb_pragya_top/dut/commit_instr[5] /tb_pragya_top/dut/commit_instr[6] /tb_pragya_top/dut/commit_instr[7] /tb_pragya_top/dut/commit_instr[8] /tb_pragya_top/dut/commit_instr[9]
+# 
+# coverage exclude -scope /tb_pragya_top/dut -togglenode {commit_instr[10]} {commit_instr[11]} {commit_instr[12]} {commit_instr[13]} {commit_instr[14]} {commit_instr[15]} {commit_instr[16]} {commit_instr[17]} {commit_instr[18]} {commit_instr[19]}
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+#     * Unaffected toggles: /tb_pragya_top/dut/commit_instr[10] /tb_pragya_top/dut/commit_instr[11] /tb_pragya_top/dut/commit_instr[12] /tb_pragya_top/dut/commit_instr[13] /tb_pragya_top/dut/commit_instr[14] /tb_pragya_top/dut/commit_instr[15] /tb_pragya_top/dut/commit_instr[16] /tb_pragya_top/dut/commit_instr[17] /tb_pragya_top/dut/commit_instr[18] /tb_pragya_top/dut/commit_instr[19]
+# 
+# coverage exclude -scope /tb_pragya_top/dut -togglenode {commit_instr[20]} {commit_instr[21]} {commit_instr[22]} {commit_instr[23]} {commit_instr[24]} {commit_instr[25]} {commit_instr[26]} {commit_instr[27]} {commit_instr[28]} {commit_instr[29]}
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+#     * Unaffected toggles: /tb_pragya_top/dut/commit_instr[20] /tb_pragya_top/dut/commit_instr[21] /tb_pragya_top/dut/commit_instr[22] /tb_pragya_top/dut/commit_instr[23] /tb_pragya_top/dut/commit_instr[24] /tb_pragya_top/dut/commit_instr[25] /tb_pragya_top/dut/commit_instr[26] /tb_pragya_top/dut/commit_instr[27] /tb_pragya_top/dut/commit_instr[28] /tb_pragya_top/dut/commit_instr[29]
+# 
+# coverage exclude -scope /tb_pragya_top/dut -togglenode {commit_instr[30]} {commit_instr[31]} {commit_pc[0]} {commit_pc[1]} {commit_pc[2]} {commit_pc[3]} {commit_pc[4]} {commit_pc[5]} {commit_pc[6]} {commit_pc[7]}
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+#     * Unaffected toggles: /tb_pragya_top/dut/commit_instr[30] /tb_pragya_top/dut/commit_instr[31] /tb_pragya_top/dut/commit_pc[0] /tb_pragya_top/dut/commit_pc[1] /tb_pragya_top/dut/commit_pc[2] /tb_pragya_top/dut/commit_pc[3] /tb_pragya_top/dut/commit_pc[4] /tb_pragya_top/dut/commit_pc[5] /tb_pragya_top/dut/commit_pc[6] /tb_pragya_top/dut/commit_pc[7]
+# 
+# coverage exclude -scope /tb_pragya_top/dut -togglenode {commit_pc[8]} {commit_pc[9]} {commit_pc[10]} {commit_pc[11]} {commit_pc[12]} {commit_pc[13]} {commit_pc[14]} {commit_pc[15]} {commit_pc[16]} {commit_pc[17]}
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+#     * Unaffected toggles: /tb_pragya_top/dut/commit_pc[8] /tb_pragya_top/dut/commit_pc[9] /tb_pragya_top/dut/commit_pc[10] /tb_pragya_top/dut/commit_pc[11] /tb_pragya_top/dut/commit_pc[12] /tb_pragya_top/dut/commit_pc[13] /tb_pragya_top/dut/commit_pc[14] /tb_pragya_top/dut/commit_pc[15] /tb_pragya_top/dut/commit_pc[16] /tb_pragya_top/dut/commit_pc[17]
+# 
+# coverage exclude -scope /tb_pragya_top/dut -togglenode {commit_pc[18]} {commit_pc[19]} {commit_pc[20]} {commit_pc[21]} {commit_pc[22]} {commit_pc[23]} {commit_pc[24]} {commit_pc[25]} {commit_pc[26]} {commit_pc[27]}
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+#     * Unaffected toggles: /tb_pragya_top/dut/commit_pc[18] /tb_pragya_top/dut/commit_pc[19] /tb_pragya_top/dut/commit_pc[20] /tb_pragya_top/dut/commit_pc[21] /tb_pragya_top/dut/commit_pc[22] /tb_pragya_top/dut/commit_pc[23] /tb_pragya_top/dut/commit_pc[24] /tb_pragya_top/dut/commit_pc[25] /tb_pragya_top/dut/commit_pc[26] /tb_pragya_top/dut/commit_pc[27]
+# 
+# coverage exclude -scope /tb_pragya_top/dut -togglenode {commit_pc[28]} {commit_pc[29]} {commit_pc[30]} {commit_pc[31]} pg_riscv32_mp_imreq_out
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+#     * Unaffected toggles: /tb_pragya_top/dut/commit_pc[28] /tb_pragya_top/dut/commit_pc[29] /tb_pragya_top/dut/commit_pc[30] /tb_pragya_top/dut/commit_pc[31] /tb_pragya_top/dut/pg_riscv32_mp_imreq_out
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE -togglenode {cause_out[2]} {commit_instr_reg[0]} {commit_instr_reg[1]} {commit_pc_reg[0]} {commit_pc_reg[1]} {commit_pc_reg[15]} {commit_pc_reg[16]} {commit_pc_reg[17]} {commit_pc_reg[18]} {commit_pc_reg[19]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE -togglenode {commit_store_pc[29]} {commit_store_pc[30]} {commit_store_pc[31]} {epc_out[0]} {epc_out[1]} {id_instr[0]} {id_instr[1]} {instr_reg_out[0]} {instr_reg_out[1]} {mdu_instr[2]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE -togglenode {mdu_instr[3]} {mdu_instr[6]} {mdu_instr[26]} {mdu_instr[27]} {mdu_instr[28]} {mdu_instr[29]} {mdu_instr[30]} {mdu_instr[31]} {mdu_pc[0]} {mdu_pc[1]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE -togglenode {mdu_pc[15]} {mdu_pc[16]} {mdu_pc[17]} {mdu_pc[18]} {mdu_pc[19]} {mdu_pc[20]} {mdu_pc[21]} {mdu_pc[22]} {mdu_pc[23]} {mdu_pc[24]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE -togglenode {mdu_pc[25]} {mdu_pc[26]} {mdu_pc[27]} {mdu_pc[28]} {mdu_pc[29]} {mdu_pc[30]} {opcode_out[0]} {opcode_out[1]} {pc[0]} {pc_out[0]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE -togglenode {pc_out[1]} {pc_out[15]} {pc_out[16]} {pc_out[17]} {pc_out[18]} {pc_out[19]} {pc_out[20]} {pc_out[21]} {pc_out[22]} {pc_out[23]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE -togglenode {pc_out[24]} {pc_out[25]} {pc_out[26]} {pc_out[27]} {pc_out[28]} {pc_out[29]} {pc_out[30]} {pc_plus_4_out[0]} {pc_plus_4_pipline1_out[0]} {pc_plus_4_pipline1_out[1]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE -togglenode {pc_plus_4_pipline1_out[15]} {pc_plus_4_pipline1_out[16]} {pc_plus_4_pipline1_out[17]} {pc_plus_4_pipline1_out[18]} {pc_plus_4_pipline1_out[19]} {pc_plus_4_pipline1_out[20]} {pc_plus_4_pipline1_out[21]} {pc_plus_4_pipline1_out[22]} {pc_plus_4_pipline1_out[23]} {pc_plus_4_pipline1_out[24]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE -togglenode {pc_plus_4_pipline1_out[25]} {pc_plus_4_pipline1_out[26]} {pc_plus_4_pipline1_out[27]} {pc_plus_4_pipline1_out[28]} {pc_plus_4_pipline1_out[29]} {pc_plus_4_pipline1_out[30]} {pc_plus_4_reg_out[0]} {pc_plus_4_reg_out[1]} {pc_plus_4_reg_out[15]} {pc_plus_4_reg_out[16]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE -togglenode {pc_plus_4_reg_out[17]} {pc_plus_4_reg_out[18]} {pc_plus_4_reg_out[19]} {pc_plus_4_reg_out[20]} {pc_plus_4_reg_out[21]} {pc_plus_4_reg_out[22]} {pc_plus_4_reg_out[23]} {pc_plus_4_reg_out[24]} {pc_plus_4_reg_out[25]} {pc_plus_4_reg_out[26]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE -togglenode {pc_plus_4_reg_out[27]} {pc_plus_4_reg_out[28]} {pc_plus_4_reg_out[29]} {pc_plus_4_reg_out[30]} {pc_plus_4_reg_out[31]} {pc_reg_out[0]} {pc_reg_out[1]} {pc_reg_out[15]} {pc_reg_out[16]} {pc_reg_out[17]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE -togglenode {pc_reg_out[18]} {pc_reg_out[19]} {pc_reg_out[20]} {pc_reg_out[21]} {pc_reg_out[22]} {pc_reg_out[23]} {pc_reg_out[24]} {pc_reg_out[25]} {pc_reg_out[26]} {pc_reg_out[27]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE -togglenode {pc_reg_out[28]} {pc_reg_out[29]} {pc_reg_out[30]} {pc_reg_out[31]} {pipe2_instr[0]} {pipe2_instr[1]} {pipe2_pc[0]} {pipe2_pc[1]} {pipe2_pc[15]} {pipe2_pc[16]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE -togglenode {pipe2_pc[17]} {pipe2_pc[18]} {pipe2_pc[19]} {pipe2_pc[20]} {pipe2_pc[21]} {pipe2_pc[22]} {pipe2_pc[23]} {pipe2_pc[24]} {pipe2_pc[25]} {pipe2_pc[26]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE -togglenode {pipe2_pc[27]} {pipe2_pc[28]} {pipe2_pc[29]} {pipe2_pc[30]} {trap_address_out[0]} {trap_address_out[1]} {trap_pc_out[0]} {trap_pc_out[1]} {trap_pc_out[15]} {trap_pc_out[16]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE -togglenode {trap_pc_out[17]} {trap_pc_out[18]} {trap_pc_out[19]} {trap_pc_out[20]} {trap_pc_out[21]} {trap_pc_out[22]} {trap_pc_out[23]} {trap_pc_out[24]} {trap_pc_out[25]} {trap_pc_out[26]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE -togglenode {trap_pc_out[27]} {trap_pc_out[28]} {trap_pc_out[29]} {trap_pc_out[30]} {trap_pc_out[31]}
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-3457) Index into an optimized atomic vector net is not allowed.
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+# no matching coverage data was found.
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/u_pc_unit -togglenode {pc[0]} {pc_next[0]}
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+#     * Unaffected toggles: /tb_pragya_top/dut/CORE/u_pc_unit/pc[0] /tb_pragya_top/dut/CORE/u_pc_unit/pc_next[0]
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/if_id_reg_inst -togglenode {pc_out[0]} {pc_out[1]} {pc_out[15]} {pc_out[16]} {pc_out[17]} {pc_out[18]} {pc_out[19]} {pc_out[20]} {pc_out[21]} {pc_out[22]}
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+#     * Unaffected toggles: /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_out[0] /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_out[1] /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_out[15] /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_out[16] /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_out[17] /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_out[18] /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_out[19] /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_out[20] /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_out[21] /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_out[22]
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/if_id_reg_inst -togglenode {pc_out[23]} {pc_out[24]} {pc_out[25]} {pc_out[26]} {pc_out[27]} {pc_out[28]} {pc_out[29]} {pc_out[30]} {pc_plus_4_pipline1_out[0]} {pc_plus_4_pipline1_out[1]}
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+#     * Unaffected toggles: /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_out[23] /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_out[24] /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_out[25] /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_out[26] /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_out[27] /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_out[28] /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_out[29] /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_out[30] /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_plus_4_pipline1_out[0] /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_plus_4_pipline1_out[1]
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/if_id_reg_inst -togglenode {pc_plus_4_pipline1_out[15]} {pc_plus_4_pipline1_out[16]} {pc_plus_4_pipline1_out[17]} {pc_plus_4_pipline1_out[18]} {pc_plus_4_pipline1_out[19]} {pc_plus_4_pipline1_out[20]} {pc_plus_4_pipline1_out[21]} {pc_plus_4_pipline1_out[22]} {pc_plus_4_pipline1_out[23]} {pc_plus_4_pipline1_out[24]}
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+#     * Unaffected toggles: /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_plus_4_pipline1_out[15] /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_plus_4_pipline1_out[16] /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_plus_4_pipline1_out[17] /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_plus_4_pipline1_out[18] /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_plus_4_pipline1_out[19] /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_plus_4_pipline1_out[20] /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_plus_4_pipline1_out[21] /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_plus_4_pipline1_out[22] /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_plus_4_pipline1_out[23] /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_plus_4_pipline1_out[24]
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/if_id_reg_inst -togglenode {pc_plus_4_pipline1_out[25]} {pc_plus_4_pipline1_out[26]} {pc_plus_4_pipline1_out[27]} {pc_plus_4_pipline1_out[28]} {pc_plus_4_pipline1_out[29]} {pc_plus_4_pipline1_out[30]}
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+#     * Unaffected toggles: /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_plus_4_pipline1_out[25] /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_plus_4_pipline1_out[26] /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_plus_4_pipline1_out[27] /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_plus_4_pipline1_out[28] /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_plus_4_pipline1_out[29] /tb_pragya_top/dut/CORE/if_id_reg_inst/pc_plus_4_pipline1_out[30]
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/regfile_inst -togglenode {i[0]} {i[1]} {i[2]} {i[3]} {i[4]} {i[5]} {i[6]} {i[7]} {i[8]} {i[9]}
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+#     * Unaffected toggles: /tb_pragya_top/dut/CORE/regfile_inst/i[0] /tb_pragya_top/dut/CORE/regfile_inst/i[1] /tb_pragya_top/dut/CORE/regfile_inst/i[2] /tb_pragya_top/dut/CORE/regfile_inst/i[3] /tb_pragya_top/dut/CORE/regfile_inst/i[4] /tb_pragya_top/dut/CORE/regfile_inst/i[5] /tb_pragya_top/dut/CORE/regfile_inst/i[6] /tb_pragya_top/dut/CORE/regfile_inst/i[7] /tb_pragya_top/dut/CORE/regfile_inst/i[8] /tb_pragya_top/dut/CORE/regfile_inst/i[9]
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/regfile_inst -togglenode {i[10]} {i[11]} {i[12]} {i[13]} {i[14]} {i[15]} {i[16]} {i[17]} {i[18]} {i[19]}
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+#     * Unaffected toggles: /tb_pragya_top/dut/CORE/regfile_inst/i[10] /tb_pragya_top/dut/CORE/regfile_inst/i[11] /tb_pragya_top/dut/CORE/regfile_inst/i[12] /tb_pragya_top/dut/CORE/regfile_inst/i[13] /tb_pragya_top/dut/CORE/regfile_inst/i[14] /tb_pragya_top/dut/CORE/regfile_inst/i[15] /tb_pragya_top/dut/CORE/regfile_inst/i[16] /tb_pragya_top/dut/CORE/regfile_inst/i[17] /tb_pragya_top/dut/CORE/regfile_inst/i[18] /tb_pragya_top/dut/CORE/regfile_inst/i[19]
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/regfile_inst -togglenode {i[20]} {i[21]} {i[22]} {i[23]} {i[24]} {i[25]} {i[26]} {i[27]} {i[28]} {i[29]}
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+#     * Unaffected toggles: /tb_pragya_top/dut/CORE/regfile_inst/i[20] /tb_pragya_top/dut/CORE/regfile_inst/i[21] /tb_pragya_top/dut/CORE/regfile_inst/i[22] /tb_pragya_top/dut/CORE/regfile_inst/i[23] /tb_pragya_top/dut/CORE/regfile_inst/i[24] /tb_pragya_top/dut/CORE/regfile_inst/i[25] /tb_pragya_top/dut/CORE/regfile_inst/i[26] /tb_pragya_top/dut/CORE/regfile_inst/i[27] /tb_pragya_top/dut/CORE/regfile_inst/i[28] /tb_pragya_top/dut/CORE/regfile_inst/i[29]
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/regfile_inst -togglenode {i[30]} {i[31]}
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+#     * Unaffected toggles: /tb_pragya_top/dut/CORE/regfile_inst/i[30] /tb_pragya_top/dut/CORE/regfile_inst/i[31]
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/csr_inst -togglenode {mcause[4]} {mcause[5]} {mcause[6]} {mcause[7]} {mcause[8]} {mcause[9]} {mcause[10]} {mcause[11]} {mcause[12]} {mcause[13]}
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+#     * Unaffected toggles: /tb_pragya_top/dut/CORE/csr_inst/mcause[4] /tb_pragya_top/dut/CORE/csr_inst/mcause[5] /tb_pragya_top/dut/CORE/csr_inst/mcause[6] /tb_pragya_top/dut/CORE/csr_inst/mcause[7] /tb_pragya_top/dut/CORE/csr_inst/mcause[8] /tb_pragya_top/dut/CORE/csr_inst/mcause[9] /tb_pragya_top/dut/CORE/csr_inst/mcause[10] /tb_pragya_top/dut/CORE/csr_inst/mcause[11] /tb_pragya_top/dut/CORE/csr_inst/mcause[12] /tb_pragya_top/dut/CORE/csr_inst/mcause[13]
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/csr_inst -togglenode {mcause[14]} {mcause[15]} {mcause[16]} {mcause[17]} {mcause[18]} {mcause[19]} {mcause[20]} {mcause[21]} {mcause[22]} {mcause[23]}
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+#     * Unaffected toggles: /tb_pragya_top/dut/CORE/csr_inst/mcause[14] /tb_pragya_top/dut/CORE/csr_inst/mcause[15] /tb_pragya_top/dut/CORE/csr_inst/mcause[16] /tb_pragya_top/dut/CORE/csr_inst/mcause[17] /tb_pragya_top/dut/CORE/csr_inst/mcause[18] /tb_pragya_top/dut/CORE/csr_inst/mcause[19] /tb_pragya_top/dut/CORE/csr_inst/mcause[20] /tb_pragya_top/dut/CORE/csr_inst/mcause[21] /tb_pragya_top/dut/CORE/csr_inst/mcause[22] /tb_pragya_top/dut/CORE/csr_inst/mcause[23]
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/csr_inst -togglenode {mcause[24]} {mcause[25]} {mcause[26]} {mcause[27]} {mcause[28]} {mcause[29]} {mcause[30]} {mepc[0]} {mepc[1]} {mie[0]}
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+#     * Unaffected toggles: /tb_pragya_top/dut/CORE/csr_inst/mcause[24] /tb_pragya_top/dut/CORE/csr_inst/mcause[25] /tb_pragya_top/dut/CORE/csr_inst/mcause[26] /tb_pragya_top/dut/CORE/csr_inst/mcause[27] /tb_pragya_top/dut/CORE/csr_inst/mcause[28] /tb_pragya_top/dut/CORE/csr_inst/mcause[29] /tb_pragya_top/dut/CORE/csr_inst/mcause[30] /tb_pragya_top/dut/CORE/csr_inst/mepc[0] /tb_pragya_top/dut/CORE/csr_inst/mepc[1] /tb_pragya_top/dut/CORE/csr_inst/mie[0]
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/csr_inst -togglenode {mie[1]} {mie[2]} {mie[4]} {mie[5]} {mie[6]} {mie[8]} {mie[9]} {mie[10]} {mie[12]} {mie[13]}
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+#     * Unaffected toggles: /tb_pragya_top/dut/CORE/csr_inst/mie[1] /tb_pragya_top/dut/CORE/csr_inst/mie[2] /tb_pragya_top/dut/CORE/csr_inst/mie[4] /tb_pragya_top/dut/CORE/csr_inst/mie[5] /tb_pragya_top/dut/CORE/csr_inst/mie[6] /tb_pragya_top/dut/CORE/csr_inst/mie[8] /tb_pragya_top/dut/CORE/csr_inst/mie[9] /tb_pragya_top/dut/CORE/csr_inst/mie[10] /tb_pragya_top/dut/CORE/csr_inst/mie[12] /tb_pragya_top/dut/CORE/csr_inst/mie[13]
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/csr_inst -togglenode {mie[14]} {mie[15]} {mie[16]} {mie[17]} {mie[18]} {mie[19]} {mie[20]} {mie[21]} {mie[22]} {mie[23]}
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+#     * Unaffected toggles: /tb_pragya_top/dut/CORE/csr_inst/mie[14] /tb_pragya_top/dut/CORE/csr_inst/mie[15] /tb_pragya_top/dut/CORE/csr_inst/mie[16] /tb_pragya_top/dut/CORE/csr_inst/mie[17] /tb_pragya_top/dut/CORE/csr_inst/mie[18] /tb_pragya_top/dut/CORE/csr_inst/mie[19] /tb_pragya_top/dut/CORE/csr_inst/mie[20] /tb_pragya_top/dut/CORE/csr_inst/mie[21] /tb_pragya_top/dut/CORE/csr_inst/mie[22] /tb_pragya_top/dut/CORE/csr_inst/mie[23]
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/csr_inst -togglenode {mie[24]} {mie[25]} {mie[26]} {mie[27]} {mie[28]} {mie[29]} {mie[30]} {mie[31]} {misa[0]} {misa[1]}
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+#     * Unaffected toggles: /tb_pragya_top/dut/CORE/csr_inst/mie[24] /tb_pragya_top/dut/CORE/csr_inst/mie[25] /tb_pragya_top/dut/CORE/csr_inst/mie[26] /tb_pragya_top/dut/CORE/csr_inst/mie[27] /tb_pragya_top/dut/CORE/csr_inst/mie[28] /tb_pragya_top/dut/CORE/csr_inst/mie[29] /tb_pragya_top/dut/CORE/csr_inst/mie[30] /tb_pragya_top/dut/CORE/csr_inst/mie[31] /tb_pragya_top/dut/CORE/csr_inst/misa[0] /tb_pragya_top/dut/CORE/csr_inst/misa[1]
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/csr_inst -togglenode {misa[2]} {misa[3]} {misa[4]} {misa[5]} {misa[6]} {misa[7]} {misa[8]} {misa[9]} {misa[10]} {misa[11]}
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+#     * Unaffected toggles: /tb_pragya_top/dut/CORE/csr_inst/misa[2] /tb_pragya_top/dut/CORE/csr_inst/misa[3] /tb_pragya_top/dut/CORE/csr_inst/misa[4] /tb_pragya_top/dut/CORE/csr_inst/misa[5] /tb_pragya_top/dut/CORE/csr_inst/misa[6] /tb_pragya_top/dut/CORE/csr_inst/misa[7] /tb_pragya_top/dut/CORE/csr_inst/misa[8] /tb_pragya_top/dut/CORE/csr_inst/misa[9] /tb_pragya_top/dut/CORE/csr_inst/misa[10] /tb_pragya_top/dut/CORE/csr_inst/misa[11]
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/csr_inst -togglenode {misa[13]} {misa[14]} {misa[15]} {misa[16]} {misa[17]} {misa[18]} {misa[19]} {misa[20]} {misa[21]} {misa[22]}
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+#     * Unaffected toggles: /tb_pragya_top/dut/CORE/csr_inst/misa[13] /tb_pragya_top/dut/CORE/csr_inst/misa[14] /tb_pragya_top/dut/CORE/csr_inst/misa[15] /tb_pragya_top/dut/CORE/csr_inst/misa[16] /tb_pragya_top/dut/CORE/csr_inst/misa[17] /tb_pragya_top/dut/CORE/csr_inst/misa[18] /tb_pragya_top/dut/CORE/csr_inst/misa[19] /tb_pragya_top/dut/CORE/csr_inst/misa[20] /tb_pragya_top/dut/CORE/csr_inst/misa[21] /tb_pragya_top/dut/CORE/csr_inst/misa[22]
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/csr_inst -togglenode {misa[23]} {misa[24]} {misa[25]} {misa[26]} {misa[27]} {misa[28]} {misa[29]} {misa[30]} {misa[31]}
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+#     * Unaffected toggles: /tb_pragya_top/dut/CORE/csr_inst/misa[23] /tb_pragya_top/dut/CORE/csr_inst/misa[24] /tb_pragya_top/dut/CORE/csr_inst/misa[25] /tb_pragya_top/dut/CORE/csr_inst/misa[26] /tb_pragya_top/dut/CORE/csr_inst/misa[27] /tb_pragya_top/dut/CORE/csr_inst/misa[28] /tb_pragya_top/dut/CORE/csr_inst/misa[29] /tb_pragya_top/dut/CORE/csr_inst/misa[30] /tb_pragya_top/dut/CORE/csr_inst/misa[31]
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/machine_control_inst -togglenode {cause_out[2]} {curr_state[0]} {next_state[0]} {trap_pc_out[0]} {trap_pc_out[1]} {trap_pc_out[15]} {trap_pc_out[16]} {trap_pc_out[17]} {trap_pc_out[18]} {trap_pc_out[19]}
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+#     * Unaffected toggles: /tb_pragya_top/dut/CORE/machine_control_inst/cause_out[2] /tb_pragya_top/dut/CORE/machine_control_inst/curr_state[0] /tb_pragya_top/dut/CORE/machine_control_inst/next_state[0] /tb_pragya_top/dut/CORE/machine_control_inst/trap_pc_out[0] /tb_pragya_top/dut/CORE/machine_control_inst/trap_pc_out[1] /tb_pragya_top/dut/CORE/machine_control_inst/trap_pc_out[15] /tb_pragya_top/dut/CORE/machine_control_inst/trap_pc_out[16] /tb_pragya_top/dut/CORE/machine_control_inst/trap_pc_out[17] /tb_pragya_top/dut/CORE/machine_control_inst/trap_pc_out[18] /tb_pragya_top/dut/CORE/machine_control_inst/trap_pc_out[19]
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/machine_control_inst -togglenode {trap_pc_out[20]} {trap_pc_out[21]} {trap_pc_out[22]} {trap_pc_out[23]} {trap_pc_out[24]} {trap_pc_out[25]} {trap_pc_out[26]} {trap_pc_out[27]} {trap_pc_out[28]} {trap_pc_out[29]}
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+#     * Unaffected toggles: /tb_pragya_top/dut/CORE/machine_control_inst/trap_pc_out[20] /tb_pragya_top/dut/CORE/machine_control_inst/trap_pc_out[21] /tb_pragya_top/dut/CORE/machine_control_inst/trap_pc_out[22] /tb_pragya_top/dut/CORE/machine_control_inst/trap_pc_out[23] /tb_pragya_top/dut/CORE/machine_control_inst/trap_pc_out[24] /tb_pragya_top/dut/CORE/machine_control_inst/trap_pc_out[25] /tb_pragya_top/dut/CORE/machine_control_inst/trap_pc_out[26] /tb_pragya_top/dut/CORE/machine_control_inst/trap_pc_out[27] /tb_pragya_top/dut/CORE/machine_control_inst/trap_pc_out[28] /tb_pragya_top/dut/CORE/machine_control_inst/trap_pc_out[29]
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/machine_control_inst -togglenode {trap_pc_out[30]} {trap_pc_out[31]}
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+#     * Unaffected toggles: /tb_pragya_top/dut/CORE/machine_control_inst/trap_pc_out[30] /tb_pragya_top/dut/CORE/machine_control_inst/trap_pc_out[31]
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/pipeline2_inst -togglenode {instr_reg_out[0]} {instr_reg_out[1]} {pc_plus_4_reg_out[0]} {pc_plus_4_reg_out[1]} {pc_plus_4_reg_out[15]} {pc_plus_4_reg_out[16]} {pc_plus_4_reg_out[17]} {pc_plus_4_reg_out[18]} {pc_plus_4_reg_out[19]} {pc_plus_4_reg_out[20]}
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+#     * Unaffected toggles: /tb_pragya_top/dut/CORE/pipeline2_inst/instr_reg_out[0] /tb_pragya_top/dut/CORE/pipeline2_inst/instr_reg_out[1] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_plus_4_reg_out[0] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_plus_4_reg_out[1] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_plus_4_reg_out[15] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_plus_4_reg_out[16] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_plus_4_reg_out[17] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_plus_4_reg_out[18] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_plus_4_reg_out[19] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_plus_4_reg_out[20]
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/pipeline2_inst -togglenode {pc_plus_4_reg_out[21]} {pc_plus_4_reg_out[22]} {pc_plus_4_reg_out[23]} {pc_plus_4_reg_out[24]} {pc_plus_4_reg_out[25]} {pc_plus_4_reg_out[26]} {pc_plus_4_reg_out[27]} {pc_plus_4_reg_out[28]} {pc_plus_4_reg_out[29]} {pc_plus_4_reg_out[30]}
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+#     * Unaffected toggles: /tb_pragya_top/dut/CORE/pipeline2_inst/pc_plus_4_reg_out[21] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_plus_4_reg_out[22] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_plus_4_reg_out[23] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_plus_4_reg_out[24] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_plus_4_reg_out[25] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_plus_4_reg_out[26] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_plus_4_reg_out[27] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_plus_4_reg_out[28] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_plus_4_reg_out[29] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_plus_4_reg_out[30]
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/pipeline2_inst -togglenode {pc_plus_4_reg_out[31]} {pc_reg_out[0]} {pc_reg_out[1]} {pc_reg_out[15]} {pc_reg_out[16]} {pc_reg_out[17]} {pc_reg_out[18]} {pc_reg_out[19]} {pc_reg_out[20]} {pc_reg_out[21]}
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+#     * Unaffected toggles: /tb_pragya_top/dut/CORE/pipeline2_inst/pc_plus_4_reg_out[31] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_reg_out[0] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_reg_out[1] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_reg_out[15] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_reg_out[16] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_reg_out[17] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_reg_out[18] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_reg_out[19] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_reg_out[20] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_reg_out[21]
+# 
+# coverage exclude -scope /tb_pragya_top/dut/CORE/pipeline2_inst -togglenode {pc_reg_out[22]} {pc_reg_out[23]} {pc_reg_out[24]} {pc_reg_out[25]} {pc_reg_out[26]} {pc_reg_out[27]} {pc_reg_out[28]} {pc_reg_out[29]} {pc_reg_out[30]} {pc_reg_out[31]}
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+#     * Unaffected toggles: /tb_pragya_top/dut/CORE/pipeline2_inst/pc_reg_out[22] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_reg_out[23] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_reg_out[24] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_reg_out[25] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_reg_out[26] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_reg_out[27] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_reg_out[28] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_reg_out[29] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_reg_out[30] /tb_pragya_top/dut/CORE/pipeline2_inst/pc_reg_out[31]
+# 
+# coverage exclude -scope /tb_pragya_top/dut/I_wrapper/imem -togglenode {instruction_out[0]} {instruction_out[1]}
+# ** UI-Msg: (vsim-4036) The 'coverage exclude' command had no effect on some/all objects because
+#     * matching coverage data is already excluded.
+#     * Unaffected toggles: /tb_pragya_top/dut/I_wrapper/imem/instruction_out[0] /tb_pragya_top/dut/I_wrapper/imem/instruction_out[1]
+# 
+#  run -all
+# c_wfi_timer_test    = 0
+# 
+# ==============================================
+# TB TEST MODE
+# ==============================================
+# RISCV_DV_MODE       = 1
+# c_irq_test          = 0
+# c_timer_irq_test    = 0
+# c_timer_pending_test    = 0
+# c_timer_mtie_disabled_test = 0
+# c_external_pending_test    = 0
+# c_software_pending_test    = 0
+# c_software_irq_test = 0
+# dv_irq_test         = 0
+# ==============================================
+# 
+# RTL log opened successfully.
+# [40000] Reset Released
+# 
+# ======================================
+# Starting RISC-V-DV Program
+# ======================================
+# 
+# PC=80000000 INSTR=f14022f3 x5=00000000
+# PC=80000004 INSTR=00000313 x6=00000000
+# PC=8000000c INSTR=00000f17 x30=8000000c
+# IMM_ADDER: rs1=80000018 imm=00000000 target=80000018
+# PC=80000010 INSTR=00cf0f13 x30=80000018
+# IMM_ADDER: rs1=8000000c imm=00000000 target=8000000c
+# PC=80000018 INSTR=40001637 x12=40001000
+# PC=8000001c INSTR=10060613 x12=40001100
+# PC=80000024 INSTR=00011c17 x24=80011024
+# PC=80000028 INSTR=cc0c0c13 x24=80010ce4
+# PC=8000002c INSTR=00003617 x12=8000302c
+# PC=80000030 INSTR=81860613 x12=80002844
+# PC=80000034 INSTR=00066613 x12=80002844
+# PC=8000003c INSTR=00000617 x12=8000003c
+# PC=80000040 INSTR=02860613 x12=80000064
+# PC=8000004c INSTR=00002637 x12=00002000
+# PC=80000050 INSTR=80060613 x12=00001800
+# PC=80000058 INSTR=00000613 x12=00000000
+# PC=8000006c INSTR=f42180b7 x1=f4218000
+# PC=80000070 INSTR=f3f08093 x1=f4217f3f
+# PC=80000074 INSTR=00b00113 x2=0000000b
+# PC=80000078 INSTR=0cc791b7 x3=0cc79000
+# PC=8000007c INSTR=94818193 x3=0cc78948
+# PC=80000080 INSTR=fda63237 x4=fda63000
+# PC=80000084 INSTR=9ab20213 x4=fda629ab
+# PC=80000088 INSTR=00000293 x5=00000000
+# PC=8000008c INSTR=00300313 x6=00000003
+# PC=80000090 INSTR=00000393 x7=00000000
+# PC=80000094 INSTR=00700413 x8=00000007
+# PC=80000098 INSTR=f850a537 x10=f850a000
+# PC=8000009c INSTR=33650513 x10=f850a336
+# PC=800000a0 INSTR=00000593 x11=00000000
+# PC=800000a4 INSTR=ff294637 x12=ff294000
+# PC=800000a8 INSTR=71760613 x12=ff294717
+# PC=800000ac INSTR=f2a776b7 x13=f2a77000
+# PC=800000b0 INSTR=bb268693 x13=f2a76bb2
+# PC=800000b4 INSTR=80000737 x14=80000000
+# PC=800000b8 INSTR=800007b7 x15=80000000
+# PC=800000bc INSTR=00200813 x16=00000002
+# PC=800000c0 INSTR=00900893 x17=00000009
+# PC=800000c4 INSTR=00000913 x18=00000000
+# PC=800000c8 INSTR=335789b7 x19=33578000
+# PC=800000cc INSTR=dd998993 x19=33577dd9
+# PC=800000d0 INSTR=fdfc6a37 x20=fdfc6000
+# PC=800000d4 INSTR=5e0a0a13 x20=fdfc65e0
+# PC=800000d8 INSTR=00000a93 x21=00000000
+# PC=800000dc INSTR=f3e82b37 x22=f3e82000
+# PC=800000e0 INSTR=73db0b13 x22=f3e8273d
+# PC=800000e4 INSTR=80000bb7 x23=80000000
+# PC=800000e8 INSTR=fa774cb7 x25=fa774000
+# PC=800000ec INSTR=402c8c93 x25=fa774402
+# PC=800000f0 INSTR=00400d13 x26=00000004
+# PC=800000f4 INSTR=00000d93 x27=00000000
+# PC=800000f8 INSTR=00000e13 x28=00000000
+# PC=800000fc INSTR=00200e93 x29=00000002
+# PC=80000100 INSTR=00500f13 x30=00000005
+# PC=80000104 INSTR=00000f93 x31=00000000
+# PC=80000108 INSTR=0000d497 x9=8000d108
+# PC=8000010c INSTR=d5c48493 x9=8000ce64
+# PC=80000110 INSTR=40bbd113 x2=fff00000
+# PC=80000114 INSTR=02ebda33 x20=00000001
+# PC=80000118 INSTR=003e95b3 x11=00000200
+# PC=8000011c INSTR=02579933 x18=00000000
+# PC=80000124 INSTR=00306133 x2=0cc78948
+# PC=80000128 INSTR=008b9e93 x29=00000000
+# PC=8000012c INSTR=00bcaeb3 x29=00000001
+# PC=80000130 INSTR=003e95b3 x11=00000100
+# PC=80000134 INSTR=40bbd113 x2=fff00000
+# PC=80000138 INSTR=2be6b093 x1=00000000
+# PC=8000013c INSTR=02c60b33 x22=ab1bc411
+# PC=80000140 INSTR=01f97cb3 x25=00000000
+# PC=80000144 INSTR=039268b3 x17=fda629ab
+# PC=80000148 INSTR=07584893 x17=00000077
+# PC=80000150 INSTR=6d8ee293 x5=000006d9
+# PC=80000154 INSTR=0023b433 x8=00000001
+# PC=80000158 INSTR=0264b2b3 x5=00000001
+# PC=8000015c INSTR=13722417 x8=9372215c
+# PC=80000160 INSTR=07584893 x17=00000077
+# PC=80000164 INSTR=02579933 x18=ffffffff
+# PC=80000168 INSTR=13722417 x8=93722168
+# PC=8000016c INSTR=003e95b3 x11=00000100
+# PC=80000170 INSTR=008b9e93 x29=00000000
+# PC=80000174 INSTR=2ac3dab7 x21=2ac3d000
+# PC=80000178 INSTR=07584893 x17=00000077
+# PC=8000017c INSTR=0023b433 x8=00000001
+# PC=80000180 INSTR=6d8ee293 x5=000006d8
+# PC=80000188 INSTR=00306133 x2=0cc78948
+# PC=8000018c INSTR=2be6b093 x1=00000000
+# PC=80000190 INSTR=2be6b093 x1=00000000
+# PC=80000194 INSTR=01f97cb3 x25=00000000
+# PC=80000198 INSTR=f74d0393 x7=ffffff78
+# PC=8000019c INSTR=13722417 x8=9372219c
+# PC=800001a0 INSTR=00094eb3 x29=ffffffff
+# PC=800001a4 INSTR=13722417 x8=937221a4
+# PC=800001a8 INSTR=af59fa13 x20=335778d1
+# PC=800001ac INSTR=02ebda33 x20=00000001
+# PC=800001b0 INSTR=02c60b33 x22=ab1bc411
+# PC=800001b4 INSTR=039268b3 x17=fda629ab
+# PC=800001b8 INSTR=f74d0393 x7=ffffff78
+# PC=800001bc INSTR=03094e33 x28=00000000
+# PC=800001c0 INSTR=f74d0393 x7=ffffff78
+# PC=800001c4 INSTR=00bcaeb3 x29=00000001
+# PC=800001c8 INSTR=40b20233 x4=fda628ab
+# PC=800001cc INSTR=af59fa13 x20=335778d1
+# PC=800001d0 INSTR=f74d0393 x7=ffffff78
+# PC=800001d4 INSTR=001352b3 x5=00000003
+# PC=800001d8 INSTR=037ca0b3 x1=00000000
+# PC=800001dc INSTR=00bcaeb3 x29=00000001
+# PC=800001e0 INSTR=02579933 x18=fffffffe
+# PC=800001e4 INSTR=02ebda33 x20=00000001
+# PC=800001e8 INSTR=037ca0b3 x1=00000000
+# PC=800001ec INSTR=001352b3 x5=00000003
+# PC=800001f0 INSTR=00306133 x2=0cc78948
+# PC=800001f4 INSTR=037ca0b3 x1=00000000
+# PC=800001f8 INSTR=2be6b093 x1=00000000
+# PC=800001fc INSTR=008b9e93 x29=00000000
+# PC=80000200 INSTR=02579933 x18=fffffffe
+# PC=80000204 INSTR=41abd5b3 x11=f8000000
+# PC=80000208 INSTR=00306133 x2=0cc78948
+# PC=8000020c INSTR=6d8ee293 x5=000006d8
+# PC=80000214 INSTR=00860b33 x22=929b68bb
+# PC=80000218 INSTR=008b9e93 x29=00000000
+# PC=8000021c INSTR=41abd5b3 x11=f8000000
+# PC=80000220 INSTR=0023b433 x8=00000000
+# PC=80000224 INSTR=0023b433 x8=00000000
+# PC=80000228 INSTR=00094eb3 x29=fffffffe
+# PC=8000022c INSTR=13722417 x8=9372222c
+# PC=80000230 INSTR=00bcaeb3 x29=00000000
+# PC=80000234 INSTR=0264b2b3 x5=00000001
+# PC=80000238 INSTR=41abd5b3 x11=f8000000
+# PC=8000023c INSTR=672c2913 x18=00000001
+# PC=80000240 INSTR=037ca0b3 x1=00000000
+# PC=80000244 INSTR=003e95b3 x11=00000000
+# PC=80000248 INSTR=00bcaeb3 x29=00000000
+# PC=80000250 INSTR=41abd5b3 x11=f8000000
+# PC=80000254 INSTR=02c60b33 x22=ab1bc411
+# PC=80000258 INSTR=41abd5b3 x11=f8000000
+# PC=8000025c INSTR=003e95b3 x11=00000000
+# PC=80000260 INSTR=039268b3 x17=fda628ab
+# PC=80000264 INSTR=2be6b093 x1=00000000
+# PC=80000268 INSTR=0023b433 x8=00000000
+# PC=8000026c INSTR=00306133 x2=0cc78948
+# PC=80000270 INSTR=00306133 x2=0cc78948
+# PC=80000274 INSTR=2be6b093 x1=00000000
+# PC=80000278 INSTR=af59fa13 x20=335778d1
+# PC=8000027c INSTR=03094e33 x28=00000000
+# PC=80000280 INSTR=039268b3 x17=fda628ab
+# PC=80000288 INSTR=07584893 x17=00000077
+# PC=8000028c INSTR=672c2913 x18=00000001
+# PC=80000290 INSTR=07584893 x17=00000077
+# PC=80000298 INSTR=00306133 x2=0cc78948
+# PC=8000029c INSTR=40b20233 x4=fda628ab
+# PC=800002a0 INSTR=03094e33 x28=00000000
+# PC=800002a4 INSTR=001352b3 x5=00000003
+# PC=800002a8 INSTR=6d8ee293 x5=000006d8
+# PC=800002ac INSTR=00860b33 x22=ff294717
+# PC=800002b0 INSTR=00094eb3 x29=00000001
+# PC=800002b4 INSTR=037ca0b3 x1=00000000
+# PC=800002b8 INSTR=40b20233 x4=fda628ab
+# PC=800002bc INSTR=672c2913 x18=00000001
+# PC=800002c0 INSTR=00860b33 x22=ff294717
+# PC=800002c4 INSTR=02ebda33 x20=00000001
+# PC=800002c8 INSTR=01f97cb3 x25=00000000
+# PC=800002d0 INSTR=037ca0b3 x1=00000000
+# PC=800002d4 INSTR=01f97cb3 x25=00000000
+# PC=800002d8 INSTR=0178d913 x18=00000000
+# PC=800002dc INSTR=00094eb3 x29=00000000
+# PC=800002e0 INSTR=0264b2b3 x5=00000001
+# PC=800002e4 INSTR=02c60b33 x22=ab1bc411
+# PC=800002e8 INSTR=07584893 x17=00000077
+# PC=800002ec INSTR=af59fa13 x20=335778d1
+# PC=800002f0 INSTR=672c2913 x18=00000001
+# PC=800002f8 INSTR=00860b33 x22=ff294717
+# PC=800002fc INSTR=07584893 x17=00000077
+# PC=80000300 INSTR=13722417 x8=93722300
+# PC=80000304 INSTR=00860b33 x22=929b6a17
+# PC=80000308 INSTR=03094e33 x28=00000000
+# PC=8000030c INSTR=0023b433 x8=00000000
+# PC=80000310 INSTR=40b20233 x4=fda628ab
+# PC=80000318 INSTR=008b9e93 x29=00000000
+# PC=8000031c INSTR=02c60b33 x22=ab1bc411
+# PC=80000320 INSTR=037ca0b3 x1=00000000
+# PC=80000324 INSTR=02ebda33 x20=00000001
+# PC=80000328 INSTR=03094e33 x28=00000000
+# PC=8000032c INSTR=2be6b093 x1=00000000
+# PC=80000330 INSTR=037ca0b3 x1=00000000
+# PC=80000334 INSTR=41abd5b3 x11=f8000000
+# PC=80000338 INSTR=13722417 x8=93722338
+# PC=8000033c INSTR=02c60b33 x22=ab1bc411
+# PC=80000340 INSTR=0178d913 x18=00000000
+# PC=80000344 INSTR=008b9e93 x29=00000000
+# PC=80000348 INSTR=0023b433 x8=00000000
+# PC=80000350 INSTR=00860b33 x22=ff294717
+# PC=80000354 INSTR=0264b2b3 x5=00000001
+# PC=80000358 INSTR=f74d0393 x7=ffffff78
+# PC=8000035c INSTR=039268b3 x17=fda628ab
+# PC=80000360 INSTR=0178d913 x18=000001fb
+# PC=8000036c INSTR=008b9e93 x29=00000000
+# PC=80000370 INSTR=003e95b3 x11=00000000
+# PC=80000374 INSTR=008b9e93 x29=00000000
+# PC=80000378 INSTR=672c2913 x18=00000001
+# PC=8000037c INSTR=0023b433 x8=00000000
+# PC=80000380 INSTR=037ca0b3 x1=00000000
+# PC=80000388 INSTR=02579933 x18=ffffffff
+# PC=8000038c INSTR=40bbd113 x2=fff00000
+# PC=80000390 INSTR=00bcaeb3 x29=00000000
+# PC=80000394 INSTR=0264b2b3 x5=00000001
+# PC=80000398 INSTR=001352b3 x5=00000003
+# PC=8000039c INSTR=00094eb3 x29=ffffffff
+# PC=800003a0 INSTR=f74d0393 x7=ffffff78
+# PC=800003a4 INSTR=00bcaeb3 x29=00000000
+# PC=800003a8 INSTR=001352b3 x5=00000003
+# PC=800003ac INSTR=039268b3 x17=fda628ab
+# PC=800003b0 INSTR=039268b3 x17=fda628ab
+# PC=800003b4 INSTR=02579933 x18=fffffffe
+# PC=800003b8 INSTR=40b20233 x4=fda628ab
+# PC=800003bc INSTR=2ac3dab7 x21=2ac3d000
+# PC=800003c0 INSTR=0264b2b3 x5=00000001
+# PC=800003c4 INSTR=01f97cb3 x25=00000000
+# PC=800003c8 INSTR=13722417 x8=937223c8
+# PC=800003cc INSTR=039268b3 x17=fda628ab
+# PC=800003d4 INSTR=41abd5b3 x11=f8000000
+# PC=800003d8 INSTR=40b20233 x4=05a628ab
+# PC=800003dc INSTR=008b9e93 x29=00000000
+# PC=800003e0 INSTR=00094eb3 x29=fffffffe
+# PC=800003e4 INSTR=6d8ee293 x5=fffffffe
+# PC=800003e8 INSTR=6d8ee293 x5=fffffffe
+# PC=800003ec INSTR=00306133 x2=0cc78948
+# PC=800003f0 INSTR=00306133 x2=0cc78948
+# PC=800003f4 INSTR=01f97cb3 x25=00000000
+# PC=800003f8 INSTR=6d8ee293 x5=fffffffe
+# PC=800003fc INSTR=03094e33 x28=ffffffff
+# PC=80000408 INSTR=02ebda33 x20=00000001
+# PC=8000040c INSTR=00860b33 x22=929b6adf
+# PC=80000410 INSTR=003e95b3 x11=fffffe00
+# PC=80000414 INSTR=f74d0393 x7=ffffff78
+# PC=80000418 INSTR=40bbd113 x2=fff00000
+# PC=8000041c INSTR=07584893 x17=00000077
+# PC=80000420 INSTR=00860b33 x22=929b6adf
+# PC=80000424 INSTR=02ebda33 x20=00000001
+# PC=80000428 INSTR=00bcaeb3 x29=00000000
+# PC=8000042c INSTR=af59fa13 x20=335778d1
+# PC=80000430 INSTR=00bcaeb3 x29=00000000
+# PC=80000434 INSTR=672c2913 x18=00000001
+# PC=8000043c INSTR=0023b433 x8=00000000
+# PC=80000444 INSTR=13722417 x8=93722444
+# PC=80000448 INSTR=00306133 x2=0cc78948
+# PC=8000044c INSTR=2be6b093 x1=00000000
+# PC=80000454 INSTR=af59fa13 x20=335778d1
+# PC=80000458 INSTR=00bcaeb3 x29=00000000
+# PC=8000045c INSTR=2be6b093 x1=00000000
+# PC=80000464 INSTR=41abd5b3 x11=f8000000
+# PC=80000468 INSTR=03094e33 x28=00000000
+# PC=8000046c INSTR=039268b3 x17=05a628ab
+# PC=80000470 INSTR=2ac3dab7 x21=2ac3d000
+# PC=80000474 INSTR=00860b33 x22=929b6b5b
+# PC=80000478 INSTR=40b20233 x4=0da628ab
+# PC=8000047c INSTR=2ac3dab7 x21=2ac3d000
+# PC=80000480 INSTR=03094e33 x28=00000000
+# PC=80000484 INSTR=af59fa13 x20=335778d1
+# PC=80000488 INSTR=0178d913 x18=0000000b
+# PC=8000048c INSTR=40bbd113 x2=fff00000
+# PC=80000490 INSTR=6d8ee293 x5=000006d8
+# PC=80000494 INSTR=001352b3 x5=00000003
+# PC=80000498 INSTR=0178d913 x18=0000000b
+# PC=8000049c INSTR=0178d913 x18=0000000b
+# PC=800004a0 INSTR=03094e33 x28=00000005
+# PC=800004a4 INSTR=02c60b33 x22=ab1bc411
+# PC=800004a8 INSTR=02ebda33 x20=00000001
+# PC=800004ac INSTR=00306133 x2=0cc78948
+# PC=800004b0 INSTR=40b20233 x4=15a628ab
+# PC=800004b4 INSTR=001352b3 x5=00000003
+# PC=800004b8 INSTR=6d8ee293 x5=000006d8
+# PC=800004bc INSTR=13722417 x8=937224bc
+# PC=800004c0 INSTR=40b20233 x4=1da628ab
+# PC=800004c4 INSTR=01f97cb3 x25=00000000
+# PC=800004c8 INSTR=01f97cb3 x25=00000000
+# PC=800004d0 INSTR=00094eb3 x29=0000000b
+# PC=800004d8 INSTR=0023b433 x8=00000000
+# PC=800004dc INSTR=008b9e93 x29=00000000
+# PC=800004e0 INSTR=00306133 x2=0cc78948
+# PC=800004e4 INSTR=0178d913 x18=0000000b
+# PC=800004e8 INSTR=2ac3dab7 x21=2ac3d000
+# PC=800004ec INSTR=001352b3 x5=00000003
+# PC=800004f0 INSTR=02ebda33 x20=00000001
+# PC=800004f4 INSTR=039268b3 x17=1da628ab
+# PC=800004f8 INSTR=00306133 x2=0cc78948
+# PC=800004fc INSTR=07584893 x17=00000077
+# PC=80000500 INSTR=6d8ee293 x5=000006d8
+# PC=80000508 INSTR=40b20233 x4=25a628ab
+# PC=8000050c INSTR=00860b33 x22=ff294717
+# PC=80000510 INSTR=40bbd113 x2=fff00000
+# PC=80000514 INSTR=001352b3 x5=00000003
+# PC=80000518 INSTR=00bcaeb3 x29=00000000
+# PC=8000051c INSTR=40b20233 x4=2da628ab
+# PC=80000520 INSTR=6d8ee293 x5=000006d8
+# PC=80000528 INSTR=039268b3 x17=2da628ab
+# PC=8000052c INSTR=41abd5b3 x11=f8000000
+# PC=80000530 INSTR=f74d0393 x7=ffffff78
+# PC=80000534 INSTR=0178d913 x18=0000005b
+# PC=80000538 INSTR=02579933 x18=fffffc94
+# PC=8000053c INSTR=008b9e93 x29=00000000
+# PC=80000540 INSTR=02ebda33 x20=00000001
+# PC=80000544 INSTR=13722417 x8=93722544
+# PC=80000548 INSTR=f74d0393 x7=ffffff78
+# PC=8000054c INSTR=0264b2b3 x5=00000001
+# PC=80000550 INSTR=008b9e93 x29=00000000
+# PC=80000554 INSTR=02579933 x18=ffffffff
+# PC=80000558 INSTR=0023b433 x8=00000000
+# PC=8000055c INSTR=01f97cb3 x25=00000000
+# PC=80000560 INSTR=00bcaeb3 x29=00000000
+# PC=80000564 INSTR=037ca0b3 x1=00000000
+# PC=80000568 INSTR=02c60b33 x22=ab1bc411
+# PC=8000056c INSTR=40b20233 x4=35a628ab
+# PC=80000570 INSTR=02c60b33 x22=ab1bc411
+# PC=80000574 INSTR=07584893 x17=00000077
+# PC=80000578 INSTR=00306133 x2=0cc78948
+# PC=8000057c INSTR=02ebda33 x20=00000001
+# PC=80000580 INSTR=0023b433 x8=00000000
+# PC=80000588 INSTR=01f97cb3 x25=00000000
+# PC=8000058c INSTR=02ebda33 x20=00000001
+# PC=80000594 INSTR=af59fa13 x20=335778d1
+# PC=80000598 INSTR=02579933 x18=ffffffff
+# PC=8000059c INSTR=41abd5b3 x11=f8000000
+# PC=800005a0 INSTR=0178d913 x18=00000000
+# PC=800005a4 INSTR=13722417 x8=937225a4
+# PC=800005a8 INSTR=037ca0b3 x1=00000000
+# PC=800005b0 INSTR=008b9e93 x29=00000000
+# PC=800005b4 INSTR=02579933 x18=ffffffff
+# PC=800005b8 INSTR=2be6b093 x1=00000000
+# PC=800005bc INSTR=00860b33 x22=929b6cbb
+# PC=800005c4 INSTR=07584893 x17=00000077
+# PC=800005c8 INSTR=0264b2b3 x5=00000001
+# PC=800005cc INSTR=00860b33 x22=929b6cbb
+# PC=800005d0 INSTR=001352b3 x5=00000003
+# PC=800005d4 INSTR=2be6b093 x1=00000000
+# PC=800005d8 INSTR=07584893 x17=00000077
+# PC=800005dc INSTR=6d8ee293 x5=000006d8
+# PC=800005e0 INSTR=07584893 x17=00000077
+# PC=800005e4 INSTR=07584893 x17=00000077
+# PC=800005e8 INSTR=0023b433 x8=00000000
+# PC=800005f0 INSTR=672c2913 x18=00000001
+# PC=800005f4 INSTR=0178d913 x18=00000000
+# PC=800005f8 INSTR=00bcaeb3 x29=00000000
+# PC=800005fc INSTR=672c2913 x18=00000001
+# PC=80000600 INSTR=40bbd113 x2=fff00000
+# PC=80000604 INSTR=001352b3 x5=00000003
+# PC=8000060c INSTR=00bcaeb3 x29=00000000
+# PC=80000610 INSTR=6d8ee293 x5=000006d8
+# PC=80000614 INSTR=13722417 x8=93722614
+# PC=80000618 INSTR=0264b2b3 x5=00000001
+# PC=8000061c INSTR=00bcaeb3 x29=00000000
+# PC=80000620 INSTR=13722417 x8=93722620
+# PC=80000624 INSTR=02ebda33 x20=00000001
+# PC=80000628 INSTR=f74d0393 x7=ffffff78
+# PC=8000062c INSTR=039268b3 x17=35a628ab
+# PC=80000630 INSTR=2ac3dab7 x21=2ac3d000
+# PC=80000634 INSTR=40bbd113 x2=fff00000
+# PC=80000638 INSTR=01f97cb3 x25=00000000
+# PC=8000063c INSTR=07584893 x17=00000077
+# PC=80000640 INSTR=672c2913 x18=00000001
+# PC=80000644 INSTR=41abd5b3 x11=f8000000
+# PC=80000648 INSTR=039268b3 x17=35a628ab
+# PC=8000064c INSTR=13722417 x8=9372264c
+# PC=80000650 INSTR=07584893 x17=00000077
+# PC=80000654 INSTR=2ac3dab7 x21=2ac3d000
+# PC=80000658 INSTR=03094e33 x28=00000000
+# PC=8000065c INSTR=03094e33 x28=00000000
+# PC=80000660 INSTR=003e95b3 x11=00000000
+# PC=80000664 INSTR=2be6b093 x1=00000000
+# PC=80000668 INSTR=01f97cb3 x25=00000000
+# PC=8000066c INSTR=02579933 x18=ffffffff
+# PC=80000670 INSTR=001352b3 x5=00000003
+# PC=80000674 INSTR=008b9e93 x29=00000000
+# PC=80000678 INSTR=13722417 x8=93722678
+# PC=8000067c INSTR=672c2913 x18=00000001
+# PC=80000680 INSTR=672c2913 x18=00000001
+# PC=80000688 INSTR=03094e33 x28=00000000
+# PC=8000068c INSTR=af59fa13 x20=335778d1
+# PC=80000690 INSTR=2ac3dab7 x21=2ac3d000
+# PC=80000694 INSTR=2ac3dab7 x21=2ac3d000
+# PC=80000698 INSTR=02579933 x18=fffffffe
+# PC=8000069c INSTR=2ac3dab7 x21=2ac3d000
+# PC=800006a0 INSTR=40bbd113 x2=fff00000
+# PC=800006a4 INSTR=00860b33 x22=929b6d8f
+# PC=800006a8 INSTR=41abd5b3 x11=f8000000
+# PC=800006ac INSTR=02579933 x18=fffffffe
+# PC=800006b0 INSTR=6d8ee293 x5=000006d8
+# PC=800006b4 INSTR=00094eb3 x29=fffffffe
+# PC=800006b8 INSTR=07584893 x17=00000077
+# PC=800006bc INSTR=037ca0b3 x1=00000000
+# PC=800006c0 INSTR=039268b3 x17=35a628ab
+# PC=800006c4 INSTR=672c2913 x18=00000001
+# PC=800006c8 INSTR=07584893 x17=00000077
+# PC=800006d0 INSTR=039268b3 x17=35a628ab
+# PC=800006d4 INSTR=00306133 x2=0cc78948
+# PC=800006d8 INSTR=6d8ee293 x5=fffffffe
+# PC=800006dc INSTR=008b9e93 x29=00000000
+# PC=800006e0 INSTR=0023b433 x8=00000000
+# PC=800006e4 INSTR=2ac3dab7 x21=2ac3d000
+# PC=800006e8 INSTR=40bbd113 x2=fff00000
+# PC=800006ec INSTR=40bbd113 x2=fff00000
+# PC=800006f0 INSTR=037ca0b3 x1=00000000
+# PC=800006f4 INSTR=02ebda33 x20=00000001
+# PC=800006f8 INSTR=0023b433 x8=00000000
+# PC=800006fc INSTR=40bbd113 x2=fff00000
+# PC=80000700 INSTR=40bbd113 x2=fff00000
+# PC=80000704 INSTR=f74d0393 x7=ffffff78
+# PC=80000708 INSTR=672c2913 x18=00000001
+# PC=8000070c INSTR=008b9e93 x29=00000000
+# PC=80000710 INSTR=af59fa13 x20=335778d1
+# PC=80000718 INSTR=01f97cb3 x25=00000000
+# PC=8000071c INSTR=0023b433 x8=00000000
+# PC=80000720 INSTR=af59fa13 x20=335778d1
+# PC=80000728 INSTR=40bbd113 x2=fff00000
+# PC=8000072c INSTR=6d8ee293 x5=000006d8
+# PC=80000730 INSTR=01f97cb3 x25=00000000
+# PC=80000734 INSTR=037ca0b3 x1=00000000
+# PC=80000738 INSTR=40bbd113 x2=fff00000
+# PC=8000073c INSTR=02579933 x18=fffffc94
+# PC=80000740 INSTR=07584893 x17=00000077
+# PC=80000744 INSTR=af59fa13 x20=335778d1
+# PC=80000748 INSTR=0264b2b3 x5=00000001
+# PC=8000074c INSTR=2ac3dab7 x21=2ac3d000
+# PC=80000750 INSTR=f74d0393 x7=ffffff78
+# PC=80000754 INSTR=672c2913 x18=00000001
+# PC=80000758 INSTR=07584893 x17=00000077
+# PC=8000075c INSTR=af59fa13 x20=335778d1
+# PC=80000760 INSTR=003e95b3 x11=00000000
+# PC=80000764 INSTR=008b9e93 x29=00000000
+# PC=80000768 INSTR=07584893 x17=00000077
+# PC=80000770 INSTR=af59fa13 x20=335778d1
+# PC=80000774 INSTR=40bbd113 x2=fff00000
+# PC=80000778 INSTR=037ca0b3 x1=00000000
+# PC=8000077c INSTR=02579933 x18=ffffffff
+# PC=80000780 INSTR=00bcaeb3 x29=00000000
+# PC=80000784 INSTR=0178d913 x18=00000000
+# PC=80000788 INSTR=02ebda33 x20=00000001
+# PC=8000078c INSTR=af59fa13 x20=335778d1
+# PC=80000790 INSTR=2be6b093 x1=00000000
+# PC=80000794 INSTR=037ca0b3 x1=00000000
+# PC=80000798 INSTR=003e95b3 x11=00000000
+# PC=8000079c INSTR=41abd5b3 x11=f8000000
+# PC=800007a0 INSTR=02579933 x18=ffffffff
+# PC=800007a4 INSTR=00306133 x2=0cc78948
+# PC=800007a8 INSTR=039268b3 x17=35a628ab
+# PC=800007ac INSTR=2ac3dab7 x21=2ac3d000
+# PC=800007b0 INSTR=2ac3dab7 x21=2ac3d000
+# PC=800007b4 INSTR=2ac3dab7 x21=2ac3d000
+# PC=800007b8 INSTR=03094e33 x28=00000000
+# PC=800007bc INSTR=2ac3dab7 x21=2ac3d000
+# PC=800007c0 INSTR=03094e33 x28=00000000
+# PC=800007c4 INSTR=00094eb3 x29=ffffffff
+# PC=800007c8 INSTR=672c2913 x18=00000001
+# PC=800007cc INSTR=07584893 x17=00000077
+# PC=800007d0 INSTR=02c60b33 x22=ab1bc411
+# PC=800007d4 INSTR=001352b3 x5=00000003
+# PC=800007d8 INSTR=07584893 x17=00000077
+# PC=800007dc INSTR=af59fa13 x20=335778d1
+# PC=800007e0 INSTR=00094eb3 x29=00000001
+# PC=800007e4 INSTR=037ca0b3 x1=00000000
+# PC=800007e8 INSTR=00094eb3 x29=00000001
+# PC=800007ec INSTR=672c2913 x18=00000001
+# PC=800007f0 INSTR=2be6b093 x1=00000000
+# PC=800007f4 INSTR=01f97cb3 x25=00000000
+# PC=800007f8 INSTR=008b9e93 x29=00000000
+# PC=800007fc INSTR=02c60b33 x22=ab1bc411
+# PC=80000800 INSTR=00094eb3 x29=00000001
+# PC=80000804 INSTR=af59fa13 x20=335778d1
+# PC=80000808 INSTR=00306133 x2=0cc78948
+# PC=8000080c INSTR=f74d0393 x7=ffffff78
+# PC=80000810 INSTR=2ac3dab7 x21=2ac3d000
+# PC=80000814 INSTR=00bcaeb3 x29=00000000
+# PC=80000818 INSTR=0264b2b3 x5=00000001
+# PC=8000081c INSTR=00306133 x2=0cc78948
+# PC=80000820 INSTR=af59fa13 x20=335778d1
+# PC=80000824 INSTR=02c60b33 x22=ab1bc411
+# PC=80000828 INSTR=07584893 x17=00000077
+# PC=8000082c INSTR=037ca0b3 x1=00000000
+# PC=80000830 INSTR=003e95b3 x11=00000000
+# PC=80000834 INSTR=001352b3 x5=00000003
+# PC=80000838 INSTR=001352b3 x5=00000003
+# PC=8000083c INSTR=6d8ee293 x5=000006d8
+# PC=80000840 INSTR=2ac3dab7 x21=2ac3d000
+# PC=80000844 INSTR=0178d913 x18=00000000
+# PC=80000848 INSTR=001352b3 x5=00000003
+# PC=8000084c INSTR=003e95b3 x11=00000000
+# PC=80000850 INSTR=02c60b33 x22=ab1bc411
+# PC=80000854 INSTR=2ac3dab7 x21=2ac3d000
+# PC=80000858 INSTR=f74d0393 x7=ffffff78
+# PC=8000085c INSTR=00094eb3 x29=00000000
+# PC=80000860 INSTR=00860b33 x22=ff294717
+# PC=80000864 INSTR=0264b2b3 x5=00000001
+# PC=80000868 INSTR=40b20233 x4=35a628ab
+# PC=8000086c INSTR=00860b33 x22=ff294717
+# PC=80000870 INSTR=02ebda33 x20=00000001
+# PC=80000874 INSTR=00306133 x2=0cc78948
+# PC=80000878 INSTR=2ac3dab7 x21=2ac3d000
+# PC=8000087c INSTR=01f97cb3 x25=00000000
+# PC=80000880 INSTR=037ca0b3 x1=00000000
+# PC=80000888 INSTR=0264b2b3 x5=00000001
+# PC=8000088c INSTR=00094eb3 x29=00000000
+# PC=80000890 INSTR=039268b3 x17=35a628ab
+# PC=80000898 INSTR=40b20233 x4=35a628ab
+# PC=8000089c INSTR=41abd5b3 x11=f8000000
+# PC=800008a0 INSTR=0264b2b3 x5=00000001
+# PC=800008a4 INSTR=672c2913 x18=00000001
+# PC=800008a8 INSTR=af59fa13 x20=335778d1
+# PC=800008ac INSTR=672c2913 x18=00000001
+# PC=800008b0 INSTR=001352b3 x5=00000003
+# PC=800008b4 INSTR=6d8ee293 x5=000006d8
+# PC=800008b8 INSTR=0023b433 x8=00000000
+# PC=800008bc INSTR=02c60b33 x22=ab1bc411
+# PC=800008c0 INSTR=02579933 x18=fffffc94
+# PC=800008c4 INSTR=039268b3 x17=35a628ab
+# PC=800008c8 INSTR=003e95b3 x11=00000000
+# PC=800008cc INSTR=0264b2b3 x5=00000001
+# PC=800008d0 INSTR=02c60b33 x22=ab1bc411
+# PC=800008d4 INSTR=07584893 x17=00000077
+# PC=800008d8 INSTR=672c2913 x18=00000001
+# PC=800008dc INSTR=003e95b3 x11=00000000
+# PC=800008e0 INSTR=f74d0393 x7=ffffff78
+# PC=800008e4 INSTR=037ca0b3 x1=00000000
+# PC=800008e8 INSTR=02ebda33 x20=00000001
+# PC=800008ec INSTR=41abd5b3 x11=f8000000
+# PC=800008f0 INSTR=039268b3 x17=35a628ab
+# PC=800008f4 INSTR=0023b433 x8=00000000
+# PC=800008f8 INSTR=40bbd113 x2=fff00000
+# PC=800008fc INSTR=01f97cb3 x25=00000000
+# PC=80000900 INSTR=02579933 x18=ffffffff
+# PC=80000904 INSTR=07584893 x17=00000077
+# PC=8000090c INSTR=0178d913 x18=00000000
+# PC=80000910 INSTR=037ca0b3 x1=00000000
+# PC=80000914 INSTR=2ac3dab7 x21=2ac3d000
+# PC=80000918 INSTR=00bcaeb3 x29=00000000
+# PC=8000091c INSTR=672c2913 x18=00000001
+# PC=80000920 INSTR=07584893 x17=00000077
+# PC=80000924 INSTR=00860b33 x22=ff294717
+# PC=80000928 INSTR=672c2913 x18=00000001
+# PC=8000092c INSTR=039268b3 x17=35a628ab
+# PC=80000930 INSTR=02ebda33 x20=00000001
+# PC=80000934 INSTR=00306133 x2=0cc78948
+# PC=80000938 INSTR=03094e33 x28=00000000
+# PC=8000093c INSTR=40bbd113 x2=fff00000
+# PC=80000940 INSTR=07584893 x17=00000077
+# PC=80000944 INSTR=13722417 x8=93722944
+# PC=80000948 INSTR=03094e33 x28=00000000
+# PC=8000094c INSTR=0178d913 x18=00000000
+# PC=80000950 INSTR=0264b2b3 x5=00000001
+# PC=80000954 INSTR=af59fa13 x20=335778d1
+# PC=80000958 INSTR=0023b433 x8=00000000
+# PC=8000095c INSTR=07584893 x17=00000077
+# PC=80000960 INSTR=001352b3 x5=00000003
+# PC=80000964 INSTR=037ca0b3 x1=00000000
+# PC=80000968 INSTR=41abd5b3 x11=f8000000
+# PC=8000096c INSTR=00bcaeb3 x29=00000000
+# PC=80000974 INSTR=2be6b093 x1=00000000
+# PC=80000978 INSTR=01f97cb3 x25=00000000
+# PC=8000097c INSTR=00bcaeb3 x29=00000000
+# PC=80000980 INSTR=40b20233 x4=3da628ab
+# PC=80000984 INSTR=039268b3 x17=3da628ab
+# PC=80000988 INSTR=003e95b3 x11=00000000
+# PC=8000098c INSTR=41abd5b3 x11=f8000000
+# PC=80000990 INSTR=001352b3 x5=00000003
+# PC=80000994 INSTR=039268b3 x17=3da628ab
+# PC=800009a0 INSTR=0178d913 x18=0000007b
+# PC=800009a4 INSTR=001352b3 x5=00000003
+# PC=800009ac INSTR=037ca0b3 x1=00000000
+# PC=800009b0 INSTR=40b20233 x4=45a628ab
+# PC=800009b4 INSTR=00bcaeb3 x29=00000000
+# PC=800009b8 INSTR=2ac3dab7 x21=2ac3d000
+# PC=800009bc INSTR=40bbd113 x2=fff00000
+# PC=800009c0 INSTR=00306133 x2=0cc78948
+# PC=800009c8 INSTR=f74d0393 x7=ffffff78
+# PC=800009cc INSTR=0178d913 x18=0000007b
+# PC=800009d0 INSTR=0023b433 x8=00000000
+# PC=800009d4 INSTR=13722417 x8=937229d4
+# PC=800009d8 INSTR=00860b33 x22=929b70eb
+# PC=800009dc INSTR=00094eb3 x29=0000007b
+# PC=800009e0 INSTR=07584893 x17=00000077
+# PC=800009e4 INSTR=02579933 x18=fffffffe
+# PC=800009e8 INSTR=001352b3 x5=00000003
+# PC=800009ec INSTR=00094eb3 x29=fffffffe
+# PC=800009f0 INSTR=40b20233 x4=4da628ab
+# PC=800009f4 INSTR=037ca0b3 x1=00000000
+# PC=800009f8 INSTR=f74d0393 x7=ffffff78
+# PC=800009fc INSTR=13722417 x8=937229fc
+# PC=80000a00 INSTR=0178d913 x18=00000000
+# PC=80000a04 INSTR=02ebda33 x20=00000001
+# PC=80000a08 INSTR=003e95b3 x11=fffffe00
+# PC=80000a0c INSTR=07584893 x17=00000077
+# PC=80000a10 INSTR=2ac3dab7 x21=2ac3d000
+# PC=80000a14 INSTR=6d8ee293 x5=fffffffe
+# PC=80000a18 INSTR=00306133 x2=0cc78948
+# PC=80000a1c INSTR=00bcaeb3 x29=00000000
+# PC=80000a20 INSTR=2be6b093 x1=00000000
+# PC=80000a24 INSTR=40b20233 x4=4da62aab
+# PC=80000a28 INSTR=672c2913 x18=00000001
+# PC=80000a2c INSTR=00306133 x2=0cc78948
+# PC=80000a30 INSTR=037ca0b3 x1=00000000
+# PC=80000a34 INSTR=0178d913 x18=00000000
+# PC=80000a40 INSTR=01f97cb3 x25=00000000
+# PC=80000a44 INSTR=13722417 x8=93722a44
+# PC=80000a48 INSTR=02c60b33 x22=ab1bc411
+# PC=80000a4c INSTR=001352b3 x5=00000003
+# PC=80000a50 INSTR=672c2913 x18=00000001
+# PC=80000a54 INSTR=00860b33 x22=929b715b
+# PC=80000a58 INSTR=40b20233 x4=4da62cab
+# PC=80000a60 INSTR=003e95b3 x11=00000000
+# PC=80000a64 INSTR=672c2913 x18=00000001
+# PC=80000a68 INSTR=00860b33 x22=929b715b
+# PC=80000a6c INSTR=008b9e93 x29=00000000
+# PC=80000a70 INSTR=6d8ee293 x5=000006d8
+# PC=80000a74 INSTR=008b9e93 x29=00000000
+# PC=80000a78 INSTR=6d8ee293 x5=000006d8
+# PC=80000a7c INSTR=13722417 x8=93722a7c
+# PC=80000a80 INSTR=0264b2b3 x5=00000001
+# PC=80000a84 INSTR=6d8ee293 x5=000006d8
+# PC=80000a88 INSTR=0178d913 x18=00000000
+# PC=80000a8c INSTR=40b20233 x4=4da62cab
+# PC=80000a90 INSTR=40b20233 x4=4da62cab
+# PC=80000a94 INSTR=f74d0393 x7=ffffff78
+# PC=80000a98 INSTR=af59fa13 x20=335778d1
+# PC=80000a9c INSTR=01f97cb3 x25=00000000
+# PC=80000aa0 INSTR=00bcaeb3 x29=00000000
+# PC=80000aa4 INSTR=037ca0b3 x1=00000000
+# PC=80000aa8 INSTR=40b20233 x4=4da62cab
+# PC=80000aac INSTR=003e95b3 x11=00000000
+# PC=80000ab0 INSTR=039268b3 x17=4da62cab
+# PC=80000ab4 INSTR=003e95b3 x11=00000000
+# PC=80000ab8 INSTR=40bbd113 x2=fff00000
+# PC=80000abc INSTR=00bcaeb3 x29=00000000
+# PC=80000ac0 INSTR=f74d0393 x7=ffffff78
+# PC=80000ac4 INSTR=00860b33 x22=929b7193
+# PC=80000ac8 INSTR=008b9e93 x29=00000000
+# PC=80000acc INSTR=039268b3 x17=4da62cab
+# PC=80000ad0 INSTR=039268b3 x17=4da62cab
+# PC=80000ad8 INSTR=af59fa13 x20=335778d1
+# PC=80000adc INSTR=00306133 x2=0cc78948
+# PC=80000ae0 INSTR=001352b3 x5=00000003
+# PC=80000ae4 INSTR=f74d0393 x7=ffffff78
+# PC=80000ae8 INSTR=40b20233 x4=4da62cab
+# PC=80000aec INSTR=40b20233 x4=4da62cab
+# PC=80000af0 INSTR=07584893 x17=00000077
+# PC=80000af4 INSTR=07584893 x17=00000077
+# PC=80000af8 INSTR=07584893 x17=00000077
+# PC=80000afc INSTR=01f97cb3 x25=00000000
+# PC=80000b00 INSTR=0264b2b3 x5=00000001
+# PC=80000b08 INSTR=2be6b093 x1=00000000
+# PC=80000b0c INSTR=00bcaeb3 x29=00000000
+# PC=80000b10 INSTR=01f97cb3 x25=00000000
+# PC=80000b14 INSTR=40bbd113 x2=fff00000
+# PC=80000b18 INSTR=01f97cb3 x25=00000000
+# PC=80000b1c INSTR=003e95b3 x11=00000000
+# PC=80000b24 INSTR=039268b3 x17=4da62cab
+# PC=80000b28 INSTR=0178d913 x18=0000009b
+# PC=80000b2c INSTR=13722417 x8=93722b2c
+# PC=80000b30 INSTR=02579933 x18=ffffffff
+# PC=80000b34 INSTR=40b20233 x4=4da62cab
+# PC=80000b38 INSTR=2be6b093 x1=00000000
+# PC=80000b3c INSTR=00306133 x2=0cc78948
+# PC=80000b44 INSTR=008b9e93 x29=00000000
+# PC=80000b48 INSTR=00094eb3 x29=ffffffff
+# PC=80000b50 INSTR=41abd5b3 x11=f8000000
+# PC=80000b54 INSTR=6d8ee293 x5=ffffffff
+# PC=80000b58 INSTR=02c60b33 x22=ab1bc411
+# PC=80000b5c INSTR=01f97cb3 x25=00000000
+# PC=80000b60 INSTR=00bcaeb3 x29=00000000
+# PC=80000b64 INSTR=af59fa13 x20=335778d1
+# PC=80000b68 INSTR=037ca0b3 x1=00000000
+# PC=80000b6c INSTR=00306133 x2=0cc78948
+# PC=80000b70 INSTR=02ebda33 x20=00000001
+# PC=80000b74 INSTR=2be6b093 x1=00000000
+# PC=80000b78 INSTR=40bbd113 x2=fff00000
+# PC=80000b7c INSTR=03094e33 x28=00000000
+# PC=80000b84 INSTR=40bbd113 x2=fff00000
+# PC=80000b88 INSTR=0023b433 x8=00000000
+# PC=80000b8c INSTR=2ac3dab7 x21=2ac3d000
+# PC=80000b90 INSTR=41abd5b3 x11=f8000000
+# PC=80000b94 INSTR=0264b2b3 x5=00000001
+# PC=80000b9c INSTR=03094e33 x28=00000000
+# PC=80000ba0 INSTR=2be6b093 x1=00000000
+# PC=80000ba4 INSTR=02c60b33 x22=ab1bc411
+# PC=80000ba8 INSTR=003e95b3 x11=00000000
+# PC=80000bac INSTR=0264b2b3 x5=00000001
+# PC=80000bb0 INSTR=2be6b093 x1=00000000
+# PC=80000bb4 INSTR=6d8ee293 x5=000006d8
+# PC=80000bb8 INSTR=40b20233 x4=4da62cab
+# PC=80000bbc INSTR=03094e33 x28=00000000
+# PC=80000bc0 INSTR=01f97cb3 x25=00000000
+# PC=80000bc4 INSTR=6d8ee293 x5=000006d8
+# PC=80000bc8 INSTR=037ca0b3 x1=00000000
+# PC=80000bcc INSTR=00860b33 x22=ff294717
+# PC=80000bd4 INSTR=00860b33 x22=ff294717
+# PC=80000bd8 INSTR=2ac3dab7 x21=2ac3d000
+# PC=80000bdc INSTR=2ac3dab7 x21=2ac3d000
+# PC=80000be0 INSTR=039268b3 x17=4da62cab
+# PC=80000be4 INSTR=037ca0b3 x1=00000000
+# PC=80000be8 INSTR=00bcaeb3 x29=00000000
+# PC=80000bec INSTR=0023b433 x8=00000000
+# PC=80000bf0 INSTR=02579933 x18=fffffc94
+# PC=80000bf4 INSTR=008b9e93 x29=00000000
+# PC=80000bf8 INSTR=00094eb3 x29=fffffc94
+# PC=80000bfc INSTR=672c2913 x18=00000001
+# PC=80000c00 INSTR=02c60b33 x22=ab1bc411
+# PC=80000c04 INSTR=40b20233 x4=4da62cab
+# PC=80000c08 INSTR=40bbd113 x2=fff00000
+# PC=80000c10 INSTR=f74d0393 x7=ffffff78
+# PC=80000c14 INSTR=6d8ee293 x5=fffffedc
+# PC=80000c18 INSTR=0178d913 x18=0000009b
+# PC=80000c1c INSTR=f74d0393 x7=ffffff78
+# PC=80000c20 INSTR=00860b33 x22=ff294717
+# PC=80000c24 INSTR=00306133 x2=0cc78948
+# PC=80000c28 INSTR=0023b433 x8=00000000
+# PC=80000c2c INSTR=af59fa13 x20=335778d1
+# PC=80000c30 INSTR=008b9e93 x29=00000000
+# PC=80000c34 INSTR=2be6b093 x1=00000000
+# PC=80000c38 INSTR=2be6b093 x1=00000000
+# PC=80000c3c INSTR=40bbd113 x2=fff00000
+# PC=80000c40 INSTR=af59fa13 x20=335778d1
+# PC=80000c44 INSTR=672c2913 x18=00000001
+# PC=80000c48 INSTR=02ebda33 x20=00000001
+# PC=80000c4c INSTR=037ca0b3 x1=00000000
+# PC=80000c50 INSTR=41abd5b3 x11=f8000000
+# PC=80000c54 INSTR=af59fa13 x20=335778d1
+# PC=80000c58 INSTR=00306133 x2=0cc78948
+# PC=80000c5c INSTR=02ebda33 x20=00000001
+# PC=80000c60 INSTR=00860b33 x22=ff294717
+# PC=80000c64 INSTR=40b20233 x4=55a62cab
+# PC=80000c68 INSTR=0178d913 x18=0000009b
+# PC=80000c6c INSTR=40b20233 x4=5da62cab
+# PC=80000c70 INSTR=001352b3 x5=00000003
+# PC=80000c74 INSTR=02579933 x18=fffffffe
+# PC=80000c78 INSTR=2ac3dab7 x21=2ac3d000
+# PC=80000c80 INSTR=00306133 x2=0cc78948
+# PC=80000c84 INSTR=00094eb3 x29=fffffffe
+# PC=80000c88 INSTR=13722417 x8=93722c88
+# PC=80000c8c INSTR=0178d913 x18=0000009b
+# PC=80000c90 INSTR=02579933 x18=fffffffe
+# PC=80000c94 INSTR=00306133 x2=0cc78948
+# PC=80000ca0 INSTR=2ac3dab7 x21=2ac3d000
+# PC=80000ca4 INSTR=07584893 x17=00000077
+# PC=80000ca8 INSTR=40bbd113 x2=fff00000
+# PC=80000cac INSTR=0178d913 x18=00000000
+# PC=80000cb0 INSTR=af59fa13 x20=335778d1
+# PC=80000cb4 INSTR=0178d913 x18=00000000
+# PC=80000cb8 INSTR=2ac3dab7 x21=2ac3d000
+# PC=80000cbc INSTR=00bcaeb3 x29=00000000
+# PC=80000cc4 INSTR=13722417 x8=93722cc4
+# PC=80000cc8 INSTR=00306133 x2=0cc78948
+# PC=80000cd0 INSTR=0264b2b3 x5=00000001
+# PC=80000cd4 INSTR=40b20233 x4=65a62cab
+# PC=80000cd8 INSTR=40b20233 x4=6da62cab
+# PC=80000cdc INSTR=00860b33 x22=929b73db
+# PC=80000ce0 INSTR=f74d0393 x7=ffffff78
+# PC=80000ce4 INSTR=af59fa13 x20=335778d1
+# PC=80000ce8 INSTR=07584893 x17=00000077
+# PC=80000cec INSTR=07584893 x17=00000077
+# PC=80000cf0 INSTR=0264b2b3 x5=00000001
+# PC=80000cf4 INSTR=0264b2b3 x5=00000001
+# PC=80000cf8 INSTR=02ebda33 x20=00000001
+# PC=80000cfc INSTR=01f97cb3 x25=00000000
+# PC=80000d00 INSTR=02579933 x18=ffffffff
+# PC=80000d04 INSTR=41abd5b3 x11=f8000000
+# PC=80000d08 INSTR=672c2913 x18=00000001
+# PC=80000d0c INSTR=0264b2b3 x5=00000001
+# PC=80000d10 INSTR=2be6b093 x1=00000000
+# PC=80000d14 INSTR=40bbd113 x2=fff00000
+# PC=80000d18 INSTR=af59fa13 x20=335778d1
+# PC=80000d1c INSTR=07584893 x17=00000077
+# PC=80000d20 INSTR=02ebda33 x20=00000001
+# PC=80000d24 INSTR=af59fa13 x20=335778d1
+# PC=80000d28 INSTR=039268b3 x17=6da62cab
+# PC=80000d2c INSTR=40b20233 x4=75a62cab
+# PC=80000d30 INSTR=03094e33 x28=00000000
+# PC=80000d34 INSTR=41abd5b3 x11=f8000000
+# PC=80000d38 INSTR=02ebda33 x20=00000001
+# PC=80000d3c INSTR=00860b33 x22=929b73db
+# PC=80000d40 INSTR=03094e33 x28=00000000
+# PC=80000d44 INSTR=003e95b3 x11=00000000
+# PC=80000d48 INSTR=2ac3dab7 x21=2ac3d000
+# PC=80000d4c INSTR=0178d913 x18=000000db
+# PC=80000d50 INSTR=03094e33 x28=0000006d
+# PC=80000d54 INSTR=02579933 x18=ffffffff
+# PC=80000d58 INSTR=00bcaeb3 x29=00000000
+# PC=80000d5c INSTR=00306133 x2=0cc78948
+# PC=80000d60 INSTR=0264b2b3 x5=00000001
+# PC=80000d64 INSTR=13722417 x8=93722d64
+# PC=80000d68 INSTR=00bcaeb3 x29=00000000
+# PC=80000d6c INSTR=40b20233 x4=75a62cab
+# PC=80000d74 INSTR=00bcaeb3 x29=00000000
+# PC=80000d78 INSTR=0264b2b3 x5=00000001
+# PC=80000d7c INSTR=af59fa13 x20=335778d1
+# PC=80000d80 INSTR=07584893 x17=00000077
+# PC=80000d84 INSTR=672c2913 x18=00000001
+# PC=80000d88 INSTR=2ac3dab7 x21=2ac3d000
+# PC=80000d8c INSTR=0023b433 x8=00000000
+# PC=80000d90 INSTR=00094eb3 x29=00000001
+# PC=80000d94 INSTR=2ac3dab7 x21=2ac3d000
+# PC=80000d9c INSTR=001352b3 x5=00000003
+# PC=80000da0 INSTR=0178d913 x18=00000000
+# PC=80000da4 INSTR=f74d0393 x7=ffffff78
+# PC=80000da8 INSTR=0178d913 x18=00000000
+# PC=80000dac INSTR=008b9e93 x29=00000000
+# PC=80000db0 INSTR=0264b2b3 x5=00000001
+# PC=80000db4 INSTR=00094eb3 x29=00000000
+# PC=80000db8 INSTR=00306133 x2=0cc78948
+# PC=80000dbc INSTR=00860b33 x22=ff294717
+# PC=80000dc0 INSTR=037ca0b3 x1=00000000
+# PC=80000dc4 INSTR=02c60b33 x22=ab1bc411
+# PC=80000dc8 INSTR=13722417 x8=93722dc8
+# PC=80000dcc INSTR=037ca0b3 x1=00000000
+# PC=80000dd0 INSTR=13722417 x8=93722dd0
+# PC=80000dd4 INSTR=00860b33 x22=929b74e7
+# PC=80000dd8 INSTR=af59fa13 x20=335778d1
+# PC=80000ddc INSTR=037ca0b3 x1=00000000
+# PC=80000de0 INSTR=af59fa13 x20=335778d1
+# PC=80000de4 INSTR=2ac3dab7 x21=2ac3d000
+# PC=80000de8 INSTR=02c60b33 x22=ab1bc411
+# PC=80000dec INSTR=01f97cb3 x25=00000000
+# PC=80000df4 INSTR=6d8ee293 x5=000006d8
+# PC=80000df8 INSTR=6d8ee293 x5=000006d8
+# PC=80000dfc INSTR=6d8ee293 x5=000006d8
+# PC=80000e00 INSTR=07584893 x17=00000077
+# PC=80000e04 INSTR=0264b2b3 x5=00000001
+# PC=80000e08 INSTR=2be6b093 x1=00000000
+# PC=80000e0c INSTR=00860b33 x22=929b74e7
+# PC=80000e10 INSTR=02c60b33 x22=ab1bc411
+# PC=80000e14 INSTR=037ca0b3 x1=00000000
+# PC=80000e20 INSTR=001352b3 x5=00000003
+# PC=80000e24 INSTR=02ebda33 x20=00000001
+# PC=80000e28 INSTR=af59fa13 x20=335778d1
+# PC=80000e2c INSTR=00094eb3 x29=00000000
+# PC=80000e30 INSTR=00094eb3 x29=00000000
+# PC=80000e34 INSTR=af59fa13 x20=335778d1
+# PC=80000e38 INSTR=6d8ee293 x5=000006d8
+# PC=80000e3c INSTR=001352b3 x5=00000003
+# PC=80000e40 INSTR=001352b3 x5=00000003
+# PC=80000e44 INSTR=2be6b093 x1=00000000
+# PC=80000e48 INSTR=0023b433 x8=00000000
+# PC=80000e4c INSTR=40bbd113 x2=fff00000
+# PC=80000e50 INSTR=037ca0b3 x1=00000000
+# PC=80000e54 INSTR=00094eb3 x29=00000000
+# PC=80000e58 INSTR=672c2913 x18=00000001
+# PC=80000e5c INSTR=40bbd113 x2=fff00000
+# PC=80000e60 INSTR=40b20233 x4=75a62cab
+# PC=80000e64 INSTR=0178d913 x18=00000000
+# PC=80000e68 INSTR=00094eb3 x29=00000000
+# PC=80000e70 INSTR=00860b33 x22=ff294717
+# PC=80000e74 INSTR=40b20233 x4=75a62cab
+# PC=80000e78 INSTR=2be6b093 x1=00000000
+# PC=80000e7c INSTR=07584893 x17=00000077
+# PC=80000e80 INSTR=00bcaeb3 x29=00000000
+# PC=80000e84 INSTR=0264b2b3 x5=00000001
+# PC=80000e88 INSTR=00094eb3 x29=00000000
+# PC=80000e8c INSTR=001352b3 x5=00000003
+# PC=80000e90 INSTR=008b9e93 x29=00000000
+# PC=80000e94 INSTR=0023b433 x8=00000000
+# PC=80000e98 INSTR=02c60b33 x22=ab1bc411
+# PC=80000e9c INSTR=00094eb3 x29=00000000
+# PC=80000ea0 INSTR=40b20233 x4=75a62cab
+# PC=80000ea4 INSTR=02c60b33 x22=ab1bc411
+# PC=80000ea8 INSTR=2be6b093 x1=00000000
+# PC=80000eac INSTR=037ca0b3 x1=00000000
+# PC=80000eb0 INSTR=41abd5b3 x11=f8000000
+# PC=80000eb4 INSTR=13722417 x8=93722eb4
+# PC=80000eb8 INSTR=672c2913 x18=00000001
+# PC=80000ebc INSTR=6d8ee293 x5=000006d8
+# PC=80000ec4 INSTR=037ca0b3 x1=00000000
+# PC=80000ec8 INSTR=6d8ee293 x5=000006d8
+# PC=80000ecc INSTR=40bbd113 x2=fff00000
+# PC=80000ed0 INSTR=40bbd113 x2=fff00000
+# PC=80000ed4 INSTR=2be6b093 x1=00000000
+# PC=80000ed8 INSTR=2be6b093 x1=00000000
+# PC=80000edc INSTR=13722417 x8=93722edc
+# PC=80000ee0 INSTR=672c2913 x18=00000001
+# PC=80000ee4 INSTR=01f97cb3 x25=00000000
+# PC=80000ee8 INSTR=f74d0393 x7=ffffff78
+# PC=80000eec INSTR=01f97cb3 x25=00000000
+# PC=80000ef0 INSTR=0178d913 x18=00000000
+# PC=80000ef4 INSTR=13722417 x8=93722ef4
+# PC=80000ef8 INSTR=40bbd113 x2=fff00000
+# PC=80000efc INSTR=0264b2b3 x5=00000001
+# PC=80000f00 INSTR=672c2913 x18=00000001
+# PC=80000f08 INSTR=02579933 x18=ffffffff
+# PC=80000f0c INSTR=2be6b093 x1=00000000
+# PC=80000f10 INSTR=40b20233 x4=7da62cab
+# PC=80000f14 INSTR=0264b2b3 x5=00000001
+# PC=80000f1c INSTR=0023b433 x8=00000000
+# PC=80000f20 INSTR=0178d913 x18=00000000
+# PC=80000f24 INSTR=00094eb3 x29=00000000
+# PC=80000f28 INSTR=672c2913 x18=00000001
+# PC=80000f2c INSTR=13722417 x8=93722f2c
+# PC=80000f30 INSTR=f74d0393 x7=ffffff78
+# PC=80000f34 INSTR=f74d0393 x7=ffffff78
+# PC=80000f38 INSTR=13722417 x8=93722f38
+# PC=80000f40 INSTR=039268b3 x17=7da62cab
+# PC=80000f44 INSTR=037ca0b3 x1=00000000
+# PC=80000f48 INSTR=07584893 x17=00000077
+# PC=80000f4c INSTR=02ebda33 x20=00000001
+# PC=80000f50 INSTR=40b20233 x4=85a62cab
+# PC=80000f58 INSTR=003e95b3 x11=00000000
+# PC=80000f5c INSTR=037ca0b3 x1=00000000
+# PC=80000f60 INSTR=672c2913 x18=00000001
+# PC=80000f64 INSTR=01f97cb3 x25=00000000
+# PC=80000f68 INSTR=6d8ee293 x5=000006d8
+# PC=80000f6c INSTR=02579933 x18=fffffc94
+# PC=80000f70 INSTR=039268b3 x17=85a62cab
+# PC=80000f74 INSTR=0178d913 x18=0000010b
+# PC=80000f78 INSTR=f74d0393 x7=ffffff78
+# PC=80000f7c INSTR=0023b433 x8=00000000
+# PC=80000f80 INSTR=00094eb3 x29=0000010b
+# PC=80000f84 INSTR=00bcaeb3 x29=00000000
+# PC=80000f88 INSTR=2ac3dab7 x21=2ac3d000
+# PC=80000f8c INSTR=41abd5b3 x11=f8000000
+# PC=80000f90 INSTR=40bbd113 x2=fff00000
+# PC=80000f94 INSTR=02579933 x18=fffffc94
+# PC=80000f98 INSTR=2ac3dab7 x21=2ac3d000
+# PC=80000f9c INSTR=0023b433 x8=00000000
+# PC=80000fa0 INSTR=0023b433 x8=00000000
+# PC=80000fa8 INSTR=0264b2b3 x5=00000001
+# PC=80000fb0 INSTR=037ca0b3 x1=00000000
+# PC=80000fb4 INSTR=02c60b33 x22=ab1bc411
+# PC=80000fb8 INSTR=0178d913 x18=0000010b
+# PC=80000fbc INSTR=00bcaeb3 x29=00000000
+# PC=80000fc0 INSTR=02579933 x18=ffffffff
+# PC=80000fc4 INSTR=6d8ee293 x5=000006d8
+# PC=80000fc8 INSTR=039268b3 x17=85a62cab
+# PC=80000fcc INSTR=41abd5b3 x11=f8000000
+# PC=80000fd0 INSTR=00094eb3 x29=ffffffff
+# PC=80000fd4 INSTR=01f97cb3 x25=00000000
+# PC=80000fd8 INSTR=6d8ee293 x5=ffffffff
+# PC=80000fdc INSTR=13722417 x8=93722fdc
+# PC=80000fe0 INSTR=40b20233 x4=8da62cab
+# PC=80000fe4 INSTR=03094e33 x28=00000000
+# PC=80000fe8 INSTR=0178d913 x18=0000010b
+# PC=80000fec INSTR=039268b3 x17=8da62cab
+# PC=80000ff0 INSTR=01f97cb3 x25=00000000
+# PC=80000ff4 INSTR=00094eb3 x29=0000010b
+# PC=80000ff8 INSTR=2be6b093 x1=00000000
+# PC=80000ffc INSTR=40b20233 x4=95a62cab
+# PC=80001000 INSTR=02ebda33 x20=00000001
+# PC=80001004 INSTR=00bcaeb3 x29=00000000
+# PC=80001008 INSTR=41abd5b3 x11=f8000000
+# PC=8000100c INSTR=02c60b33 x22=ab1bc411
+# PC=80001010 INSTR=00094eb3 x29=0000010b
+# PC=80001014 INSTR=0178d913 x18=0000011b
+# PC=80001018 INSTR=40bbd113 x2=fff00000
+# PC=8000101c INSTR=00306133 x2=0cc78948
+# PC=80001020 INSTR=6d8ee293 x5=000007db
+# PC=80001024 INSTR=02579933 x18=fffffc12
+# PC=80001028 INSTR=672c2913 x18=00000001
+# PC=8000102c INSTR=40b20233 x4=9da62cab
+# PC=80001034 INSTR=af59fa13 x20=335778d1
+# PC=80001038 INSTR=40b20233 x4=a5a62cab
+# PC=8000103c INSTR=00094eb3 x29=00000001
+# PC=80001040 INSTR=00094eb3 x29=00000001
+# PC=80001044 INSTR=af59fa13 x20=335778d1
+# PC=80001048 INSTR=02579933 x18=fffffc12
+# PC=8000104c INSTR=0023b433 x8=00000000
+# PC=80001050 INSTR=f74d0393 x7=ffffff78
+# PC=80001054 INSTR=00bcaeb3 x29=00000000
+# PC=80001058 INSTR=0023b433 x8=00000000
+# PC=8000105c INSTR=40b20233 x4=ada62cab
+# PC=80001064 INSTR=0023b433 x8=00000000
+# PC=80001068 INSTR=00860b33 x22=ff294717
+# PC=8000106c INSTR=037ca0b3 x1=00000000
+# PC=80001070 INSTR=07584893 x17=00000077
+# PC=80001074 INSTR=40bbd113 x2=fff00000
+# PC=80001078 INSTR=003e95b3 x11=00000000
+# PC=8000107c INSTR=008b9e93 x29=00000000
+# PC=80001080 INSTR=0178d913 x18=00000000
+# PC=80001084 INSTR=2ac3dab7 x21=2ac3d000
+# PC=80001088 INSTR=01f97cb3 x25=00000000
+# PC=8000108c INSTR=00bcaeb3 x29=00000000
+# PC=80001090 INSTR=00094eb3 x29=00000000
+# PC=80001094 INSTR=40b20233 x4=ada62cab
+# PC=80001098 INSTR=13722417 x8=93723098
+# PC=8000109c INSTR=41abd5b3 x11=f8000000
+# PC=800010a0 INSTR=0264b2b3 x5=00000001
+# PC=800010a4 INSTR=6d8ee293 x5=000006d8
+# PC=800010a8 INSTR=0178d913 x18=00000000
+# PC=800010b0 INSTR=2be6b093 x1=00000000
+# PC=800010b4 INSTR=02579933 x18=fffffc94
+# PC=800010b8 INSTR=037ca0b3 x1=00000000
+# PC=800010c0 INSTR=13722417 x8=937230c0
+# PC=800010c4 INSTR=00bcaeb3 x29=00000000
+# PC=800010c8 INSTR=f74d0393 x7=ffffff78
+# PC=800010cc INSTR=008b9e93 x29=00000000
+# PC=800010d0 INSTR=00860b33 x22=929b77d7
+# PC=800010d4 INSTR=6d8ee293 x5=000006d8
+# PC=800010d8 INSTR=f74d0393 x7=ffffff78
+# PC=800010dc INSTR=07584893 x17=00000077
+# PC=800010e0 INSTR=40b20233 x4=b5a62cab
+# PC=800010e4 INSTR=02579933 x18=fffffc94
+# PC=800010e8 INSTR=03094e33 x28=fffffe4a
+# PC=800010ec INSTR=41abd5b3 x11=f8000000
+# PC=800010f0 INSTR=039268b3 x17=b5a62cab
+# PC=800010f4 INSTR=0178d913 x18=0000016b
+# PC=800010f8 INSTR=001352b3 x5=00000003
+# PC=800010fc INSTR=40b20233 x4=bda62cab
+# PC=80001100 INSTR=0178d913 x18=0000016b
+# PC=80001104 INSTR=f74d0393 x7=ffffff78
+# PC=80001108 INSTR=6d8ee293 x5=000006d8
+# PC=8000110c INSTR=f74d0393 x7=ffffff78
+# PC=80001110 INSTR=00094eb3 x29=0000016b
+# PC=80001114 INSTR=02ebda33 x20=00000001
+# PC=80001118 INSTR=6d8ee293 x5=000007fb
+# PC=8000111c INSTR=6d8ee293 x5=000007fb
+# PC=80001120 INSTR=00306133 x2=0cc78948
+# PC=80001124 INSTR=f74d0393 x7=ffffff78
+# PC=80001128 INSTR=03094e33 x28=000000b5
+# PC=8000112c INSTR=40bbd113 x2=fff00000
+# PC=80001130 INSTR=01f97cb3 x25=00000000
+# PC=80001134 INSTR=02ebda33 x20=00000001
+# PC=80001138 INSTR=af59fa13 x20=335778d1
+# PC=8000113c INSTR=02579933 x18=fffffc02
+# PC=80001140 INSTR=f74d0393 x7=ffffff78
+# PC=80001144 INSTR=0264b2b3 x5=00000001
+# PC=80001148 INSTR=0178d913 x18=0000016b
+# PC=8000114c INSTR=41abd5b3 x11=f8000000
+# PC=80001150 INSTR=003e95b3 x11=00016b00
+# PC=80001154 INSTR=00860b33 x22=929b77d7
+# PC=80001158 INSTR=00860b33 x22=929b77d7
+# PC=8000115c INSTR=01f97cb3 x25=00000000
+# PC=80001160 INSTR=01f97cb3 x25=00000000
+# PC=80001164 INSTR=f74d0393 x7=ffffff78
+# PC=80001168 INSTR=0023b433 x8=00000000
+# PC=8000116c INSTR=0178d913 x18=0000016b
+# PC=80001170 INSTR=2ac3dab7 x21=2ac3d000
+# PC=80001174 INSTR=0023b433 x8=00000000
+# PC=80001178 INSTR=07584893 x17=00000077
+# PC=8000117c INSTR=03094e33 x28=000000b5
+# PC=80001184 INSTR=0178d913 x18=00000000
+# PC=80001188 INSTR=037ca0b3 x1=00000000
+# PC=8000118c INSTR=f74d0393 x7=ffffff78
+# PC=80001190 INSTR=03094e33 x28=00000000
+# PC=80001194 INSTR=008b9e93 x29=00000000
+# PC=80001198 INSTR=02ebda33 x20=00000001
+# PC=8000119c INSTR=03094e33 x28=00000000
+# PC=800011a0 INSTR=02579933 x18=ffffffff
+# PC=800011a4 INSTR=01f97cb3 x25=00000000
+# PC=800011a8 INSTR=41abd5b3 x11=f8000000
+# PC=800011ac INSTR=03094e33 x28=00000000
+# PC=800011b0 INSTR=00306133 x2=0cc78948
+# PC=800011b4 INSTR=2ac3dab7 x21=2ac3d000
+# PC=800011b8 INSTR=40b20233 x4=c5a62cab
+# PC=800011bc INSTR=2be6b093 x1=00000000
+# PC=800011c0 INSTR=037ca0b3 x1=00000000
+# PC=800011c4 INSTR=039268b3 x17=c5a62cab
+# PC=800011c8 INSTR=037ca0b3 x1=00000000
+# PC=800011cc INSTR=02ebda33 x20=00000001
+# PC=800011d4 INSTR=00094eb3 x29=ffffffff
+# PC=800011d8 INSTR=008b9e93 x29=00000000
+# PC=800011dc INSTR=039268b3 x17=c5a62cab
+# PC=800011e0 INSTR=6d8ee293 x5=000006d8
+# PC=800011e4 INSTR=008b9e93 x29=00000000
+# PC=800011e8 INSTR=2be6b093 x1=00000000
+# PC=800011ec INSTR=40b20233 x4=cda62cab
+# PC=800011f0 INSTR=40b20233 x4=d5a62cab
+# PC=800011f4 INSTR=0264b2b3 x5=00000001
+# PC=800011f8 INSTR=00860b33 x22=ff294717
+# PC=800011fc INSTR=af59fa13 x20=335778d1
+# PC=80001200 INSTR=40bbd113 x2=fff00000
+# PC=80001204 INSTR=2be6b093 x1=00000000
+# PC=80001208 INSTR=f74d0393 x7=ffffff78
+# PC=8000120c INSTR=02579933 x18=ffffffff
+# PC=80001210 INSTR=40bbd113 x2=fff00000
+# PC=80001218 INSTR=00bcaeb3 x29=00000000
+# PC=8000121c INSTR=6d8ee293 x5=000006d8
+# PC=80001220 INSTR=00bcaeb3 x29=00000000
+# PC=80001224 INSTR=0264b2b3 x5=00000001
+# PC=8000122c INSTR=001352b3 x5=00000003
+# PC=80001230 INSTR=008b9e93 x29=00000000
+# PC=80001234 INSTR=00860b33 x22=ff294717
+# PC=80001238 INSTR=13722417 x8=93723238
+# PC=8000123c INSTR=41abd5b3 x11=f8000000
+# PC=80001240 INSTR=0264b2b3 x5=00000001
+# PC=80001244 INSTR=6d8ee293 x5=000006d8
+# PC=80001248 INSTR=0178d913 x18=0000018b
+# PC=80001250 INSTR=02ebda33 x20=00000001
+# PC=80001254 INSTR=039268b3 x17=d5a62cab
+# PC=80001258 INSTR=6d8ee293 x5=000006d8
+# PC=8000125c INSTR=0264b2b3 x5=00000001
+# PC=80001260 INSTR=6d8ee293 x5=000006d8
+# PC=80001264 INSTR=00bcaeb3 x29=00000000
+# PC=80001268 INSTR=0023b433 x8=00000000
+# PC=8000126c INSTR=0023b433 x8=00000000
+# PC=80001270 INSTR=2be6b093 x1=00000000
+# PC=80001274 INSTR=00094eb3 x29=0000018b
+# PC=80001278 INSTR=02c60b33 x22=ab1bc411
+# PC=8000127c INSTR=f74d0393 x7=ffffff78
+# PC=80001280 INSTR=0023b433 x8=00000000
+# PC=80001284 INSTR=03094e33 x28=000000c5
+# PC=80001288 INSTR=07584893 x17=00000077
+# PC=80001290 INSTR=001352b3 x5=00000003
+# PC=80001294 INSTR=02c60b33 x22=ab1bc411
+# PC=80001298 INSTR=00306133 x2=0cc78948
+# PC=8000129c INSTR=001352b3 x5=00000003
+# PC=800012a0 INSTR=2be6b093 x1=00000000
+# PC=800012a4 INSTR=039268b3 x17=d5a62cab
+# PC=800012a8 INSTR=41abd5b3 x11=f8000000
+# PC=800012ac INSTR=01f97cb3 x25=00000000
+# PC=800012b0 INSTR=40b20233 x4=dda62cab
+# PC=800012b4 INSTR=40b20233 x4=e5a62cab
+# PC=800012b8 INSTR=41abd5b3 x11=f8000000
+# PC=800012c4 INSTR=00860b33 x22=ff294717
+# PC=800012c8 INSTR=039268b3 x17=e5a62cab
+# PC=800012cc INSTR=01f97cb3 x25=00000000
+# PC=800012d0 INSTR=008b9e93 x29=00000000
+# PC=800012d4 INSTR=00306133 x2=0cc78948
+# PC=800012d8 INSTR=037ca0b3 x1=00000000
+# PC=800012dc INSTR=41abd5b3 x11=f8000000
+# PC=800012e0 INSTR=01f97cb3 x25=00000000
+# PC=800012e4 INSTR=40b20233 x4=eda62cab
+# PC=800012e8 INSTR=6d8ee293 x5=000006d8
+# PC=800012ec INSTR=6d8ee293 x5=000006d8
+# PC=800012f0 INSTR=00860b33 x22=ff294717
+# PC=800012f4 INSTR=001352b3 x5=00000003
+# PC=800012f8 INSTR=039268b3 x17=eda62cab
+# PC=800012fc INSTR=02ebda33 x20=00000001
+# PC=80001300 INSTR=40b20233 x4=f5a62cab
+# PC=80001304 INSTR=037ca0b3 x1=00000000
+# PC=80001308 INSTR=f74d0393 x7=ffffff78
+# PC=8000130c INSTR=0023b433 x8=00000000
+# PC=80001310 INSTR=01f97cb3 x25=00000000
+# PC=80001314 INSTR=f74d0393 x7=ffffff78
+# PC=80001318 INSTR=13722417 x8=93723318
+# PC=8000131c INSTR=02ebda33 x20=00000001
+# PC=80001320 INSTR=af59fa13 x20=335778d1
+# PC=80001328 INSTR=02579933 x18=fffffffe
+# PC=8000132c INSTR=00bcaeb3 x29=00000000
+# PC=80001330 INSTR=40bbd113 x2=fff00000
+# PC=80001334 INSTR=672c2913 x18=00000001
+# PC=80001338 INSTR=40bbd113 x2=fff00000
+# PC=8000133c INSTR=2ac3dab7 x21=2ac3d000
+# PC=80001344 INSTR=6d8ee293 x5=000006d8
+# PC=80001348 INSTR=008b9e93 x29=00000000
+# PC=8000134c INSTR=00860b33 x22=929b7a2f
+# PC=80001350 INSTR=001352b3 x5=00000003
+# PC=80001354 INSTR=af59fa13 x20=335778d1
+# PC=8000135c INSTR=672c2913 x18=00000001
+# PC=80001360 INSTR=00094eb3 x29=00000001
+# PC=80001364 INSTR=6d8ee293 x5=000006d9
+# PC=8000136c INSTR=41abd5b3 x11=f8000000
+# PC=80001370 INSTR=af59fa13 x20=335778d1
+# PC=80001374 INSTR=0023b433 x8=00000000
+# PC=80001378 INSTR=2be6b093 x1=00000000
+# PC=8000137c INSTR=037ca0b3 x1=00000000
+# PC=80001380 INSTR=f74d0393 x7=ffffff78
+# PC=80001384 INSTR=02c60b33 x22=ab1bc411
+# PC=80001388 INSTR=037ca0b3 x1=00000000
+# PC=8000138c INSTR=0023b433 x8=00000000
+# PC=80001390 INSTR=00306133 x2=0cc78948
+# PC=80001394 INSTR=41abd5b3 x11=f8000000
+# PC=80001398 INSTR=03094e33 x28=00000000
+# PC=8000139c INSTR=01f97cb3 x25=00000000
+# PC=800013a0 INSTR=0264b2b3 x5=00000001
+# PC=800013a4 INSTR=02579933 x18=ffffffff
+# PC=800013a8 INSTR=03094e33 x28=00000000
+# PC=800013b0 INSTR=00bcaeb3 x29=00000000
+# PC=800013b4 INSTR=0178d913 x18=000001db
+# PC=800013b8 INSTR=2ac3dab7 x21=2ac3d000
+# PC=800013bc INSTR=02c60b33 x22=ab1bc411
+# PC=800013c0 INSTR=037ca0b3 x1=00000000
+# PC=800013c8 INSTR=07584893 x17=00000077
+# PC=800013cc INSTR=02c60b33 x22=ab1bc411
+# PC=800013d0 INSTR=003e95b3 x11=00000000
+# PC=800013d4 INSTR=037ca0b3 x1=00000000
+# PC=800013d8 INSTR=00bcaeb3 x29=00000000
+# PC=800013dc INSTR=001352b3 x5=00000003
+# PC=800013e0 INSTR=001352b3 x5=00000003
+# PC=800013e4 INSTR=00094eb3 x29=000001db
+# PC=800013e8 INSTR=008b9e93 x29=00000000
+# PC=800013ec INSTR=0264b2b3 x5=00000001
+# PC=800013f0 INSTR=07584893 x17=00000077
+# PC=800013f4 INSTR=40bbd113 x2=fff00000
+# PC=800013f8 INSTR=03094e33 x28=000000ed
+# PC=800013fc INSTR=02579933 x18=ffffffff
+# PC=80001400 INSTR=003e95b3 x11=00000000
+# PC=80001408 INSTR=13722417 x8=93723408
+# PC=80001410 INSTR=0023b433 x8=00000000
+# PC=80001414 INSTR=0264b2b3 x5=00000001
+# PC=80001418 INSTR=13722417 x8=93723418
+# PC=8000141c INSTR=00306133 x2=0cc78948
+# PC=80001420 INSTR=00094eb3 x29=ffffffff
+# PC=80001424 INSTR=0264b2b3 x5=00000001
+# PC=80001428 INSTR=02ebda33 x20=00000001
+# PC=8000142c INSTR=00bcaeb3 x29=00000000
+# PC=80001430 INSTR=02579933 x18=ffffffff
+# PC=80001434 INSTR=af59fa13 x20=335778d1
+# PC=80001438 INSTR=13722417 x8=93723438
+# PC=8000143c INSTR=0264b2b3 x5=00000001
+# PC=80001440 INSTR=f74d0393 x7=ffffff78
+# PC=80001444 INSTR=02ebda33 x20=00000001
+# PC=80001448 INSTR=00094eb3 x29=ffffffff
+# PC=8000144c INSTR=f74d0393 x7=ffffff78
+# PC=80001450 INSTR=13722417 x8=93723450
+# PC=80001454 INSTR=00860b33 x22=929b7b67
+# PC=80001458 INSTR=0264b2b3 x5=00000001
+# PC=8000145c INSTR=0264b2b3 x5=00000001
+# PC=80001460 INSTR=2ac3dab7 x21=2ac3d000
+# PC=80001464 INSTR=af59fa13 x20=335778d1
+# PC=80001468 INSTR=2ac3dab7 x21=2ac3d000
+# PC=8000146c INSTR=03094e33 x28=00000000
+# PC=80001470 INSTR=0178d913 x18=00000000
+# PC=80001474 INSTR=f74d0393 x7=ffffff78
+# PC=80001478 INSTR=003e95b3 x11=ffffff00
+# PC=8000147c INSTR=13722417 x8=9372347c
+# PC=80001480 INSTR=00306133 x2=0cc78948
+# PC=80001484 INSTR=003e95b3 x11=ffffff00
+# PC=80001488 INSTR=0178d913 x18=00000000
+# PC=80001490 INSTR=00306133 x2=0cc78948
+# PC=80001494 INSTR=0264b2b3 x5=00000001
+# PC=80001498 INSTR=2ac3dab7 x21=2ac3d000
+# PC=8000149c INSTR=2be6b093 x1=00000000
+# PC=800014a0 INSTR=0023b433 x8=00000000
+# PC=800014a4 INSTR=00860b33 x22=ff294717
+# PC=800014a8 INSTR=13722417 x8=937234a8
+# PC=800014ac INSTR=01f97cb3 x25=00000000
+# PC=800014b0 INSTR=0178d913 x18=00000000
+# PC=800014b4 INSTR=41abd5b3 x11=f8000000
+# PC=800014bc INSTR=0264b2b3 x5=00000001
+# PC=800014c0 INSTR=672c2913 x18=00000001
+# PC=800014c4 INSTR=6d8ee293 x5=ffffffff
+# PC=800014c8 INSTR=0264b2b3 x5=00000001
+# PC=800014cc INSTR=00094eb3 x29=00000001
+# PC=800014d4 INSTR=00bcaeb3 x29=00000000
+# PC=800014d8 INSTR=02ebda33 x20=00000001
+# PC=800014e0 INSTR=0178d913 x18=00000000
+# PC=800014e4 INSTR=03094e33 x28=00000000
+# PC=800014ec INSTR=008b9e93 x29=00000000
+# PC=800014f0 INSTR=039268b3 x17=f5a62cab
+# PC=800014f4 INSTR=41abd5b3 x11=f8000000
+# PC=800014f8 INSTR=0264b2b3 x5=00000001
+# PC=800014fc INSTR=13722417 x8=937234fc
+# PC=80001500 INSTR=40bbd113 x2=fff00000
+# PC=80001504 INSTR=02ebda33 x20=00000001
+# PC=80001508 INSTR=41abd5b3 x11=f8000000
+# PC=8000150c INSTR=6d8ee293 x5=000006d8
+# PC=80001510 INSTR=02ebda33 x20=00000001
+# PC=80001514 INSTR=001352b3 x5=00000003
+# PC=80001520 INSTR=00094eb3 x29=00000000
+# PC=80001524 INSTR=672c2913 x18=00000001
+# PC=80001528 INSTR=0264b2b3 x5=00000001
+# PC=8000152c INSTR=02c60b33 x22=ab1bc411
+# PC=80001530 INSTR=003e95b3 x11=00000000
+# PC=80001534 INSTR=07584893 x17=00000077
+# PC=80001538 INSTR=03094e33 x28=00000000
+# PC=8000153c INSTR=02579933 x18=ffffffff
+# PC=80001540 INSTR=0178d913 x18=00000000
+# PC=80001544 INSTR=13722417 x8=93723544
+# PC=80001548 INSTR=40b20233 x4=f5a62cab
+# PC=8000154c INSTR=40bbd113 x2=fff00000
+# PC=80001550 INSTR=02ebda33 x20=00000001
+# PC=80001554 INSTR=00094eb3 x29=00000000
+# PC=80001558 INSTR=2ac3dab7 x21=2ac3d000
+# PC=8000155c INSTR=03094e33 x28=00000000
+# PC=80001560 INSTR=672c2913 x18=00000001
+# PC=80001564 INSTR=672c2913 x18=00000001
+# PC=80001568 INSTR=02579933 x18=ffffffff
+# PC=8000156c INSTR=00306133 x2=0cc78948
+# PC=80001570 INSTR=02c60b33 x22=ab1bc411
+# PC=80001574 INSTR=02c60b33 x22=ab1bc411
+# PC=80001578 INSTR=2be6b093 x1=00000000
+# PC=8000157c INSTR=0023b433 x8=00000000
+# PC=80001584 INSTR=00860b33 x22=ff294717
+# PC=80001588 INSTR=41abd5b3 x11=f8000000
+# PC=8000158c INSTR=039268b3 x17=f5a62cab
+# PC=80001590 INSTR=02c60b33 x22=ab1bc411
+# PC=80001594 INSTR=00306133 x2=0cc78948
+# PC=80001598 INSTR=f74d0393 x7=ffffff78
+# PC=8000159c INSTR=2be6b093 x1=00000000
+# PC=800015a0 INSTR=0178d913 x18=000001eb
+# PC=800015ac INSTR=f74d0393 x7=ffffff78
+# PC=800015b8 INSTR=001352b3 x5=00000003
+# PC=800015bc INSTR=af59fa13 x20=335778d1
+# PC=800015c0 INSTR=f74d0393 x7=ffffff78
+# PC=800015c4 INSTR=00bcaeb3 x29=00000000
+# PC=800015c8 INSTR=40b20233 x4=fda62cab
+# PC=800015cc INSTR=037ca0b3 x1=00000000
+# PC=800015d0 INSTR=00306133 x2=0cc78948
+# PC=800015d8 INSTR=02c60b33 x22=ab1bc411
+# PC=800015dc INSTR=008b9e93 x29=00000000
+# PC=800015e0 INSTR=01f97cb3 x25=00000000
+# PC=800015e4 INSTR=039268b3 x17=fda62cab
+# PC=800015e8 INSTR=672c2913 x18=00000001
+# PC=800015ec INSTR=2be6b093 x1=00000000
+# PC=800015f0 INSTR=00bcaeb3 x29=00000000
+# PC=800015f4 INSTR=00094eb3 x29=00000001
+# PC=800015f8 INSTR=00860b33 x22=ff294717
+# PC=800015fc INSTR=001352b3 x5=00000003
+# PC=80001600 INSTR=00306133 x2=0cc78948
+# PC=80001608 INSTR=00306133 x2=0cc78948
+# PC=8000160c INSTR=40b20233 x4=05a62cab
+# PC=80001614 INSTR=00860b33 x22=ff294717
+# PC=80001618 INSTR=00306133 x2=0cc78948
+# PC=8000161c INSTR=00860b33 x22=ff294717
+# PC=80001620 INSTR=00306133 x2=0cc78948
+# PC=80001628 INSTR=2be6b093 x1=00000000
+# PC=8000162c INSTR=13722417 x8=9372362c
+# PC=80001630 INSTR=40bbd113 x2=fff00000
+# PC=80001634 INSTR=003e95b3 x11=00000100
+# PC=80001638 INSTR=01f97cb3 x25=00000000
+# PC=8000163c INSTR=f74d0393 x7=ffffff78
+# PC=80001640 INSTR=00094eb3 x29=00000001
+# PC=80001644 INSTR=07584893 x17=00000077
+# PC=80001648 INSTR=f74d0393 x7=ffffff78
+# PC=8000164c INSTR=6d8ee293 x5=000006d9
+# PC=80001650 INSTR=2ac3dab7 x21=2ac3d000
+# PC=80001654 INSTR=03094e33 x28=00000000
+# PC=80001658 INSTR=003e95b3 x11=00000100
+# PC=8000165c INSTR=f74d0393 x7=ffffff78
+# PC=80001660 INSTR=02ebda33 x20=00000001
+# PC=80001664 INSTR=40bbd113 x2=fff00000
+# PC=80001668 INSTR=037ca0b3 x1=00000000
+# PC=8000166c INSTR=07584893 x17=00000077
+# PC=80001670 INSTR=f74d0393 x7=ffffff78
+# PC=80001674 INSTR=00306133 x2=0cc78948
+# PC=80001678 INSTR=2ac3dab7 x21=2ac3d000
+# PC=8000167c INSTR=02c60b33 x22=ab1bc411
+# PC=80001680 INSTR=02ebda33 x20=00000001
+# PC=80001684 INSTR=af59fa13 x20=335778d1
+# PC=80001688 INSTR=0264b2b3 x5=00000001
+# PC=8000168c INSTR=02ebda33 x20=00000001
+# PC=80001690 INSTR=039268b3 x17=05a62cab
+# PC=80001698 INSTR=13722417 x8=93723698
+# PC=8000169c INSTR=0178d913 x18=0000000b
+# PC=800016a0 INSTR=07584893 x17=00000077
+# PC=800016a4 INSTR=af59fa13 x20=335778d1
+# PC=800016a8 INSTR=40b20233 x4=05a62bab
+# PC=800016ac INSTR=41abd5b3 x11=f8000000
+# PC=800016b0 INSTR=02c60b33 x22=ab1bc411
+# PC=800016b4 INSTR=037ca0b3 x1=00000000
+# PC=800016bc INSTR=40b20233 x4=0da62bab
+# PC=800016c0 INSTR=03094e33 x28=00000005
+# PC=800016c4 INSTR=02c60b33 x22=ab1bc411
+# PC=800016c8 INSTR=02ebda33 x20=00000001
+# PC=800016cc INSTR=01f97cb3 x25=00000000
+# PC=800016d0 INSTR=037ca0b3 x1=00000000
+# PC=800016d4 INSTR=02579933 x18=ffffffff
+# PC=800016d8 INSTR=0178d913 x18=00000000
+# PC=800016dc INSTR=02c60b33 x22=ab1bc411
+# PC=800016e0 INSTR=0023b433 x8=00000000
+# PC=800016e4 INSTR=039268b3 x17=0da62bab
+# PC=800016e8 INSTR=00306133 x2=0cc78948
+# PC=800016ec INSTR=0023b433 x8=00000000
+# PC=800016f0 INSTR=003e95b3 x11=00000100
+# PC=800016f4 INSTR=02ebda33 x20=00000001
+# PC=800016f8 INSTR=2be6b093 x1=00000000
+# PC=800016fc INSTR=00094eb3 x29=00000000
+# PC=80001700 INSTR=0264b2b3 x5=00000001
+# PC=80001704 INSTR=037ca0b3 x1=00000000
+# PC=80001708 INSTR=0023b433 x8=00000000
+# PC=8000170c INSTR=f74d0393 x7=ffffff78
+# PC=80001710 INSTR=41abd5b3 x11=f8000000
+# PC=80001714 INSTR=40b20233 x4=15a62bab
+# PC=80001718 INSTR=02c60b33 x22=ab1bc411
+# PC=8000171c INSTR=00bcaeb3 x29=00000000
+# PC=80001720 INSTR=008b9e93 x29=00000000
+# PC=80001724 INSTR=af59fa13 x20=335778d1
+# PC=80001728 INSTR=40bbd113 x2=fff00000
+# PC=8000172c INSTR=008b9e93 x29=00000000
+# PC=80001730 INSTR=40b20233 x4=1da62bab
+# PC=80001734 INSTR=2be6b093 x1=00000000
+# PC=80001738 INSTR=00306133 x2=0cc78948
+# PC=8000173c INSTR=039268b3 x17=1da62bab
+# PC=80001740 INSTR=0264b2b3 x5=00000001
+# PC=80001744 INSTR=008b9e93 x29=00000000
+# PC=80001748 INSTR=00306133 x2=0cc78948
+# PC=8000174c INSTR=2be6b093 x1=00000000
+# PC=80001750 INSTR=0023b433 x8=00000000
+# PC=80001754 INSTR=008b9e93 x29=00000000
+# PC=80001758 INSTR=13722417 x8=93723758
+# PC=8000175c INSTR=037ca0b3 x1=00000000
+# PC=80001760 INSTR=003e95b3 x11=00000000
+# PC=80001764 INSTR=00094eb3 x29=00000000
+# PC=80001768 INSTR=13722417 x8=93723768
+# PC=8000176c INSTR=03094e33 x28=00000000
+# PC=80001770 INSTR=00bcaeb3 x29=00000000
+# PC=80001774 INSTR=2be6b093 x1=00000000
+# PC=80001778 INSTR=6d8ee293 x5=000006d8
+# PC=8000177c INSTR=0178d913 x18=0000003b
+# PC=80001780 INSTR=03094e33 x28=0000001d
+# PC=80001784 INSTR=6d8ee293 x5=000006d8
+# PC=80001788 INSTR=672c2913 x18=00000001
+# PC=8000178c INSTR=0023b433 x8=00000000
+# PC=80001794 INSTR=00860b33 x22=ff294717
+# PC=80001798 INSTR=02ebda33 x20=00000001
+# PC=8000179c INSTR=2ac3dab7 x21=2ac3d000
+# PC=800017a0 INSTR=0178d913 x18=0000003b
+# PC=800017a4 INSTR=f74d0393 x7=ffffff78
+# PC=800017a8 INSTR=02ebda33 x20=00000001
+# PC=800017ac INSTR=0178d913 x18=0000003b
+# PC=800017b0 INSTR=13722417 x8=937237b0
+# PC=800017b8 INSTR=00860b33 x22=929b7ec7
+# PC=800017bc INSTR=02ebda33 x20=00000001
+# PC=800017c0 INSTR=00bcaeb3 x29=00000000
+# PC=800017c4 INSTR=003e95b3 x11=00000000
+# PC=800017cc INSTR=00306133 x2=0cc78948
+# PC=800017d0 INSTR=02ebda33 x20=00000001
+# PC=800017d4 INSTR=40b20233 x4=1da62bab
+# PC=800017d8 INSTR=0178d913 x18=0000003b
+# PC=800017dc INSTR=13722417 x8=937237dc
+# PC=800017e4 INSTR=00bcaeb3 x29=00000000
+# PC=800017e8 INSTR=6d8ee293 x5=000006d8
+# PC=800017ec INSTR=13722417 x8=937237ec
+# PC=800017f0 INSTR=0023b433 x8=00000000
+# PC=800017f4 INSTR=00094eb3 x29=0000003b
+# PC=800017f8 INSTR=6d8ee293 x5=000006fb
+# PC=800017fc INSTR=40bbd113 x2=fff00000
+# PC=80001800 INSTR=02c60b33 x22=ab1bc411
+# PC=80001804 INSTR=00094eb3 x29=0000003b
+# PC=80001808 INSTR=02ebda33 x20=00000001
+# PC=8000180c INSTR=2ac3dab7 x21=2ac3d000
+# PC=80001810 INSTR=00860b33 x22=ff294717
+# PC=80001814 INSTR=039268b3 x17=1da62bab
+# PC=80001818 INSTR=00860b33 x22=ff294717
+# PC=8000181c INSTR=13722417 x8=9372381c
+# PC=80001820 INSTR=037ca0b3 x1=00000000
+# PC=80001828 INSTR=2be6b093 x1=00000000
+# PC=80001830 INSTR=037ca0b3 x1=00000000
+# PC=80001838 INSTR=672c2913 x18=00000001
+# PC=8000183c INSTR=2be6b093 x1=00000000
+# PC=80001840 INSTR=02ebda33 x20=00000001
+# PC=80001844 INSTR=00094eb3 x29=00000001
+# PC=80001848 INSTR=039268b3 x17=1da62bab
+# PC=8000184c INSTR=003e95b3 x11=00000100
+# PC=80001850 INSTR=40bbd113 x2=fff00000
+# PC=80001854 INSTR=00860b33 x22=929b7f33
+# PC=80001858 INSTR=00bcaeb3 x29=00000001
+# PC=8000185c INSTR=003e95b3 x11=00000100
+# PC=80001860 INSTR=00bcaeb3 x29=00000001
+# PC=80001864 INSTR=41abd5b3 x11=f8000000
+# PC=80001868 INSTR=af59fa13 x20=335778d1
+# PC=80001870 INSTR=6d8ee293 x5=000006d9
+# PC=80001874 INSTR=41abd5b3 x11=f8000000
+# PC=80001878 INSTR=039268b3 x17=1da62bab
+# PC=8000187c INSTR=af59fa13 x20=335778d1
+# PC=80001880 INSTR=01f97cb3 x25=00000000
+# PC=80001884 INSTR=00094eb3 x29=00000001
+# PC=80001888 INSTR=003e95b3 x11=00000100
+# PC=8000188c INSTR=02ebda33 x20=00000001
+# PC=80001890 INSTR=008b9e93 x29=00000000
+# PC=80001894 INSTR=6d8ee293 x5=000006d8
+# PC=8000189c INSTR=6d8ee293 x5=000006d8
+# PC=800018a0 INSTR=008b9e93 x29=00000000
+# PC=800018a4 INSTR=02579933 x18=fffffc94
+# PC=800018a8 INSTR=001352b3 x5=00000003
+# PC=800018b0 INSTR=0023b433 x8=00000000
+# PC=800018b4 INSTR=02ebda33 x20=00000001
+# PC=800018c0 INSTR=2ac3dab7 x21=2ac3d000
+# PC=800018c4 INSTR=00306133 x2=0cc78948
+# PC=800018c8 INSTR=0178d913 x18=0000003b
+# PC=800018d0 INSTR=001352b3 x5=00000003
+# PC=800018d4 INSTR=0178d913 x18=0000003b
+# PC=800018d8 INSTR=0023b433 x8=00000000
+# PC=800018dc INSTR=03094e33 x28=0000001d
+# PC=800018e0 INSTR=02579933 x18=fffffffe
+# PC=800018e4 INSTR=0264b2b3 x5=00000001
+# PC=800018e8 INSTR=001352b3 x5=00000003
+# PC=800018ec INSTR=672c2913 x18=00000001
+# PC=800018f0 INSTR=f74d0393 x7=ffffff78
+# PC=800018f4 INSTR=00bcaeb3 x29=00000001
+# PC=800018f8 INSTR=00306133 x2=0cc78948
+# PC=800018fc INSTR=02c60b33 x22=ab1bc411
+# PC=80001900 INSTR=af59fa13 x20=335778d1
+# PC=80001904 INSTR=f74d0393 x7=ffffff78
+# PC=80001908 INSTR=003e95b3 x11=00000100
+# PC=8000190c INSTR=02ebda33 x20=00000001
+# PC=80001910 INSTR=00094eb3 x29=00000001
+# PC=80001914 INSTR=00bcaeb3 x29=00000001
+# PC=80001918 INSTR=f74d0393 x7=ffffff78
+# PC=8000191c INSTR=008b9e93 x29=00000000
+# PC=80001920 INSTR=2be6b093 x1=00000000
+# PC=80001924 INSTR=0023b433 x8=00000000
+# PC=80001928 INSTR=003e95b3 x11=00000000
+# PC=8000192c INSTR=40bbd113 x2=fff00000
+# PC=80001930 INSTR=001352b3 x5=00000003
+# PC=80001934 INSTR=2ac3dab7 x21=2ac3d000
+# PC=80001938 INSTR=039268b3 x17=1da62bab
+# PC=8000193c INSTR=03094e33 x28=00000000
+# PC=80001940 INSTR=13722417 x8=93723940
+# PC=80001948 INSTR=07584893 x17=00000077
+# PC=8000194c INSTR=00306133 x2=0cc78948
+# PC=80001950 INSTR=2ac3dab7 x21=2ac3d000
+# PC=80001954 INSTR=2ac3dab7 x21=2ac3d000
+# PC=80001958 INSTR=f74d0393 x7=ffffff78
+# PC=8000195c INSTR=40bbd113 x2=fff00000
+# PC=80001964 INSTR=0023b433 x8=00000000
+# PC=80001968 INSTR=037ca0b3 x1=00000000
+# PC=8000196c INSTR=02c60b33 x22=ab1bc411
+# PC=80001970 INSTR=07584893 x17=00000077
+# PC=80001974 INSTR=2be6b093 x1=00000000
+# PC=80001978 INSTR=2ac3dab7 x21=2ac3d000
+# PC=8000197c INSTR=0264b2b3 x5=00000001
+# PC=80001980 INSTR=00bcaeb3 x29=00000000
+# PC=80001984 INSTR=00094eb3 x29=00000001
+# PC=80001988 INSTR=2be6b093 x1=00000000
+# PC=8000198c INSTR=02579933 x18=ffffffff
+# PC=80001994 INSTR=008b9e93 x29=00000000
+# PC=80001998 INSTR=672c2913 x18=00000001
+# PC=8000199c INSTR=13722417 x8=9372399c
+# PC=800019a0 INSTR=003e95b3 x11=00000000
+# PC=800019a4 INSTR=00860b33 x22=929b80b3
+# PC=800019a8 INSTR=001352b3 x5=00000003
+# PC=800019ac INSTR=001352b3 x5=00000003
+# PC=800019b0 INSTR=008b9e93 x29=00000000
+# PC=800019b4 INSTR=2be6b093 x1=00000000
+# PC=800019b8 INSTR=003e95b3 x11=00000000
+# PC=800019bc INSTR=f74d0393 x7=ffffff78
+# PC=800019c0 INSTR=001352b3 x5=00000003
+# PC=800019c4 INSTR=f74d0393 x7=ffffff78
+# PC=800019cc INSTR=003e95b3 x11=00000000
+# PC=800019d0 INSTR=672c2913 x18=00000001
+# PC=800019d4 INSTR=672c2913 x18=00000001
+# PC=800019e0 INSTR=00094eb3 x29=00000001
+# PC=800019e8 INSTR=6d8ee293 x5=000006d9
+# PC=800019ec INSTR=02579933 x18=fffffc93
+# PC=800019f0 INSTR=13722417 x8=937239f0
+# PC=800019f4 INSTR=40b20233 x4=1da62bab
+# PC=800019f8 INSTR=40bbd113 x2=fff00000
+# PC=800019fc INSTR=02c60b33 x22=ab1bc411
+# PC=80001a04 INSTR=03094e33 x28=fffffe4a
+# PC=80001a08 INSTR=2ac3dab7 x21=2ac3d000
+# PC=80001a0c INSTR=41abd5b3 x11=f8000000
+# PC=80001a10 INSTR=039268b3 x17=1da62bab
+# PC=80001a14 INSTR=03094e33 x28=fffffe4a
+# PC=80001a18 INSTR=672c2913 x18=00000001
+# PC=80001a1c INSTR=001352b3 x5=00000003
+# PC=80001a20 INSTR=07584893 x17=00000077
+# PC=80001a24 INSTR=6d8ee293 x5=000006d9
+# PC=80001a28 INSTR=0023b433 x8=00000000
+# PC=80001a2c INSTR=f74d0393 x7=ffffff78
+# PC=80001a30 INSTR=03094e33 x28=00000000
+# PC=80001a34 INSTR=40bbd113 x2=fff00000
+# PC=80001a38 INSTR=2be6b093 x1=00000000
+# PC=80001a3c INSTR=00bcaeb3 x29=00000000
+# PC=80001a40 INSTR=af59fa13 x20=335778d1
+# PC=80001a44 INSTR=672c2913 x18=00000001
+# PC=80001a48 INSTR=02c60b33 x22=ab1bc411
+# PC=80001a4c INSTR=0023b433 x8=00000000
+# PC=80001a54 INSTR=00bcaeb3 x29=00000000
+# PC=80001a58 INSTR=039268b3 x17=1da62bab
+# PC=80001a5c INSTR=41abd5b3 x11=f8000000
+# PC=80001a60 INSTR=008b9e93 x29=00000000
+# PC=80001a64 INSTR=01f97cb3 x25=00000000
+# PC=80001a6c INSTR=00bcaeb3 x29=00000000
+# PC=80001a70 INSTR=008b9e93 x29=00000000
+# PC=80001a74 INSTR=03094e33 x28=00000000
+# PC=80001a78 INSTR=2ac3dab7 x21=2ac3d000
+# PC=80001a7c INSTR=2be6b093 x1=00000000
+# PC=80001a80 INSTR=2ac3dab7 x21=2ac3d000
+# PC=80001a84 INSTR=03094e33 x28=00000000
+# PC=80001a88 INSTR=f74d0393 x7=ffffff78
+# PC=80001a8c INSTR=0178d913 x18=0000003b
+# PC=80001a90 INSTR=2be6b093 x1=00000000
+# PC=80001a94 INSTR=2be6b093 x1=00000000
+# PC=80001a98 INSTR=2ac3dab7 x21=2ac3d000
+# PC=80001a9c INSTR=41abd5b3 x11=f8000000
+# PC=80001aa0 INSTR=13722417 x8=93723aa0
+# PC=80001aa4 INSTR=037ca0b3 x1=00000000
+# PC=80001aac INSTR=039268b3 x17=1da62bab
+# PC=80001ab4 INSTR=02ebda33 x20=00000001
+# PC=80001ab8 INSTR=02ebda33 x20=00000001
+# PC=80001abc INSTR=02c60b33 x22=ab1bc411
+# PC=80001ac0 INSTR=0023b433 x8=00000000
+# PC=80001ac4 INSTR=f74d0393 x7=ffffff78
+# PC=80001ac8 INSTR=00860b33 x22=ff294717
+# PC=80001acc INSTR=03094e33 x28=0000001d
+# PC=80001ad0 INSTR=2be6b093 x1=00000000
+# PC=80001ad4 INSTR=039268b3 x17=1da62bab
+# PC=80001adc INSTR=6d8ee293 x5=000006d8
+# PC=80001ae0 INSTR=2ac3dab7 x21=2ac3d000
+# PC=80001ae4 INSTR=039268b3 x17=1da62bab
+# PC=80001ae8 INSTR=2be6b093 x1=00000000
+# PC=80001aec INSTR=07584893 x17=00000077
+# PC=80001af0 INSTR=6d8ee293 x5=000006d8
+# PC=80001af4 INSTR=00306133 x2=0cc78948
+# PC=80001af8 INSTR=2ac3dab7 x21=2ac3d000
+# PC=80001afc INSTR=02579933 x18=fffffc94
+# PC=80001b00 INSTR=00094eb3 x29=fffffc94
+# PC=80001b04 INSTR=039268b3 x17=1da62bab
+# PC=80001b08 INSTR=f74d0393 x7=ffffff78
+# PC=80001b0c INSTR=13722417 x8=93723b0c
+# PC=80001b10 INSTR=6d8ee293 x5=fffffedc
+# PC=80001b14 INSTR=008b9e93 x29=00000000
+# PC=80001b18 INSTR=41abd5b3 x11=f8000000
+# PC=80001b1c INSTR=2ac3dab7 x21=2ac3d000
+# PC=80001b20 INSTR=0178d913 x18=0000003b
+# PC=80001b24 INSTR=40b20233 x4=25a62bab
+# PC=80001b28 INSTR=00bcaeb3 x29=00000000
+# PC=80001b2c INSTR=41abd5b3 x11=f8000000
+# PC=80001b30 INSTR=0023b433 x8=00000000
+# PC=80001b34 INSTR=672c2913 x18=00000001
+# PC=80001b38 INSTR=40bbd113 x2=fff00000
+# PC=80001b3c INSTR=037ca0b3 x1=00000000
+# PC=80001b40 INSTR=0178d913 x18=0000003b
+# PC=80001b44 INSTR=008b9e93 x29=00000000
+# PC=80001b48 INSTR=40bbd113 x2=fff00000
+# PC=80001b4c INSTR=003e95b3 x11=00000000
+# PC=80001b50 INSTR=00bcaeb3 x29=00000000
+# PC=80001b54 INSTR=039268b3 x17=25a62bab
+# PC=80001b58 INSTR=001352b3 x5=00000003
+# PC=80001b5c INSTR=037ca0b3 x1=00000000
+# PC=80001b60 INSTR=02ebda33 x20=00000001
+# PC=80001b64 INSTR=41abd5b3 x11=f8000000
+# PC=80001b68 INSTR=008b9e93 x29=00000000
+# PC=80001b70 INSTR=03094e33 x28=0000001d
+# PC=80001b74 INSTR=07584893 x17=00000077
+# PC=80001b78 INSTR=af59fa13 x20=335778d1
+# PC=80001b7c INSTR=2ac3dab7 x21=2ac3d000
+# PC=80001b80 INSTR=02579933 x18=fffffffe
+# PC=80001b84 INSTR=40b20233 x4=2da62bab
+# PC=80001b88 INSTR=02579933 x18=fffffffe
+# PC=80001b8c INSTR=02ebda33 x20=00000001
+# PC=80001b90 INSTR=008b9e93 x29=00000000
+# PC=80001b94 INSTR=40b20233 x4=35a62bab
+# PC=80001b98 INSTR=af59fa13 x20=335778d1
+# PC=80001b9c INSTR=008b9e93 x29=00000000
+# PC=80001ba0 INSTR=2ac3dab7 x21=2ac3d000
+# PC=80001ba4 INSTR=af59fa13 x20=335778d1
+# PC=80001ba8 INSTR=6d8ee293 x5=000006d8
+# PC=80001bac INSTR=0023b433 x8=00000000
+# PC=80001bb4 INSTR=07584893 x17=00000077
+# PC=80001bb8 INSTR=672c2913 x18=00000001
+# PC=80001bbc INSTR=40b20233 x4=3da62bab
+# PC=80001bc0 INSTR=2ac3dab7 x21=2ac3d000
+# PC=80001bc4 INSTR=008b9e93 x29=00000000
+# PC=80001bc8 INSTR=001352b3 x5=00000003
+# PC=80001bcc INSTR=af59fa13 x20=335778d1
+# PC=80001bd0 INSTR=001352b3 x5=00000003
+# PC=80001bd4 INSTR=07584893 x17=00000077
+# PC=80001bdc INSTR=039268b3 x17=3da62bab
+# PC=80001be0 INSTR=0264b2b3 x5=00000001
+# PC=80001be4 INSTR=03094e33 x28=00000000
+# PC=80001be8 INSTR=41abd5b3 x11=f8000000
+# PC=80001bec INSTR=40b20233 x4=45a62bab
+# PC=80001bf0 INSTR=40bbd113 x2=fff00000
+# PC=80001bf4 INSTR=039268b3 x17=45a62bab
+# PC=80001bf8 INSTR=41abd5b3 x11=f8000000
+# PC=80001bfc INSTR=0178d913 x18=0000008b
+# PC=80001c00 INSTR=07584893 x17=00000077
+# PC=80001c04 INSTR=01f97cb3 x25=00000000
+# PC=80001c08 INSTR=41abd5b3 x11=f8000000
+# PC=80001c0c INSTR=039268b3 x17=45a62bab
+# PC=80001c10 INSTR=2be6b093 x1=00000000
+# PC=80001c14 INSTR=00094eb3 x29=0000008b
+# PC=80001c18 INSTR=40b20233 x4=4da62bab
+# PC=80001c1c INSTR=00306133 x2=0cc78948
+# PC=80001c20 INSTR=02579933 x18=ffffffff
+# PC=80001c24 INSTR=03094e33 x28=00000000
+# PC=80001c28 INSTR=40bbd113 x2=fff00000
+# PC=80001c2c INSTR=02c60b33 x22=ab1bc411
+# PC=80001c30 INSTR=13722417 x8=93723c30
+# PC=80001c34 INSTR=03094e33 x28=00000000
+# PC=80001c38 INSTR=01f97cb3 x25=00000000
+# PC=80001c3c INSTR=008b9e93 x29=00000000
+# PC=80001c40 INSTR=00306133 x2=0cc78948
+# PC=80001c44 INSTR=01f97cb3 x25=00000000
+# PC=80001c48 INSTR=00860b33 x22=929b8347
+# PC=80001c4c INSTR=00bcaeb3 x29=00000000
+# PC=80001c50 INSTR=07584893 x17=00000077
+# PC=80001c54 INSTR=40bbd113 x2=fff00000
+# PC=80001c58 INSTR=01f97cb3 x25=00000000
+# PC=80001c5c INSTR=0264b2b3 x5=00000001
+# PC=80001c60 INSTR=003e95b3 x11=00000000
+# PC=80001c64 INSTR=40bbd113 x2=fff00000
+# PC=80001c68 INSTR=02ebda33 x20=00000001
+# PC=80001c6c INSTR=00860b33 x22=929b8347
+# PC=80001c70 INSTR=6d8ee293 x5=000006d8
+# PC=80001c74 INSTR=0178d913 x18=00000000
+# PC=80001c78 INSTR=0023b433 x8=00000000
+# PC=80001c7c INSTR=07584893 x17=00000077
+# PC=80001c84 INSTR=2be6b093 x1=00000000
+# PC=80001c88 INSTR=2ac3dab7 x21=2ac3d000
+# PC=80001c8c INSTR=00306133 x2=0cc78948
+# PC=80001c90 INSTR=672c2913 x18=00000001
+# PC=80001c98 INSTR=00094eb3 x29=00000001
+# PC=80001c9c INSTR=40bbd113 x2=fff00000
+# PC=80001ca0 INSTR=00306133 x2=0cc78948
+# PC=80001ca4 INSTR=0264b2b3 x5=00000001
+# PC=80001ca8 INSTR=40bbd113 x2=fff00000
+# PC=80001cac INSTR=13722417 x8=93723cac
+# PC=80001cb0 INSTR=0178d913 x18=00000000
+# PC=80001cb4 INSTR=07584893 x17=00000077
+# PC=80001cb8 INSTR=0178d913 x18=00000000
+# PC=80001cbc INSTR=2be6b093 x1=00000000
+# PC=80001cc0 INSTR=af59fa13 x20=335778d1
+# PC=80001cc4 INSTR=00094eb3 x29=00000000
+# PC=80001cc8 INSTR=07584893 x17=00000077
+# PC=80001ccc INSTR=07584893 x17=00000077
+# PC=80001cd0 INSTR=6d8ee293 x5=000006d8
+# PC=80001cd4 INSTR=008b9e93 x29=00000000
+# PC=80001cd8 INSTR=0023b433 x8=00000000
+# PC=80001cdc INSTR=07584893 x17=00000077
+# PC=80001ce0 INSTR=41abd5b3 x11=f8000000
+# PC=80001ce4 INSTR=037ca0b3 x1=00000000
+# PC=80001ce8 INSTR=2ac3dab7 x21=2ac3d000
+# PC=80001cec INSTR=02ebda33 x20=00000001
+# PC=80001cf0 INSTR=008b9e93 x29=00000000
+# PC=80001cf4 INSTR=0264b2b3 x5=00000001
+# PC=80001cf8 INSTR=2ac3dab7 x21=2ac3d000
+# PC=80001cfc INSTR=01f97cb3 x25=00000000
+# PC=80001d00 INSTR=00860b33 x22=ff294717
+# PC=80001d04 INSTR=00306133 x2=0cc78948
+# PC=80001d08 INSTR=f74d0393 x7=ffffff78
+# PC=80001d0c INSTR=02ebda33 x20=00000001
+# PC=80001d10 INSTR=039268b3 x17=4da62bab
+# PC=80001d18 INSTR=41abd5b3 x11=f8000000
+# PC=80001d1c INSTR=039268b3 x17=4da62bab
+# PC=80001d20 INSTR=00bcaeb3 x29=00000000
+# PC=80001d28 INSTR=003e95b3 x11=00000000
+# PC=80001d2c INSTR=00bcaeb3 x29=00000000
+# PC=80001d30 INSTR=40b20233 x4=4da62bab
+# PC=80001d34 INSTR=07584893 x17=00000077
+# PC=80001d38 INSTR=00306133 x2=0cc78948
+# PC=80001d3c INSTR=41abd5b3 x11=f8000000
+# PC=80001d40 INSTR=13722417 x8=93723d40
+# PC=80001d44 INSTR=6d8ee293 x5=000006d8
+# PC=80001d48 INSTR=00306133 x2=0cc78948
+# PC=80001d4c INSTR=0264b2b3 x5=00000001
+# PC=80001d50 INSTR=13722417 x8=93723d50
+# PC=80001d54 INSTR=0178d913 x18=00000000
+# PC=80001d58 INSTR=2be6b093 x1=00000000
+# PC=80001d5c INSTR=41abd5b3 x11=f8000000
+# PC=80001d60 INSTR=40bbd113 x2=fff00000
+# PC=80001d64 INSTR=07584893 x17=00000077
+# PC=80001d68 INSTR=00bcaeb3 x29=00000000
+# PC=80001d6c INSTR=0264b2b3 x5=00000001
+# PC=80001d70 INSTR=001352b3 x5=00000003
+# PC=80001d78 INSTR=6d8ee293 x5=000006d8
+# PC=80001d7c INSTR=2ac3dab7 x21=2ac3d000
+# PC=80001d80 INSTR=037ca0b3 x1=00000000
+# PC=80001d84 INSTR=0023b433 x8=00000000
+# PC=80001d88 INSTR=672c2913 x18=00000001
+# PC=80001d8c INSTR=00860b33 x22=ff294717
+# PC=80001d90 INSTR=13722417 x8=93723d90
+# PC=80001d94 INSTR=0264b2b3 x5=00000001
+# PC=80001d98 INSTR=0178d913 x18=00000000
+# PC=80001d9c INSTR=0023b433 x8=00000000
+# PC=80001da4 INSTR=41abd5b3 x11=f8000000
+# PC=80001da8 INSTR=0264b2b3 x5=00000001
+# PC=80001dac INSTR=039268b3 x17=4da62bab
+# PC=80001db0 INSTR=0178d913 x18=0000009b
+# PC=80001db4 INSTR=008b9e93 x29=00000000
+# PC=80001db8 INSTR=003e95b3 x11=00000000
+# PC=80001dbc INSTR=6d8ee293 x5=000006d8
+# PC=80001dc0 INSTR=41abd5b3 x11=f8000000
+# PC=80001dc8 INSTR=2be6b093 x1=00000000
+# PC=80001dcc INSTR=008b9e93 x29=00000000
+# PC=80001dd0 INSTR=0264b2b3 x5=00000001
+# PC=80001dd4 INSTR=6d8ee293 x5=000006d8
+# PC=80001dd8 INSTR=2ac3dab7 x21=2ac3d000
+# PC=80001ddc INSTR=02c60b33 x22=ab1bc411
+# PC=80001de0 INSTR=00bcaeb3 x29=00000000
+# PC=80001de4 INSTR=03094e33 x28=0000004d
+# PC=80001de8 INSTR=003e95b3 x11=00000000
+# PC=80001dec INSTR=008b9e93 x29=00000000
+# PC=80001df0 INSTR=2ac3dab7 x21=2ac3d000
+# PC=80001df4 INSTR=02c60b33 x22=ab1bc411
+# PC=80001dfc INSTR=00860b33 x22=ff294717
+# PC=80001e00 INSTR=07584893 x17=00000077
+# PC=80001e04 INSTR=41abd5b3 x11=f8000000
+# PC=80001e08 INSTR=0178d913 x18=00000000
+# PC=80001e0c INSTR=039268b3 x17=4da62bab
+# PC=80001e10 INSTR=0264b2b3 x5=00000001
+# PC=80001e14 INSTR=037ca0b3 x1=00000000
+# PC=80001e18 INSTR=2ac3dab7 x21=2ac3d000
+# PC=80001e1c INSTR=008b9e93 x29=00000000
+# PC=80001e20 INSTR=003e95b3 x11=00000000
+# PC=80001e24 INSTR=af59fa13 x20=335778d1
+# PC=80001e28 INSTR=af59fa13 x20=335778d1
+# PC=80001e30 INSTR=40b20233 x4=4da62bab
+# PC=80001e34 INSTR=41abd5b3 x11=f8000000
+# PC=80001e38 INSTR=00306133 x2=0cc78948
+# PC=80001e3c INSTR=40bbd113 x2=fff00000
+# PC=80001e40 INSTR=01f97cb3 x25=00000000
+# PC=80001e44 INSTR=003e95b3 x11=00000000
+# PC=80001e48 INSTR=672c2913 x18=00000001
+# PC=80001e4c INSTR=41abd5b3 x11=f8000000
+# PC=80001e50 INSTR=2be6b093 x1=00000000
+# PC=80001e54 INSTR=40b20233 x4=55a62bab
+# PC=80001e58 INSTR=02579933 x18=ffffffff
+# PC=80001e5c INSTR=00094eb3 x29=ffffffff
+# PC=80001e60 INSTR=07584893 x17=00000077
+# PC=80001e64 INSTR=0178d913 x18=00000000
+# PC=80001e68 INSTR=41abd5b3 x11=f8000000
+# PC=80001e6c INSTR=001352b3 x5=00000003
+# PC=80001e70 INSTR=003e95b3 x11=ffffff00
+# PC=80001e74 INSTR=0023b433 x8=00000000
+# PC=80001e78 INSTR=02c60b33 x22=ab1bc411
+# PC=80001e7c INSTR=02579933 x18=fffffffe
+# PC=80001e80 INSTR=001352b3 x5=00000003
+# PC=80001e84 INSTR=001352b3 x5=00000003
+# PC=80001e88 INSTR=07584893 x17=00000077
+# PC=80001e8c INSTR=01f97cb3 x25=00000000
+# PC=80001e90 INSTR=6d8ee293 x5=ffffffff
+# PC=80001e94 INSTR=2ac3dab7 x21=2ac3d000
+# PC=80001e98 INSTR=2ac3dab7 x21=2ac3d000
+# PC=80001e9c INSTR=00860b33 x22=ff294717
+# PC=80001ea0 INSTR=40bbd113 x2=fff00000
+# PC=80001ea4 INSTR=037ca0b3 x1=00000000
+# PC=80001ea8 INSTR=40b20233 x4=55a62cab
+# PC=80001eac INSTR=41abd5b3 x11=f8000000
+# PC=80001eb0 INSTR=f74d0393 x7=ffffff78
+# PC=80001eb4 INSTR=0023b433 x8=00000000
+# PC=80001eb8 INSTR=008b9e93 x29=00000000
+# PC=80001ebc INSTR=07584893 x17=00000077
+# PC=80001ec0 INSTR=02579933 x18=00000000
+# PC=80001ec4 INSTR=6d8ee293 x5=000006d8
+# PC=80001ec8 INSTR=6d8ee293 x5=000006d8
+# PC=80001ecc INSTR=13722417 x8=93723ecc
+# PC=80001ed0 INSTR=af59fa13 x20=335778d1
+# PC=80001ed4 INSTR=001352b3 x5=00000003
+# PC=80001edc INSTR=2ac3dab7 x21=2ac3d000
+# PC=80001ee0 INSTR=2be6b093 x1=00000000
+# PC=80001ee4 INSTR=6d8ee293 x5=000006d8
+# PC=80001ee8 INSTR=41abd5b3 x11=f8000000
+# PC=80001eec INSTR=039268b3 x17=55a62cab
+# PC=80001ef0 INSTR=02579933 x18=fffffc94
+# PC=80001ef4 INSTR=0023b433 x8=00000000
+# PC=80001ef8 INSTR=03094e33 x28=fffffe4a
+# PC=80001efc INSTR=40bbd113 x2=fff00000
+# PC=80001f00 INSTR=00306133 x2=0cc78948
+# PC=80001f04 INSTR=2be6b093 x1=00000000
+# PC=80001f08 INSTR=40b20233 x4=5da62cab
+# PC=80001f0c INSTR=02579933 x18=fffffc94
+# PC=80001f10 INSTR=6d8ee293 x5=000006d8
+# PC=80001f14 INSTR=00860b33 x22=ff294717
+# PC=80001f18 INSTR=02ebda33 x20=00000001
+# PC=80001f1c INSTR=008b9e93 x29=00000000
+# PC=80001f20 INSTR=039268b3 x17=5da62cab
+# PC=80001f24 INSTR=40b20233 x4=65a62cab
+# PC=80001f28 INSTR=00094eb3 x29=fffffc94
+# PC=80001f30 INSTR=02579933 x18=fffffc94
+# PC=80001f38 INSTR=2ac3dab7 x21=2ac3d000
+# PC=80001f3c INSTR=037ca0b3 x1=00000000
+# PC=80001f40 INSTR=41abd5b3 x11=f8000000
+# PC=80001f44 INSTR=07584893 x17=00000077
+# PC=80001f48 INSTR=001352b3 x5=00000003
+# PC=80001f4c INSTR=00860b33 x22=ff294717
+# PC=80001f50 INSTR=02c60b33 x22=ab1bc411
+# PC=80001f54 INSTR=0264b2b3 x5=00000001
+# PC=80001f58 INSTR=40b20233 x4=6da62cab
+# PC=80001f5c INSTR=2ac3dab7 x21=2ac3d000
+# PC=80001f64 INSTR=001352b3 x5=00000003
+# PC=80001f68 INSTR=03094e33 x28=fffffe4a
+# PC=80001f6c INSTR=008b9e93 x29=00000000
+# PC=80001f70 INSTR=00306133 x2=0cc78948
+# PC=80001f74 INSTR=00bcaeb3 x29=00000000
+# PC=80001f78 INSTR=00094eb3 x29=fffffc94
+# PC=80001f7c INSTR=02ebda33 x20=00000001
+# PC=80001f80 INSTR=af59fa13 x20=335778d1
+# PC=80001f84 INSTR=01f97cb3 x25=00000000
+# PC=80001f88 INSTR=41abd5b3 x11=f8000000
+# PC=80001f8c INSTR=039268b3 x17=6da62cab
+# PC=80001f90 INSTR=0264b2b3 x5=00000001
+# PC=80001f98 INSTR=672c2913 x18=00000001
+# PC=80001f9c INSTR=00bcaeb3 x29=00000000
+# PC=80001fa0 INSTR=0178d913 x18=000000db
+# PC=80001fa4 INSTR=001352b3 x5=00000003
+# PC=80001fa8 INSTR=672c2913 x18=00000001
+# PC=80001fac INSTR=41abd5b3 x11=f8000000
+# PC=80001fb4 INSTR=40b20233 x4=75a62cab
+# PC=80001fb8 INSTR=02ebda33 x20=00000001
+# PC=80001fbc INSTR=af59fa13 x20=335778d1
+# PC=80001fc4 INSTR=00860b33 x22=ff294717
+# PC=80001fc8 INSTR=2be6b093 x1=00000000
+# PC=80001fcc INSTR=672c2913 x18=00000001
+# PC=80001fd0 INSTR=00306133 x2=0cc78948
+# PC=80001fd4 INSTR=00bcaeb3 x29=00000000
+# PC=80001fd8 INSTR=008b9e93 x29=00000000
+# PC=80001fdc INSTR=0023b433 x8=00000000
+# PC=80001fe0 INSTR=f74d0393 x7=ffffff78
+# PC=80001fe4 INSTR=03094e33 x28=00000000
+# PC=80001fe8 INSTR=001352b3 x5=00000003
+# PC=80001fec INSTR=008b9e93 x29=00000000
+# PC=80001ff0 INSTR=037ca0b3 x1=00000000
+# PC=80001ff4 INSTR=2ac3dab7 x21=2ac3d000
+# PC=80001ff8 INSTR=2be6b093 x1=00000000
+# PC=80001ffc INSTR=039268b3 x17=75a62cab
+# PC=80002000 INSTR=02c60b33 x22=ab1bc411
+# PC=80002004 INSTR=6d8ee293 x5=000006d8
+# PC=80002008 INSTR=41abd5b3 x11=f8000000
+# PC=8000200c INSTR=039268b3 x17=75a62cab
+# PC=80002010 INSTR=0178d913 x18=000000eb
+# PC=80002014 INSTR=40b20233 x4=7da62cab
+# PC=80002018 INSTR=f74d0393 x7=ffffff78
+# PC=8000201c INSTR=02579933 x18=fffffc94
+# PC=80002020 INSTR=0264b2b3 x5=00000001
+# PC=80002024 INSTR=02c60b33 x22=ab1bc411
+# PC=80002028 INSTR=672c2913 x18=00000001
+# PC=80002030 INSTR=2ac3dab7 x21=2ac3d000
+# PC=80002034 INSTR=6d8ee293 x5=000006d8
+# PC=80002038 INSTR=2be6b093 x1=00000000
+# PC=8000203c INSTR=01f97cb3 x25=00000000
+# PC=80002040 INSTR=02579933 x18=fffffc94
+# PC=80002044 INSTR=41abd5b3 x11=f8000000
+# PC=80002048 INSTR=008b9e93 x29=00000000
+# PC=8000204c INSTR=0178d913 x18=000000eb
+# PC=80002050 INSTR=008b9e93 x29=00000000
+# PC=80002054 INSTR=40bbd113 x2=fff00000
+# PC=8000205c INSTR=6d8ee293 x5=000006d8
+# PC=80002060 INSTR=03094e33 x28=00000075
+# PC=80002064 INSTR=40bbd113 x2=fff00000
+# PC=80002068 INSTR=00bcaeb3 x29=00000000
+# PC=8000206c INSTR=039268b3 x17=7da62cab
+# PC=80002070 INSTR=00860b33 x22=ff294717
+# PC=80002074 INSTR=41abd5b3 x11=f8000000
+# PC=80002078 INSTR=037ca0b3 x1=00000000
+# PC=8000207c INSTR=00094eb3 x29=000000eb
+# PC=80002080 INSTR=00306133 x2=0cc78948
+# PC=80002084 INSTR=40bbd113 x2=fff00000
+# PC=80002088 INSTR=2be6b093 x1=00000000
+# PC=8000208c INSTR=039268b3 x17=7da62cab
+# PC=80002090 INSTR=40bbd113 x2=fff00000
+# PC=80002094 INSTR=0178d913 x18=000000fb
+# PC=80002098 INSTR=40bbd113 x2=fff00000
+# PC=8000209c INSTR=03094e33 x28=0000007d
+# PC=800020a0 INSTR=13722417 x8=937240a0
+# PC=800020a4 INSTR=00094eb3 x29=000000fb
+# PC=800020a8 INSTR=039268b3 x17=7da62cab
+# PC=800020ac INSTR=6d8ee293 x5=000006fb
+# PC=800020b0 INSTR=039268b3 x17=7da62cab
+# PC=800020b8 INSTR=41abd5b3 x11=f8000000
+# PC=800020bc INSTR=af59fa13 x20=335778d1
+# PC=800020c0 INSTR=41abd5b3 x11=f8000000
+# PC=800020c4 INSTR=037ca0b3 x1=00000000
+# PC=800020cc INSTR=01f97cb3 x25=00000000
+# PC=800020d0 INSTR=00306133 x2=0cc78948
+# PC=800020d4 INSTR=00bcaeb3 x29=00000000
+# PC=800020d8 INSTR=f74d0393 x7=ffffff78
+# PC=800020dc INSTR=2be6b093 x1=00000000
+# PC=800020e0 INSTR=2be6b093 x1=00000000
+# PC=800020e4 INSTR=02579933 x18=fffffc82
+# PC=800020e8 INSTR=41abd5b3 x11=f8000000
+# PC=800020ec INSTR=672c2913 x18=00000001
+# PC=800020f0 INSTR=af59fa13 x20=335778d1
+# PC=800020f4 INSTR=00bcaeb3 x29=00000000
+# PC=800020f8 INSTR=02c60b33 x22=ab1bc411
+# PC=800020fc INSTR=037ca0b3 x1=00000000
+# PC=80002100 INSTR=00306133 x2=0cc78948
+# PC=80002104 INSTR=001352b3 x5=00000003
+# PC=80002108 INSTR=40bbd113 x2=fff00000
+# PC=8000210c INSTR=02c60b33 x22=ab1bc411
+# PC=80002110 INSTR=2be6b093 x1=00000000
+# PC=80002114 INSTR=02579933 x18=fffffffe
+# PC=80002118 INSTR=0023b433 x8=00000000
+# PC=8000211c INSTR=2be6b093 x1=00000000
+# PC=80002120 INSTR=003e95b3 x11=00000000
+# PC=80002124 INSTR=af59fa13 x20=335778d1
+# PC=80002128 INSTR=40bbd113 x2=fff00000
+# PC=8000212c INSTR=40bbd113 x2=fff00000
+# PC=80002130 INSTR=0178d913 x18=000000fb
+# PC=80002134 INSTR=2ac3dab7 x21=2ac3d000
+# PC=80002138 INSTR=02c60b33 x22=ab1bc411
+# PC=8000213c INSTR=13722417 x8=9372413c
+# PC=80002140 INSTR=0178d913 x18=000000fb
+# PC=80002144 INSTR=02c60b33 x22=ab1bc411
+# PC=80002148 INSTR=672c2913 x18=00000001
+# PC=8000214c INSTR=07584893 x17=00000077
+# PC=80002150 INSTR=40b20233 x4=7da62cab
+# PC=80002154 INSTR=02579933 x18=fffffffe
+# PC=80002158 INSTR=001352b3 x5=00000003
+# PC=8000215c INSTR=2ac3dab7 x21=2ac3d000
+# PC=80002160 INSTR=07584893 x17=00000077
+# PC=80002164 INSTR=40b20233 x4=7da62cab
+# PC=80002168 INSTR=0023b433 x8=00000000
+# PC=8000216c INSTR=003e95b3 x11=00000000
+# PC=80002170 INSTR=001352b3 x5=00000003
+# PC=80002174 INSTR=039268b3 x17=7da62cab
+# PC=80002178 INSTR=02579933 x18=fffffffe
+# PC=8000217c INSTR=01f97cb3 x25=00000000
+# PC=80002184 INSTR=41abd5b3 x11=f8000000
+# PC=80002188 INSTR=039268b3 x17=7da62cab
+# PC=8000218c INSTR=40b20233 x4=85a62cab
+# PC=80002190 INSTR=6d8ee293 x5=000006d8
+# PC=80002194 INSTR=40b20233 x4=8da62cab
+# PC=80002198 INSTR=008b9e93 x29=00000000
+# PC=8000219c INSTR=003e95b3 x11=00000000
+# PC=800021a0 INSTR=2be6b093 x1=00000000
+# PC=800021a4 INSTR=00bcaeb3 x29=00000000
+# PC=800021a8 INSTR=001352b3 x5=00000003
+# PC=800021ac INSTR=008b9e93 x29=00000000
+# PC=800021b0 INSTR=0178d913 x18=000000fb
+# PC=800021b4 INSTR=40bbd113 x2=fff00000
+# PC=800021b8 INSTR=00094eb3 x29=000000fb
+# PC=800021bc INSTR=40bbd113 x2=fff00000
+# PC=800021c0 INSTR=0023b433 x8=00000000
+# PC=800021c4 INSTR=0178d913 x18=000000fb
+# PC=800021cc INSTR=003e95b3 x11=0000fb00
+# PC=800021d0 INSTR=0178d913 x18=000000fb
+# PC=800021d4 INSTR=00306133 x2=0cc78948
+# PC=800021d8 INSTR=001352b3 x5=00000003
+# PC=800021dc INSTR=00306133 x2=0cc78948
+# PC=800021e0 INSTR=00bcaeb3 x29=00000001
+# PC=800021e4 INSTR=6d8ee293 x5=000006d9
+# PC=800021e8 INSTR=02ebda33 x20=00000001
+# PC=800021ec INSTR=6d8ee293 x5=000006d9
+# PC=800021f0 INSTR=2ac3dab7 x21=2ac3d000
+# PC=800021f4 INSTR=02579933 x18=fffffc93
+# PC=800021f8 INSTR=02c60b33 x22=ab1bc411
+# PC=800021fc INSTR=0178d913 x18=000000fb
+# PC=80002200 INSTR=672c2913 x18=00000001
+# PC=80002204 INSTR=0023b433 x8=00000000
+# PC=80002208 INSTR=13722417 x8=93724208
+# PC=8000220c INSTR=41abd5b3 x11=f8000000
+# PC=80002210 INSTR=2ac3dab7 x21=2ac3d000
+# PC=80002214 INSTR=40bbd113 x2=fff00000
+# PC=80002218 INSTR=03094e33 x28=00000000
+# PC=8000221c INSTR=672c2913 x18=00000001
+# PC=80002220 INSTR=00094eb3 x29=00000001
+# PC=80002224 INSTR=13722417 x8=93724224
+# PC=80002228 INSTR=0178d913 x18=000000fb
+# PC=8000222c INSTR=672c2913 x18=00000001
+# PC=80002230 INSTR=672c2913 x18=00000001
+# PC=80002234 INSTR=6d8ee293 x5=000006d9
+# PC=80002238 INSTR=02c60b33 x22=ab1bc411
+# PC=8000223c INSTR=0023b433 x8=00000000
+# PC=80002240 INSTR=07584893 x17=00000077
+# PC=80002244 INSTR=001352b3 x5=00000003
+# PC=80002248 INSTR=02579933 x18=fffffffe
+# PC=8000224c INSTR=01f97cb3 x25=00000000
+# PC=80002250 INSTR=00094eb3 x29=fffffffe
+# PC=80002254 INSTR=02c60b33 x22=ab1bc411
+# PC=80002258 INSTR=13722417 x8=93724258
+# PC=8000225c INSTR=40b20233 x4=95a62cab
+# PC=80002260 INSTR=07584893 x17=00000077
+# PC=80002264 INSTR=01f97cb3 x25=00000000
+# PC=80002268 INSTR=008b9e93 x29=00000000
+# PC=8000226c INSTR=02579933 x18=fffffffe
+# PC=80002270 INSTR=2ac3dab7 x21=2ac3d000
+# PC=80002274 INSTR=03094e33 x28=ffffffff
+# PC=80002278 INSTR=2be6b093 x1=00000000
+# PC=8000227c INSTR=2ac3dab7 x21=2ac3d000
+# PC=80002280 INSTR=0264b2b3 x5=00000001
+# PC=80002284 INSTR=0023b433 x8=00000000
+# PC=80002288 INSTR=f74d0393 x7=ffffff78
+# PC=8000228c INSTR=008b9e93 x29=00000000
+# PC=80002290 INSTR=0023b433 x8=00000000
+# PC=80002294 INSTR=001352b3 x5=00000003
+# PC=80002298 INSTR=02579933 x18=fffffffe
+# PC=8000229c INSTR=01f97cb3 x25=00000000
+# PC=800022a0 INSTR=f74d0393 x7=ffffff78
+# PC=800022a4 INSTR=6d8ee293 x5=000006d8
+# PC=800022a8 INSTR=40bbd113 x2=fff00000
+# PC=800022ac INSTR=0178d913 x18=00000000
+# PC=800022b4 INSTR=2ac3dab7 x21=2ac3d000
+# PC=800022b8 INSTR=039268b3 x17=95a62cab
+# PC=800022bc INSTR=037ca0b3 x1=00000000
+# PC=800022c0 INSTR=f74d0393 x7=ffffff78
+# PC=800022c4 INSTR=af59fa13 x20=335778d1
+# PC=800022c8 INSTR=2be6b093 x1=00000000
+# PC=800022cc INSTR=03094e33 x28=00000000
+# PC=800022d0 INSTR=03094e33 x28=00000000
+# PC=800022d8 INSTR=0264b2b3 x5=00000001
+# PC=800022dc INSTR=6d8ee293 x5=000006d8
+# PC=800022e0 INSTR=00306133 x2=0cc78948
+# PC=800022e4 INSTR=2be6b093 x1=00000000
+# PC=800022e8 INSTR=2be6b093 x1=00000000
+# PC=800022ec INSTR=672c2913 x18=00000001
+# PC=800022f0 INSTR=2be6b093 x1=00000000
+# PC=800022f4 INSTR=037ca0b3 x1=00000000
+# PC=800022f8 INSTR=02ebda33 x20=00000001
+# PC=800022fc INSTR=02c60b33 x22=ab1bc411
+# PC=80002300 INSTR=672c2913 x18=00000001
+# PC=80002304 INSTR=f74d0393 x7=ffffff78
+# PC=80002308 INSTR=672c2913 x18=00000001
+# PC=8000230c INSTR=2ac3dab7 x21=2ac3d000
+# PC=80002310 INSTR=0178d913 x18=0000012b
+# PC=80002314 INSTR=00860b33 x22=ff294717
+# PC=80002318 INSTR=02c60b33 x22=ab1bc411
+# PC=8000231c INSTR=01f97cb3 x25=00000000
+# PC=80002320 INSTR=40b20233 x4=9da62cab
+# PC=80002324 INSTR=02c60b33 x22=ab1bc411
+# PC=8000232c INSTR=40bbd113 x2=fff00000
+# PC=80002330 INSTR=00306133 x2=0cc78948
+# PC=80002334 INSTR=039268b3 x17=9da62cab
+# PC=8000233c INSTR=001352b3 x5=00000003
+# PC=80002340 INSTR=0178d913 x18=0000013b
+# PC=80002344 INSTR=41abd5b3 x11=f8000000
+# PC=80002348 INSTR=001352b3 x5=00000003
+# PC=8000234c INSTR=00306133 x2=0cc78948
+# PC=80002350 INSTR=6d8ee293 x5=000006d8
+# PC=80002354 INSTR=07584893 x17=00000077
+# PC=8000235c INSTR=037ca0b3 x1=00000000
+# PC=80002360 INSTR=02579933 x18=fffffc94
+# PC=80002364 INSTR=003e95b3 x11=00000000
+# PC=80002368 INSTR=6d8ee293 x5=000006d8
+# PC=8000236c INSTR=f74d0393 x7=ffffff78
+# PC=80002374 INSTR=0178d913 x18=00000000
+# PC=80002378 INSTR=07584893 x17=00000077
+# PC=8000237c INSTR=00306133 x2=0cc78948
+# PC=80002380 INSTR=00094eb3 x29=00000000
+# PC=80002388 INSTR=02ebda33 x20=00000001
+# PC=8000238c INSTR=01f97cb3 x25=00000000
+# PC=80002390 INSTR=008b9e93 x29=00000000
+# PC=80002394 INSTR=41abd5b3 x11=f8000000
+# PC=80002398 INSTR=00bcaeb3 x29=00000000
+# PC=8000239c INSTR=0023b433 x8=00000000
+# PC=800023a0 INSTR=039268b3 x17=9da62cab
+# PC=800023a8 INSTR=00bcaeb3 x29=00000000
+# PC=800023ac INSTR=6d8ee293 x5=000006d8
+# PC=800023b0 INSTR=672c2913 x18=00000001
+# PC=800023b4 INSTR=039268b3 x17=9da62cab
+# PC=800023b8 INSTR=02ebda33 x20=00000001
+# PC=800023bc INSTR=02ebda33 x20=00000001
+# PC=800023c0 INSTR=41abd5b3 x11=f8000000
+# PC=800023c4 INSTR=f74d0393 x7=ffffff78
+# PC=800023c8 INSTR=af59fa13 x20=335778d1
+# PC=800023cc INSTR=00094eb3 x29=00000001
+# PC=800023d0 INSTR=2ac3dab7 x21=2ac3d000
+# PC=800023d4 INSTR=0264b2b3 x5=00000001
+# PC=800023d8 INSTR=03094e33 x28=00000000
+# PC=800023dc INSTR=02ebda33 x20=00000001
+# PC=800023e0 INSTR=037ca0b3 x1=00000000
+# PC=800023e4 INSTR=00bcaeb3 x29=00000000
+# PC=800023e8 INSTR=01f97cb3 x25=00000000
+# PC=800023ec INSTR=672c2913 x18=00000001
+# PC=800023f0 INSTR=0178d913 x18=0000013b
+# PC=800023f4 INSTR=01f97cb3 x25=00000000
+# PC=800023f8 INSTR=07584893 x17=00000077
+# PC=80002400 INSTR=003e95b3 x11=00000000
+# PC=80002404 INSTR=02c60b33 x22=ab1bc411
+# PC=80002408 INSTR=40b20233 x4=9da62cab
+# PC=8000240c INSTR=039268b3 x17=9da62cab
+# PC=80002410 INSTR=03094e33 x28=0000009d
+# PC=80002414 INSTR=2ac3dab7 x21=2ac3d000
+# PC=80002418 INSTR=672c2913 x18=00000001
+# PC=8000241c INSTR=039268b3 x17=9da62cab
+# PC=80002420 INSTR=672c2913 x18=00000001
+# PC=80002424 INSTR=03094e33 x28=00000000
+# PC=80002428 INSTR=0264b2b3 x5=00000001
+# PC=8000242c INSTR=03094e33 x28=00000000
+# PC=80002430 INSTR=0264b2b3 x5=00000001
+# PC=80002438 INSTR=001352b3 x5=00000003
+# PC=8000243c INSTR=41abd5b3 x11=f8000000
+# PC=80002440 INSTR=00094eb3 x29=00000001
+# PC=80002448 INSTR=02ebda33 x20=00000001
+# PC=8000244c INSTR=40b20233 x4=a5a62cab
+# PC=80002450 INSTR=008b9e93 x29=00000000
+# PC=80002454 INSTR=13722417 x8=93724454
+# PC=80002458 INSTR=af59fa13 x20=335778d1
+# PC=8000245c INSTR=02c60b33 x22=ab1bc411
+# PC=80002460 INSTR=001352b3 x5=00000003
+# PC=80002464 INSTR=00860b33 x22=929b8b6b
+# PC=80002468 INSTR=02c60b33 x22=ab1bc411
+# PC=8000246c INSTR=40bbd113 x2=fff00000
+# PC=80002470 INSTR=003e95b3 x11=00000000
+# PC=80002474 INSTR=0264b2b3 x5=00000001
+# PC=80002478 INSTR=00306133 x2=0cc78948
+# PC=8000247c INSTR=00306133 x2=0cc78948
+# PC=80002480 INSTR=0178d913 x18=0000013b
+# PC=80002484 INSTR=037ca0b3 x1=00000000
+# PC=80002488 INSTR=00306133 x2=0cc78948
+# PC=8000248c INSTR=6d8ee293 x5=000006d8
+# PC=80002490 INSTR=f74d0393 x7=ffffff78
+# PC=80002494 INSTR=40b20233 x4=a5a62cab
+# PC=80002498 INSTR=02579933 x18=fffffc94
+# PC=8000249c INSTR=01f97cb3 x25=00000000
+# PC=800024a0 INSTR=0178d913 x18=0000013b
+# PC=800024a4 INSTR=0023b433 x8=00000000
+# PC=800024a8 INSTR=03094e33 x28=0000009d
+# PC=800024ac INSTR=001352b3 x5=00000003
+# PC=800024b4 INSTR=0264b2b3 x5=00000001
+# PC=800024b8 INSTR=00094eb3 x29=0000013b
+# PC=800024bc INSTR=037ca0b3 x1=00000000
+# PC=800024c0 INSTR=001352b3 x5=00000003
+# PC=800024c8 INSTR=41abd5b3 x11=f8000000
+# PC=800024cc INSTR=40b20233 x4=ada62cab
+# PC=800024d4 INSTR=f74d0393 x7=ffffff78
+# PC=800024d8 INSTR=008b9e93 x29=00000000
+# PC=800024dc INSTR=003e95b3 x11=00000000
+# PC=800024e4 INSTR=0023b433 x8=00000000
+# PC=800024e8 INSTR=008b9e93 x29=00000000
+# PC=800024ec INSTR=07584893 x17=00000077
+# PC=800024f0 INSTR=40bbd113 x2=fff00000
+# PC=800024f4 INSTR=00bcaeb3 x29=00000000
+# PC=800024f8 INSTR=001352b3 x5=00000003
+# PC=800024fc INSTR=0023b433 x8=00000000
+# PC=80002500 INSTR=037ca0b3 x1=00000000
+# PC=80002504 INSTR=02ebda33 x20=00000001
+# PC=80002508 INSTR=02579933 x18=fffffffe
+# PC=8000250c INSTR=03094e33 x28=ffffffff
+# PC=80002514 INSTR=13722417 x8=93724514
+# PC=80002518 INSTR=00306133 x2=0cc78948
+# PC=8000251c INSTR=001352b3 x5=00000003
+# PC=80002520 INSTR=41abd5b3 x11=f8000000
+# PC=80002528 INSTR=f74d0393 x7=ffffff78
+# PC=8000252c INSTR=00306133 x2=0cc78948
+# PC=80002530 INSTR=672c2913 x18=00000001
+# PC=80002534 INSTR=40bbd113 x2=fff00000
+# PC=80002538 INSTR=41abd5b3 x11=f8000000
+# PC=8000253c INSTR=0178d913 x18=00000000
+# PC=80002540 INSTR=003e95b3 x11=00000000
+# PC=80002544 INSTR=00bcaeb3 x29=00000000
+# PC=80002548 INSTR=00860b33 x22=929b8c2b
+# PC=8000254c INSTR=001352b3 x5=00000003
+# PC=80002550 INSTR=41abd5b3 x11=f8000000
+# PC=80002554 INSTR=13722417 x8=93724554
+# PC=80002558 INSTR=672c2913 x18=00000001
+# PC=80002560 INSTR=03094e33 x28=00000000
+# PC=80002564 INSTR=13722417 x8=93724564
+# PC=80002568 INSTR=0178d913 x18=00000000
+# PC=8000256c INSTR=13722417 x8=9372456c
+# PC=80002570 INSTR=00306133 x2=0cc78948
+# PC=80002574 INSTR=02c60b33 x22=ab1bc411
+# PC=80002578 INSTR=0023b433 x8=00000000
+# PC=8000257c INSTR=13722417 x8=9372457c
+# PC=80002580 INSTR=01f97cb3 x25=00000000
+# PC=80002584 INSTR=672c2913 x18=00000001
+# PC=8000258c INSTR=41abd5b3 x11=f8000000
+# PC=80002590 INSTR=6d8ee293 x5=000006d8
+# PC=80002598 INSTR=001352b3 x5=00000003
+# PC=800025a0 INSTR=01f97cb3 x25=00000000
+# PC=800025ac INSTR=41abd5b3 x11=f8000000
+# PC=800025b0 INSTR=40bbd113 x2=fff00000
+# PC=800025b4 INSTR=008b9e93 x29=00000000
+# PC=800025b8 INSTR=6d8ee293 x5=000006d8
+# PC=800025bc INSTR=00306133 x2=0cc78948
+# PC=800025c0 INSTR=008b9e93 x29=00000000
+# PC=800025c4 INSTR=001352b3 x5=00000003
+# PC=800025c8 INSTR=40b20233 x4=b5a62cab
+# PC=800025cc INSTR=039268b3 x17=b5a62cab
+# PC=800025d0 INSTR=0264b2b3 x5=00000001
+# PC=800025d4 INSTR=03094e33 x28=00000000
+# PC=800025d8 INSTR=00306133 x2=0cc78948
+# PC=800025e0 INSTR=03094e33 x28=00000000
+# PC=800025e4 INSTR=07584893 x17=00000077
+# PC=800025e8 INSTR=0023b433 x8=00000000
+# PC=800025ec INSTR=13722417 x8=937245ec
+# PC=800025f0 INSTR=13722417 x8=937245f0
+# PC=800025f8 INSTR=02579933 x18=ffffffff
+# PC=800025fc INSTR=003e95b3 x11=00000000
+# PC=80002600 INSTR=001352b3 x5=00000003
+# PC=80002608 INSTR=2be6b093 x1=00000000
+# PC=8000260c INSTR=008b9e93 x29=00000000
+# PC=80002610 INSTR=008b9e93 x29=00000000
+# PC=80002614 INSTR=01f97cb3 x25=00000000
+# PC=80002618 INSTR=2ac3dab7 x21=2ac3d000
+# PC=8000261c INSTR=02ebda33 x20=00000001
+# PC=80002620 INSTR=008b9e93 x29=00000000
+# PC=80002624 INSTR=41abd5b3 x11=f8000000
+# PC=80002628 INSTR=0178d913 x18=00000000
+# PC=8000262c INSTR=672c2913 x18=00000001
+# PC=80002630 INSTR=001352b3 x5=00000003
+# PC=80002634 INSTR=2ac3dab7 x21=2ac3d000
+# PC=80002638 INSTR=00306133 x2=0cc78948
+# PC=8000263c INSTR=af59fa13 x20=335778d1
+# PC=80002640 INSTR=00306133 x2=0cc78948
+# PC=80002644 INSTR=008b9e93 x29=00000000
+# PC=80002648 INSTR=13722417 x8=93724648
+# PC=8000264c INSTR=003e95b3 x11=00000000
+# PC=80002650 INSTR=f74d0393 x7=ffffff78
+# PC=80002654 INSTR=0023b433 x8=00000000
+# PC=80002658 INSTR=40bbd113 x2=fff00000
+# PC=8000265c INSTR=13722417 x8=9372465c
+# PC=80002660 INSTR=41abd5b3 x11=f8000000
+# PC=80002664 INSTR=0023b433 x8=00000000
+# PC=80002668 INSTR=07584893 x17=00000077
+# PC=8000266c INSTR=2be6b093 x1=00000000
+# PC=80002670 INSTR=07584893 x17=00000077
+# PC=80002674 INSTR=01f97cb3 x25=00000000
+# PC=80002678 INSTR=0178d913 x18=00000000
+# PC=8000267c INSTR=40b20233 x4=bda62cab
+# PC=80002680 INSTR=41abd5b3 x11=f8000000
+# PC=80002684 INSTR=00094eb3 x29=00000000
+# PC=80002688 INSTR=001352b3 x5=00000003
+# PC=8000268c INSTR=2ac3dab7 x21=2ac3d000
+# PC=80002690 INSTR=13722417 x8=93724690
+# PC=80002694 INSTR=f74d0393 x7=ffffff78
+# PC=80002698 INSTR=f74d0393 x7=ffffff78
+# PC=8000269c INSTR=2be6b093 x1=00000000
+# PC=800026a0 INSTR=13722417 x8=937246a0
+# PC=800026a4 INSTR=0178d913 x18=00000000
+# PC=800026a8 INSTR=00094eb3 x29=00000000
+# PC=800026ac INSTR=2be6b093 x1=00000000
+# PC=800026b0 INSTR=40bbd113 x2=fff00000
+# PC=800026b4 INSTR=001352b3 x5=00000003
+# PC=800026b8 INSTR=008b9e93 x29=00000000
+# PC=800026bc INSTR=039268b3 x17=bda62cab
+# PC=800026c0 INSTR=f74d0393 x7=ffffff78
+# PC=800026c4 INSTR=00860b33 x22=929b8db7
+# PC=800026c8 INSTR=02ebda33 x20=00000001
+# PC=800026d0 INSTR=6d8ee293 x5=000006d8
+# PC=800026d4 INSTR=008b9e93 x29=00000000
+# PC=800026d8 INSTR=0178d913 x18=0000017b
+# PC=800026dc INSTR=672c2913 x18=00000001
+# PC=800026e0 INSTR=2ac3dab7 x21=2ac3d000
+# PC=800026e4 INSTR=2be6b093 x1=00000000
+# PC=800026e8 INSTR=02ebda33 x20=00000001
+# PC=800026ec INSTR=00094eb3 x29=00000001
+# PC=800026f4 INSTR=0264b2b3 x5=00000001
+# PC=800026f8 INSTR=00860b33 x22=929b8db7
+# PC=800026fc INSTR=039268b3 x17=bda62cab
+# PC=80002700 INSTR=02579933 x18=ffffffff
+# PC=80002704 INSTR=0178d913 x18=0000017b
+# PC=80002708 INSTR=037ca0b3 x1=00000000
+# PC=8000270c INSTR=af59fa13 x20=335778d1
+# PC=80002710 INSTR=0264b2b3 x5=00000001
+# PC=80002714 INSTR=039268b3 x17=bda62cab
+# PC=80002718 INSTR=00860b33 x22=929b8db7
+# PC=8000271c INSTR=02579933 x18=ffffffff
+# PC=80002720 INSTR=2be6b093 x1=00000000
+# PC=80002724 INSTR=00094eb3 x29=ffffffff
+# PC=80002728 INSTR=af59fa13 x20=335778d1
+# PC=8000272c INSTR=02ebda33 x20=00000001
+# PC=80002730 INSTR=039268b3 x17=bda62cab
+# PC=80002734 INSTR=672c2913 x18=00000001
+# PC=80002738 INSTR=02c60b33 x22=ab1bc411
+# PC=8000273c INSTR=672c2913 x18=00000001
+# PC=80002740 INSTR=2be6b093 x1=00000000
+# PC=80002744 INSTR=03094e33 x28=00000000
+# PC=80002748 INSTR=001352b3 x5=00000003
+# PC=80002750 INSTR=07584893 x17=00000077
+# PC=80002754 INSTR=07584893 x17=00000077
+# PC=80002758 INSTR=02c60b33 x22=ab1bc411
+# PC=8000275c INSTR=02579933 x18=fffffffe
+# PC=80002760 INSTR=40bbd113 x2=fff00000
+# PC=80002764 INSTR=008b9e93 x29=00000000
+# PC=80002768 INSTR=13722417 x8=93724768
+# PC=8000276c INSTR=2be6b093 x1=00000000
+# PC=80002770 INSTR=02ebda33 x20=00000001
+# PC=80002774 INSTR=01f97cb3 x25=00000000
+# PC=80002778 INSTR=0264b2b3 x5=00000001
+# PC=8000277c INSTR=008b9e93 x29=00000000
+# PC=80002784 INSTR=03094e33 x28=ffffffff
+# PC=80002788 INSTR=00094eb3 x29=fffffffe
+# PC=8000278c INSTR=40bbd113 x2=fff00000
+# PC=80002790 INSTR=001352b3 x5=00000003
+# PC=80002798 INSTR=40bbd113 x2=fff00000
+# PC=8000279c INSTR=00306133 x2=0cc78948
+# PC=800027a0 INSTR=008b9e93 x29=00000000
+# PC=800027a4 INSTR=008b9e93 x29=00000000
+# PC=800027a8 INSTR=00860b33 x22=929b8e7f
+# PC=800027ac INSTR=00306133 x2=0cc78948
+# PC=800027b0 INSTR=2be6b093 x1=00000000
+# PC=800027b4 INSTR=00094eb3 x29=fffffffe
+# PC=800027b8 INSTR=0264b2b3 x5=00000001
+# PC=800027bc INSTR=01f97cb3 x25=00000000
+# PC=800027c0 INSTR=0264b2b3 x5=00000001
+# PC=800027c4 INSTR=01f97cb3 x25=00000000
+# PC=800027c8 INSTR=00860b33 x22=929b8e7f
+# PC=800027cc INSTR=07584893 x17=00000077
+# PC=800027d0 INSTR=039268b3 x17=bda62cab
+# PC=800027d4 INSTR=00bcaeb3 x29=00000000
+# PC=800027d8 INSTR=41abd5b3 x11=f8000000
+# PC=800027dc INSTR=00094eb3 x29=fffffffe
+# PC=800027e0 INSTR=2be6b093 x1=00000000
+# PC=800027e4 INSTR=2be6b093 x1=00000000
+# PC=800027e8 INSTR=af59fa13 x20=335778d1
+# PC=800027ec INSTR=13722417 x8=937247ec
+# PC=800027f0 INSTR=40b20233 x4=c5a62cab
+# PC=800027f4 INSTR=01f97cb3 x25=00000000
+# PC=800027f8 INSTR=41abd5b3 x11=f8000000
+# PC=800027fc INSTR=03094e33 x28=ffffffff
+# PC=80002800 INSTR=40b20233 x4=cda62cab
+# PC=80002804 INSTR=02c60b33 x22=ab1bc411
+# PC=80002808 INSTR=40b20233 x4=d5a62cab
+# PC=8000280c INSTR=41abd5b3 x11=f8000000
+# PC=80002810 INSTR=41abd5b3 x11=f8000000
+# PC=80002814 INSTR=003e95b3 x11=fffffe00
+# PC=80002818 INSTR=2be6b093 x1=00000000
+# PC=8000281c INSTR=40bbd113 x2=fff00000
+# PC=80002820 INSTR=00000f17 x30=80002820
+# IMM_ADDER: rs1=8000282c imm=00000000 target=8000282c
+# PC=80002824 INSTR=00cf0f13 x30=8000282c
+# IMM_ADDER: rs1=80002820 imm=00000000 target=80002820
+# PC=8000282c INSTR=00100193 x3=00000001
+# 
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+# [154005000] INTERRUPT/TRAP TAKEN
+# CAUSE       = 0000000b
+# MSTATUS     = 00001880
+# MIE         = 00000000
+# MIP         = 00000000
+# MEPC        = 80000064
+# MTVEC       = 80002844
+# I_OR_E      = 0
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+# 
+# IMM_ADDER: rs1=80010ce0 imm=00000009 target=80010ce9
+# IMM_ADDER: rs1=80010ce0 imm=00000000 target=80010ce0
+# PC=80002844 INSTR=ffcc0c13 x24=80010ce0
+# IMM_ADDER: rs1=80010ce4 imm=00000000 target=80010ce4
+# PC=80002848 INSTR=009c2023 MEM[80010ce0]=8000ce64
+# PC=8000284c INSTR=000c04b3 x9=80010ce0
+# IMM_ADDER: rs1=80010c60 imm=00000001 target=80010c61
+# IMM_ADDER: rs1=80010c60 imm=00000004 target=80010c64
+# PC=80002850 INSTR=f8048493 x9=80010c60
+# IMM_ADDER: rs1=80010ce0 imm=00000004 target=80010ce4
+# PC=80002854 INSTR=0014a223 MEM[80010c64]=00000000
+# IMM_ADDER: rs1=80010c60 imm=00000002 target=80010c62
+# IMM_ADDER: rs1=80010c60 imm=00000008 target=80010c68
+# PC=80002858 INSTR=0024a423 MEM[80010c68]=fff00000
+# IMM_ADDER: rs1=80010c60 imm=00000003 target=80010c63
+# IMM_ADDER: rs1=80010c60 imm=0000000c target=80010c6c
+# PC=8000285c INSTR=0034a623 MEM[80010c6c]=00000001
+# IMM_ADDER: rs1=80010c60 imm=00000004 target=80010c64
+# IMM_ADDER: rs1=80010c60 imm=00000010 target=80010c70
+# PC=80002860 INSTR=0044a823 MEM[80010c70]=d5a62cab
+# IMM_ADDER: rs1=80010c60 imm=00000005 target=80010c65
+# IMM_ADDER: rs1=80010c60 imm=00000014 target=80010c74
+# PC=80002864 INSTR=0054aa23 MEM[80010c74]=00000001
+# IMM_ADDER: rs1=80010c60 imm=00000006 target=80010c66
+# IMM_ADDER: rs1=80010c60 imm=00000018 target=80010c78
+# PC=80002868 INSTR=0064ac23 MEM[80010c78]=00000003
+# IMM_ADDER: rs1=80010c60 imm=00000007 target=80010c67
+# IMM_ADDER: rs1=80010c60 imm=0000001c target=80010c7c
+# PC=8000286c INSTR=0074ae23 MEM[80010c7c]=ffffff78
+# IMM_ADDER: rs1=80010c60 imm=00000028 target=80010c88
+# IMM_ADDER: rs1=80010c60 imm=00000020 target=80010c80
+# PC=80002870 INSTR=0284a023 MEM[80010c80]=937247ec
+# IMM_ADDER: rs1=80010c60 imm=00000029 target=80010c89
+# IMM_ADDER: rs1=80010c60 imm=00000024 target=80010c84
+# PC=80002874 INSTR=0294a223 MEM[80010c84]=80010c60
+# IMM_ADDER: rs1=80010c60 imm=0000002a target=80010c8a
+# IMM_ADDER: rs1=80010c60 imm=00000028 target=80010c88
+# PC=80002878 INSTR=02a4a423 MEM[80010c88]=f850a336
+# IMM_ADDER: rs1=80010c60 imm=0000002b target=80010c8b
+# IMM_ADDER: rs1=80010c60 imm=0000002c target=80010c8c
+# PC=8000287c INSTR=02b4a623 MEM[80010c8c]=fffffe00
+# IMM_ADDER: rs1=80010c60 imm=0000002c target=80010c8c
+# IMM_ADDER: rs1=80010c60 imm=00000030 target=80010c90
+# PC=80002880 INSTR=02c4a823 MEM[80010c90]=ff294717
+# IMM_ADDER: rs1=80010c60 imm=0000002d target=80010c8d
+# IMM_ADDER: rs1=80010c60 imm=00000034 target=80010c94
+# PC=80002884 INSTR=02d4aa23 MEM[80010c94]=f2a76bb2
+# IMM_ADDER: rs1=80010c60 imm=0000002e target=80010c8e
+# IMM_ADDER: rs1=80010c60 imm=00000038 target=80010c98
+# PC=80002888 INSTR=02e4ac23 MEM[80010c98]=80000000
+# IMM_ADDER: rs1=80010c60 imm=0000002f target=80010c8f
+# IMM_ADDER: rs1=80010c60 imm=0000003c target=80010c9c
+# PC=8000288c INSTR=02f4ae23 MEM[80010c9c]=80000000
+# IMM_ADDER: rs1=80010c60 imm=00000050 target=80010cb0
+# IMM_ADDER: rs1=80010c60 imm=00000040 target=80010ca0
+# PC=80002890 INSTR=0504a023 MEM[80010ca0]=00000002
+# IMM_ADDER: rs1=80010c60 imm=00000051 target=80010cb1
+# IMM_ADDER: rs1=80010c60 imm=00000044 target=80010ca4
+# PC=80002894 INSTR=0514a223 MEM[80010ca4]=bda62cab
+# IMM_ADDER: rs1=80010c60 imm=00000052 target=80010cb2
+# IMM_ADDER: rs1=80010c60 imm=00000048 target=80010ca8
+# PC=80002898 INSTR=0524a423 MEM[80010ca8]=fffffffe
+# IMM_ADDER: rs1=80010c60 imm=00000053 target=80010cb3
+# IMM_ADDER: rs1=80010c60 imm=0000004c target=80010cac
+# PC=8000289c INSTR=0534a623 MEM[80010cac]=33577dd9
+# IMM_ADDER: rs1=80010c60 imm=00000054 target=80010cb4
+# IMM_ADDER: rs1=80010c60 imm=00000050 target=80010cb0
+# PC=800028a0 INSTR=0544a823 MEM[80010cb0]=335778d1
+# IMM_ADDER: rs1=80010c60 imm=00000055 target=80010cb5
+# IMM_ADDER: rs1=80010c60 imm=00000054 target=80010cb4
+# PC=800028a4 INSTR=0554aa23 MEM[80010cb4]=2ac3d000
+# IMM_ADDER: rs1=80010c60 imm=00000056 target=80010cb6
+# IMM_ADDER: rs1=80010c60 imm=00000058 target=80010cb8
+# PC=800028a8 INSTR=0564ac23 MEM[80010cb8]=ab1bc411
+# IMM_ADDER: rs1=80010c60 imm=00000057 target=80010cb7
+# IMM_ADDER: rs1=80010c60 imm=0000005c target=80010cbc
+# PC=800028ac INSTR=0574ae23 MEM[80010cbc]=80000000
+# IMM_ADDER: rs1=80010c60 imm=00000078 target=80010cd8
+# IMM_ADDER: rs1=80010c60 imm=00000060 target=80010cc0
+# PC=800028b0 INSTR=0784a023 MEM[80010cc0]=80010ce0
+# IMM_ADDER: rs1=80010c60 imm=00000079 target=80010cd9
+# IMM_ADDER: rs1=80010c60 imm=00000064 target=80010cc4
+# PC=800028b4 INSTR=0794a223 MEM[80010cc4]=00000000
+# IMM_ADDER: rs1=80010c60 imm=0000007a target=80010cda
+# IMM_ADDER: rs1=80010c60 imm=00000068 target=80010cc8
+# PC=800028b8 INSTR=07a4a423 MEM[80010cc8]=00000004
+# IMM_ADDER: rs1=80010c60 imm=0000007b target=80010cdb
+# IMM_ADDER: rs1=80010c60 imm=0000006c target=80010ccc
+# PC=800028bc INSTR=07b4a623 MEM[80010ccc]=00000000
+# IMM_ADDER: rs1=80010c60 imm=0000007c target=80010cdc
+# IMM_ADDER: rs1=80010c60 imm=00000070 target=80010cd0
+# PC=800028c0 INSTR=07c4a823 MEM[80010cd0]=ffffffff
+# IMM_ADDER: rs1=80010c60 imm=0000007d target=80010cdd
+# IMM_ADDER: rs1=80010c60 imm=00000074 target=80010cd4
+# PC=800028c4 INSTR=07d4aa23 MEM[80010cd4]=fffffffe
+# IMM_ADDER: rs1=80010c60 imm=0000007e target=80010cde
+# IMM_ADDER: rs1=80010c60 imm=00000078 target=80010cd8
+# PC=800028c8 INSTR=07e4ac23 MEM[80010cd8]=8000282c
+# IMM_ADDER: rs1=80010c60 imm=0000007f target=80010cdf
+# IMM_ADDER: rs1=80010c60 imm=0000007c target=80010cdc
+# PC=800028cc INSTR=07f4ae23 MEM[80010cdc]=00000000
+# PC=800028d0 INSTR=00048c33 x24=80010c60
+# PC=800028d4 INSTR=30002673 x12=00001800
+# PC=800028d8 INSTR=34202673 x12=0000000b
+# PC=800028dc INSTR=01f65613 x12=00000000
+# PC=800028e4 INSTR=34102673 x12=80002830
+# PC=800028e8 INSTR=34202673 x12=0000000b
+# PC=800028ec INSTR=00300693 x13=00000003
+# PC=800028f4 INSTR=00800693 x13=00000008
+# PC=800028fc INSTR=00900693 x13=00000009
+# PC=80002904 INSTR=00b00693 x13=0000000b
+# PC=80002954 INSTR=ffffd617 x12=7ffff954
+# IMM_ADDER: rs1=80000000 imm=00000000 target=80000000
+# PC=80002958 INSTR=6ac60613 x12=80000000
+# IMM_ADDER: rs1=7ffff954 imm=00000000 target=7ffff954
+# PC=8000295c INSTR=00062023 MEM[80000000]=00000000
+# IMM_ADDER: rs1=80000000 imm=00000001 target=80000001
+# IMM_ADDER: rs1=80000000 imm=00000004 target=80000004
+# PC=80002960 INSTR=00162223 MEM[80000004]=00000000
+# IMM_ADDER: rs1=80000000 imm=00000002 target=80000002
+# IMM_ADDER: rs1=80000000 imm=00000008 target=80000008
+# PC=80002964 INSTR=00262423 MEM[80000008]=fff00000
+# IMM_ADDER: rs1=80000000 imm=00000003 target=80000003
+# IMM_ADDER: rs1=80000000 imm=0000000c target=8000000c
+# PC=80002968 INSTR=00362623 MEM[8000000c]=00000001
+# IMM_ADDER: rs1=80000000 imm=00000004 target=80000004
+# IMM_ADDER: rs1=80000000 imm=00000010 target=80000010
+# PC=8000296c INSTR=00462823 MEM[80000010]=d5a62cab
+# IMM_ADDER: rs1=80000000 imm=00000005 target=80000005
+# IMM_ADDER: rs1=80000000 imm=00000014 target=80000014
+# PC=80002970 INSTR=00562a23 MEM[80000014]=00000001
+# IMM_ADDER: rs1=80000000 imm=00000006 target=80000006
+# IMM_ADDER: rs1=80000000 imm=00000018 target=80000018
+# PC=80002974 INSTR=00662c23 MEM[80000018]=00000003
+# IMM_ADDER: rs1=80000000 imm=00000007 target=80000007
+# IMM_ADDER: rs1=80000000 imm=0000001c target=8000001c
+# PC=80002978 INSTR=00762e23 MEM[8000001c]=ffffff78
+# IMM_ADDER: rs1=80000000 imm=00000028 target=80000028
+# IMM_ADDER: rs1=80000000 imm=00000020 target=80000020
+# PC=8000297c INSTR=02862023 MEM[80000020]=937247ec
+# IMM_ADDER: rs1=80000000 imm=00000029 target=80000029
+# IMM_ADDER: rs1=80000000 imm=00000024 target=80000024
+# PC=80002980 INSTR=02962223 MEM[80000024]=80010c60
+# IMM_ADDER: rs1=80000000 imm=0000002a target=8000002a
+# IMM_ADDER: rs1=80000000 imm=00000028 target=80000028
+# PC=80002984 INSTR=02a62423 MEM[80000028]=f850a336
+# IMM_ADDER: rs1=80000000 imm=0000002b target=8000002b
+# IMM_ADDER: rs1=80000000 imm=0000002c target=8000002c
+# PC=80002988 INSTR=02b62623 MEM[8000002c]=fffffe00
+# IMM_ADDER: rs1=80000000 imm=0000002c target=8000002c
+# IMM_ADDER: rs1=80000000 imm=00000030 target=80000030
+# PC=8000298c INSTR=02c62823 MEM[80000030]=80000000
+# IMM_ADDER: rs1=80000000 imm=0000002d target=8000002d
+# IMM_ADDER: rs1=80000000 imm=00000034 target=80000034
+# PC=80002990 INSTR=02d62a23 MEM[80000034]=0000000b
+# IMM_ADDER: rs1=80000000 imm=0000002e target=8000002e
+# IMM_ADDER: rs1=80000000 imm=00000038 target=80000038
+# PC=80002994 INSTR=02e62c23 MEM[80000038]=80000000
+# IMM_ADDER: rs1=80000000 imm=0000002f target=8000002f
+# IMM_ADDER: rs1=80000000 imm=0000003c target=8000003c
+# PC=80002998 INSTR=02f62e23 MEM[8000003c]=80000000
+# IMM_ADDER: rs1=80000000 imm=00000050 target=80000050
+# IMM_ADDER: rs1=80000000 imm=00000040 target=80000040
+# PC=8000299c INSTR=05062023 MEM[80000040]=00000002
+# IMM_ADDER: rs1=80000000 imm=00000051 target=80000051
+# IMM_ADDER: rs1=80000000 imm=00000044 target=80000044
+# PC=800029a0 INSTR=05162223 MEM[80000044]=bda62cab
+# IMM_ADDER: rs1=80000000 imm=00000052 target=80000052
+# IMM_ADDER: rs1=80000000 imm=00000048 target=80000048
+# PC=800029a4 INSTR=05262423 MEM[80000048]=fffffffe
+# IMM_ADDER: rs1=80000000 imm=00000053 target=80000053
+# IMM_ADDER: rs1=80000000 imm=0000004c target=8000004c
+# PC=800029a8 INSTR=05362623 MEM[8000004c]=33577dd9
+# IMM_ADDER: rs1=80000000 imm=00000054 target=80000054
+# IMM_ADDER: rs1=80000000 imm=00000050 target=80000050
+# PC=800029ac INSTR=05462823 MEM[80000050]=335778d1
+# IMM_ADDER: rs1=80000000 imm=00000055 target=80000055
+# IMM_ADDER: rs1=80000000 imm=00000054 target=80000054
+# PC=800029b0 INSTR=05562a23 MEM[80000054]=2ac3d000
+# IMM_ADDER: rs1=80000000 imm=00000056 target=80000056
+# IMM_ADDER: rs1=80000000 imm=00000058 target=80000058
+# PC=800029b4 INSTR=05662c23 MEM[80000058]=ab1bc411
+# IMM_ADDER: rs1=80000000 imm=00000057 target=80000057
+# IMM_ADDER: rs1=80000000 imm=0000005c target=8000005c
+# PC=800029b8 INSTR=05762e23 MEM[8000005c]=80000000
+# IMM_ADDER: rs1=80000000 imm=00000078 target=80000078
+# IMM_ADDER: rs1=80000000 imm=00000060 target=80000060
+# PC=800029bc INSTR=07862023 MEM[80000060]=80010c60
+# IMM_ADDER: rs1=80000000 imm=00000079 target=80000079
+# IMM_ADDER: rs1=80000000 imm=00000064 target=80000064
+# PC=800029c0 INSTR=07962223 MEM[80000064]=00000000
+# IMM_ADDER: rs1=80000000 imm=0000007a target=8000007a
+# IMM_ADDER: rs1=80000000 imm=00000068 target=80000068
+# PC=800029c4 INSTR=07a62423 MEM[80000068]=00000004
+# IMM_ADDER: rs1=80000000 imm=0000007b target=8000007b
+# IMM_ADDER: rs1=80000000 imm=0000006c target=8000006c
+# PC=800029c8 INSTR=07b62623 MEM[8000006c]=00000000
+# IMM_ADDER: rs1=80000000 imm=0000007c target=8000007c
+# IMM_ADDER: rs1=80000000 imm=00000070 target=80000070
+# PC=800029cc INSTR=07c62823 MEM[80000070]=ffffffff
+# IMM_ADDER: rs1=80000000 imm=0000007d target=8000007d
+# IMM_ADDER: rs1=80000000 imm=00000074 target=80000074
+# PC=800029d0 INSTR=07d62a23 MEM[80000074]=fffffffe
+# IMM_ADDER: rs1=80000000 imm=0000007e target=8000007e
+# IMM_ADDER: rs1=80000000 imm=00000078 target=80000078
+# PC=800029d4 INSTR=07e62c23 MEM[80000078]=8000282c
+# IMM_ADDER: rs1=80000000 imm=0000007f target=8000007f
+# IMM_ADDER: rs1=80000000 imm=0000007c target=8000007c
+# PC=800029d8 INSTR=07f62e23 MEM[8000007c]=00000000
+# PC=800029dc INSTR=00000f17 x30=800029dc
+# IMM_ADDER: rs1=80002834 imm=00000000 target=80002834
+# PC=800029e0 INSTR=e58f0f13 x30=80002834
+# IMM_ADDER: rs1=800029dc imm=00000000 target=800029dc
+# IMM_ADDER: rs1=80007834 imm=7c3f2000 target=fc3f9834
+# IMM_ADDER: rs1=80007834 imm=000007cc target=80008000
+# PC=80002834 INSTR=00005f17 x30=80007834
+# IMM_ADDER: rs1=80002834 imm=000007cc target=80003000
+# PC=80002838 INSTR=7c3f2623 MEM[80008000]=00000001
+# RISC-V-DV PROGRAM COMPLETED
+# 
+# ======================================
+#       FUNCTIONAL COVERAGE
+# ======================================
+# 
+# ==========================================================
+#                  PRAGYA RV32I COVERAGE
+# ==========================================================
+# RV32I Instruction Coverage : 67.57 %
+# RV32I Overall Coverage     : 56.74 %
+# Register Hazard Coverage    : 92.50 %
+# Edge Case Coverage          : 85.00 %
+# ==========================================================
+# 
+# 
+# ===========================================
+#          RV32M COVERAGE REPORT
+# ===========================================
+# Coverage = 55.39 %
+# ===========================================
+# 
+# 
+# ========================================
+#       LOAD / STORE COVERAGE
+# ========================================
+# Coverage = 24.00 %
+# ========================================
+# 
+# --------------------------------
+# Branch/Jump Coverage = 63.99%
+# --------------------------------
+# 
+# ===================================
+#  PIPELINE COVERAGE REPORT
+# ===================================
+# Coverage = 87.15 %
+# ===================================
+# 
+# 
+# ==================================================
+#           PRAGYA SYSTEM COVERAGE
+# ==================================================
+# CSR Coverage        = 42.72 % 
+# Exception Coverage  = 58.75 % 
+# Interrupt Coverage  = 32.57 % 
+# --------------------------------------------------
+# TOTAL SYSTEM COVERAGE = 44.68 %
+# ==================================================
+# 
+# ======================================
+# 
+# ** Note: $finish    : verification/pragya_core/top/tb_pragya_top.sv(4472)
+#    Time: 155575 ns  Iteration: 1  Instance: /tb_pragya_top
+# Break at verification/pragya_core/top/tb_pragya_top.sv line 4472
+# Stopped at verification/pragya_core/top/tb_pragya_top.sv line 4472
+#  coverage save coverage/databases/regression/pragya_arithmetic_basic_test_seed1.ucdb
+#  quit -f
+# End time: 23:40:58 on Nov 16,2026, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 10
+
+========================================================
+          PRAGYA RTL vs SPIKE COMPARISON
+========================================================
+
+RTL commits   : 2449
+Spike commits : 2449
+
+
+========================================================
+                    TEST PASSED
+========================================================
+
+All 2449 architectural commits match.

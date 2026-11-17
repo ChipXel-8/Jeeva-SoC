@@ -1,0 +1,118 @@
+
+Merging object attributes
+
+
+There are no discarded input sections
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+IMEM             0x80000000         0x00008000         xr
+DMEM             0x80008000         0x00008000         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD /tmp/ccv56Pon.o
+LOAD /tmp/ccx8sCfl.o
+LOAD /tmp/ccCbiOFn.o
+
+.text           0x80000000      0x2c4
+                0x80000000                        . = ALIGN (0x4)
+ *(.text.start)
+ .text.start    0x80000000       0x54 /tmp/ccv56Pon.o
+                0x80000000                _start
+ *(.text.trap)
+ .text.trap     0x80000054       0x58 /tmp/ccx8sCfl.o
+                0x80000054                trap_entry
+ *(.text)
+ .text          0x800000ac        0x0 /tmp/ccv56Pon.o
+ .text          0x800000ac        0x0 /tmp/ccx8sCfl.o
+ .text          0x800000ac      0x218 /tmp/ccCbiOFn.o
+                0x800000ec                main
+ *(.text.*)
+                0x800002c4                        . = ALIGN (0x4)
+
+.rela.dyn       0x800002c4        0x0
+ .rela.text.start
+                0x800002c4        0x0 /tmp/ccv56Pon.o
+ .rela.text.trap
+                0x800002c4        0x0 /tmp/ccv56Pon.o
+
+.rodata         0x800002c4        0x0
+                0x800002c4                        . = ALIGN (0x4)
+ *(.rodata)
+ *(.rodata.*)
+ *(.srodata)
+ *(.srodata.*)
+                0x800002c4                        . = ALIGN (0x4)
+
+.data           0x80008000        0x0
+                0x80008000                        . = ALIGN (0x4)
+                0x80008000                        _sdata = .
+                0x80008000                        __data_start = .
+ *(.data)
+ .data          0x80008000        0x0 /tmp/ccv56Pon.o
+ .data          0x80008000        0x0 /tmp/ccx8sCfl.o
+ .data          0x80008000        0x0 /tmp/ccCbiOFn.o
+ *(.data.*)
+                0x80008000                        . = ALIGN (0x4)
+                0x80008800                        __global_pointer$ = (. + 0x800)
+ *(.sdata)
+ *(.sdata.*)
+                0x80008000                        . = ALIGN (0x4)
+                0x80008000                        _edata = .
+                0x80008000                        __data_end = .
+
+.bss            0x80008000       0x28
+                0x80008000                        . = ALIGN (0x4)
+                0x80008000                        _sbss = .
+                0x80008000                        __bss_start = .
+ *(.sbss)
+ *(.sbss.*)
+ *(.bss)
+ .bss           0x80008000        0x0 /tmp/ccv56Pon.o
+ .bss           0x80008000        0x0 /tmp/ccx8sCfl.o
+ .bss           0x80008000       0x28 /tmp/ccCbiOFn.o
+                0x80008000                fib
+ *(.bss.*)
+ *(COMMON)
+                0x80008028                        . = ALIGN (0x4)
+                0x80008028                        _ebss = .
+                0x80008028                        __bss_end = .
+
+.signature      0x80008028      0x108
+                0x80008030                        . = ALIGN (0x10)
+ *fill*         0x80008028        0x8 
+                0x80008030                        _signature_start = .
+                0x80008030                        __signature_start = .
+                0x80008130                        . = (. + 0x100)
+ *fill*         0x80008030      0x100 
+                0x80008130                        _signature_end = .
+                0x80008130                        __signature_end = .
+                0x80010000                        _stack_top = (ORIGIN (DMEM) + LENGTH (DMEM))
+                0x80010000                        __stack_top = _stack_top
+                0x80000000                        __imem_start = ORIGIN (IMEM)
+                0x80008000                        __imem_end = (ORIGIN (IMEM) + LENGTH (IMEM))
+                0x80008000                        __dmem_start = ORIGIN (DMEM)
+                0x80010000                        __dmem_end = (ORIGIN (DMEM) + LENGTH (DMEM))
+                0x80008028                        _end = __bss_end
+OUTPUT(build/elf/22_fibonacci_test_spike.elf elf32-littleriscv)
+
+.riscv.attributes
+                0x00000000       0x41
+ .riscv.attributes
+                0x00000000       0x3f /tmp/ccv56Pon.o
+ .riscv.attributes
+                0x0000003f       0x3f /tmp/ccx8sCfl.o
+ .riscv.attributes
+                0x0000007e       0x3d /tmp/ccCbiOFn.o
+
+.comment        0x00000000       0x19
+ .comment       0x00000000       0x19 /tmp/ccCbiOFn.o
+                                 0x1a (size before relaxing)
+
+.note.GNU-stack
+                0x00000000        0x0
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/ccCbiOFn.o

@@ -1,0 +1,116 @@
+
+Merging object attributes
+
+
+There are no discarded input sections
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+IMEM             0x80000000         0x00008000         xr
+DMEM             0x80008000         0x00008000         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD /tmp/cc39pTJH.o
+LOAD /tmp/ccqONexI.o
+LOAD /tmp/cclNcVqI.o
+
+.text           0x80000000      0x3b4
+                0x80000000                        . = ALIGN (0x4)
+ *(.text.start)
+ .text.start    0x80000000       0x54 /tmp/cc39pTJH.o
+                0x80000000                _start
+ *(.text.trap)
+ .text.trap     0x80000054       0x58 /tmp/ccqONexI.o
+                0x80000054                trap_entry
+ *(.text)
+ .text          0x800000ac        0x0 /tmp/cc39pTJH.o
+ .text          0x800000ac        0x0 /tmp/ccqONexI.o
+ .text          0x800000ac      0x308 /tmp/cclNcVqI.o
+                0x800000ec                main
+ *(.text.*)
+                0x800003b4                        . = ALIGN (0x4)
+
+.rela.dyn       0x800003b4        0x0
+ .rela.text.start
+                0x800003b4        0x0 /tmp/cc39pTJH.o
+ .rela.text.trap
+                0x800003b4        0x0 /tmp/cc39pTJH.o
+
+.rodata         0x800003b4        0x0
+                0x800003b4                        . = ALIGN (0x4)
+ *(.rodata)
+ *(.rodata.*)
+ *(.srodata)
+ *(.srodata.*)
+                0x800003b4                        . = ALIGN (0x4)
+
+.data           0x80008000        0x0
+                0x80008000                        . = ALIGN (0x4)
+                0x80008000                        _sdata = .
+                0x80008000                        __data_start = .
+ *(.data)
+ .data          0x80008000        0x0 /tmp/cc39pTJH.o
+ .data          0x80008000        0x0 /tmp/ccqONexI.o
+ .data          0x80008000        0x0 /tmp/cclNcVqI.o
+ *(.data.*)
+                0x80008000                        . = ALIGN (0x4)
+                0x80008800                        __global_pointer$ = (. + 0x800)
+ *(.sdata)
+ *(.sdata.*)
+                0x80008000                        . = ALIGN (0x4)
+                0x80008000                        _edata = .
+                0x80008000                        __data_end = .
+
+.bss            0x80008000        0x0
+                0x80008000                        . = ALIGN (0x4)
+                0x80008000                        _sbss = .
+                0x80008000                        __bss_start = .
+ *(.sbss)
+ *(.sbss.*)
+ *(.bss)
+ .bss           0x80008000        0x0 /tmp/cc39pTJH.o
+ .bss           0x80008000        0x0 /tmp/ccqONexI.o
+ .bss           0x80008000        0x0 /tmp/cclNcVqI.o
+ *(.bss.*)
+ *(COMMON)
+                0x80008000                        . = ALIGN (0x4)
+                0x80008000                        _ebss = .
+                0x80008000                        __bss_end = .
+
+.signature      0x80008000      0x100
+                0x80008000                        . = ALIGN (0x10)
+                0x80008000                        _signature_start = .
+                0x80008000                        __signature_start = .
+                0x80008100                        . = (. + 0x100)
+ *fill*         0x80008000      0x100 
+                0x80008100                        _signature_end = .
+                0x80008100                        __signature_end = .
+                0x80010000                        _stack_top = (ORIGIN (DMEM) + LENGTH (DMEM))
+                0x80010000                        __stack_top = _stack_top
+                0x80000000                        __imem_start = ORIGIN (IMEM)
+                0x80008000                        __imem_end = (ORIGIN (IMEM) + LENGTH (IMEM))
+                0x80008000                        __dmem_start = ORIGIN (DMEM)
+                0x80010000                        __dmem_end = (ORIGIN (DMEM) + LENGTH (DMEM))
+                0x80008000                        _end = __bss_end
+OUTPUT(build/elf/01_alu_test_spike.elf elf32-littleriscv)
+
+.riscv.attributes
+                0x00000000       0x41
+ .riscv.attributes
+                0x00000000       0x3f /tmp/cc39pTJH.o
+ .riscv.attributes
+                0x0000003f       0x3f /tmp/ccqONexI.o
+ .riscv.attributes
+                0x0000007e       0x3d /tmp/cclNcVqI.o
+
+.comment        0x00000000       0x19
+ .comment       0x00000000       0x19 /tmp/cclNcVqI.o
+                                 0x1a (size before relaxing)
+
+.note.GNU-stack
+                0x00000000        0x0
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/cclNcVqI.o

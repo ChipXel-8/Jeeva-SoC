@@ -1,0 +1,25 @@
+Model Technology ModelSim SE-64 vopt 2021.3 Compiler 2021.07 Jul 13 2021
+Start time: 23:50:46 on Nov 16,2026
+vopt -debug "+designfile" -f /home/tops2/your_custom_directory_name/build/riscv_dv/pragya_mem_access_test_seed2/top.list -l /home/tops2/your_custom_directory_name/build/riscv_dv/pragya_mem_access_test_seed2/optimize.log -o design_opt 
+
+Top level modules:
+	riscv_instr_gen_tb_top
+	design_cuname
+
+Analyzing design...
+-- Loading module riscv_instr_gen_tb_top
+-- Importing package mtiUvm.uvm_pkg (uvm-1.2 Built-in)
+-- Importing package riscv_instr_test_pkg
+-- Importing package riscv_instr_pkg
+-- Importing package riscv_signature_pkg
+-- Loading package design_cuname
+-- Loading package mtiUvm.questa_uvm_pkg
+Incremental compilation check found no design-units have changed.
+viscom:
+VISCOM: Model Technology ModelSim /opt/modeltech/linux_x86_64/VisualizerRls/bin/viscom 2021.3 at 2021.07 Jul 13 2021
+VISCOM: Writing design.bin
+VISCOM: Done writing design.bin
+
+Optimized design name is design_opt
+End time: 23:50:48 on Nov 16,2026, Elapsed time: 0:00:02
+Errors: 0, Warnings: 0
